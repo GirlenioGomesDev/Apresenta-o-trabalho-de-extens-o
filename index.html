@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <meta name="description" content="Uma oficina interativa sobre desenvolvimento web, segurança digital e carreiras em TI. Grupo 04, Ciência da Computação, UNINASSAU.">
+  <title>Fábrica de Software na Prática · Grupo 04</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/logic.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm3 5h6m-6 4h6m-6 4h4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M13 4h7v7m0-7L10 14M9 4H4v16h16v-5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Fábrica de Software, início"><span class="brand-mark">&lt;/&gt;</span><span>fábrica<span class="brand-light">.de.software</span></span></a>
+    <span class="topbar-context">EXTENSÃO UNIVERSITÁRIA <span class="context-divider">/</span> GRUPO 04</span>
+    <div class="topbar-actions">
+      <button class="timer" id="timer-toggle" title="Iniciar ou pausar cronômetro" aria-label="Iniciar cronômetro"><span class="status-dot"></span><span id="timer-value">00:00</span></button>
+      <button class="icon-button" id="overview-open" aria-label="Abrir roteiro" title="Roteiro (M)"><svg><use href="#i-menu"/></svg></button>
+      <button class="icon-button" id="fullscreen" aria-label="Entrar em tela cheia" title="Tela cheia (F)"><svg><use href="#i-expand"/></svg></button>
+    </div>
+  </header>
+
+  <aside class="chapter-rail" aria-label="Capítulos">
+    <span class="rail-label">A OFICINA</span>
+    <nav>
+      <a href="#inicio" data-chapter-link="abertura"><span class="rail-number">00</span><span class="rail-name">Começo</span></a>
+      <a href="#por-tras-do-clique" data-chapter-link="web"><span class="rail-number">01</span><span class="rail-name">Criar</span></a>
+      <a href="#caso-real" data-chapter-link="seguranca"><span class="rail-number">02</span><span class="rail-name">Proteger</span></a>
+      <a href="#carreiras" data-chapter-link="carreiras"><span class="rail-number">03</span><span class="rail-name">Explorar</span></a>
+      <a href="#quiz" data-chapter-link="desafio"><span class="rail-number">04</span><span class="rail-name">Participar</span></a>
+      <a href="#equipe" data-chapter-link="creditos"><span class="rail-number">05</span><span class="rail-name">Equipe</span></a>
+    </nav>
+    <span class="rail-bottom">RECIFE, PE<br>2026</span>
+  </aside>
+
+  <main id="conteudo" class="stage" tabindex="-1">
+    <section class="scene hero" id="inicio" data-chapter="abertura" data-title="Fábrica de Software na Prática">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> UMA OFICINA PARA QUEM TEM CURIOSIDADE</p>
+        <h1 tabindex="-1">Fábrica de<br>Software<br><span class="accent-underline">na prática<span class="title-dot">.</span></span></h1>
+        <p class="lead">Desenvolvimento web, cibersegurança<br class="desktop-only"> e carreiras em TI.</p>
+        <div class="hero-actions"><a class="button primary" href="#vida-digital">Vamos começar <svg><use href="#i-arrow"/></svg></a><a class="text-link" href="#laboratorio">Ir para o laboratório <span>↗</span></a></div>
+        <div class="institution"><span class="institution-line"></span><span>UNINASSAU <b>Campus Graças</b><br>Escola Lions de Parnamirim</span></div>
+      </div>
+      <div class="hero-lab" aria-label="Prévia interativa de uma página construída com código">
+        <div class="hero-orbit">IDEIA EM CONSTRUÇÃO <span>01 / WEB</span></div>
+        <div class="hero-code-window">
+          <div class="window-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>minha-primeira-ideia.html</span><span class="mono">&lt;/&gt;</span></div>
+          <div class="hero-code"><div><span class="line-number">01</span><span class="code-muted">&lt;!-- tudo começa com uma ideia --&gt;</span></div><div><span class="line-number">02</span><span class="code-green">&lt;h1&gt;</span>Olá, mundo!<span class="code-green">&lt;/h1&gt;</span></div><div><span class="line-number">03</span><span class="code-green">&lt;p&gt;</span>Eu posso criar.<span class="code-green">&lt;/p&gt;</span></div><div><span class="line-number">04</span><span class="code-green">&lt;button&gt;</span>Testar ideia<span class="code-green">&lt;/button&gt;</span></div><div><span class="line-number">05</span><span class="code-muted">// agora é com você</span><span class="code-caret"></span></div></div>
+        </div>
+        <div class="hero-result"><div class="result-address"><span class="status-dot"></span> sua-ideia.local <span>↗</span></div><div class="result-content"><span class="mini-tag">FEITO COM CURIOSIDADE</span><h2>Olá, mundo<span>!</span></h2><p id="hero-message" aria-live="polite">Eu posso criar.</p><button id="hero-try">Testar ideia <svg><use href="#i-arrow"/></svg></button></div><div class="result-bottom"><span class="tiny-squares">▧</span><span>Um clique. Uma possibilidade.</span></div></div>
+        <div class="hero-caption"><span class="caption-line"></span> Essa apresentação também é um site.<br>O código está acontecendo bem aqui.</div>
+      </div>
+    </section>
+
+    <section class="scene" id="vida-digital" data-chapter="abertura" data-title="Tecnologia no nosso dia a dia" hidden>
+      <p class="eyebrow">ANTES DE OLHAR O CÓDIGO</p>
+      <h2 class="scene-title" tabindex="-1">A tecnologia já faz<br>parte da sua vida.</h2>
+      <p class="lead">Quais dessas situações a turma reconhece? Marquem as respostas mencionadas.</p>
+      <div class="audience-grid">
+        <button class="audience-option" data-audience="app" aria-pressed="false"><span class="option-index">01</span><span class="option-drawing">@</span><strong>Usei um site<br>ou aplicativo hoje</strong><span class="option-check">✓</span></button>
+        <button class="audience-option" data-audience="conta" aria-pressed="false"><span class="option-index">02</span><span class="option-drawing">•••</span><strong>Já criei uma conta<br>ou fiz login</strong><span class="option-check">✓</span></button>
+        <button class="audience-option" data-audience="link" aria-pressed="false"><span class="option-index">03</span><span class="option-drawing">?!</span><strong>Já recebi uma<br>mensagem suspeita</strong><span class="option-check">✓</span></button>
+        <button class="audience-option" data-audience="carreira" aria-pressed="false"><span class="option-index">04</span><span class="option-drawing">&lt;/&gt;</span><strong>Já pensei em<br>trabalhar com TI</strong><span class="option-check">✓</span></button>
+      </div>
+      <div class="inline-note"><span id="audience-count" aria-live="polite">0 de 4 situações exploradas</span><span>Registro local da conversa, sem contagem de pessoas.</span></div>
+      <div class="bottom-statement">Hoje, vamos conhecer o que existe <strong>por trás da tela.</strong></div>
+    </section>
+
+    <section class="scene" id="por-tras-do-clique" data-chapter="web" data-title="O que acontece depois de um clique?" hidden>
+      <p class="eyebrow">01 / DESENVOLVIMENTO WEB</p>
+      <h2 class="scene-title" tabindex="-1">Um clique faz<br>uma pequena viagem.</h2>
+      <p class="lead">Vamos acompanhar uma consulta à programação de uma feira da escola.</p>
+      <div class="request-map" aria-label="Etapas de uma consulta a um site">
+        <button data-request-step="0" class="request-node active" aria-pressed="true"><span class="node-icon">▱</span><span class="node-index">01</span><strong>Navegador</strong><small>Você faz um pedido</small></button><span class="connector" aria-hidden="true">→</span>
+        <button data-request-step="1" class="request-node" aria-pressed="false"><span class="node-icon">{ }</span><span class="node-index">02</span><strong>Servidor</strong><small>O sistema processa</small></button><span class="connector" aria-hidden="true">→</span>
+        <button data-request-step="2" class="request-node" aria-pressed="false"><span class="node-icon">≡</span><span class="node-index">03</span><strong>Banco de dados</strong><small>As informações vivem aqui</small></button><span class="connector" aria-hidden="true">→</span>
+        <button data-request-step="3" class="request-node" aria-pressed="false"><span class="node-icon">✓</span><span class="node-index">04</span><strong>Resposta</strong><small>O conteúdo chega à tela</small></button>
+      </div>
+      <div class="explanation-strip"><span class="mono" id="request-label">PASSO 01</span><div><h3 id="request-title">O navegador envia a solicitação</h3><p id="request-text">Você toca em “Ver programação”. O navegador pede essa informação ao servidor pela rede.</p></div><button class="button secondary" id="request-next">Próximo passo <svg><use href="#i-arrow"/></svg></button></div>
+      <p class="footnote">Modelo simplificado de um site com dados. Uma página estática também pode funcionar sem banco de dados.</p>
+    </section>
+
+    <section class="scene" id="linguagens" data-chapter="web" data-title="HTML, CSS e JavaScript" hidden>
+      <p class="eyebrow">CADA PARTE TEM UMA FUNÇÃO</p>
+      <h2 class="scene-title" tabindex="-1">Estrutura. Aparência.<br><span class="muted-title">Comportamento.</span></h2>
+      <div class="language-layout">
+        <div class="language-list" aria-label="Explore as tecnologias">
+          <button class="language-item active" data-language="html" aria-pressed="true"><span class="language-symbol html-symbol">&lt;&gt;</span><span><strong>HTML</strong><small>O que está na página</small></span><span class="language-arrow">↗</span></button>
+          <button class="language-item" data-language="css" aria-pressed="false"><span class="language-symbol css-symbol">#</span><span><strong>CSS</strong><small>Como a página aparece</small></span><span class="language-arrow">↗</span></button>
+          <button class="language-item" data-language="js" aria-pressed="false"><span class="language-symbol js-symbol">{ }</span><span><strong>JavaScript</strong><small>Como a página reage</small></span><span class="language-arrow">↗</span></button>
+        </div>
+        <div class="language-detail"><span class="mini-label" id="language-analogy">COMO A ESTRUTURA DE UMA CASA</span><h3 id="language-heading">O conteúdo ganha lugar.</h3><p id="language-text">Títulos, parágrafos, imagens e botões. HTML marca o significado e a estrutura do conteúdo.</p><pre class="small-code"><code id="language-code">&lt;h1&gt;Feira de Ideias&lt;/h1&gt;
+&lt;p&gt;Um encontro para criar.&lt;/p&gt;
+&lt;button&gt;Participar&lt;/button&gt;</code></pre><p class="footnote" id="language-hint">Uma linguagem de marcação. Pense nas paredes e nos cômodos.</p></div>
+      </div>
+      <a class="text-link lower-link" href="#laboratorio">Vamos ver as três trabalhando juntas <span>↗</span></a>
+    </section>
+
+    <section class="scene lab-scene" id="laboratorio" data-chapter="web" data-title="Laboratório: uma página ganha vida" hidden>
+      <div class="scene-heading-row"><div><p class="eyebrow">LABORATÓRIO AO VIVO</p><h2 class="scene-title compact" tabindex="-1">A página ganha vida.</h2></div><span class="offline-label"><span class="status-dot"></span> FUNCIONA OFFLINE</span></div>
+      <div class="lab-stage-controls" aria-label="Etapas da demonstração"><button data-lab-stage="1" class="active" aria-pressed="true"><b>01</b> Só HTML</button><button data-lab-stage="2" aria-pressed="false"><b>02</b> + CSS</button><button data-lab-stage="3" aria-pressed="false"><b>03</b> + JavaScript</button><button class="lab-reset" id="lab-reset">Restaurar exemplo ↺</button></div>
+      <div class="lab-workspace">
+        <div class="editor-pane"><div class="editor-toolbar"><div class="editor-tabs" role="tablist" aria-label="Arquivos do exemplo"><button id="tab-html" role="tab" aria-selected="true" aria-controls="panel-html" data-editor="html">index.html</button><button id="tab-css" role="tab" aria-selected="false" aria-controls="panel-css" data-editor="css" tabindex="-1">style.css</button><button id="tab-js" role="tab" aria-selected="false" aria-controls="panel-js" data-editor="js" tabindex="-1">script.js</button></div><span class="editor-corner">EDITÁVEL</span></div><div class="editor-body"><div id="panel-html" class="editor-panel" role="tabpanel" aria-labelledby="tab-html"><textarea id="editor-html" class="code-editor" aria-label="Código HTML" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea></div><div id="panel-css" class="editor-panel" role="tabpanel" aria-labelledby="tab-css" hidden><textarea id="editor-css" class="code-editor" aria-label="Código CSS" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" hidden></textarea></div><div id="panel-js" class="editor-panel" role="tabpanel" aria-labelledby="tab-js" hidden><textarea id="editor-js" class="code-editor" aria-label="Código JavaScript" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" hidden></textarea></div></div><div class="editor-footer"><span>Edite e veja o resultado</span><button class="run-button" id="lab-run"><svg><use href="#i-play"/></svg> Executar <kbd>Ctrl ↵</kbd></button></div></div>
+        <div class="preview-pane"><div class="preview-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>feira-de-ideias.local</span><span class="preview-live">PRÉVIA</span></div><iframe id="lab-preview" title="Resultado do código de demonstração" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe><div class="preview-footer" id="lab-description">Só HTML: o conteúdo já existe, ainda sem estilo ou interação.</div></div>
+      </div>
+      <div class="lab-bottom"><p id="lab-status" role="status">Exemplo pronto para executar.</p><span>Dica: mude o título, troque a cor e experimente o botão.</span></div>
+    </section>
+
+    <section class="scene" id="fabrica" data-chapter="web" data-title="Uma fábrica de software trabalha em equipe" hidden>
+      <p class="eyebrow">DO PROBLEMA À ENTREGA</p>
+      <h2 class="scene-title" tabindex="-1">Código é uma parte.<br>O trabalho é em equipe.</h2>
+      <div class="factory-layout"><div class="factory-brief"><span class="mini-label">UM PROBLEMA REALISTA</span><h3>“Como divulgar<br>a feira da escola?”</h3><p>A turma precisa mostrar a programação, os horários e o local do evento.</p><div class="brief-stamp">FEIRA DE IDEIAS<br><span>Exemplo educativo</span></div></div><div class="factory-steps"><button data-factory="0" class="active" aria-pressed="true"><span>01</span> Entender o problema</button><button data-factory="1" aria-pressed="false"><span>02</span> Planejar a solução</button><button data-factory="2" aria-pressed="false"><span>03</span> Construir em conjunto</button><button data-factory="3" aria-pressed="false"><span>04</span> Testar com pessoas</button><button data-factory="4" aria-pressed="false"><span>05</span> Proteger os dados</button><button data-factory="5" aria-pressed="false"><span>06</span> Entregar e melhorar</button></div></div>
+      <div class="factory-result" aria-live="polite"><span class="mono" id="factory-deliverable">ENTREGA: REQUISITOS</span><p id="factory-text">Conversar com a escola: quem usará a página? Que informações precisam aparecer? O que realmente resolve o problema?</p></div>
+    </section>
+
+    <section class="scene dark-scene" id="caso-real" data-chapter="seguranca" data-title="Caso real: Uber, setembro de 2022" data-theme="dark" hidden>
+      <p class="eyebrow"><span class="live-dot"></span> 02 / CIBERSEGURANÇA</p>
+      <div class="security-heading"><h2 class="scene-title" tabindex="-1">Uma senha.<br>Vários pedidos.<br><span class="lime-text">Um acesso indevido.</span></h2><div class="case-label"><strong>Uber</strong><span>SETEMBRO<br>DE 2022</span></div></div>
+      <p class="lead">Um caso real para entender por que atenção e proteção precisam andar juntas.</p>
+      <div class="incident-timeline" aria-label="Linha do tempo do incidente"><button data-incident="0" class="active" aria-pressed="true"><span>01</span> Credencial comprometida</button><button data-incident="1" aria-pressed="false"><span>02</span> Pedidos de autenticação</button><button data-incident="2" aria-pressed="false"><span>03</span> Aprovação indevida</button><button data-incident="3" aria-pressed="false"><span>04</span> Acesso e resposta</button></div>
+      <div class="incident-detail" aria-live="polite"><span class="incident-number" id="incident-number">01</span><div><h3 id="incident-heading">A conta de um prestador foi comprometida</h3><p id="incident-text">Segundo a Uber, a senha provavelmente foi exposta por malware no dispositivo pessoal do prestador e depois obtida pelo atacante.</p></div></div>
+      <p class="source-note">Relato da própria empresa, atualização de 19/09/2022. <a href="https://www.uber.com/us/en/newsroom/security-update/" target="_blank" rel="noopener noreferrer">Ler a fonte oficial ↗</a></p>
+    </section>
+
+    <section class="scene" id="detetive" data-chapter="seguranca" data-title="Desafio: você confiaria nesta mensagem?" hidden>
+      <p class="eyebrow">SUA VEZ DE INVESTIGAR</p>
+      <h2 class="scene-title" tabindex="-1">Você confiaria<br>nessa mensagem?</h2>
+      <div class="scenario-tabs" aria-label="Situações de segurança"><button data-scenario="phishing" class="active" aria-pressed="true">01 Mensagem suspeita</button><button data-scenario="mfa" aria-pressed="false">02 Pedido de login</button></div>
+      <div id="phishing-scenario" class="detective-layout"><div class="message-card"><div class="message-sender"><span class="sender-avatar">!</span><span><b>Atendimento Escolar</b><small>Número desconhecido</small></span><span class="mono">14:32</span></div><div class="message-bubble"><p>⚠️ <strong>Sua matrícula será bloqueada em 10 minutos!</strong></p><p>Confirme seu CPF, sua senha e o código recebido por SMS para evitar o cancelamento.</p><span class="fake-url">https://portal-aluno.example.invalid</span><small>Mensagem fictícia para a oficina. Endereço sem acesso.</small></div></div><div class="detective-actions"><p class="mini-label">O QUE VOCÊ FARIA?</p><button class="decision-button" data-decision="phishing-open">Abriria o link para resolver logo <span>↗</span></button><button class="decision-button" data-decision="phishing-check">Confirmaria com a escola por um canal conhecido <span>↗</span></button><div class="decision-feedback" id="phishing-feedback" role="status">Conversem antes de escolher uma resposta.</div></div></div>
+      <div id="mfa-scenario" class="detective-layout" hidden><div class="mfa-card"><svg class="large-lock"><use href="#i-lock"/></svg><span class="mini-label">PEDIDO DE ACESSO</span><h3>Você está tentando<br>entrar na sua conta?</h3><p>Você estava apenas conversando com a turma e não iniciou nenhum login.</p><span class="mfa-time">Simulação educativa</span></div><div class="detective-actions"><p class="mini-label">COMO RESPONDER?</p><button class="decision-button" data-decision="mfa-approve">Aprovar para a notificação sumir <span>↗</span></button><button class="decision-button" data-decision="mfa-deny">Negar e verificar a segurança da conta <span>↗</span></button><div class="decision-feedback" id="mfa-feedback" role="status">O pedido apareceu. Qual seria sua decisão?</div></div></div>
+      <p class="footnote">Engenharia social explora confiança, medo ou pressa para induzir uma ação. Confirme solicitações por canais oficiais.</p>
+    </section>
+
+    <section class="scene" id="habitos" data-chapter="seguranca" data-title="Hábitos de segurança digital" hidden>
+      <p class="eyebrow">PROTEÇÃO NO DIA A DIA</p>
+      <h2 class="scene-title" tabindex="-1">Pequenos hábitos.<br>Contas mais protegidas.</h2>
+      <div class="habits-layout"><div class="habit-list"><details open><summary><span>01</span> Uma senha diferente para cada conta <span>+</span></summary><p>Prefira senhas longas e únicas. Um gerenciador ajuda a criar e guardar senhas. Os exemplos de uma apresentação nunca devem virar sua senha.</p></details><details><summary><span>02</span> Autenticação em duas etapas <span>+</span></summary><p>Ative uma segunda etapa. Quando disponível, considere chaves de acesso ou chaves de segurança. Negue pedidos de login que você não iniciou.</p></details><details><summary><span>03</span> Uma pausa antes de abrir o link <span>+</span></summary><p>Confira o endereço e procure a instituição pelo aplicativo ou site oficial. Um cadeado ou HTTPS, sozinho, não garante que um site seja confiável.</p></details><details><summary><span>04</span> Atualizações e cópias de segurança <span>+</span></summary><p>Atualize aplicativos e o sistema. Mantenha cópias dos arquivos importantes para poder recuperá-los em caso de perda.</p></details><details><summary><span>05</span> Menos exposição de dados pessoais <span>+</span></summary><p>Revise permissões de aplicativos e o que publica. Não compartilhe senhas ou códigos de autenticação em conversas.</p></details></div><div class="habit-takeaway"><span class="takeaway-mark">!</span><h3>Não iniciou<br>o login?<br><span>Negue o pedido.</span></h3><p>Se houver atividade suspeita, use o canal oficial para revisar sessões e trocar credenciais comprometidas.</p><a href="https://cartilha.cert.br/fasciculos/" target="_blank" rel="noopener noreferrer" class="text-link">Materiais do CERT.br <span>↗</span></a></div></div>
+    </section>
+
+    <section class="scene" id="codigo-seguro" data-chapter="seguranca" data-title="Segurança também faz parte do desenvolvimento" hidden>
+      <p class="eyebrow">QUEM CRIA TAMBÉM PROTEGE</p>
+      <h2 class="scene-title" tabindex="-1">Quem pode alterar<br>a programação da feira?</h2>
+      <div class="permission-layout"><div class="permission-demo"><div class="permission-label"><span class="status-dot"></span> SIMULAÇÃO DE UMA REGRA</div><div class="role-switch" aria-label="Escolha o papel para testar"><button data-role="visitante" class="active" aria-pressed="true">Visitante</button><button data-role="editor" aria-pressed="false">Editor autorizado</button></div><div class="permission-document"><span class="mini-label">PROGRAMAÇÃO DA FEIRA</span><h3>Oficina de robótica</h3><p>Sala 02 · 14h</p><button class="button secondary" id="permission-try">Tentar editar <svg><use href="#i-lock"/></svg></button></div><div class="permission-status" id="permission-status" role="status">Escolha um papel e tente editar a programação.</div></div><div class="permission-copy"><h3>Esconder um botão<br>não protege os dados.</h3><p>Em um sistema real, o servidor deve verificar a identidade e a permissão em cada operação protegida.</p><ul class="plain-list"><li>Validar dados recebidos no servidor.</li><li>Dar apenas as permissões necessárias.</li><li>Manter senhas e chaves fora do código público.</li><li>Testar e corrigir dependências vulneráveis.</li></ul><p class="footnote">Aqui tudo acontece no navegador para explicar a ideia. Esta simulação não implementa autenticação real.</p></div></div>
+    </section>
+
+    <section class="scene" id="carreiras" data-chapter="carreiras" data-title="Explore as áreas de TI" hidden>
+      <p class="eyebrow">03 / CARREIRAS EM TECNOLOGIA</p>
+      <h2 class="scene-title compact" tabindex="-1">Qual problema você<br>gostaria de resolver?</h2>
+      <p class="lead">Escolha uma área e conheça o trabalho que acontece por trás dela.</p>
+      <div class="career-layout"><div class="career-menu" id="career-menu" aria-label="Áreas de TI"></div><div class="career-detail" id="career-detail" aria-live="polite"></div></div>
+    </section>
+
+    <section class="scene" id="formacao" data-chapter="carreiras" data-title="Caminhos de formação em TI" hidden>
+      <p class="eyebrow">EXISTEM DIFERENTES CAMINHOS</p>
+      <h2 class="scene-title" tabindex="-1">O começo pode<br>ser um projeto pequeno.</h2>
+      <div class="formation-grid"><article><span class="formation-number">01</span><h3>Explorar<br>e praticar</h3><p>Materiais introdutórios, documentação e pequenos projetos ajudam a descobrir seus interesses.</p><span class="formation-example">Exemplo: uma página para a feira da escola.</span></article><article><span class="formation-number">02</span><h3>Formação<br>técnica</h3><p>Cursos técnicos podem oferecer contato com desenvolvimento, redes e manutenção de sistemas.</p><span class="formation-example">Confira requisitos, carga horária e reconhecimento do curso.</span></article><article><span class="formation-number">03</span><h3>Ensino<br>superior</h3><p>Ciência da Computação, Sistemas de Informação, Engenharia de Software e ADS têm propostas diferentes.</p><span class="formation-example">Compare a grade, os projetos e as possibilidades de estágio.</span></article></div>
+      <div class="explanation-strip formation-strip"><span class="mono">APRENDER FAZENDO</span><p>Guarde seus projetos, explique suas escolhas e pratique trabalho em equipe. <strong>Um portfólio mostra o que você consegue construir.</strong></p></div>
+    </section>
+
+    <section class="scene" id="vida-em-ti" data-chapter="carreiras" data-title="Oportunidades e desafios de uma carreira em TI" hidden>
+      <p class="eyebrow">CARREIRA COM EXPECTATIVAS REAIS</p>
+      <h2 class="scene-title" tabindex="-1">Oportunidades,<br>aprendizado e desafios.</h2>
+      <div class="reality-grid"><div><span class="mini-label">O QUE PODE ATRAIR</span><h3>Resolver problemas<br>que fazem diferença.</h3><ul class="reality-list"><li>Diversidade de áreas e de projetos.</li><li>Possibilidade de crescer com a experiência.</li><li>Colaboração com pessoas de outras áreas.</li></ul></div><div><span class="mini-label">O QUE TAMBÉM FAZ PARTE</span><h3>Estudar, revisar<br>e lidar com limites.</h3><ul class="reality-list"><li>Aprendizado contínuo e mudanças técnicas.</li><li>Prazos, testes e investigação de erros.</li><li>Busca por experiência e pela primeira oportunidade.</li></ul></div></div>
+      <div class="seniority-row"><div><span class="mini-label">CARGOS E EXPERIÊNCIA</span><p>Júnior, pleno e sênior costumam indicar autonomia e complexidade das responsabilidades. Os critérios variam entre empresas.</p></div><div><span class="mini-label">E A REMUNERAÇÃO?</span><p>Varia com experiência, região, empresa, especialização e tipo de contratação. Não existe um salário único para “trabalhar com TI”.</p></div></div>
+    </section>
+
+    <section class="scene" id="quiz" data-chapter="desafio" data-title="Desafio da turma" hidden>
+      <p class="eyebrow">04 / DESAFIO DA TURMA</p>
+      <div class="quiz-heading"><h2 class="scene-title compact" tabindex="-1">O que ficou<br>dessa conversa?</h2><span class="quiz-mode">Conversem e escolham<br>uma resposta juntos.</span></div>
+      <div id="quiz-content" class="quiz-content"></div>
+      <p class="footnote">Atividade local: as respostas ficam apenas nesta sessão do navegador. Não há votação simultânea em outros aparelhos.</p>
+    </section>
+
+    <section class="scene" id="primeiro-projeto" data-chapter="desafio" data-title="Seu primeiro projeto e materiais de estudo" hidden>
+      <p class="eyebrow">DA CURIOSIDADE À PRÁTICA</p>
+      <h2 class="scene-title" tabindex="-1">Sua primeira ideia<br>já tem um caminho.</h2>
+      <div class="first-project-layout"><div><p class="lead">Desafio: crie uma página sobre algo que você gosta.</p><div class="project-checklist"><label><input type="checkbox"><span><b>Conteúdo</b> Um título, uma descrição e informações úteis.</span></label><label><input type="checkbox"><span><b>Aparência</b> Cores legíveis e organização para o celular.</span></label><label><input type="checkbox"><span><b>Interação</b> Um botão que mostra uma mensagem.</span></label><label><input type="checkbox"><span><b>Revisão</b> Teste os botões e evite expor dados pessoais.</span></label></div></div><div class="resource-list"><span class="mini-label">FONTES PARA CONTINUAR</span><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer"><span><b>HTML</b><small>Estrutura e conteúdo</small></span><svg><use href="#i-out"/></svg></a><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" rel="noopener noreferrer"><span><b>CSS</b><small>Estilo e organização</small></span><svg><use href="#i-out"/></svg></a><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer"><span><b>JavaScript</b><small>Lógica e interação</small></span><svg><use href="#i-out"/></svg></a><a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer"><span><b>CERT.br</b><small>Segurança no dia a dia</small></span><svg><use href="#i-out"/></svg></a><p class="footnote">Os materiais externos precisam de internet. A oficina e o laboratório funcionam offline.</p></div></div>
+    </section>
+
+    <section class="scene closing-scene" id="encerramento" data-chapter="desafio" data-title="Tecnologia também pode ser criada por você" hidden>
+      <p class="eyebrow">A CONVERSA CONTINUA</p>
+      <h2 class="closing-title" tabindex="-1">Você pode<br><span class="closing-outline">criar.</span><br>Você pode <span class="accent-underline">começar.</span></h2>
+      <div class="closing-bottom"><p>Qual área chamou sua atenção?<br>Que cuidado de segurança você vai adotar?<br>O que gostaria de construir?</p><div><span class="mini-label">ESPAÇO PARA PERGUNTAS</span><a href="#equipe" class="text-link">Conheça a equipe e as fontes <span>↗</span></a></div></div>
+    </section>
+
+    <section class="scene" id="equipe" data-chapter="creditos" data-title="Equipe e referências" hidden>
+      <p class="eyebrow">QUEM CONSTRUIU ESTA CONVERSA</p>
+      <h2 class="scene-title compact" tabindex="-1">Conhecimento<br>que se compartilha.</h2>
+      <div class="credits-layout"><div><span class="mini-label">GRUPO 04 / CIÊNCIA DA COMPUTAÇÃO</span><ul class="team-list"><li>Anita Gallindo Oliveira</li><li>Bianka Moura Batista</li><li>Emanuele Vitoria Lima de Sousa</li><li>Girlenio Gomes da Silva</li><li>Pedro Vinícius de Almeida Santana</li><li>Vanderson Gabriel Vasconcelos Barbosa</li></ul><p class="credits-institution">UNINASSAU, Campus Graças<br>Atividades Práticas Interdisciplinares de Extensão II<br>Escola Lions de Parnamirim, Recife/PE</p></div><div class="references"><span class="mini-label">REFERÊNCIAS DA OFICINA</span><p>Conteúdo organizado a partir do Projeto de Intervenção do Grupo 04 e dos materiais da oficina.</p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTML, CSS e JavaScript <span>↗</span></a><a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">CERT.br: Cartilha de Segurança para Internet <span>↗</span></a><a href="https://www.uber.com/us/en/newsroom/security-update/" target="_blank" rel="noopener noreferrer">Uber: Security update, 19 de setembro de 2022 <span>↗</span></a><a href="https://github.com/GirlenioGomesDev/Apresenta-o-trabalho-de-extens-o" target="_blank" rel="noopener noreferrer">Código desta apresentação no GitHub <span>↗</span></a><p class="footnote">Fontes web conferidas em 25/10/2026. Os exemplos da feira, das mensagens e das permissões são fictícios e educativos.</p></div></div>
+    </section>
+    <noscript><div class="no-script">Ative o JavaScript para navegar e usar as demonstrações. O conteúdo e as instruções também estão no README e no roteiro do repositório.</div></noscript>
+  </main>
+
+  <footer class="presentation-footer"><div class="footer-location"><span id="scene-number">01</span><span class="footer-slash">/</span><span id="scene-total">17</span><span class="footer-scene-title" id="footer-title">Fábrica de Software na Prática</span></div><div class="footer-middle"><button id="notes-toggle" aria-expanded="false" aria-controls="presenter-notes"><svg><use href="#i-notes"/></svg> Notas <kbd>N</kbd></button><button id="help-open" aria-label="Ver atalhos de teclado">Atalhos <kbd>?</kbd></button></div><div class="footer-navigation"><button class="nav-previous" id="previous-scene" aria-label="Etapa anterior" disabled><svg><use href="#i-back"/></svg></button><button class="nav-next" id="next-scene">Próximo <svg><use href="#i-arrow"/></svg></button></div><div class="progress-track" role="progressbar" aria-label="Progresso da apresentação" aria-valuemin="1" aria-valuemax="17" aria-valuenow="1"><div id="presentation-progress"></div></div></footer>
+
+  <aside id="presenter-notes" class="presenter-notes" aria-label="Notas para quem apresenta" hidden><div class="notes-header"><span class="mini-label">APOIO À APRESENTAÇÃO</span><button class="icon-button" id="notes-close" aria-label="Fechar notas"><svg><use href="#i-close"/></svg></button></div><h2 id="notes-title"></h2><p id="notes-time" class="mono"></p><p id="notes-text"></p><p class="footnote">Estas notas aparecem na mesma tela da apresentação.</p><button id="timer-reset" class="text-link">Zerar cronômetro ↺</button></aside>
+  <dialog id="overview-dialog" class="overview-dialog" aria-labelledby="overview-title"><div class="dialog-heading"><div><span class="mini-label">A OFICINA COMPLETA</span><h2 id="overview-title">Escolha uma etapa.</h2></div><button class="icon-button" data-close-dialog aria-label="Fechar roteiro"><svg><use href="#i-close"/></svg></button></div><nav id="overview-list"></nav></dialog>
+  <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><h2 id="help-title">Atalhos para apresentar</h2><button class="icon-button" data-close-dialog aria-label="Fechar atalhos"><svg><use href="#i-close"/></svg></button></div><dl class="shortcut-list"><div><dt>Avançar ou voltar</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd></div><div><dt>Avançar</dt><dd><kbd>Espaço</kbd> <kbd>Page Down</kbd></dd></div><div><dt>Início ou última etapa</dt><dd><kbd>Home</kbd> <kbd>End</kbd></dd></div><div><dt>Tela cheia</dt><dd><kbd>F</kbd></dd></div><div><dt>Roteiro</dt><dd><kbd>M</kbd></dd></div><div><dt>Notas na própria tela</dt><dd><kbd>N</kbd></dd></div><div><dt>Executar código no laboratório</dt><dd><kbd>Ctrl</kbd> + <kbd>Enter</kbd></dd></div><div><dt>Fechar painel ou diálogo</dt><dd><kbd>Esc</kbd></dd></div></dl><p class="footnote">Os atalhos de navegação ficam suspensos durante a edição de código e o uso de campos. Em celular ou tablet, use os botões.</p></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
