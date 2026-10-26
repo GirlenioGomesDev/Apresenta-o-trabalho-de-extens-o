@@ -148,8 +148,10 @@
 
   document.addEventListener('keydown', event => {
     const editing = event.target.closest('input, textarea, select, [contenteditable="true"]');
-    if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && scenes[current].id === 'laboratorio') {
-      event.preventDefault(); runLab(); return;
+    if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+      if (scenes[current].id === 'laboratorio') { event.preventDefault(); runLab(); return; }
+      const liveHost = scenes[current].querySelector('[data-live-lab]');
+      if (liveHost && window.LiveLabs) { event.preventDefault(); window.LiveLabs.run(liveHost.dataset.liveLab); return; }
     }
     if (event.key === 'Escape' && !$('#presenter-notes').hidden) { setNotes(false); return; }
     if (editing || event.ctrlKey || event.metaKey || event.altKey || document.querySelector('dialog[open]')) return;
@@ -214,11 +216,14 @@
     $('#layer-message').textContent = '';
     $('#language-lab-link').dataset.labEntry = String(content.stage);
     layerClicks = 0;
+    $('.layer-robot').style.setProperty('--energia', '0%');
   }
   $$('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
   $('#layer-action').addEventListener('click', () => {
     layerClicks += 1;
-    $('#layer-message').textContent = 'A página respondeu! Cliques: ' + layerClicks;
+    const energia = Math.min(100, layerClicks * 10);
+    $('#layer-message').textContent = 'Energia: ' + energia + '%';
+    $('.layer-robot').style.setProperty('--energia', energia + '%');
   });
 
   $$('[data-route-mode]').forEach(button => button.addEventListener('click', () => {
@@ -239,11 +244,12 @@
 
   let labStage = 1;
   let labToken = '';
+  let labInputTimer;
   const editors = { html: $('#editor-html'), css: $('#editor-css'), js: $('#editor-js') };
   const stageDescriptions = [
     'Só HTML: o conteúdo já existe, ainda sem estilo ou interação.',
     'HTML + CSS: a mesma estrutura agora tem cores, tamanhos e organização.',
-    'HTML + CSS + JavaScript: clique em “Testar botão” na prévia.'
+    'HTML + CSS + JavaScript: clique em “Dar energia” e acompanhe o console.'
   ];
 
   function setEditor(language, focus = false) {
@@ -260,19 +266,22 @@
   }
 
   $$('[data-editor]').forEach((button, index, buttons) => {
-    button.addEventListener('click', () => setEditor(button.dataset.editor));
+    button.addEventListener('click', () => setLabStage({html:1, css:2, js:3}[button.dataset.editor]));
     button.addEventListener('keydown', event => {
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault(); event.stopPropagation();
       const next = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : buttons.length - 1)) % buttons.length;
+      setLabStage({html:1, css:2, js:3}[buttons[next].dataset.editor]);
       setEditor(buttons[next].dataset.editor, true);
     });
   });
 
   function runLab() {
+    clearTimeout(labInputTimer);
     labToken = String(Date.now()) + '-' + String(Math.random());
     $('#lab-status').classList.remove('has-error');
     $('#lab-status').textContent = 'Código aplicado. Etapa ' + labStage + ' de 3.';
+    $('#web-console').replaceChildren();
     $('#lab-preview').srcdoc = logic.buildPreview({ html: editors.html.value, css: editors.css.value, js: editors.js.value, stage: labStage, token: labToken });
   }
   function setLabStage(stage) {
@@ -280,6 +289,10 @@
     selectButtons('[data-lab-stage]', 'data-lab-stage', stage);
     setEditor(stage === 1 ? 'html' : stage === 2 ? 'css' : 'js');
     $('#lab-description').textContent = stageDescriptions[stage - 1];
+    const lesson = data.webLessons[stage - 1];
+    $('#web-lesson-label').textContent = lesson.label;
+    $('#web-lesson-description').textContent = lesson.text;
+    $('#web-change-button').textContent = lesson.preset;
     runLab();
   }
   function resetLab() {
@@ -289,14 +302,38 @@
   $$('[data-lab-stage]').forEach(button => button.addEventListener('click', () => setLabStage(Number(button.dataset.labStage))));
   $('#lab-run').addEventListener('click', runLab);
   $('#lab-reset').addEventListener('click', () => { resetLab(); toast('Exemplo original restaurado.'); });
+  $('#lab-auto').addEventListener('change', event => {
+    clearTimeout(labInputTimer);
+    if (event.target.checked) runLab();
+    else $('#lab-status').textContent = 'Atualização pausada. Execute quando quiser aplicar as mudanças.';
+  });
+  $('#web-change-button').addEventListener('click', () => {
+    if (labStage === 1) editors.html.value = editors.html.value.replace(/(<h1[^>]*>)[\s\S]*?(<\/h1>)/i, '$1Vocês já criam tecnologia!$2');
+    if (labStage === 2) editors.css.value = editors.css.value.replace(/--cor\s*:\s*[^;\n}]+/, '--cor: #c5adff');
+    if (labStage === 3) editors.js.value = editors.js.value.replace(/const ganho\s*=\s*[^;\n]+/, 'const ganho = 50');
+    runLab();
+  });
   Object.values(editors).forEach(editor => editor.addEventListener('input', () => {
+    clearTimeout(labInputTimer);
     $('#lab-status').classList.remove('has-error');
-    $('#lab-status').textContent = 'Alterações pendentes. Clique em Executar.';
+    $('#lab-status').textContent = $('#lab-auto').checked ? 'Aplicando alteração…' : 'Alterações pendentes. Clique em Executar.';
+    if ($('#lab-auto').checked) labInputTimer = setTimeout(runLab, 350);
   }));
   window.addEventListener('message', event => {
-    if (event.source !== $('#lab-preview').contentWindow || !event.data || event.data.kind !== 'workshop-error' || event.data.token !== labToken) return;
-    $('#lab-status').textContent = 'Erro no exemplo: ' + String(event.data.message).slice(0, 230);
-    $('#lab-status').classList.add('has-error');
+    if (event.source !== $('#lab-preview').contentWindow || !event.data || event.data.token !== labToken) return;
+    const error = event.data.kind === 'workshop-error';
+    if (!error && event.data.kind !== 'workshop-console') return;
+    const line = document.createElement('div');
+    line.className = 'console-entry ' + (error ? 'error' : ['error','warn'].includes(event.data.level) ? event.data.level : 'log');
+    line.textContent = (error ? '× ' : '› ') + String(event.data.message).slice(0, 600);
+    const consoleHost = $('#web-console');
+    consoleHost.appendChild(line);
+    while (consoleHost.children.length > 30) consoleHost.firstElementChild.remove();
+    consoleHost.scrollTop = consoleHost.scrollHeight;
+    if (error) {
+      $('#lab-status').textContent = 'Erro no exemplo: ' + String(event.data.message).slice(0, 230);
+      $('#lab-status').classList.add('has-error');
+    }
   });
   resetLab();
 
@@ -307,6 +344,7 @@
     $('#factory-deliverable').textContent = item.deliverable;
     $('#factory-text').textContent = item.text;
     $('#factory-career-link').dataset.careerEntry = item.career;
+    $('#factory-career-link').setAttribute('href', '#lab-' + item.career);
     $$('[data-team]').forEach(label => label.classList.toggle('active', label.dataset.team === item.career));
   }));
   $$('[data-scenario]').forEach(button => button.addEventListener('click', () => {
@@ -342,47 +380,9 @@
       : 'Acesso negado nesta simulação: visitantes podem consultar, mas não alterar o conteúdo.';
   });
 
-  let softwareView = 'front';
-  let infrastructureStep = 0;
-  let dataConclusionVisible = false;
-  let cyberSecondStep = false;
-
-  function careerVisual(id) {
-    const e = logic.escapeHTML;
-    if (id === 'software') {
-      const view = data.softwareViews[softwareView];
-      return '<div class="career-visual software-visual"><div class="software-role-tabs" aria-label="Partes do desenvolvimento de software">' + Object.entries(data.softwareViews).map(([key, item]) => '<button data-software-view="' + key + '" aria-pressed="' + (key === softwareView) + '" class="' + (key === softwareView ? 'active' : '') + '">' + e(item.label) + '</button>').join('') + '</div><div class="software-parts"><div class="' + (softwareView !== 'back' ? 'active' : '') + '"><span>▱</span><b>Interface</b><small>O que você usa</small></div><span class="part-connector" aria-hidden="true">↔</span><div class="' + (softwareView !== 'front' ? 'active' : '') + '"><span>⚙</span><b>Servidor</b><small>Regras e dados</small></div></div><p class="visual-caption">' + e(view.text) + '</p><a class="text-link" href="#laboratorio" data-lab-entry="3">Ver a interação no laboratório <span>↗</span></a></div>';
-    }
-    if (id === 'infra') {
-      const messages = ['Por onde começar a investigar?', 'Primeiro: conferir o dispositivo.', 'Depois: conferir a conexão com a rede.', 'Também: conferir se o serviço está disponível.'];
-      const names = ['Dispositivo', 'Rede', 'Serviço'];
-      return '<div class="career-visual infra-visual"><span class="mini-label">SIMULAÇÃO / UM ACESSO QUE NÃO FUNCIONA</span><div class="network-parts">' + names.map((name,index) => '<div class="' + (infrastructureStep > index ? 'checked' : '') + '"><span class="network-status">' + (infrastructureStep > index ? '✓' : '?') + '</span><b>' + name + '</b><small>' + (infrastructureStep > index ? 'Conferido no exemplo' : 'A verificar') + '</small></div>').join('') + '</div><p class="visual-caption" role="status">' + messages[infrastructureStep] + '</p><button class="visual-action" id="infra-check">' + (infrastructureStep === 3 ? 'Recomeçar a simulação ↺' : 'Simular próxima verificação →') + '</button></div>';
-    }
-    if (id === 'dados') {
-      const total = data.demand.reduce((sum,item) => sum + item.value,0);
-      const max = Math.max(...data.demand.map(item => item.value),1);
-      return '<div class="career-visual data-visual"><div class="data-visual-header"><span class="mini-label">PREFERÊNCIAS POR CONTEÚDO</span><small>Dados fictícios / ' + total + ' escolhas</small></div><div class="demo-bar-chart" role="img" aria-label="Exemplo fictício: ' + data.demand.map(item=>e(item.label)+' '+item.value).join(', ') + '">' + data.demand.map(item => '<div class="demo-bar-row"><span>' + e(item.label) + '</span><div class="demo-bar-track"><div style="width:' + (item.value/max*100) + '%"></div></div><b>' + item.value + '</b></div>').join('') + '</div><p class="visual-caption" id="data-conclusion">' + (dataConclusionVisible ? 'Neste exemplo, Jogos teve 24 das 60 escolhas. Os dados ajudam a comparar preferências.' : 'Qual categoria aparece mais neste conjunto de dados?') + '</p><button class="visual-action" id="data-interpret">' + (dataConclusionVisible ? 'Voltar à pergunta ↺' : 'Mostrar uma interpretação →') + '</button></div>';
-    }
-    return '<div class="career-visual cyber-visual"><span class="mini-label">SIMULAÇÃO / PROTEÇÃO DE UMA CONTA</span><div class="account-protection"><span class="account-avatar">◎</span><div><b>Uma conta de usuário</b><small>Senha + permissões + cuidado com os acessos</small></div><span class="protection-indicator' + (cyberSecondStep ? ' active' : '') + '">' + (cyberSecondStep ? '2 etapas' : '1 etapa') + '</span></div><div class="protection-layers"><span class="active">Senha diferente</span><span class="' + (cyberSecondStep ? 'active' : '') + '">Segunda etapa</span><span class="active">Permissões revisadas</span></div><p class="visual-caption">' + (cyberSecondStep ? 'A segunda etapa acrescenta uma camada de proteção. Pedidos inesperados ainda precisam ser negados.' : 'A proteção combina controles técnicos e atenção das pessoas.') + '</p><button class="visual-action" id="cyber-second-step" aria-pressed="' + cyberSecondStep + '">' + (cyberSecondStep ? 'Recomeçar a simulação ↺' : 'Simular segunda etapa →') + '</button></div>';
-  }
-
   function setCareer(id) {
-    const career = data.careers.find(item => item.id === id) || data.careers[0];
-    selectButtons('[data-career]', 'data-career', career.id);
-    const e = logic.escapeHTML;
-    $('#career-detail').innerHTML = '<span class="mini-label">' + e(career.label.toUpperCase()) + '</span><h3>' + e(career.question) + '</h3><p class="career-description">' + e(career.description) + '</p>' + careerVisual(career.id) + '<p class="career-delivery">' + e(career.delivery) + '</p><details class="career-first-step"><summary>O que estudar e como começar <span>+</span></summary><div><p><b>Fundamentos:</b> ' + e(career.skills) + '</p><p><b>Uma primeira prática:</b> ' + e(career.start) + '</p></div></details>';
-    $$('[data-software-view]').forEach(button => button.addEventListener('click', () => {
-      softwareView = button.dataset.softwareView;
-      setCareer('software');
-      $('[data-software-view="' + softwareView + '"]').focus({preventScroll:true});
-    }));
-    if ($('#infra-check')) $('#infra-check').addEventListener('click', () => { infrastructureStep = (infrastructureStep + 1) % 4; setCareer('infra'); $('#infra-check').focus({preventScroll:true}); });
-    if ($('#data-interpret')) $('#data-interpret').addEventListener('click', () => { dataConclusionVisible = !dataConclusionVisible; setCareer('dados'); $('#data-interpret').focus({preventScroll:true}); });
-    if ($('#cyber-second-step')) $('#cyber-second-step').addEventListener('click', () => { cyberSecondStep = !cyberSecondStep; setCareer('cyber'); $('#cyber-second-step').focus({preventScroll:true}); });
+    $$('[data-career-card]').forEach(card => card.classList.toggle('active', card.dataset.careerCard === id));
   }
-  $('#career-menu').innerHTML = data.careers.map(career => '<button data-career="' + career.id + '" aria-pressed="false"><span class="career-menu-symbol">' + logic.escapeHTML(career.symbol) + '</span><span class="career-menu-copy"><b>' + logic.escapeHTML(career.label) + '</b><small>' + logic.escapeHTML(career.short) + '</small></span><span class="career-menu-arrow">↗</span></button>').join('');
-  $$('[data-career]').forEach(button => button.addEventListener('click', () => setCareer(button.dataset.career)));
-  setCareer(data.careers[0].id);
 
   function setStart(id) {
     const item = data.starts[id];

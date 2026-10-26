@@ -48,7 +48,14 @@
     const styles = stage >= 2 ? String(css).replace(/<\/style/gi, '<\\/style') : '';
     const script = stage >= 3 ? String(js).replace(/<\/script/gi, '<\\/script') : '';
     const safeToken = JSON.stringify(String(token)).replace(/</g, '\\u003c');
-    const report = `window.addEventListener('error',function(event){parent.postMessage({kind:'workshop-error',token:${safeToken},message:event.message},'*')});window.addEventListener('unhandledrejection',function(event){parent.postMessage({kind:'workshop-error',token:${safeToken},message:String(event.reason)},'*')});`;
+    const report = `
+      (function(){
+        function send(kind,message,level){parent.postMessage({kind:kind,token:${safeToken},message:String(message).slice(0,600),level:level},'*')}
+        function format(value){if(typeof value==='string')return value;try{var text=JSON.stringify(value);return text===undefined?String(value):text}catch(_){return String(value)}}
+        ['log','info','warn','error'].forEach(function(level){console[level]=function(){send('workshop-console',Array.from(arguments).map(format).join(' '),level)}});
+        window.addEventListener('error',function(event){send('workshop-error',event.message,'error')});
+        window.addEventListener('unhandledrejection',function(event){send('workshop-error',String(event.reason),'error')});
+      })();`;
     return '<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; script-src \'unsafe-inline\'; style-src \'unsafe-inline\'; img-src data:; connect-src \'none\'; form-action \'none\'; base-uri \'none\'"><script>' + report + '</script><style>' + styles + '</style></head><body>' + String(html) + '<script>' + script + '</script></body></html>';
   }
 

@@ -4,15 +4,18 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const logic = require('../assets/logic.js');
+const engine = require('../assets/lab-engine.js');
 const root = path.resolve(__dirname, '..');
 const context = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/content.js'), 'utf8'), context);
+vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/lab-content.js'), 'utf8'), context);
 const data = context.window.WorkshopData;
+const lessons = context.window.LiveLabLessons;
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ids = [...html.matchAll(/<section class="scene[^>]* id="([^"]+)"/g)].map(match => match[1]);
 
 test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () => {
-  assert.equal(ids.length, 13);
+  assert.equal(ids.length, 17);
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.ok(data.notes[id], 'Notas ausentes para ' + id);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
@@ -53,20 +56,20 @@ test('toda pergunta tem uma resposta válida e uma explicação', () => {
 });
 
 test('a sequência liga construção, funcionamento, proteção e profissões', () => {
-  const flow = ['vida-digital', 'linguagens', 'laboratorio', 'por-tras-do-clique', 'codigo-seguro', 'detetive', 'carreiras', 'fabrica', 'quiz'];
+  const flow = ['vida-digital', 'linguagens', 'laboratorio', 'por-tras-do-clique', 'carreiras', 'lab-software', 'lab-infra', 'lab-dados', 'lab-cyber', 'codigo-seguro', 'detetive', 'fabrica', 'quiz'];
   for (let index = 1; index < flow.length; index += 1) {
     assert.ok(ids.indexOf(flow[index - 1]) < ids.indexOf(flow[index]));
   }
   for (const section of html.matchAll(/<section class="scene[^>]*id="([^"]+)"[\s\S]*?<\/section>/g)) {
-    if (section[1] !== 'laboratorio') assert.doesNotMatch(section[0], /<(?:pre|code|textarea)\b/);
+    if (section[1] !== 'laboratorio' && !section[1].startsWith('lab-')) assert.doesNotMatch(section[0], /<(?:pre|code|textarea)\b/);
   }
   assert.doesNotMatch(html, /feira|uber/i);
 });
 
 test('links do laboratório selecionam apenas camadas válidas e os dados são ilustrativos', () => {
   for (const [, stage] of html.matchAll(/data-lab-entry="([^"]+)"/g)) assert.ok([1, 2, 3].includes(Number(stage)));
-  assert.equal(data.demand.reduce((sum, row) => sum + row.value, 0), 60);
-  assert.ok(data.demand.every(row => Number.isInteger(row.value) && row.value >= 0));
+  assert.deepEqual(Object.keys(lessons), ['software', 'infra', 'dados', 'cyber']);
+  for (const id of Object.keys(lessons)) assert.match(html, new RegExp('data-live-lab="' + id + '"'));
   assert.deepEqual(Object.keys(data.starts), ['software', 'infra', 'dados', 'cyber']);
 });
 
@@ -87,8 +90,66 @@ test('prévia inclui CSS e JavaScript somente nas etapas adequadas', () => {
   assert.ok(stage3.includes(common.js));
   assert.ok(stage3.includes("connect-src 'none'"));
   assert.ok(stage3.includes("form-action 'none'"));
+  assert.ok(stage3.includes('workshop-console'));
   assert.match(html, /sandbox="allow-scripts"/);
   assert.ok(!html.includes('allow-same-origin'));
+});
+
+function execute(code, input) {
+  const results = [];
+  const sandbox = { self: { postMessage: result => results.push(result) } };
+  vm.runInNewContext('(' + engine.workerMain.toString() + ')()', sandbox);
+  sandbox.self.onmessage({ data: { code, input } });
+  return JSON.parse(JSON.stringify(results[0]));
+}
+
+test('o código editável de software recalcula o placar e emite console.log', () => {
+  const original = execute(lessons.software.code, { estrelas: 3 });
+  assert.equal(original.output.pontos, 30);
+  assert.equal(original.logs[0].text, 'Placar: 30');
+  const edited = execute(lessons.software.code.replace('* 10', '* 50'), { estrelas: 3 });
+  assert.equal(edited.output.pontos, 150);
+});
+
+test('o diagnóstico executado responde aos sinais e o desafio permite encontrar o bug', () => {
+  for (const [redeAtiva, servidorAtivo, expected] of [[false,true,'rede'],[true,false,'servidor'],[true,true,'online'],[false,false,'rede']]) {
+    assert.equal(execute(lessons.infra.code,{redeAtiva,servidorAtivo}).output.status,expected);
+  }
+  assert.equal(execute(lessons.infra.alternate,{redeAtiva:false,servidorAtivo:true}).output.status,'online');
+});
+
+test('listas editadas geram os dados e o total usados pelo gráfico', () => {
+  const original=execute(lessons.dados.code,{}).output;
+  assert.deepEqual(original,{valores:[12,8,5],total:25});
+  const edited=execute(lessons.dados.code.replace('[12, 8, 5]','[30, 8, 5]'),{}).output;
+  assert.deepEqual(edited,{valores:[30,8,5],total:43});
+  assert.equal(execute(lessons.dados.alternate,{}).output.total,35);
+});
+
+test('a porta segue a função editada e combina papel e segunda etapa', () => {
+  for (const papel of ['visitante','editor','revisor']) {
+    for (const segundaEtapa of [false,true]) {
+      assert.equal(execute(lessons.cyber.code,{papel,segundaEtapa}).output.permitido,papel==='editor'&&segundaEtapa);
+    }
+  }
+  assert.equal(execute(lessons.cyber.alternate,{papel:'revisor',segundaEtapa:true}).output.permitido,true);
+  assert.equal(execute(lessons.cyber.alternate,{papel:'revisor',segundaEtapa:false}).output.permitido,false);
+});
+
+test('erros de edição são devolvidos, e o visual só aceita o contrato esperado', () => {
+  assert.equal(execute('const quebrado = ;',{}).ok,false);
+  assert.match(execute('console.log("olá")',{}).error,/mostrar/);
+  assert.equal(execute('console.log(undefined); mostrar({pontos:1})',{}).logs[0].text,'undefined');
+  for (const id of Object.keys(lessons)) assert.doesNotThrow(()=>engine.validateOutput(id,execute(lessons[id].code,lessons[id].input).output));
+  assert.throws(()=>engine.validateOutput('software',{pontos:Infinity}));
+  assert.throws(()=>engine.validateOutput('dados',{valores:[1,-1,2],total:2}));
+  assert.throws(()=>engine.validateOutput('cyber',{permitido:'true'}));
+  assert.throws(()=>engine.validateOutput('infra',{status:'<script>'}));
+  const runner=engine.buildRunnerDocument('</script><script>alert(1)</script>');
+  assert.ok(runner.includes("worker-src blob:"));
+  assert.ok(runner.includes("connect-src 'none'"));
+  assert.ok(!runner.includes('allow-same-origin'));
+  assert.equal((runner.match(/<\/script>/g)||[]).length,1);
 });
 
 test('texto do quiz é escapado e cronômetro suporta mais de uma hora', () => {

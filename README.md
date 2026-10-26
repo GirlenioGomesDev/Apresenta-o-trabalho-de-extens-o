@@ -1,19 +1,14 @@
 # Fábrica de Software na Prática
 
-Uma apresentação interativa em **HTML, CSS e JavaScript**, criada para a oficina do Grupo 04 na Escola Lions de Parnamirim, em Recife/PE. O conteúdo acompanha o projeto de extensão de Ciência da Computação da UNINASSAU, Campus Graças.
+Apresentação interativa para alunos do ensino médio sobre **HTML, CSS, JavaScript, cibersegurança e carreiras em TI**. Projeto de extensão do Grupo 04, Ciência da Computação, UNINASSAU Campus Graças, para a Escola Lions de Parnamirim, Recife/PE.
 
-**Tema completo:** Desenvolvimento Web, Cibersegurança e Carreiras em TI.
+A sequência tem **17 etapas conectadas**. Cada prática aproxima três coisas: **o código editável, o que ele faz e o resultado visual ao vivo**.
 
 ## Abrir e apresentar
 
-1. No GitHub, clique em **Code → Download ZIP**.
-2. Extraia a pasta inteira. Não abra o HTML de dentro do ZIP.
-3. Abra **`index.html`** no Chrome, Edge, Firefox ou outro navegador atualizado.
-4. Clique em **Vamos começar**. Use os botões inferiores ou as setas do teclado.
+Baixe o repositório em **Code → Download ZIP**, extraia a pasta inteira e abra `index.html` em um navegador atualizado. Mantenha `assets` junto do HTML. A apresentação não depende de instalação, conta, CDN ou conexão; os links de estudo precisam de internet.
 
-Não precisa instalar pacotes, fazer login ou ter internet para apresentar. Mantenha a pasta `assets` junto de `index.html`. Somente os links para materiais externos precisam de conexão.
-
-Para apresentar com um servidor local, se preferir e já tiver Node.js 20 ou superior:
+Com Node.js 20 ou superior, também é possível usar:
 
 ```bash
 npm start
@@ -21,108 +16,86 @@ npm start
 
 Abra `http://localhost:5173`. Não há dependências para instalar.
 
-## O que a oficina contém
+## Laboratórios ao vivo
 
-- **13 etapas conectadas**, com foco em tecnologia para alunos do ensino médio.
-- Uso cotidiano da tecnologia como ponto de partida, com sites, contas, recomendações e jogos como exemplos.
-- Comparação visual das camadas HTML, CSS e JavaScript.
-- **Laboratório editável preservado:** etapas, arquivos, execução e restauração do exemplo.
-- Links contextuais para abrir uma camada no laboratório e **voltar à explicação de origem**.
-- Modelo visual da interação local e de uma consulta a um sistema com dados.
-- Introdução à cibersegurança com permissões, mensagens e pedidos de acesso.
-- **Quatro áreas:** Desenvolvimento de software, Analista de Suporte/Infraestrutura, Analista de Dados e Cibersegurança.
-- Front-end, back-end e full stack dentro de desenvolvimento de software.
-- Simulações de conexão, interpretação de dados e proteção de conta.
-- **Quiz coletivo com seis perguntas**, resultado e revisão.
-- Primeiras práticas, referências e roteiro de falas.
+| Assunto | Código | Resultado / demonstração |
+| --- | --- | --- |
+| HTML | Título, parágrafo e botão | Troque a saudação e veja o texto mudar |
+| CSS | Cor, forma e animação | Personalize a aparência de um robô |
+| JavaScript | Evento de clique, variável e `console.log` | Dê energia ao robô; acompanhe preenchimento e console |
+| Desenvolvimento de software | Função de pontuação | Colete estrelas, altere o multiplicador e veja o placar |
+| Suporte / Infraestrutura | Condições de diagnóstico | Ligue/desligue rede e servidor; acompanhe um pacote fictício |
+| Análise de dados | Lista e função de soma | Mude os números e veja as barras e o total |
+| Cibersegurança | Regra de autorização com duas condições | Teste papéis e segunda etapa; observe a porta liberar ou bloquear |
 
-O conteúdo principal é tecnologia. Os exemplos apoiam as explicações. Todo código é mostrado no laboratório; as outras telas priorizam resultados e processos visuais.
+**Atualizar ao digitar** vem ativado. As alterações são executadas após uma breve pausa de 350 ms. Desative a opção para preparar várias mudanças antes de clicar em **Executar**. `Ctrl + Enter` / `Cmd + Enter` também executa o laboratório atual.
 
-O trecho de cibersegurança usa fundamentos e situações fictícias para manter a sequência conectada. Ele pode ser ajustado quando o grupo definir esse recorte.
+Cada laboratório de carreira tem três botões que explicam **entrada → regra → resultado**, além de um experimento sugerido, um exemplo alternativo e **Restaurar**. O console mostra as mensagens reais do código e os erros de edição. Os estados são mantidos ao trocar de tela e apagados ao recarregar.
 
-## Controles
+`entrada` e `mostrar` são recursos educativos dos laboratórios de carreira: o primeiro fornece o estado dos controles e o segundo envia os dados para o cenário. Usamos JavaScript como linguagem comum para comparar a lógica; isso não resume as ferramentas de cada profissão.
+
+### Sugestões para apresentar
+
+- **Web:** mude o título; depois a variável de cor; por último, troque o ganho de energia de 10 para 50 e clique no robô.
+- **Software:** pergunte o placar previsto com duas estrelas; colete uma; altere o multiplicador.
+- **Suporte:** compare rede desligada, servidor desligado e caminho disponível. O desafio remove uma verificação: a animação do pacote e a conclusão do código podem discordar. Investigue e corrija.
+- **Dados:** pergunte qual barra crescerá antes de trocar o primeiro número da lista por 30. Compare outra amostra.
+- **Cibersegurança:** teste visitante e editor com e sem segunda etapa. Depois inclua o papel revisor na função e repita os testes.
+
+Cada edição da página web recria a prévia e zera seu estado de interação. Nos laboratórios de carreira, editar o código preserva os controles; **Restaurar** recupera código e controles iniciais.
+
+## Navegação
 
 | Ação | Controle |
 | --- | --- |
-| Avançar / voltar | `→` / `←`, botões inferiores, `Page Down` / `Page Up` |
-| Avançar | `Espaço`, quando não estiver em um botão ou campo |
+| Avançar / voltar | Setas, `Page Down` / `Page Up`, botões inferiores |
+| Avançar | `Espaço`, fora de um campo ou botão |
 | Primeira / última etapa | `Home` / `End` |
-| Tela cheia | `F` ou ícone superior, conforme suporte do navegador |
-| Abrir roteiro | `M` ou ícone de quatro quadrados |
+| Tela cheia | `F` ou ícone superior |
+| Roteiro / atalhos | `M` / `?` |
 | Notas de apoio | `N` ou **Notas** |
-| Ver atalhos | `?` |
-| Executar exemplo | **Executar** ou `Ctrl + Enter` / `Cmd + Enter` |
+| Executar código | Botão **Executar**, `Ctrl + Enter` / `Cmd + Enter` |
 | Fechar painel ou diálogo | `Esc` |
 
-Durante a edição de código, os atalhos de navegação ficam suspensos. Dentro das abas de arquivos, as setas trocam a aba. Clique no cronômetro para iniciar ou pausar; abra as notas para zerá-lo.
+Os atalhos de navegação ficam suspensos nos editores. As setas nas abas do laboratório web trocam de arquivo e ativam sua etapa. Nos editores de carreira, `Tab` insere dois espaços. O cronômetro inicia/pausa com um clique; ele pode ser zerado nas notas.
 
-**As notas aparecem na própria tela.** Elas não são um monitor separado do apresentador. Se estiver projetando, o público também as verá. Consulte antecipadamente [o roteiro de falas](docs/ROTEIRO.md).
+**As notas aparecem na tela projetada.** Consulte [o roteiro de falas](docs/ROTEIRO.md) antes de apresentar. Links como `index.html#lab-dados` abrem diretamente um assunto. A navegação de voltar do navegador funciona.
 
-Links diretos, como `index.html#laboratorio` e `index.html#carreiras`, abrem a etapa correspondente. O botão de voltar do navegador também funciona.
+## Ambiente das demonstrações
 
-## Como usar o laboratório
+Todos os exemplos são locais e fictícios. O laboratório de suporte não testa a rede da escola. Os gráficos não coletam respostas reais. Os papéis e a segunda etapa não alteram contas ou permissões reais.
 
-1. Em **Só HTML**, mostre o conteúdo. O botão ainda não tem uma ação programada.
-2. Selecione **+ CSS** e compare a aparência.
-3. Selecione **+ JavaScript** e clique em **Testar botão** dentro da prévia.
-4. Nas abas de arquivos, altere o título ou a cor e clique em **Executar**.
-5. Use **Restaurar exemplo** para recuperar o código inicial e voltar à primeira etapa.
+A prévia web roda em um iframe com origem opaca, sem acesso ao DOM principal, sem conexão de rede e sem envio de formulários. Nos quatro laboratórios de funções, o código roda em Workers descartáveis dentro de iframes isolados; uma execução é encerrada após um segundo. Resultados são validados antes de alimentar os cenários. Erros preservam o último resultado válido e aparecem no console.
 
-Cada etapa controla quais tecnologias estão ativas. Editar CSS durante **Só HTML** não muda o resultado até ativar a segunda etapa. O mesmo vale para JavaScript na terceira etapa.
+O limite de um segundo é dos laboratórios de funções. Código web que manipula DOM executa no iframe: evite loops infinitos nesse exemplo. O material foi feito para as práticas educativas da oficina, não para receber programas não confiáveis de terceiros.
 
-A prévia usa um `iframe` isolado, sem acesso à origem da apresentação e com política que bloqueia conexões de rede e envio de formulários. Ela executa o código do exemplo no navegador. Evite loops infinitos, que podem travar a aba. Não é um ambiente de execução para código não confiável de terceiros.
+Em sistemas reais, autenticação e autorização devem ser verificadas pelo servidor. A porta animada apenas representa a decisão de uma função.
 
-## Dinâmicas e dados
+O quiz coletivo contém seis perguntas, explicação e revisão. Não há votação sincronizada entre aparelhos, ranking individual, cadastro, armazenamento persistente ou coleta de dados pessoais.
 
-As marcações, respostas e decisões são **locais à sessão**. Elas não são enviadas para um servidor, não são sincronizadas entre aparelhos e não permanecem após recarregar a página. A atividade de abertura registra temas reconhecidos na conversa, sem medir quantas pessoas responderam.
+## Editar e verificar
 
-O quiz aceita uma resposta por pergunta, mostra a explicação e permite revisão ao final. **Recomeçar o quiz** limpa as respostas. Não há ranking individual, cadastro ou coleta de dados pessoais.
-
-A troca entre visitante e editor é uma **simulação educativa de uma regra de autorização**. A conexão, o gráfico e a proteção de conta também são exemplos locais e fictícios. Em um sistema real, essa verificação deve ser imposta pelo servidor. Não use esta interface como controle real de acesso.
-
-## Preparação para o dia
-
-- Extraia o projeto no notebook e teste sem internet.
-- Teste o cabo, o projetor e a resolução. O conteúdo pode rolar em telas menores.
-- Faça uma passagem pelo laboratório e restaure o exemplo.
-- Combine as falas entre os seis integrantes. O roteiro sugere uma divisão e cerca de 90 minutos.
-- Deixe uma cópia local completa. A apresentação não depende de um serviço de hospedagem.
-
-## Editar o conteúdo
-
-| Arquivo | O que alterar |
+| Arquivo | Conteúdo |
 | --- | --- |
-| `index.html` | Textos principais, etapas, equipe e estrutura da página |
-| `assets/content.js` | Exemplos, carreiras, perguntas, respostas e notas de apoio |
-| `assets/styles.css` | Base visual, controles e laboratório |
-| `assets/story.css` | Comparações, simulações visuais e transições entre os assuntos |
-| `assets/app.js` | Navegação, interações, laboratório e quiz |
-| `assets/logic.js` | Funções de navegação, pontuação e isolamento da prévia |
-| `docs/ROTEIRO.md` | Sugestão de falas e organização da oficina |
-| `docs/FONTES.md` | Referências e relação com o projeto original |
-
-O código usa scripts clássicos em vez de módulos para permitir abertura direta do HTML. Não utiliza frameworks, CDNs, fontes remotas, serviços pagos, banco de dados ou telemetria.
-
-## Verificações de desenvolvimento
-
-Com Node.js 20 ou superior:
+| `index.html` | Estrutura, sequência, textos e créditos |
+| `assets/content.js` | Exemplo web, explicações, perguntas e notas |
+| `assets/lab-content.js` | Código, desafios e explicações das quatro carreiras |
+| `assets/live-labs.js` | Editores, console, controles e cenários animados |
+| `assets/lab-engine.js` | Executor isolado e contratos dos resultados |
+| `assets/app.js` e `assets/logic.js` | Navegação, prévia web e quiz |
+| `assets/styles.css`, `assets/story.css`, `assets/live-labs.css` | Aparência, responsividade e animações |
+| `docs/ROTEIRO.md` | Sequência de falas e demonstrações |
+| `docs/FONTES.md` | Referências e escopo dos exemplos |
 
 ```bash
 npm run check
 ```
 
-O comando verifica a sintaxe e executa testes da sequência dos assuntos, localização dos exemplos de código, quatro grupos de carreira, navegação, âncoras, notas, pontuação e isolamento da prévia. O fluxo de GitHub Actions executa essas verificações em novos commits e pull requests. Os testes não substituem a conferência visual e a passagem da oficina pelo grupo.
+A verificação cobre sintaxe, sequência, âncoras, notas, quiz, isolamento e a execução dos exemplos com entradas e edições diferentes. O GitHub Actions usa o mesmo comando. Antes da apresentação, ensaie os laboratórios no notebook e no projetor, inclusive sem internet. Em telas menores o conteúdo pode rolar; o layout empilha editor e resultado no celular.
 
-## Hospedar no GitHub Pages, se quiser um link
+## Hospedagem estática
 
-O projeto já está pronto para hospedagem estática. No próprio repositório:
-
-1. Abra **Settings → Pages**.
-2. Em **Build and deployment**, escolha **Deploy from a branch**.
-3. Selecione a branch **main** e a pasta **/ (root)**.
-4. Salve e aguarde o GitHub mostrar o endereço publicado.
-
-Use o endereço exibido pelo GitHub depois que a publicação concluir. A apresentação local continua funcionando sem essa configuração. Não há uma publicação ativa presumida por este README.
+O projeto funciona em qualquer hospedagem estática. Para GitHub Pages, selecione **Settings → Pages → Deploy from a branch → main → / (root)** e use o endereço que o GitHub informar após publicar. Não é necessário configurar Pages para abrir a cópia local.
 
 ## Equipe
 
