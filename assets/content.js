@@ -1,71 +1,345 @@
-/* Conteúdo editável da oficina. Sem dependências, importações ou chamadas de rede. */
+/* Conteúdo editável: tecnologia para alunos do ensino médio. */
 window.WorkshopData = {
-  request: [
-    { title: 'O navegador envia a solicitação', text: 'Você toca em “Ver programação”. O navegador pede essa informação ao servidor pela rede.' },
-    { title: 'O servidor aplica as regras', text: 'O sistema recebe o pedido e decide o que precisa consultar e quais informações pode devolver.' },
-    { title: 'O banco guarda e consulta informações', text: 'A programação, as salas e os horários podem estar armazenados aqui. O servidor faz a consulta necessária.' },
-    { title: 'A resposta aparece na página', text: 'O servidor responde. O navegador interpreta o conteúdo e atualiza a tela que você vê.' }
-  ],
-  languages: {
-    html: { analogy: 'COMO A ESTRUTURA DE UMA CASA', heading: 'O conteúdo ganha lugar.', text: 'Títulos, parágrafos, imagens e botões. HTML marca o significado e a estrutura do conteúdo.', code: '<h1>Feira de Ideias</h1>\n<p>Um encontro para criar.</p>\n<button>Participar</button>', hint: 'Uma linguagem de marcação. Pense nas paredes e nos cômodos.' },
-    css: { analogy: 'COMO A PINTURA E A ORGANIZAÇÃO DA CASA', heading: 'A página ganha aparência.', text: 'Cores, tamanhos, espaçamentos e posição dos elementos. CSS também ajuda a adaptar a página ao celular.', code: 'h1 { color: #2b6b42; }\nbutton { border-radius: 12px; }\nbody { font-family: sans-serif; }', hint: 'Uma linguagem de estilos. Pense nas cores e na disposição dos móveis.' },
-    js: { analogy: 'COMO UM INTERRUPTOR QUE ACENDE A LUZ', heading: 'A página responde a você.', text: 'JavaScript executa instruções, reage a eventos e pode atualizar o conteúdo quando você interage.', code: "botao.addEventListener('click', () => {\n  mensagem.textContent = 'Eu posso criar!';\n});", hint: 'Uma linguagem de programação. Um clique pode disparar uma ação.' }
+  "experiences": {
+    "site": {
+      "title": "Uma página abre no navegador.",
+      "text": "Vamos começar pela parte que aparece: conteúdo, aparência e interação na página.",
+      "focus": [
+        "interface"
+      ]
+    },
+    "conta": {
+      "title": "O sistema confirma quem pode entrar.",
+      "text": "Além da tela, entram em cena regras de acesso, informações e cuidados de segurança.",
+      "focus": [
+        "sistema",
+        "dados"
+      ]
+    },
+    "conteudo": {
+      "title": "Uma lista sugere o que pode interessar.",
+      "text": "Dados podem ajudar a organizar conteúdo e apoiar decisões. Alguém precisa analisá-los com cuidado.",
+      "focus": [
+        "dados",
+        "interface"
+      ]
+    },
+    "jogo": {
+      "title": "Outras pessoas aparecem na mesma partida.",
+      "text": "Interface, regras e conexão trabalham juntas para trocar informações entre os participantes.",
+      "focus": [
+        "interface",
+        "sistema",
+        "conexao"
+      ]
+    }
   },
-  example: {
-    html: '<main>\n  <span>ESCOLA LIONS DE PARNAMIRIM</span>\n  <h1>Feira de Ideias</h1>\n  <p>Um encontro para quem gosta de criar.</p>\n  <button id="participar">Quero participar</button>\n  <p id="mensagem" aria-live="polite"></p>\n</main>',
-    css: '* { box-sizing: border-box; }\nbody {\n  margin: 0; padding: 24px;\n  background: #edf3e4; color: #183323;\n  font-family: system-ui, sans-serif;\n}\nmain { max-width: 440px; margin: auto; }\nspan { font-size: 11px; letter-spacing: 2px; }\nh1 { font-size: 36px; line-height: 1.05; margin: 16px 0 12px; }\np { font-size: 15px; line-height: 1.5; margin: 10px 0; }\nbutton {\n  padding: 12px 18px; border: 0;\n  border-radius: 10px; cursor: pointer;\n  background: #c5ec6a; color: #183323;\n  font: 700 14px system-ui, sans-serif;\n}\nbutton:focus-visible { outline: 3px solid #183323; }\n#mensagem { min-height: 32px; font-size: 13px; font-weight: 600; }',
-    js: "const botao = document.querySelector('#participar');\nconst mensagem = document.querySelector('#mensagem');\nlet cliques = 0;\n\nbotao.addEventListener('click', () => {\n  cliques += 1;\n  mensagem.textContent =\n    `Você fez o botão funcionar! Cliques: ${cliques}`;\n});"
+  "languages": {
+    "html": {
+      "heading": "HTML / O CONTEÚDO",
+      "text": "O título, o texto e o botão já existem. Cada elemento tem seu lugar e significado.",
+      "stage": 1
+    },
+    "css": {
+      "heading": "CSS / A APARÊNCIA",
+      "text": "O conteúdo é o mesmo. Cores, tamanhos e espaços mudam a forma como ele aparece.",
+      "stage": 2
+    },
+    "js": {
+      "heading": "JAVASCRIPT / A INTERAÇÃO",
+      "text": "Agora o botão responde a uma ação. Clique e observe a mensagem mudar.",
+      "stage": 3
+    }
   },
-  factory: [
-    { deliverable: 'REQUISITOS', text: 'Conversar com a escola: quem usará a página? Que informações precisam aparecer? O que realmente resolve o problema?' },
-    { deliverable: 'PROTÓTIPO E DIVISÃO DE TAREFAS', text: 'Desenhar a página, escolher as tecnologias e combinar quem cuidará do conteúdo, da interface, das regras e dos testes.' },
-    { deliverable: 'VERSÃO DO SITE', text: 'Construir as partes e integrar o trabalho. Git e GitHub ajudam a organizar versões e a colaboração da equipe.' },
-    { deliverable: 'TESTES E CORREÇÕES', text: 'Testar no celular, conferir a leitura e os botões, pedir que alguém use a página e corrigir os problemas encontrados.' },
-    { deliverable: 'CUIDADOS DE SEGURANÇA', text: 'Evitar coletar dados sem necessidade. Se houver cadastro, proteger o acesso, validar as informações e revisar permissões desde o início.' },
-    { deliverable: 'PUBLICAÇÃO E MANUTENÇÃO', text: 'Disponibilizar a página, acompanhar o uso, atualizar a programação e melhorar a solução a partir das dúvidas das pessoas.' }
+  "example": {
+    "html": "<main>\n  <span>MEU PRIMEIRO SITE</span>\n  <h1>Olá, mundo!</h1>\n  <p>Uma página que eu posso transformar.</p>\n  <button id=\"participar\">Testar botão</button>\n  <p id=\"mensagem\" aria-live=\"polite\"></p>\n</main>",
+    "css": "* { box-sizing: border-box; }\nbody {\n  margin: 0; padding: 24px;\n  background: #edf3e4; color: #183323;\n  font-family: system-ui, sans-serif;\n}\nmain { max-width: 440px; margin: auto; }\nspan { font-size: 11px; letter-spacing: 2px; }\nh1 { font-size: 36px; line-height: 1.05; margin: 16px 0 12px; }\np { font-size: 15px; line-height: 1.5; margin: 10px 0; }\nbutton {\n  padding: 12px 18px; border: 0;\n  border-radius: 10px; cursor: pointer;\n  background: #c5ec6a; color: #183323;\n  font: 700 14px system-ui, sans-serif;\n}\nbutton:focus-visible { outline: 3px solid #183323; }\n#mensagem { min-height: 32px; font-size: 13px; font-weight: 600; }",
+    "js": "const botao = document.querySelector('#participar');\nconst mensagem = document.querySelector('#mensagem');\nlet cliques = 0;\n\nbotao.addEventListener('click', () => {\n  cliques += 1;\n  mensagem.textContent =\n    `Você fez o botão funcionar! Cliques: ${cliques}`;\n});"
+  },
+  "request": [
+    {
+      "title": "O navegador envia o pedido",
+      "text": "Uma busca ou um acesso pode exigir informações que estão fora do seu dispositivo."
+    },
+    {
+      "title": "O servidor confere as regras",
+      "text": "Ele recebe a solicitação e decide o que consultar e o que a pessoa tem permissão para fazer."
+    },
+    {
+      "title": "O sistema consulta informações",
+      "text": "Um banco de dados pode guardar conteúdo, preferências e outras informações necessárias ao serviço."
+    },
+    {
+      "title": "A resposta volta para a tela",
+      "text": "O navegador recebe o resultado e apresenta a informação. Este é um modelo simplificado do processo."
+    }
   ],
-  incident: [
-    { heading: 'A conta de um prestador foi comprometida', text: 'Segundo a Uber, a senha provavelmente foi exposta por malware no dispositivo pessoal do prestador e depois obtida pelo atacante.' },
-    { heading: 'O prestador recebeu pedidos repetidos de login', text: 'As solicitações de autenticação em dois fatores inicialmente impediram o acesso. A repetição dos pedidos não os tornava legítimos.' },
-    { heading: 'Um dos pedidos acabou aprovado', text: 'A aprovação permitiu a entrada. A lição para nossas contas: negar solicitações inesperadas e verificar a atividade pelo canal oficial.' },
-    { heading: 'A empresa conteve acessos e revisou a proteção', text: 'O invasor alcançou ferramentas internas. A Uber informou bloqueios de contas, redefinições de acesso e reforço das políticas de autenticação.' }
+  "safety": {
+    "contas": {
+      "symbol": "•••",
+      "heading": "Confirmar quem está acessando.",
+      "text": "Senhas diferentes e uma segunda etapa de autenticação ajudam a proteger o acesso à conta."
+    },
+    "permissoes": {
+      "symbol": "✓",
+      "heading": "Acesso na medida certa.",
+      "text": "Cada pessoa deve conseguir fazer apenas o que está autorizado para seu papel."
+    },
+    "dados": {
+      "symbol": "≡",
+      "heading": "Cuidar do que é necessário.",
+      "text": "Pedir menos dados, limitar o acesso e manter sistemas atualizados são partes desse cuidado."
+    }
+  },
+  "careers": [
+    {
+      "id": "software",
+      "label": "Desenvolvimento de software",
+      "short": "Criar interfaces e comportamentos",
+      "symbol": "▱",
+      "question": "Como transformar uma ideia em algo que funciona?",
+      "description": "Cria e testa as telas, as regras e as interações de sites e aplicativos.",
+      "skills": "Lógica, HTML, CSS, JavaScript e trabalho em equipe.",
+      "start": "Construir uma página pequena e experimentar mudanças no laboratório.",
+      "delivery": "ENTREGA / UMA FUNCIONALIDADE QUE A PESSOA CONSEGUE USAR"
+    },
+    {
+      "id": "infra",
+      "label": "Analista de Suporte / Infraestrutura",
+      "short": "Ajudar pessoas e manter o ambiente",
+      "symbol": "↔",
+      "question": "Por que o acesso não está funcionando?",
+      "description": "Ajuda usuários e investiga equipamentos, redes e disponibilidade dos serviços.",
+      "skills": "Redes, sistemas operacionais, diagnóstico e comunicação.",
+      "start": "Entender o caminho entre dispositivo, conexão e serviço.",
+      "delivery": "ENTREGA / UM AMBIENTE QUE AS PESSOAS CONSEGUEM UTILIZAR"
+    },
+    {
+      "id": "dados",
+      "label": "Analista de Dados",
+      "short": "Transformar informações em compreensão",
+      "symbol": "▥",
+      "question": "O que podemos entender olhando os dados?",
+      "description": "Organiza e analisa informações para responder perguntas e apoiar decisões.",
+      "skills": "Planilhas, SQL, estatística e visualização de dados.",
+      "start": "Organizar uma tabela fictícia e explicar o que ela mostra.",
+      "delivery": "ENTREGA / UMA RESPOSTA APOIADA EM INFORMAÇÕES"
+    },
+    {
+      "id": "cyber",
+      "label": "Cibersegurança",
+      "short": "Reduzir riscos para pessoas e sistemas",
+      "symbol": "◇",
+      "question": "Como proteger o acesso e as informações?",
+      "description": "Avalia riscos, revisa controles e ajuda a prevenir e responder a incidentes.",
+      "skills": "Redes, sistemas, proteção de contas e análise de riscos.",
+      "start": "Conhecer os cuidados com senhas, permissões e mensagens suspeitas.",
+      "delivery": "ENTREGA / CONTROLES E ORIENTAÇÕES PARA REDUZIR RISCOS"
+    }
   ],
-  careers: [
-    { id: 'frontend', label: 'Front-end', symbol: '<>', question: 'Como deixar a tela clara e fácil de usar?', description: 'Desenvolve a interface que as pessoas veem e usam no navegador.', example: 'Na feira: criar a página com a programação e adaptá-la ao celular.', skills: 'HTML, CSS, JavaScript e acessibilidade.', start: 'Reconstruir uma página simples e testar em tamanhos de tela diferentes.' },
-    { id: 'backend', label: 'Back-end', symbol: '{ }', question: 'Quais regras fazem o sistema funcionar?', description: 'Implementa regras, APIs, autenticação e comunicação com bancos de dados.', example: 'Na feira: conferir inscrições e evitar cadastros duplicados.', skills: 'Lógica, uma linguagem de servidor, HTTP e bancos de dados.', start: 'Criar uma pequena API que consulta e registra informações fictícias.' },
-    { id: 'fullstack', label: 'Full stack', symbol: '↔', question: 'Como conectar a interface às regras?', description: 'Trabalha tanto na interface quanto nos serviços do servidor, com profundidade que varia conforme a função.', example: 'Na feira: integrar a tela de inscrição ao serviço que recebe os dados.', skills: 'Fundamentos de front-end, back-end e integração.', start: 'Conectar uma interface simples a uma API e entender o fluxo completo.' },
-    { id: 'dados', label: 'Análise de dados', symbol: '▥', question: 'O que as informações podem nos mostrar?', description: 'Organiza, analisa e apresenta dados para ajudar pessoas a tomar decisões.', example: 'Na feira: descobrir quais oficinas receberam mais interesse.', skills: 'Planilhas, SQL, estatística e visualização.', start: 'Analisar uma tabela de dados fictícios e explicar uma conclusão.' },
-    { id: 'banco', label: 'Banco de dados', symbol: '≡', question: 'Como guardar e consultar os dados?', description: 'Modela e mantém estruturas de armazenamento, consultas e recuperação das informações.', example: 'Na feira: relacionar oficinas, salas e horários sem inconsistências.', skills: 'Modelagem, SQL, integridade e cópias de segurança.', start: 'Desenhar tabelas de oficinas e horários e praticar consultas simples.' },
-    { id: 'infra', label: 'Infraestrutura', symbol: '⌘', question: 'Como manter os equipamentos conectados?', description: 'Cuida de redes, sistemas operacionais e ambientes que sustentam os serviços.', example: 'Na feira: preparar rede, computadores e acesso ao sistema.', skills: 'Redes, sistemas operacionais, monitoramento e diagnóstico.', start: 'Entender uma rede local e praticar em um laboratório autorizado.' },
-    { id: 'cloud', label: 'Nuvem e DevOps', symbol: '☁', question: 'Como colocar o sistema no ar e mantê-lo?', description: 'Trabalha com ambientes em nuvem, publicação, automação e acompanhamento dos serviços.', example: 'Na feira: publicar o site, automatizar entregas e observar falhas.', skills: 'Linux, redes, automação, serviços em nuvem e custos.', start: 'Publicar uma página estática e entender cada etapa da entrega.' },
-    { id: 'suporte', label: 'Suporte técnico', symbol: '?', question: 'Como ajudar uma pessoa a resolver um erro?', description: 'Atende usuários, identifica problemas e orienta soluções com comunicação clara.', example: 'Na feira: ajudar alguém que não consegue acessar a programação.', skills: 'Diagnóstico, sistemas, comunicação e documentação.', start: 'Documentar a solução de um problema comum passo a passo.' },
-    { id: 'cyber', label: 'Cibersegurança', symbol: '◇', question: 'Como reduzir riscos para pessoas e sistemas?', description: 'Analisa riscos, previne incidentes e ajuda a proteger contas, dados e serviços.', example: 'Na feira: revisar permissões e orientar a equipe sobre mensagens suspeitas.', skills: 'Redes, sistemas, análise de riscos e desenvolvimento seguro.', start: 'Estudar proteção de contas e praticar apenas em ambientes autorizados.' }
+  "softwareViews": {
+    "front": {
+      "label": "Front-end",
+      "text": "A parte que a pessoa vê e usa: conteúdo, visual e interação.",
+      "visual": "interface"
+    },
+    "back": {
+      "label": "Back-end",
+      "text": "A parte do servidor: regras, permissões e comunicação com dados.",
+      "visual": "regras"
+    },
+    "full": {
+      "label": "Full stack",
+      "text": "Trabalha nas duas partes e na ligação entre interface e servidor.",
+      "visual": "conexao"
+    }
+  },
+  "demand": [
+    {
+      "label": "Jogos",
+      "value": 24
+    },
+    {
+      "label": "Vídeos",
+      "value": 20
+    },
+    {
+      "label": "Música",
+      "value": 16
+    }
   ],
-  quiz: [
-    { question: 'Qual tecnologia define um título e um parágrafo na página?', options: ['HTML', 'CSS', 'JavaScript'], correct: 0, explanation: 'HTML marca a estrutura e o significado do conteúdo. Um título pode usar <h1> e um parágrafo, <p>.', review: 'linguagens' },
-    { question: 'Você quer mudar cores e organizar a página no celular. O que usa?', options: ['Banco de dados', 'CSS', 'Uma senha'], correct: 1, explanation: 'CSS cuida de estilos e de layouts que podem se adaptar ao tamanho da tela.', review: 'laboratorio' },
-    { question: 'O botão deve mostrar uma mensagem ao receber um clique. Qual é a função do JavaScript?', options: ['Guardar a senha no código', 'Escolher apenas a cor do botão', 'Reagir ao evento e atualizar o conteúdo'], correct: 2, explanation: 'JavaScript pode ouvir o evento de clique e executar uma ação, como mudar o texto da página.', review: 'laboratorio' },
-    { question: 'Apareceu um pedido de login que você não iniciou. O que fazer?', options: ['Aprovar para a notificação sumir', 'Negar e revisar a atividade da conta pelo canal oficial', 'Enviar seu código para quem pediu'], correct: 1, explanation: 'Negue o pedido. Verifique sessões e atividade no serviço oficial e proteja as credenciais se houver suspeita de comprometimento.', review: 'detetive' },
-    { question: 'Uma mensagem exige senha e código com urgência. Qual é a melhor primeira atitude?', options: ['Confirmar a situação por um canal oficial conhecido', 'Abrir o link porque a mensagem tem um logotipo', 'Encaminhar seus dados para resolver rápido'], correct: 0, explanation: 'Pressa, aparência e logotipos não comprovam a origem. Procure a instituição diretamente e não compartilhe senha ou código.', review: 'habitos' },
-    { question: 'Quem costuma implementar regras no servidor e conversar com o banco de dados?', options: ['Apenas o usuário final', 'Somente o front-end', 'O desenvolvimento back-end'], correct: 2, explanation: 'O back-end implementa regras e serviços no servidor. Profissionais de outras áreas colaboram na solução.', review: 'carreiras' }
+  "factory": [
+    {
+      "career": "software",
+      "deliverable": "DESENVOLVIMENTO DE SOFTWARE",
+      "text": "Investigar o comportamento, corrigir a lógica e testar a interação."
+    },
+    {
+      "career": "infra",
+      "deliverable": "SUPORTE / INFRAESTRUTURA",
+      "text": "Verificar dispositivo, conexão e disponibilidade. Se houver erro na aplicação, trabalhar junto com desenvolvimento."
+    },
+    {
+      "career": "dados",
+      "deliverable": "ANÁLISE DE DADOS",
+      "text": "Organizar as informações, comparar resultados e explicar o que elas permitem concluir."
+    },
+    {
+      "career": "cyber",
+      "deliverable": "CIBERSEGURANÇA",
+      "text": "Investigar o risco, orientar a pessoa e revisar os controles de proteção com a equipe."
+    }
   ],
-  notes: {
-    'inicio': { time: 'Abertura, dentro do bloco web', text: 'Apresente a equipe e o tema completo. Diga que a própria apresentação é uma aplicação web. Clique em “Testar ideia” para começar com uma interação. Convide o público a observar conteúdo, aparência e comportamento ao longo da oficina.' },
-    'vida-digital': { time: 'Web e abertura: aproximadamente 25 minutos no total', text: 'Peça respostas por levantamento de mãos, sem solicitar dados pessoais. Marque as situações mencionadas. Isso registra assuntos explorados, não quantidade de alunos nem votação remota. Pergunte como essas experiências poderiam ter sido construídas.' },
-    'por-tras-do-clique': { time: 'Bloco web', text: 'Avance pelos quatro pontos. Diferencie navegador, servidor e banco. Explique que é um modelo simplificado: esta apresentação usa arquivos estáticos e as interações rodam localmente, sem banco de dados.' },
-    'linguagens': { time: 'Bloco web', text: 'Clique nas três tecnologias. Use a casa como analogia: estrutura, aparência e interruptor. Leia um trecho de código por vez. HTML é marcação, CSS é estilo e JavaScript é programação. Evite afirmar que toda interação de uma página exige JavaScript.' },
-    'laboratorio': { time: 'Reserve a maior parte do bloco web para a demonstração', text: 'Mostre Só HTML e clique no botão: ainda não existe ação. Ative CSS e compare o visual. Ative JavaScript e clique novamente. Troque o título em index.html e a cor em style.css, depois execute. O botão Restaurar exemplo recupera o material inicial. Se editar uma aba cuja tecnologia ainda não está ativa, avance a etapa para enxergar a mudança.' },
-    'fabrica': { time: 'Fechamento do bloco web', text: 'Conecte a demonstração ao tema Fábrica de Software. Percorra as entregas e pergunte quem faria cada parte. Reforce que segurança e testes devem acompanhar o processo desde o início. A feira é um exemplo fictício, não um projeto já executado pela escola.' },
-    'caso-real': { time: 'Segurança: aproximadamente 20 minutos no total', text: 'Identifique o caso: Uber, setembro de 2022, comunicado atualizado no dia 19. Selecione cada etapa. Preserve “provavelmente” para a origem da senha: é a hipótese relatada pela empresa. O foco é prevenção. Não atribua o incidente a uma única pessoa nem afirme que todos os dados dos clientes vazaram.' },
-    'detetive': { time: 'Bloco segurança', text: 'Leia a mensagem sem clicar em links externos. Peça à turma que identifique urgência, solicitação de segredos, remetente desconhecido e endereço não confiável. Escolha a resposta junto com o público. Depois alterne para Pedido de login e relacione ao caso real. Os endereços são fictícios e não acessáveis.' },
-    'habitos': { time: 'Bloco segurança', text: 'Abra cada hábito e peça um exemplo cotidiano. Reforce senhas diferentes, segunda etapa e verificação por canais oficiais. HTTPS protege a conexão, mas não comprova a honestidade do site. Não solicite senhas reais do público.' },
-    'codigo-seguro': { time: 'Fechamento do bloco segurança', text: 'Tente editar como visitante e depois como editor. Explique claramente que a troca de papel é uma simulação no navegador. Em um sistema real, o servidor verifica a permissão a cada operação. Distingua proteção visual da interface de controle real de acesso.' },
-    'carreiras': { time: 'Carreiras: aproximadamente 25 minutos no total', text: 'Convide alunos a escolher áreas. Compare front-end, back-end e full stack, depois mostre dados, banco, infraestrutura, nuvem, suporte e segurança. As funções podem se sobrepor conforme a empresa. Pergunte se preferem criar interfaces, investigar dados, resolver problemas de pessoas ou proteger sistemas.' },
-    'formacao': { time: 'Bloco carreiras', text: 'Mostre que existem diferentes caminhos e que a escolha depende dos objetivos e das condições de cada pessoa. Não prometa emprego ao concluir um curso. Sugira comparar grades e começar com projetos pequenos. Explique ADS como Análise e Desenvolvimento de Sistemas.' },
-    'vida-em-ti': { time: 'Fechamento do bloco carreiras', text: 'Equilibre possibilidades e desafios. Júnior, pleno e sênior variam entre empresas e não representam um número obrigatório de anos. Não invente faixas salariais. Remuneração depende de experiência, região, empresa, especialização e contrato.' },
-    'quiz': { time: 'Quiz, conversa e fechamento: aproximadamente 20 minutos', text: 'Leia a pergunta, espere a turma conversar e registre uma resposta coletiva. A escolha fica bloqueada após a primeira resposta. Explique o retorno antes de avançar. O resultado aparece ao final das seis perguntas e pode ser revisado. Não há coleta, ranking individual ou sincronização com celulares.' },
-    'primeiro-projeto': { time: 'Bloco final', text: 'Transforme o interesse em um pequeno projeto. Marque os quatro passos enquanto conversa. Mostre os links oficiais e avise que só a consulta externa exige internet. A página pode ser aberta diretamente no navegador, sem instalação.' },
-    'encerramento': { time: 'Perguntas e fechamento', text: 'Abra espaço para dúvidas. Peça uma coisa aprendida, um cuidado que a turma pretende adotar e uma ideia de projeto. Retome os objetivos sem afirmar resultados medidos. Não recolha dados de menores de idade pela apresentação.' },
-    'equipe': { time: 'Créditos e referências', text: 'Agradeça à escola e ao público. Mostre os integrantes e as fontes. A divisão de falas pode ser combinada entre os seis participantes. O roteiro do repositório traz uma sugestão, sem atribuição obrigatória.' }
+  "starts": {
+    "software": {
+      "area": "DESENVOLVIMENTO DE SOFTWARE",
+      "heading": "Transforme uma ideia em uma página.",
+      "text": "Troque o título, escolha uma cor legível e crie uma resposta para o botão.",
+      "action": "Experimentar no laboratório",
+      "href": "#laboratorio"
+    },
+    "infra": {
+      "area": "SUPORTE / INFRAESTRUTURA",
+      "heading": "Entenda o caminho de uma conexão.",
+      "text": "Identifique dispositivo, rede e serviço. Pratique como explicar um problema de acesso a outra pessoa.",
+      "action": "Rever a simulação de conexão",
+      "href": "#carreiras"
+    },
+    "dados": {
+      "area": "ANÁLISE DE DADOS",
+      "heading": "Faça uma pergunta a uma tabela.",
+      "text": "Use dados fictícios, organize categorias e compare resultados antes de tirar uma conclusão.",
+      "action": "Rever a visualização de dados",
+      "href": "#carreiras"
+    },
+    "cyber": {
+      "area": "CIBERSEGURANÇA",
+      "heading": "Observe os cuidados com uma conta.",
+      "text": "Conheça a segunda etapa de autenticação e pratique reconhecer uma mensagem suspeita.",
+      "action": "Rever as situações de segurança",
+      "href": "#detetive"
+    }
+  },
+  "quiz": [
+    {
+      "question": "Qual camada cria o título e o texto de uma página?",
+      "options": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "correct": 0,
+      "explanation": "HTML define a estrutura e o significado do conteúdo. Foi a primeira camada que vimos no laboratório.",
+      "review": "linguagens"
+    },
+    {
+      "question": "O conteúdo já existe. Você quer mudar cores e organizar a página no celular. O que usa?",
+      "options": [
+        "Uma senha",
+        "CSS",
+        "O roteador"
+      ],
+      "correct": 1,
+      "explanation": "CSS define a apresentação visual e ajuda a adaptar o layout a diferentes tamanhos de tela.",
+      "review": "laboratorio"
+    },
+    {
+      "question": "O botão deve mostrar uma mensagem depois de um clique. O que programa essa resposta?",
+      "options": [
+        "JavaScript",
+        "Só a cor do botão",
+        "O nome do arquivo"
+      ],
+      "correct": 0,
+      "explanation": "JavaScript pode reagir ao clique e atualizar a página. Esse é um exemplo de comportamento criado no desenvolvimento de software.",
+      "review": "laboratorio"
+    },
+    {
+      "question": "Um notebook ficou sem conexão. Qual área atua diretamente na investigação do acesso e da rede?",
+      "options": [
+        "Análise de Dados",
+        "Apenas o design visual",
+        "Suporte / Infraestrutura"
+      ],
+      "correct": 2,
+      "explanation": "Suporte e infraestrutura investigam o dispositivo, a conexão e a disponibilidade do serviço, colaborando com outras áreas quando necessário.",
+      "review": "carreiras"
+    },
+    {
+      "question": "A equipe precisa comparar uma tabela para entender preferências. Qual área tem esse foco?",
+      "options": [
+        "Analista de Dados",
+        "Somente edição de imagem",
+        "Troca de equipamento"
+      ],
+      "correct": 0,
+      "explanation": "A análise de dados organiza e compara informações para responder perguntas. O gráfico mostrado na oficina usa dados fictícios.",
+      "review": "carreiras"
+    },
+    {
+      "question": "Uma mensagem exige sua senha e seu código de acesso com urgência. Qual é a melhor atitude?",
+      "options": [
+        "Enviar para resolver rápido",
+        "Confirmar pelo aplicativo ou site oficial, sem compartilhar os segredos",
+        "Confiar porque tem um logotipo"
+      ],
+      "correct": 1,
+      "explanation": "Pressa e aparência não confirmam a origem. Verifique pelo canal oficial e não compartilhe senha ou código. Cibersegurança também envolve esses cuidados.",
+      "review": "detetive"
+    }
+  ],
+  "notes": {
+    "inicio": {
+      "time": "Abertura",
+      "text": "Apresente a oficina como uma conversa sobre tecnologia para alunos do ensino médio. Mostre a sequência: entender uma página, conhecer cuidados digitais e descobrir quem trabalha nessas partes. Use o botão da abertura, sem mostrar trechos de código fora do laboratório."
+    },
+    "vida-digital": {
+      "time": "Começo da conversa",
+      "text": "Convide a turma a escolher situações familiares: site, conta, recomendação ou jogo. Use as partes destacadas para mostrar que existem processos e pessoas por trás da tela. Faça a transição para a interface que aparece no navegador. Os exemplos apenas apoiam o tema tecnologia."
+    },
+    "linguagens": {
+      "time": "HTML, CSS e JavaScript",
+      "text": "Alterne as três camadas e compare sempre a mesma página. No HTML, conteúdo; no CSS, visual; no JavaScript, resposta ao clique. A demonstração aqui é visual. Para ler ou alterar código, use o link que abre a camada correspondente no laboratório."
+    },
+    "laboratorio": {
+      "time": "Demonstração prática",
+      "text": "Mantenha a explicação ligada às camadas que a turma acabou de ver. Mostre Só HTML, depois CSS e JavaScript. Clique em Testar botão, altere um título ou uma cor e execute. Todos os trechos de código da apresentação ficam aqui. O link Voltar à explicação retoma o ponto de onde vocês vieram."
+    },
+    "por-tras-do-clique": {
+      "time": "Da página ao sistema",
+      "text": "Comece com O botão do laboratório: a mudança acontece no navegador. Só depois selecione Uma consulta ao sistema e percorra navegador, servidor, banco e resposta. Diga que a segunda opção é uma simulação do processo. Conecte o assunto à proteção de dados que circulam."
+    },
+    "codigo-seguro": {
+      "time": "Introdução à cibersegurança",
+      "text": "Teste Visitante e Editor autorizado. A regra é ilustrativa e roda no navegador; sistemas reais verificam a autorização no servidor. Explore contas, permissões e dados. Este bloco usa fundamentos ligados ao que foi explicado e pode ser ajustado quando o grupo definir o recorte de cibersegurança."
+    },
+    "detetive": {
+      "time": "Segurança no cotidiano",
+      "text": "Peça à turma que observe urgência, remetente e pedido de senha ou código. Depois mostre o login não iniciado. O objetivo é praticar uma decisão, com exemplos fictícios. Não há caso real obrigatório nesta sequência; um caso poderá ser incluído depois dentro do recorte de segurança que o grupo escolher."
+    },
+    "carreiras": {
+      "time": "Quatro áreas de carreira",
+      "text": "Apresente exatamente quatro grupos: Desenvolvimento de software, Analista de Suporte/Infraestrutura, Analista de Dados e Cibersegurança. Dentro de software, compare front-end, back-end e full stack. Use as simulações de cada área e explique a entrega do profissional, sem prometer salário ou emprego."
+    },
+    "fabrica": {
+      "time": "As áreas colaboram",
+      "text": "Percorra as situações e destaque quem investiga cada pergunta. Evite tratar toda falha de acesso como um problema de rede: as áreas colaboram. Se precisar mostrar a lógica de um botão, volte ao laboratório. A tecnologia é o assunto central, sem um projeto fictício dominar a apresentação."
+    },
+    "quiz": {
+      "time": "Participação da turma",
+      "text": "Conversem antes de escolher uma resposta. As perguntas retomam, na mesma ordem, construção de páginas, funcionamento e responsabilidades profissionais e segurança. Leia a explicação após cada escolha. As respostas são locais e não medem pessoas ou votos de outros aparelhos."
+    },
+    "primeiro-projeto": {
+      "time": "Primeiros passos",
+      "text": "Peça que a turma escolha uma parte que despertou interesse. Mostre uma primeira prática pequena e as referências. Para software, abra o laboratório. Para as outras áreas, retome a simulação correspondente. Cursos técnicos e superiores são possibilidades, não exigências ou promessas iguais para todos."
+    },
+    "encerramento": {
+      "time": "Perguntas e fechamento",
+      "text": "Retome a jornada: o que aparece na tela é construído, precisa funcionar e exige cuidado. Há diferentes pessoas trabalhando com cada parte. Convide a turma a contar o que entendeu e qual área despertou interesse."
+    },
+    "equipe": {
+      "time": "Créditos",
+      "text": "Agradeça ao público e apresente os integrantes. O conteúdo tem como foco tecnologia para ensino médio. As referências de web e segurança estão disponíveis aqui. Exemplos, mensagens e números das simulações são fictícios, sem coleta de dados reais de alunos."
+    }
   }
 };

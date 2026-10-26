@@ -1,129 +1,120 @@
-# Roteiro de apoio à oficina
+# Roteiro da apresentação
 
-**Fábrica de Software na Prática: Desenvolvimento Web, Cibersegurança e Carreiras em TI**
+**Tema:** tecnologia para alunos do ensino médio, com HTML, CSS, JavaScript, cibersegurança e carreiras em TI.
 
-Público: estudantes do ensino médio e jovens da comunidade escolar, com preferência pelos estudantes de 15 a 17 anos, conforme o projeto de intervenção. Local previsto no projeto: Escola Lions de Parnamirim, Recife/PE.
+A apresentação segue uma sequência de perguntas: o que existe por trás da tela, como uma página ganha vida, como as informações circulam, quais cuidados entram em cena e quem trabalha com essas partes. Sites, contas, recomendações e jogos são exemplos para apoiar os assuntos.
 
-## Organização sugerida: cerca de 90 minutos
+Todo trecho de código é mostrado no laboratório. Nas outras telas, a explicação usa mudanças visuais, esquemas e pequenas decisões. O laboratório mantém as três etapas, os arquivos editáveis, a execução e a restauração do exemplo.
 
-O documento do projeto reserva aproximadamente 25 minutos para web, 20 para segurança, 25 para carreiras e 20 para dinâmica e perguntas. A abertura está incluída no primeiro bloco. Os tempos abaixo são uma sugestão de condução, não um compromisso rígido por tela.
+## Como conduzir
+
+Use uma pergunta curta antes de cada interação. Mostre uma mudança, espere que a turma descreva o que percebeu e só então apresente o nome do conceito. A frase “A seguir” no final de cada etapa prepara a passagem para o próximo assunto.
+
+O tempo de referência do projeto continua em torno de 90 minutos, ajustável ao espaço disponível para conversa. A segurança ainda pode receber outro recorte depois da definição do grupo. A versão atual usa fundamentos e situações fictícias do cotidiano.
 
 | Bloco | Etapas | Tempo de referência |
 | --- | --- | --- |
-| Abertura e desenvolvimento web | 01 a 06 | 25 min |
-| Cibersegurança | 07 a 10 | 20 min |
-| Carreiras e formação | 11 a 13 | 25 min |
-| Quiz, primeiro projeto e conversa final | 14 a 17 | 20 min |
+| Uso cotidiano, HTML/CSS/JS e laboratório | 01 a 05 | 25 min |
+| Cibersegurança | 06 e 07 | 20 min |
+| Quatro áreas e colaboração | 08 e 09 | 25 min |
+| Dinâmica, primeiros passos e perguntas | 10 a 13 | 20 min |
 
-## Sugestão de divisão entre os seis integrantes
+## Sequência das falas
 
-A divisão abaixo serve apenas para ensaio. O grupo pode trocar falas e compartilhar o controle do computador.
+### 01. Tecnologia por trás da tela
 
-| Integrante | Trecho sugerido | Demonstração principal |
-| --- | --- | --- |
-| Anita Gallindo Oliveira | Abertura e tecnologia cotidiana | Interação inicial e conversa com o público |
-| Bianka Moura Batista | Navegador e linguagens | Fluxo de um clique e HTML/CSS/JavaScript |
-| Girlenio Gomes da Silva | Laboratório e fábrica de software | Edição ao vivo e comparação das três etapas |
-| Vanderson Gabriel Vasconcelos Barbosa | Segurança | Caso Uber, mensagem suspeita e permissões |
-| Pedro Vinícius de Almeida Santana | Carreiras e formação | Exploração das nove áreas e desafios reais |
-| Emanuele Vitoria Lima de Sousa | Quiz e encerramento | Respostas coletivas, materiais e perguntas |
+Apresente a equipe e os assuntos: construção de uma página, proteção digital e possibilidades de trabalho. Clique em **Testar ideia**. Pergunte o que aconteceu e diga que o processo será explicado aos poucos.
 
-## Falas e ações por etapa
+### 02. Um toque na tela
 
-### 01. Fábrica de Software na Prática
+Deixe a turma escolher um site, uma conta, uma recomendação ou um jogo online. A interface destaca as partes envolvidas. Não tente explicar tudo agora: comece pelo que aparece no navegador e prepare o assunto HTML/CSS/JS.
 
-“Nós somos o Grupo 04 de Ciência da Computação da UNINASSAU. Hoje vamos conversar sobre como sites são criados, como proteger contas e dados e quais profissões existem em TI.”
+**Transição:** “A primeira parte que vemos é a página. Como ela ganha conteúdo, visual e ações?”
 
-Clique em **Testar ideia**. Pergunte o que mudou na tela. Explique que a própria apresentação foi construída com código.
+### 03. Uma camada de cada vez
 
-### 02. Tecnologia no dia a dia
+Selecione HTML, CSS e JavaScript. A página visual é sempre a mesma, permitindo comparar as camadas. Peça que a turma descreva a mudança antes de apresentar o conceito. O botão só responde no exemplo com JavaScript.
 
-Peça que a turma cite situações conhecidas: uso de aplicativos, criação de conta, links suspeitos e interesse em TI. Marque os assuntos mencionados. Não apresente essas marcações como quantidade de alunos ou pesquisa de resultados.
+Use **Ver essa camada no laboratório** quando precisar mostrar ou editar código. O link seleciona a etapa correspondente.
 
-### 03. O caminho de um clique
+### 04. Laboratório
 
-Use **Próximo passo** para percorrer navegador, servidor, banco e resposta. Exemplo: consultar a programação de uma feira. Explique que esse é um modelo simplificado de um sistema com dados; uma página estática pode funcionar sem banco de dados.
+Mostre **Só HTML**, **+ CSS** e **+ JavaScript**. Clique em **Testar botão**, altere o título e uma cor e execute. Pergunte o que mudou em cada etapa.
 
-### 04. HTML, CSS e JavaScript
+**Restaurar exemplo** recupera o estado inicial. As edições são mantidas ao navegar pelas etapas e ao sair e voltar ao laboratório, enquanto a página não for recarregada. **Voltar à explicação** retoma a tela que abriu o laboratório.
 
-Selecione cada tecnologia. HTML organiza o conteúdo, CSS define a apresentação visual e JavaScript permite comportamentos programados. A analogia da casa é um apoio, não uma definição técnica completa. Leia pequenos trechos sem exigir que o público decore a sintaxe.
+**Transição:** “Essa mensagem mudou aqui no navegador. E quando um sistema precisa buscar uma informação em outro lugar?”
 
-### 05. Laboratório ao vivo
+### 05. Da tela ao sistema
 
-1. Abra **Só HTML**. Mostre título, parágrafo e botão.
-2. Clique no botão da prévia e observe que ainda não existe ação programada.
-3. Ative **+ CSS** e peça que a turma descreva as mudanças.
-4. Ative **+ JavaScript**, clique no botão e veja a mensagem e o contador.
-5. Volte à aba `index.html`, altere o título e execute.
-6. Altere a cor no CSS e execute novamente.
-7. Se necessário, use **Restaurar exemplo**.
+Comece com **O botão do laboratório** e relembre o que a turma acabou de experimentar. Depois selecione **Uma consulta ao sistema**. Percorra navegador, servidor, banco e resposta.
 
-Se a mudança não aparecer, confira a etapa ativa e se o código foi executado. A prévia pode mostrar erros do JavaScript, sem alterar o restante da apresentação. Não copie scripts externos ou use loops infinitos.
+É um modelo simplificado, não uma consulta real. Diferencie a página estática do laboratório de um sistema com dados e regras no servidor.
 
-### 06. Fábrica de software
+**Transição:** “Se informações circulam e diferentes pessoas acessam o sistema, precisamos definir como protegê-las.”
 
-Selecione as seis entregas. Relacione a feira fictícia à necessidade de entender um problema, planejar, dividir trabalho, construir, testar, proteger e melhorar. Segurança e testes acompanham o processo desde o início.
+### 06. Quem pode fazer o quê?
 
-### 07. Caso Uber
+Teste como Visitante e Editor autorizado. Explore Contas, Permissões e Dados. Use a mudança visual como ponto de partida para explicar identidade, autorização e cuidado com informações.
 
-“Em setembro de 2022, a Uber publicou detalhes de um incidente. Segundo a empresa, uma conta de prestador foi comprometida. Pedidos de autenticação se repetiram até que um foi aprovado.”
+A troca de papel é uma simulação no navegador. Em um sistema real, o servidor deve verificar a autorização. Não apresente o exemplo como um mecanismo de autenticação real.
 
-Mostre as quatro etapas e a resposta da empresa. A origem da senha por malware é descrita como provável no comunicado. Evite afirmar que todos os dados dos clientes foram expostos ou apresentar hipóteses como fatos confirmados. O foco é proteção, sem ensinar invasão.
+### 07. Quem está pedindo o acesso?
 
-### 08. Você confiaria?
+Discuta a mensagem fictícia e o pedido de login não iniciado. Peça que a turma identifique urgência, origem desconhecida e solicitação de senha ou código. Registre uma decisão e leia o retorno.
 
-Leia a mensagem fictícia e espere a turma identificar sinais de alerta: urgência, origem desconhecida e pedido de senha e código. Escolham uma ação e leiam o retorno.
+O conteúdo atual é introdutório e pode ser ajustado quando o grupo definir melhor o trecho de cibersegurança. Um caso real não é obrigatório nesta versão. Se for acrescentado depois, conecte-o às perguntas já apresentadas e confira as fontes.
 
-Alterne para **Pedido de login**. Pergunte por que aprovar uma solicitação inesperada pode ser perigoso. Reforce a verificação pelo canal oficial. O endereço `.invalid` é fictício e não abre um serviço.
+**Transição:** “Vimos construção, funcionamento e proteção. Há profissionais trabalhando com cada uma dessas responsabilidades.”
 
-### 09. Hábitos de segurança
+### 08. As quatro áreas de carreira
 
-Abra cada tópico e peça exemplos. Reforce senhas diferentes, segunda etapa, pausa antes do link, atualizações, cópias e cuidado com dados. Não peça senhas reais. Explique que o uso de HTTPS não confirma que uma instituição é legítima.
+Apresente os grupos solicitados:
 
-### 10. Segurança no desenvolvimento
+| Área | O que mostrar |
+| --- | --- |
+| Desenvolvimento de software | Interface, regras e ligação entre partes; front-end, back-end e full stack ficam dentro deste grupo |
+| Analista de Suporte / Infraestrutura | Dispositivo, rede e serviço; simulação de verificação de acesso |
+| Analista de Dados | Comparação de categorias e interpretação de um gráfico com 60 escolhas fictícias |
+| Cibersegurança | Controles de proteção de uma conta e atenção a pedidos inesperados |
 
-Tente editar como visitante e depois como editor. Explique: “Aqui trocamos o papel no navegador só para entender a regra. Num sistema real, o servidor precisa verificar quem é a pessoa e o que ela pode fazer.”
+Abra **O que estudar e como começar** apenas quando fizer sentido para uma pergunta da turma. Não transforme a tela em uma lista extensa de linguagens ou promessas de carreira.
 
-Relacione a regra a validação de dados, permissões mínimas e proteção de chaves. Não afirme que esconder um botão protege um banco de dados.
+### 09. As áreas colaboram
 
-### 11. Áreas de TI
+Selecione situações diferentes e destaque a pergunta que cada área investiga. Uma falha de acesso pode exigir colaboração entre suporte, infraestrutura e desenvolvimento. Uma decisão baseada em dados pode envolver análise e proteção das informações.
 
-Deixe o público escolher áreas. Compare front-end, back-end e full stack. Mostre também análise de dados, banco de dados, infraestrutura, nuvem/DevOps, suporte e cibersegurança. Para cada uma, use o exemplo da feira e uma prática inicial. As funções podem se sobrepor de acordo com a empresa.
+Se precisar explicar a lógica de uma interação, use o laboratório. O foco é entender o processo e as responsabilidades, não decorar nomes de cargos.
 
-### 12. Formação
+### 10. A turma assume a equipe
 
-Apresente aprendizagem por projetos, cursos técnicos e ensino superior. Explique ADS: Análise e Desenvolvimento de Sistemas. Compare propostas de cursos sem prometer emprego imediato. Sugira guardar projetos e explicar as próprias decisões.
+Use o quiz como conversa coletiva. As perguntas retomam as camadas da página, a investigação de acesso, a análise de dados e os cuidados de segurança. Espere a turma conversar antes de escolher.
 
-### 13. Expectativas de carreira
+A primeira resposta fica bloqueada. Ao final, revisem as explicações e os assuntos. Não há ranking individual nem votação simultânea entre celulares.
 
-Fale de possibilidades de atuação e também de estudo contínuo, prazos, testes, erros e busca da primeira oportunidade. Júnior, pleno e sênior variam entre empresas. A remuneração depende de vários fatores; não prometa um valor fixo ou uma vaga garantida.
+### 11. Qual parte despertou curiosidade?
 
-### 14. Quiz coletivo
+Escolha uma primeira prática. Para software, abra o laboratório. Para infraestrutura ou dados, retome as simulações. Para segurança, reveja as decisões sobre contas e mensagens.
 
-Leia cada pergunta. Dê tempo para a turma discutir e registre uma resposta. Leia a explicação antes de avançar. A primeira escolha fica bloqueada naquela pergunta. Ao final, revisem os assuntos e, se desejarem, recomecem o quiz.
+Mostre as referências do MDN e do CERT.br. Os links precisam de internet, mas a apresentação e suas simulações funcionam offline. Cursos técnicos, superiores e projetos são caminhos possíveis, sem garantia de emprego ou remuneração.
 
-O resultado pertence à atividade naquele dispositivo. Não é uma avaliação individual nem uma votação sincronizada entre celulares.
+### 12. Fechamento
 
-### 15. Primeiro projeto
+Pergunte o que mudou na forma como a turma enxerga uma página, um aplicativo ou uma conta. Peça um cuidado digital e uma área que chamou a atenção.
 
-Convide cada interessado a escolher um tema: esporte, música, comunidade, um hobby ou um evento. Mostre os quatro passos e os links do MDN e do CERT.br. A consulta aos links precisa de internet; o conteúdo da oficina continua acessível offline.
+### 13. Equipe e referências
 
-### 16. Conversa final
+Apresente os seis integrantes e as fontes. Os nomes estão em ordem alfabética na tela de créditos. Combinem livremente a divisão das falas durante o ensaio.
 
-Use as perguntas da tela: uma área que chamou atenção, um cuidado de segurança e uma ideia para construir. Abra espaço para dúvidas. Não apresente resultados quantitativos ou relatos de execução que ainda não tenham sido medidos ou registrados.
+## Ensaio
 
-### 17. Equipe e referências
-
-Agradeça ao público e à escola. Apresente os seis integrantes e os materiais de consulta. A fonte do incidente é a atualização oficial da Uber de 19/09/2022. As matrículas acadêmicas e os documentos administrativos não foram incluídos na página pública por não serem necessários para a oficina.
-
-## Ensaio rápido
-
-- [ ] Todos conseguem explicar a própria parte em linguagem simples.
-- [ ] Cada pessoa sabe quando assume e entrega a fala.
-- [ ] O notebook abre `index.html` com a pasta `assets` ao lado.
-- [ ] A oficina abre sem conexão à internet.
-- [ ] O laboratório foi testado nas três etapas.
-- [ ] O grupo sabe restaurar o exemplo e recomeçar o quiz.
-- [ ] A apresentação cabe no projetor ou pode ser rolada com clareza.
-- [ ] Quem apresenta conhece os atalhos e sabe que as notas aparecem na mesma tela.
-- [ ] As perguntas e a conversa final têm tempo reservado.
+- [ ] A passagem de uma tela para outra responde à pergunta anterior.
+- [ ] Os exemplos apoiam os assuntos de tecnologia.
+- [ ] Todo código aparece no laboratório.
+- [ ] O grupo testou HTML, CSS, JavaScript, edição e restauração.
+- [ ] As simulações de conexão, dados e segurança estão claras como exemplos.
+- [ ] Todos sabem voltar do laboratório para a explicação.
+- [ ] O grupo conhece as quatro áreas e suas possibilidades de colaboração.
+- [ ] Há tempo para respostas e perguntas dos alunos.
+- [ ] O conteúdo de cibersegurança foi revisado pelo grupo antes da apresentação.
+- [ ] A pasta foi testada no notebook e no projetor, inclusive sem internet.

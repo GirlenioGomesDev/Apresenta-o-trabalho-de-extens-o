@@ -23,17 +23,22 @@ Abra `http://localhost:5173`. Não há dependências para instalar.
 
 ## O que a oficina contém
 
-- **17 etapas** com navegação, roteiro, progresso, tela cheia e cronômetro.
-- Demonstração do caminho entre navegador, servidor e banco de dados.
-- Explicação de HTML, CSS e JavaScript com exemplos e analogias.
-- **Laboratório editável:** compare HTML, HTML + CSS e HTML + CSS + JavaScript.
-- Etapas de uma fábrica de software, da identificação do problema à manutenção.
-- Caso real da **Uber, setembro de 2022**, com fonte oficial e foco em prevenção.
-- Mensagem suspeita e pedido inesperado de login para discutir com o público.
-- Cuidados com contas e dados, além de uma simulação de permissões.
-- Exploração de **nove áreas de TI**, caminhos de formação e desafios da carreira.
-- **Quiz coletivo com seis perguntas**, explicações, resultado e revisão.
-- Desafio de primeiro projeto, materiais de estudo, equipe e referências.
+- **13 etapas conectadas**, com foco em tecnologia para alunos do ensino médio.
+- Uso cotidiano da tecnologia como ponto de partida, com sites, contas, recomendações e jogos como exemplos.
+- Comparação visual das camadas HTML, CSS e JavaScript.
+- **Laboratório editável preservado:** etapas, arquivos, execução e restauração do exemplo.
+- Links contextuais para abrir uma camada no laboratório e **voltar à explicação de origem**.
+- Modelo visual da interação local e de uma consulta a um sistema com dados.
+- Introdução à cibersegurança com permissões, mensagens e pedidos de acesso.
+- **Quatro áreas:** Desenvolvimento de software, Analista de Suporte/Infraestrutura, Analista de Dados e Cibersegurança.
+- Front-end, back-end e full stack dentro de desenvolvimento de software.
+- Simulações de conexão, interpretação de dados e proteção de conta.
+- **Quiz coletivo com seis perguntas**, resultado e revisão.
+- Primeiras práticas, referências e roteiro de falas.
+
+O conteúdo principal é tecnologia. Os exemplos apoiam as explicações. Todo código é mostrado no laboratório; as outras telas priorizam resultados e processos visuais.
+
+O trecho de cibersegurança usa fundamentos e situações fictícias para manter a sequência conectada. Ele pode ser ajustado quando o grupo definir esse recorte.
 
 ## Controles
 
@@ -59,7 +64,7 @@ Links diretos, como `index.html#laboratorio` e `index.html#carreiras`, abrem a e
 
 1. Em **Só HTML**, mostre o conteúdo. O botão ainda não tem uma ação programada.
 2. Selecione **+ CSS** e compare a aparência.
-3. Selecione **+ JavaScript** e clique em **Quero participar** dentro da prévia.
+3. Selecione **+ JavaScript** e clique em **Testar botão** dentro da prévia.
 4. Nas abas de arquivos, altere o título ou a cor e clique em **Executar**.
 5. Use **Restaurar exemplo** para recuperar o código inicial e voltar à primeira etapa.
 
@@ -73,7 +78,7 @@ As marcações, respostas e decisões são **locais à sessão**. Elas não são
 
 O quiz aceita uma resposta por pergunta, mostra a explicação e permite revisão ao final. **Recomeçar o quiz** limpa as respostas. Não há ranking individual, cadastro ou coleta de dados pessoais.
 
-A troca entre visitante e editor é uma **simulação educativa de uma regra de autorização**. Em um sistema real, essa verificação deve ser imposta pelo servidor. Não use esta interface como controle real de acesso.
+A troca entre visitante e editor é uma **simulação educativa de uma regra de autorização**. A conexão, o gráfico e a proteção de conta também são exemplos locais e fictícios. Em um sistema real, essa verificação deve ser imposta pelo servidor. Não use esta interface como controle real de acesso.
 
 ## Preparação para o dia
 
@@ -89,7 +94,8 @@ A troca entre visitante e editor é uma **simulação educativa de uma regra de 
 | --- | --- |
 | `index.html` | Textos principais, etapas, equipe e estrutura da página |
 | `assets/content.js` | Exemplos, carreiras, perguntas, respostas e notas de apoio |
-| `assets/styles.css` | Cores, fontes, tamanhos e comportamento responsivo |
+| `assets/styles.css` | Base visual, controles e laboratório |
+| `assets/story.css` | Comparações, simulações visuais e transições entre os assuntos |
 | `assets/app.js` | Navegação, interações, laboratório e quiz |
 | `assets/logic.js` | Funções de navegação, pontuação e isolamento da prévia |
 | `docs/ROTEIRO.md` | Sugestão de falas e organização da oficina |
@@ -105,7 +111,7 @@ Com Node.js 20 ou superior:
 npm run check
 ```
 
-O comando verifica a sintaxe e executa testes de navegação, âncoras, notas, respostas e pontuação, permissões ilustrativas e restrições da prévia. O fluxo de GitHub Actions executa essas verificações em novos commits e pull requests. Os testes não substituem a conferência visual e a passagem da oficina pelo grupo.
+O comando verifica a sintaxe e executa testes da sequência dos assuntos, localização dos exemplos de código, quatro grupos de carreira, navegação, âncoras, notas, pontuação e isolamento da prévia. O fluxo de GitHub Actions executa essas verificações em novos commits e pull requests. Os testes não substituem a conferência visual e a passagem da oficina pelo grupo.
 
 ## Hospedar no GitHub Pages, se quiser um link
 

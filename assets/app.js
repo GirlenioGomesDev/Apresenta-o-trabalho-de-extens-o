@@ -28,9 +28,11 @@
   function renderScene(index, focus) {
     const safeIndex = logic.clampIndex(index, scenes.length);
     if (current === safeIndex) return;
+    const previousId = current >= 0 ? scenes[current].id : null;
     current = safeIndex;
     scenes.forEach((scene, sceneIndex) => { scene.hidden = sceneIndex !== current; });
     const scene = scenes[current];
+    if (scene.id === 'laboratorio') $('#lab-return').setAttribute('href', '#' + (previousId || 'linguagens'));
     document.body.dataset.theme = scene.dataset.theme || 'light';
     document.title = scene.dataset.title + ' · Fábrica de Software';
     $('#scene-number').textContent = String(current + 1).padStart(2, '0');
@@ -102,6 +104,8 @@
     const dialog = link.closest('dialog');
     if (dialog && dialog.open) dialog.close();
     go(index);
+    if (link.dataset.labEntry) setLabStage(Number(link.dataset.labEntry));
+    if (link.dataset.careerEntry) setCareer(link.dataset.careerEntry);
   });
 
   function setNotes(open) {
@@ -166,14 +170,18 @@
   let heroClicks = 0;
   $('#hero-try').addEventListener('click', () => {
     heroClicks += 1;
-    $('#hero-message').textContent = heroClicks === 1 ? 'Você acabou de interagir com JavaScript.' : 'A sua ideia já respondeu a ' + heroClicks + ' cliques.';
+    $('#hero-message').textContent = heroClicks === 1 ? 'A página respondeu ao seu clique.' : 'Você já experimentou ' + heroClicks + ' interações.';
   });
 
-  $$('[data-audience]').forEach(button => button.addEventListener('click', () => {
-    button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
-    const count = $$('[data-audience][aria-pressed="true"]').length;
-    $('#audience-count').textContent = count + ' de 4 situações exploradas';
-  }));
+  function setExperience(id) {
+    const experience = data.experiences[id];
+    selectButtons('[data-experience]', 'data-experience', id);
+    $('#experience-title').textContent = experience.title;
+    $('#experience-explanation').textContent = experience.text;
+    $$('[data-experience-layer]').forEach(layer => layer.classList.toggle('active', experience.focus.includes(layer.dataset.experienceLayer)));
+  }
+  $$('[data-experience]').forEach(button => button.addEventListener('click', () => setExperience(button.dataset.experience)));
+  setExperience('site');
 
   function selectButtons(selector, attribute, value) {
     $$(selector).forEach(button => {
@@ -195,15 +203,38 @@
   $$('[data-request-step]').forEach(button => button.addEventListener('click', () => setRequestStep(Number(button.dataset.requestStep))));
   $('#request-next').addEventListener('click', () => setRequestStep((requestStep + 1) % data.request.length));
 
-  $$('[data-language]').forEach(button => button.addEventListener('click', () => {
-    const language = button.dataset.language;
-    selectButtons('[data-language]', 'data-language', language);
+  let layerClicks = 0;
+  function setLanguage(language) {
     const content = data.languages[language];
-    $('#language-analogy').textContent = content.analogy;
+    selectButtons('[data-language]', 'data-language', language);
     $('#language-heading').textContent = content.heading;
     $('#language-text').textContent = content.text;
-    $('#language-code').textContent = content.code;
-    $('#language-hint').textContent = content.hint;
+    $('#layer-browser').dataset.layer = language;
+    $('#layer-action').disabled = language !== 'js';
+    $('#layer-message').textContent = '';
+    $('#language-lab-link').dataset.labEntry = String(content.stage);
+    layerClicks = 0;
+  }
+  $$('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+  $('#layer-action').addEventListener('click', () => {
+    layerClicks += 1;
+    $('#layer-message').textContent = 'A página respondeu! Cliques: ' + layerClicks;
+  });
+
+  $$('[data-route-mode]').forEach(button => button.addEventListener('click', () => {
+    const mode = button.dataset.routeMode;
+    selectButtons('[data-route-mode]', 'data-route-mode', mode);
+    $('#local-route').hidden = mode !== 'local';
+    $('#server-route').hidden = mode !== 'servidor';
+  }));
+
+  $$('[data-safety]').forEach(button => button.addEventListener('click', () => {
+    const value = button.dataset.safety;
+    const content = data.safety[value];
+    selectButtons('[data-safety]', 'data-safety', value);
+    $('#safety-symbol').textContent = content.symbol;
+    $('#safety-heading').textContent = content.heading;
+    $('#safety-text').textContent = content.text;
   }));
 
   let labStage = 1;
@@ -212,7 +243,7 @@
   const stageDescriptions = [
     'Só HTML: o conteúdo já existe, ainda sem estilo ou interação.',
     'HTML + CSS: a mesma estrutura agora tem cores, tamanhos e organização.',
-    'HTML + CSS + JavaScript: clique em “Quero participar” na prévia.'
+    'HTML + CSS + JavaScript: clique em “Testar botão” na prévia.'
   ];
 
   function setEditor(language, focus = false) {
@@ -271,16 +302,12 @@
 
   $$('[data-factory]').forEach(button => button.addEventListener('click', () => {
     const index = Number(button.dataset.factory);
+    const item = data.factory[index];
     selectButtons('[data-factory]', 'data-factory', index);
-    $('#factory-deliverable').textContent = 'ENTREGA: ' + data.factory[index].deliverable;
-    $('#factory-text').textContent = data.factory[index].text;
-  }));
-  $$('[data-incident]').forEach(button => button.addEventListener('click', () => {
-    const index = Number(button.dataset.incident);
-    selectButtons('[data-incident]', 'data-incident', index);
-    $('#incident-number').textContent = String(index + 1).padStart(2, '0');
-    $('#incident-heading').textContent = data.incident[index].heading;
-    $('#incident-text').textContent = data.incident[index].text;
+    $('#factory-deliverable').textContent = item.deliverable;
+    $('#factory-text').textContent = item.text;
+    $('#factory-career-link').dataset.careerEntry = item.career;
+    $$('[data-team]').forEach(label => label.classList.toggle('active', label.dataset.team === item.career));
   }));
   $$('[data-scenario]').forEach(button => button.addEventListener('click', () => {
     const value = button.dataset.scenario;
@@ -289,9 +316,9 @@
     $('#mfa-scenario').hidden = value !== 'mfa';
   }));
   const decisionFeedback = {
-    'phishing-open': { target: 'phishing', good: false, text: 'A pressa aumenta o risco. A mensagem pede senha e código, usa um número desconhecido e ameaça bloquear a matrícula. Confirme com a escola por um canal oficial, sem abrir o link.' },
-    'phishing-check': { target: 'phishing', good: true, text: 'Boa decisão. Procure a escola por um canal oficial conhecido. Urgência, pedido de senha e código e origem desconhecida são sinais de alerta. Um logotipo não comprova autenticidade.' },
-    'mfa-approve': { target: 'mfa', good: false, text: 'Aprovar pode liberar o acesso de outra pessoa. Se você não iniciou o login, negue e revise a atividade da conta pelo serviço oficial. Foi uma lição central do caso da Uber.' },
+    'phishing-open': { target: 'phishing', good: false, text: 'A pressa aumenta o risco. A mensagem pede senha e código, usa um número desconhecido e ameaça suspender a conta. Confirme pelo aplicativo ou site oficial, sem abrir o link.' },
+    'phishing-check': { target: 'phishing', good: true, text: 'Boa decisão. Procure o serviço pelo aplicativo ou site oficial. Urgência, pedido de senha e código e origem desconhecida são sinais de alerta. Um logotipo não comprova autenticidade.' },
+    'mfa-approve': { target: 'mfa', good: false, text: 'Aprovar pode liberar o acesso de outra pessoa. Se você não iniciou o login, negue e revise a atividade da conta pelo serviço oficial.' },
     'mfa-deny': { target: 'mfa', good: true, text: 'Boa decisão. Negue a solicitação inesperada. Revise as sessões e a atividade da conta pelo canal oficial e proteja as credenciais se houver indícios de comprometimento.' }
   };
   $$('[data-decision]').forEach(button => button.addEventListener('click', () => {
@@ -307,23 +334,71 @@
   $$('[data-role]').forEach(button => button.addEventListener('click', () => {
     selectedRole = button.dataset.role;
     selectButtons('[data-role]', 'data-role', selectedRole);
-    $('#permission-status').textContent = 'Papel selecionado: ' + (selectedRole === 'editor' ? 'editor autorizado.' : 'visitante.') + ' Tente editar.';
+    $('#permission-status').textContent = 'Papel selecionado: ' + (selectedRole === 'editor' ? 'editor autorizado.' : 'visitante.') + ' Tente editar o conteúdo.';
   }));
   $('#permission-try').addEventListener('click', () => {
     $('#permission-status').textContent = logic.canEdit(selectedRole)
       ? 'Permitido nesta simulação: o papel de editor tem autorização. Em um sistema real, o servidor deve verificar essa permissão.'
-      : 'Acesso negado nesta simulação: visitantes podem consultar, mas não alterar a programação.';
+      : 'Acesso negado nesta simulação: visitantes podem consultar, mas não alterar o conteúdo.';
   });
+
+  let softwareView = 'front';
+  let infrastructureStep = 0;
+  let dataConclusionVisible = false;
+  let cyberSecondStep = false;
+
+  function careerVisual(id) {
+    const e = logic.escapeHTML;
+    if (id === 'software') {
+      const view = data.softwareViews[softwareView];
+      return '<div class="career-visual software-visual"><div class="software-role-tabs" aria-label="Partes do desenvolvimento de software">' + Object.entries(data.softwareViews).map(([key, item]) => '<button data-software-view="' + key + '" aria-pressed="' + (key === softwareView) + '" class="' + (key === softwareView ? 'active' : '') + '">' + e(item.label) + '</button>').join('') + '</div><div class="software-parts"><div class="' + (softwareView !== 'back' ? 'active' : '') + '"><span>▱</span><b>Interface</b><small>O que você usa</small></div><span class="part-connector" aria-hidden="true">↔</span><div class="' + (softwareView !== 'front' ? 'active' : '') + '"><span>⚙</span><b>Servidor</b><small>Regras e dados</small></div></div><p class="visual-caption">' + e(view.text) + '</p><a class="text-link" href="#laboratorio" data-lab-entry="3">Ver a interação no laboratório <span>↗</span></a></div>';
+    }
+    if (id === 'infra') {
+      const messages = ['Por onde começar a investigar?', 'Primeiro: conferir o dispositivo.', 'Depois: conferir a conexão com a rede.', 'Também: conferir se o serviço está disponível.'];
+      const names = ['Dispositivo', 'Rede', 'Serviço'];
+      return '<div class="career-visual infra-visual"><span class="mini-label">SIMULAÇÃO / UM ACESSO QUE NÃO FUNCIONA</span><div class="network-parts">' + names.map((name,index) => '<div class="' + (infrastructureStep > index ? 'checked' : '') + '"><span class="network-status">' + (infrastructureStep > index ? '✓' : '?') + '</span><b>' + name + '</b><small>' + (infrastructureStep > index ? 'Conferido no exemplo' : 'A verificar') + '</small></div>').join('') + '</div><p class="visual-caption" role="status">' + messages[infrastructureStep] + '</p><button class="visual-action" id="infra-check">' + (infrastructureStep === 3 ? 'Recomeçar a simulação ↺' : 'Simular próxima verificação →') + '</button></div>';
+    }
+    if (id === 'dados') {
+      const total = data.demand.reduce((sum,item) => sum + item.value,0);
+      const max = Math.max(...data.demand.map(item => item.value),1);
+      return '<div class="career-visual data-visual"><div class="data-visual-header"><span class="mini-label">PREFERÊNCIAS POR CONTEÚDO</span><small>Dados fictícios / ' + total + ' escolhas</small></div><div class="demo-bar-chart" role="img" aria-label="Exemplo fictício: ' + data.demand.map(item=>e(item.label)+' '+item.value).join(', ') + '">' + data.demand.map(item => '<div class="demo-bar-row"><span>' + e(item.label) + '</span><div class="demo-bar-track"><div style="width:' + (item.value/max*100) + '%"></div></div><b>' + item.value + '</b></div>').join('') + '</div><p class="visual-caption" id="data-conclusion">' + (dataConclusionVisible ? 'Neste exemplo, Jogos teve 24 das 60 escolhas. Os dados ajudam a comparar preferências.' : 'Qual categoria aparece mais neste conjunto de dados?') + '</p><button class="visual-action" id="data-interpret">' + (dataConclusionVisible ? 'Voltar à pergunta ↺' : 'Mostrar uma interpretação →') + '</button></div>';
+    }
+    return '<div class="career-visual cyber-visual"><span class="mini-label">SIMULAÇÃO / PROTEÇÃO DE UMA CONTA</span><div class="account-protection"><span class="account-avatar">◎</span><div><b>Uma conta de usuário</b><small>Senha + permissões + cuidado com os acessos</small></div><span class="protection-indicator' + (cyberSecondStep ? ' active' : '') + '">' + (cyberSecondStep ? '2 etapas' : '1 etapa') + '</span></div><div class="protection-layers"><span class="active">Senha diferente</span><span class="' + (cyberSecondStep ? 'active' : '') + '">Segunda etapa</span><span class="active">Permissões revisadas</span></div><p class="visual-caption">' + (cyberSecondStep ? 'A segunda etapa acrescenta uma camada de proteção. Pedidos inesperados ainda precisam ser negados.' : 'A proteção combina controles técnicos e atenção das pessoas.') + '</p><button class="visual-action" id="cyber-second-step" aria-pressed="' + cyberSecondStep + '">' + (cyberSecondStep ? 'Recomeçar a simulação ↺' : 'Simular segunda etapa →') + '</button></div>';
+  }
 
   function setCareer(id) {
     const career = data.careers.find(item => item.id === id) || data.careers[0];
     selectButtons('[data-career]', 'data-career', career.id);
-    const esc = logic.escapeHTML;
-    $('#career-detail').innerHTML = '<span class="mini-label">' + esc(career.label.toUpperCase()) + '</span><h3>' + esc(career.question) + '</h3><p class="career-description">' + esc(career.description) + '</p><div class="career-example">' + esc(career.example) + '</div><div class="career-basics"><div><span class="mini-label">O QUE ESTUDAR</span><p>' + esc(career.skills) + '</p></div><div><span class="mini-label">UMA PRIMEIRA PRÁTICA</span><p>' + esc(career.start) + '</p></div></div>';
+    const e = logic.escapeHTML;
+    $('#career-detail').innerHTML = '<span class="mini-label">' + e(career.label.toUpperCase()) + '</span><h3>' + e(career.question) + '</h3><p class="career-description">' + e(career.description) + '</p>' + careerVisual(career.id) + '<p class="career-delivery">' + e(career.delivery) + '</p><details class="career-first-step"><summary>O que estudar e como começar <span>+</span></summary><div><p><b>Fundamentos:</b> ' + e(career.skills) + '</p><p><b>Uma primeira prática:</b> ' + e(career.start) + '</p></div></details>';
+    $$('[data-software-view]').forEach(button => button.addEventListener('click', () => {
+      softwareView = button.dataset.softwareView;
+      setCareer('software');
+      $('[data-software-view="' + softwareView + '"]').focus({preventScroll:true});
+    }));
+    if ($('#infra-check')) $('#infra-check').addEventListener('click', () => { infrastructureStep = (infrastructureStep + 1) % 4; setCareer('infra'); $('#infra-check').focus({preventScroll:true}); });
+    if ($('#data-interpret')) $('#data-interpret').addEventListener('click', () => { dataConclusionVisible = !dataConclusionVisible; setCareer('dados'); $('#data-interpret').focus({preventScroll:true}); });
+    if ($('#cyber-second-step')) $('#cyber-second-step').addEventListener('click', () => { cyberSecondStep = !cyberSecondStep; setCareer('cyber'); $('#cyber-second-step').focus({preventScroll:true}); });
   }
-  $('#career-menu').innerHTML = data.careers.map(career => '<button data-career="' + career.id + '" aria-pressed="false"><span>' + logic.escapeHTML(career.symbol) + '</span>' + logic.escapeHTML(career.label) + '</button>').join('');
+  $('#career-menu').innerHTML = data.careers.map(career => '<button data-career="' + career.id + '" aria-pressed="false"><span class="career-menu-symbol">' + logic.escapeHTML(career.symbol) + '</span><span class="career-menu-copy"><b>' + logic.escapeHTML(career.label) + '</b><small>' + logic.escapeHTML(career.short) + '</small></span><span class="career-menu-arrow">↗</span></button>').join('');
   $$('[data-career]').forEach(button => button.addEventListener('click', () => setCareer(button.dataset.career)));
   setCareer(data.careers[0].id);
+
+  function setStart(id) {
+    const item = data.starts[id];
+    selectButtons('[data-start]', 'data-start', id);
+    $('#start-area').textContent = item.area;
+    $('#start-heading').textContent = item.heading;
+    $('#start-text').textContent = item.text;
+    const action = $('#start-action');
+    action.setAttribute('href', item.href);
+    action.innerHTML = logic.escapeHTML(item.action) + ' <svg aria-hidden="true"><use href="#i-arrow"/></svg>';
+    delete action.dataset.labEntry;
+    delete action.dataset.careerEntry;
+    if (id === 'software') action.dataset.labEntry = '3';
+    else if (item.href === '#carreiras') action.dataset.careerEntry = id;
+  }
+  $$('[data-start]').forEach(button => button.addEventListener('click', () => setStart(button.dataset.start)));
 
   let quizIndex = 0;
   let quizAnswers = Array(data.quiz.length).fill(null);

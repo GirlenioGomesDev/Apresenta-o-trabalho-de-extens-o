@@ -12,7 +12,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ids = [...html.matchAll(/<section class="scene[^>]* id="([^"]+)"/g)].map(match => match[1]);
 
 test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () => {
-  assert.equal(ids.length, 17);
+  assert.equal(ids.length, 13);
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.ok(data.notes[id], 'Notas ausentes para ' + id);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
@@ -23,7 +23,7 @@ test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () =
 });
 
 test('navegação aceita links diretos e trata fragmentos inválidos', () => {
-  assert.equal(logic.resolveIndex('#laboratorio', ids), 4);
+  assert.equal(logic.resolveIndex('#laboratorio', ids), ids.indexOf('laboratorio'));
   assert.equal(logic.resolveIndex('#inexistente', ids), 0);
   assert.equal(logic.resolveIndex('#%E0%A4%A', ids), 0);
   assert.equal(logic.clampIndex(-10, ids.length), 0);
@@ -49,7 +49,25 @@ test('toda pergunta tem uma resposta válida e uma explicação', () => {
     assert.ok(question.options[question.correct]);
     assert.ok(question.explanation.length > 30);
   }
-  assert.equal(data.careers.length, 9);
+  assert.deepEqual(Array.from(data.careers, career => career.id), ['software', 'infra', 'dados', 'cyber']);
+});
+
+test('a sequência liga construção, funcionamento, proteção e profissões', () => {
+  const flow = ['vida-digital', 'linguagens', 'laboratorio', 'por-tras-do-clique', 'codigo-seguro', 'detetive', 'carreiras', 'fabrica', 'quiz'];
+  for (let index = 1; index < flow.length; index += 1) {
+    assert.ok(ids.indexOf(flow[index - 1]) < ids.indexOf(flow[index]));
+  }
+  for (const section of html.matchAll(/<section class="scene[^>]*id="([^"]+)"[\s\S]*?<\/section>/g)) {
+    if (section[1] !== 'laboratorio') assert.doesNotMatch(section[0], /<(?:pre|code|textarea)\b/);
+  }
+  assert.doesNotMatch(html, /feira|uber/i);
+});
+
+test('links do laboratório selecionam apenas camadas válidas e os dados são ilustrativos', () => {
+  for (const [, stage] of html.matchAll(/data-lab-entry="([^"]+)"/g)) assert.ok([1, 2, 3].includes(Number(stage)));
+  assert.equal(data.demand.reduce((sum, row) => sum + row.value, 0), 60);
+  assert.ok(data.demand.every(row => Number.isInteger(row.value) && row.value >= 0));
+  assert.deepEqual(Object.keys(data.starts), ['software', 'infra', 'dados', 'cyber']);
 });
 
 test('a regra ilustrativa de permissão nega papéis desconhecidos', () => {
@@ -84,5 +102,5 @@ test('texto do quiz é escapado e cronômetro suporta mais de uma hora', () => {
 test('a apresentação não depende de CDNs, fontes remotas ou bibliotecas externas', () => {
   assert.ok(!/<script[^>]+src="https?:/i.test(html));
   assert.ok(!/<link[^>]+href="https?:/i.test(html));
-  for (const [, filename] of html.matchAll(/(?:src|href)="(assets\/[^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, filename)));
+  for (const [, filename] of html.matchAll(/(?:src|href)="(assets\/[^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, filename.split('?')[0])));
 });
