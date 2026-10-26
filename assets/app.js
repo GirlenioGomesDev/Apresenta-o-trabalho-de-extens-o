@@ -217,7 +217,10 @@
     $('#layer-browser').dataset.layer = language;
     $('#layer-action').disabled = language !== 'js';
     $('#layer-message').textContent = '';
-    $('#language-lab-link').dataset.labEntry = String(content.stage);
+    const labLink = $('#language-lab-link');
+    labLink.setAttribute('href', {html:'#lab-html',css:'#lab-css-layout',js:'#laboratorio'}[language]);
+    if (language === 'js') labLink.dataset.labEntry = '3';
+    else delete labLink.dataset.labEntry;
     layerClicks = 0;
     $('.layer-robot').style.setProperty('--energia', '0%');
   }
@@ -285,7 +288,7 @@
     $('#lab-status').classList.remove('has-error');
     $('#lab-status').textContent = 'Código aplicado. Etapa ' + labStage + ' de 3.';
     $('#web-console').replaceChildren();
-    $('#lab-preview').srcdoc = logic.buildPreview({ html: editors.html.value, css: editors.css.value, js: editors.js.value, stage: labStage, token: labToken });
+    $('#lab-preview').srcdoc = logic.buildPreview({ html: editors.html.value, css: (data.exampleSupport.css || '') + '\n' + editors.css.value, js: editors.js.value + '\n' + (data.exampleSupport.js || ''), stage: labStage, token: labToken });
   }
   function setLabStage(stage) {
     labStage = stage;
@@ -408,19 +411,33 @@
   let quizFinished = false;
   const quizHost = $('#quiz-content');
   const esc = logic.escapeHTML;
+  const quizPicker = $('#quiz-question-picker');
+  quizPicker.innerHTML = data.quiz.map((question,index) => '<option value="' + index + '">' + String(index + 1).padStart(2,'0') + '. ' + esc(question.question) + '</option>').join('');
+  quizPicker.addEventListener('change', () => { quizIndex = Number(quizPicker.value); quizFinished = false; renderQuiz(true); });
+  const participationPrompts = {
+    voluntario: 'Alguém quer responder? O que fez você escolher essa alternativa?',
+    convite: 'Posso convidar você para responder? Pode passar a vez. Qual pista ajudou na sua escolha?',
+    dupla: 'Conversem em dupla por alguns instantes. Quem quer compartilhar a resposta e o motivo?'
+  };
+  $$('[data-participation]').forEach(button => button.addEventListener('click', () => {
+    selectButtons('[data-participation]','data-participation',button.dataset.participation);
+    $('#participation-prompt').textContent = participationPrompts[button.dataset.participation];
+  }));
 
   function renderQuiz(focusQuestion = false) {
     if (quizFinished) { renderQuizResult(); return; }
+    quizPicker.value = String(quizIndex);
     const question = data.quiz[quizIndex];
     const answer = quizAnswers[quizIndex];
     const answered = answer != null;
-    const progress = data.quiz.map((_, index) => '<span class="' + (index <= quizIndex ? 'filled' : '') + '"></span>').join('');
+    const allAnswered = quizAnswers.every(answer => answer != null);
+    const progress = data.quiz.map((_, index) => '<span class="' + (quizAnswers[index] != null ? 'filled' : '') + '"></span>').join('');
     quizHost.innerHTML = '<div class="quiz-meta"><span>PERGUNTA ' + String(quizIndex + 1).padStart(2, '0') + ' / ' + String(data.quiz.length).padStart(2, '0') + '</span><span class="quiz-mini-progress" aria-hidden="true">' + progress + '</span></div><h3 class="quiz-question" tabindex="-1">' + esc(question.question) + '</h3><div class="quiz-options">' + question.options.map((option, index) => {
       const correct = answered && index === question.correct;
       const wrong = answered && index === answer && index !== question.correct;
       const state = correct ? ' <span class="answer-state">CORRETA ✓</span>' : wrong ? ' <span class="answer-state">SUA RESPOSTA</span>' : '';
       return '<button class="quiz-option' + (correct ? ' correct' : '') + (wrong ? ' wrong' : '') + '" data-answer="' + index + '"' + (answered ? ' disabled' : '') + '><span class="answer-letter">' + String.fromCharCode(65 + index) + '</span><span>' + esc(option) + '</span>' + state + '</button>';
-    }).join('') + '</div><div class="quiz-feedback' + (!answered ? ' waiting' : '') + '" role="status">' + (answered ? '<strong>' + (answer === question.correct ? 'Isso mesmo. ' : 'Vamos entender. ') + '</strong>' + esc(question.explanation) : 'Conversem antes de escolher. A explicação aparece depois da resposta.') + '</div><div class="quiz-controls"><button class="text-link" data-quiz-previous' + (quizIndex === 0 ? ' disabled' : '') + '>← Pergunta anterior</button><button class="button primary" data-quiz-next' + (!answered ? ' disabled' : '') + '>' + (quizIndex === data.quiz.length - 1 ? 'Ver resultado' : 'Próxima pergunta') + ' <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>';
+    }).join('') + '</div><div class="quiz-feedback' + (!answered ? ' waiting' : '') + '" role="status">' + (answered ? '<strong>' + (answer === question.correct ? 'Isso mesmo. ' : 'Vamos entender. ') + '</strong>' + esc(question.explanation) : 'Conversem antes de escolher. A explicação aparece depois da resposta.') + '</div><div class="quiz-controls"><button class="text-link" data-quiz-previous' + (quizIndex === 0 ? ' disabled' : '') + '>← Pergunta anterior</button><button class="button primary" data-quiz-next' + (!answered ? ' disabled' : '') + '>' + (allAnswered ? 'Ver resultado' : 'Próxima pergunta') + ' <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>';
     $$('[data-answer]').forEach(button => button.addEventListener('click', () => {
       quizAnswers = logic.recordAnswer(quizAnswers, quizIndex, Number(button.dataset.answer), data.quiz);
       renderQuiz();
@@ -429,7 +446,8 @@
     $('[data-quiz-previous]').addEventListener('click', () => { quizIndex = Math.max(0, quizIndex - 1); renderQuiz(true); });
     $('[data-quiz-next]').addEventListener('click', () => {
       if (quizAnswers[quizIndex] == null) return;
-      if (quizIndex === data.quiz.length - 1) quizFinished = true;
+      if (quizAnswers.every(answer => answer != null)) quizFinished = true;
+      else if (quizIndex === data.quiz.length - 1) quizIndex = quizAnswers.findIndex(answer => answer == null);
       else quizIndex += 1;
       renderQuiz(true);
     });

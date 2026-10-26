@@ -16,7 +16,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ids = [...html.matchAll(/<section class="scene[^>]* id="([^"]+)"/g)].map(match => match[1]);
 
 test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () => {
-  assert.equal(ids.length, 46);
+  assert.equal(ids.length, 50);
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.ok(data.notes[id], 'Notas ausentes para ' + id);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
@@ -57,7 +57,7 @@ test('toda pergunta tem uma resposta válida e uma explicação', () => {
 });
 
 test('a sequência liga construção, funcionamento, proteção e profissões', () => {
-  const flow = ['vida-digital', 'linguagens', 'laboratorio', 'por-tras-do-clique', 'carreiras', 'lab-software', 'lab-infra', 'lab-dados', 'lab-cyber', 'codigo-seguro', 'detetive', 'fabrica', 'quiz'];
+  const flow = ['vida-digital', 'web-na-tela', 'linguagens', 'logica-passos', 'logica-decisoes', 'laboratorio', 'carreiras', 'por-tras-do-clique', 'lab-software', 'lab-infra', 'infra-cabo', 'lab-dados', 'lab-cyber', 'codigo-seguro', 'detetive', 'fabrica', 'quiz'];
   for (let index = 1; index < flow.length; index += 1) {
     assert.ok(ids.indexOf(flow[index - 1]) < ids.indexOf(flow[index]));
   }
@@ -69,7 +69,7 @@ test('a sequência liga construção, funcionamento, proteção e profissões', 
 
 test('links do laboratório selecionam apenas camadas válidas e os dados são ilustrativos', () => {
   for (const [, stage] of html.matchAll(/data-lab-entry="([^"]+)"/g)) assert.ok([1, 2, 3].includes(Number(stage)));
-  assert.deepEqual(Object.keys(lessons), ['software', 'infra', 'dados', 'cyber']);
+  assert.deepEqual(Object.keys(lessons), ['software']);
   for (const id of Object.keys(lessons)) assert.match(html, new RegExp('data-live-lab="' + id + '"'));
   assert.deepEqual(Object.keys(data.starts), ['software', 'infra', 'dados', 'cyber']);
 });
@@ -110,31 +110,6 @@ test('o código editável de software recalcula o placar e emite console.log', (
   assert.equal(original.logs[0].text, 'Placar: 30');
   const edited = execute(lessons.software.code.replace('* 10', '* 50'), { estrelas: 3 });
   assert.equal(edited.output.pontos, 150);
-});
-
-test('o diagnóstico executado responde aos sinais e o desafio permite encontrar o bug', () => {
-  for (const [redeAtiva, servidorAtivo, expected] of [[false,true,'rede'],[true,false,'servidor'],[true,true,'online'],[false,false,'rede']]) {
-    assert.equal(execute(lessons.infra.code,{redeAtiva,servidorAtivo}).output.status,expected);
-  }
-  assert.equal(execute(lessons.infra.alternate,{redeAtiva:false,servidorAtivo:true}).output.status,'online');
-});
-
-test('listas editadas geram os dados e o total usados pelo gráfico', () => {
-  const original=execute(lessons.dados.code,{}).output;
-  assert.deepEqual(original,{valores:[12,8,5],total:25});
-  const edited=execute(lessons.dados.code.replace('[12, 8, 5]','[30, 8, 5]'),{}).output;
-  assert.deepEqual(edited,{valores:[30,8,5],total:43});
-  assert.equal(execute(lessons.dados.alternate,{}).output.total,35);
-});
-
-test('a porta segue a função editada e combina papel e segunda etapa', () => {
-  for (const papel of ['visitante','editor','revisor']) {
-    for (const segundaEtapa of [false,true]) {
-      assert.equal(execute(lessons.cyber.code,{papel,segundaEtapa}).output.permitido,papel==='editor'&&segundaEtapa);
-    }
-  }
-  assert.equal(execute(lessons.cyber.alternate,{papel:'revisor',segundaEtapa:true}).output.permitido,true);
-  assert.equal(execute(lessons.cyber.alternate,{papel:'revisor',segundaEtapa:false}).output.permitido,false);
 });
 
 test('erros de edição são devolvidos, e o visual só aceita o contrato esperado', () => {

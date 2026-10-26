@@ -16,6 +16,10 @@ Referências primárias e documentação consultadas para a oficina, com verific
 - **GitLab · postmortem do incidente de 31/01/2017.** Postmortem oficial do incidente de 31 de janeiro, publicado em 10 de fevereiro de 2017. Diferenciar perda de dados do banco e indisponibilidade dos repositórios de código. <https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/>.
 - **NAO · investigação WannaCry e NHS, 2017.** Investigação oficial sobre o ataque de 12 de maio de 2017 e o NHS da Inglaterra. Atualizações, continuidade e preparação são camadas; não são garantia absoluta de segurança. <https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/>.
 
+## Cabeamento e instrumentos
+
+- **Fluke Networks · Network Cable Testers.** Diferença entre verificar continuidade e ordem dos contatos, qualificar aplicações e certificar o cabeamento. O simulador representa um cabo direto com expectativa 1:1; não mede desempenho. <https://www.flukenetworks.com/expertise/learn-about/cable-testing>.
+
 ## Conceitos web e segurança
 
 - **MDN Web Docs. HTML.** <https://developer.mozilla.org/pt-BR/docs/Web/HTML>.
@@ -28,7 +32,8 @@ Referências primárias e documentação consultadas para a oficina, com verific
 
 - Todos os conjuntos de dados, personagens, papéis, pedidos e estados de conexão são fictícios.
 - Os laboratórios não consultam equipamentos, contas ou redes reais. Não há malware ou comandos destrutivos.
-- `entrada` e `mostrar` são recursos educativos próprios; não são APIs nativas do JavaScript.
+- Nos laboratórios de desenvolvimento, `entrada` e `mostrar` são recursos educativos próprios; não são APIs nativas do JavaScript. Nas carreiras de infraestrutura, dados e cibersegurança não há código a editar.
+- A prática física usa o cabo e o testador disponíveis, seguindo o modelo. A animação não substitui uma certificação de cabeamento.
 - A autorização real é aplicada pelo servidor. Trocar um papel na interface não protege um sistema.
 - A regra de excluir durações acima de 120 minutos vem do cenário fictício da atividade, não de uma recomendação geral para remover valores extremos.
 - Um eixo recortado pode servir à análise de pequenas diferenças, desde que seja declarado; a atividade compara a percepção sem mudar os dados.

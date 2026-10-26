@@ -31,5 +31,49 @@
   }
   function moduleStart(scenes,id){return scenes.find(scene=>scene.module===id)?.id||scenes[0]?.id||'inicio';}
   function totals(course){return course.modules.map(module=>({id:module.id,minutes:course.scenes.filter(scene=>scene.module===module.id).reduce((sum,scene)=>sum+scene.minutes,0)}));}
-  return {validate,moduleStart,totals};
+  function networkStatus(input){
+    if(!input.connected)return {stage:'rede',evidence:'O dispositivo não alcança a rede. Comece pela conexão.'};
+    if(!input.dns)return {stage:'dns',evidence:'A conexão está disponível, mas o nome não encontra um endereço neste cenário.'};
+    if(input.http===404)return {stage:'http',evidence:'O serviço respondeu 404: o recurso pedido não foi encontrado.'};
+    if(input.http!==200)return {stage:'http',evidence:'O serviço respondeu 503: está indisponível neste cenário.'};
+    return {stage:'pronto',evidence:'O caminho representado está disponível e o pedido foi atendido.'};
+  }
+  function wireMap(scenario){
+    const destinations=[1,2,3,4,5,6,7,8];
+    if(scenario==='rompido')destinations[4]=null;
+    if(scenario==='trocado'){destinations[0]=2;destinations[1]=1;}
+    return {destinations,valid:destinations.every((destination,index)=>destination===index+1)};
+  }
+  function programStep(state,command){
+    const next={position:state.position,collected:state.collected,message:''};
+    if(command==='andar'){
+      next.position=Math.min(3,state.position+1);
+      next.message=state.position===3?'Chegamos ao fim do caminho. Agora falta pegar a estrela.':'O robô andou uma casa. Posição atual: '+next.position+'.';
+    }else if(command==='pegar'){
+      next.collected=state.position===3||state.collected;
+      next.message=next.collected?'Estrela coletada! A ordem das instruções realizou a tarefa.':'O robô tentou pegar a estrela antes de chegar. A ordem precisa ser revista.';
+    }
+    return next;
+  }
+  function summarizeRecords(records,maxMinutes=Infinity){
+    const isValid=record=>typeof record.minutes==='number'&&Number.isFinite(record.minutes)&&record.minutes>=0&&record.minutes<=maxMinutes;
+    const valid=records.filter(isValid),values=valid.map(record=>record.minutes).sort((a,b)=>a-b);
+    const totals=['Web','Jogos','Robótica'].map(topic=>valid.filter(record=>record.topic===topic).reduce((sum,record)=>sum+record.minutes,0));
+    const middle=Math.floor(values.length/2);
+    const median=!values.length?null:values.length%2?values[middle]:(values[middle-1]+values[middle])/2;
+    const mean=values.length?values.reduce((sum,value)=>sum+value,0)/values.length:null;
+    return {valid:valid.length,excluded:records.length-valid.length,totals,mean,median,included:records.map(isValid)};
+  }
+  function accessDecisions(input){
+    return [
+      {name:'Ler meu arquivo',own:true,action:'ler'},
+      {name:'Editar meu arquivo',own:true,action:'editar'},
+      {name:'Ler arquivo de outra pessoa',own:false,action:'ler'},
+      {name:'Editar arquivo de outra pessoa',own:false,action:'editar'}
+    ].map(row=>{
+      const actionAllowed=['editor','leitor'].includes(input.role)&&(row.action==='ler'||input.role==='editor');
+      return {...row,allowed:Boolean(input.confirmed&&actionAllowed&&(!input.checkOwner||row.own)),expected:Boolean(input.confirmed&&row.own&&actionAllowed)};
+    });
+  }
+  return {validate,moduleStart,totals,networkStatus,wireMap,programStep,summarizeRecords,accessDecisions};
 });

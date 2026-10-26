@@ -1,36 +1,36 @@
-/* Conteúdo editável: tecnologia para alunos do ensino médio. */
+/* Conteúdo da oficina, em linguagem acessível para o ensino médio. */
 window.WorkshopData = {
   "experiences": {
     "site": {
-      "title": "Uma página abre no navegador.",
-      "text": "Vamos começar pela parte que aparece: conteúdo, aparência e interação na página.",
+      "title": "Um título, um texto e um botão aparecem.",
+      "text": "HTML organiza o conteúdo. CSS cuida do visual. Vamos separar essas responsabilidades antes de programar.",
       "focus": [
-        "interface"
+        "interface",
+        "conexao"
       ]
     },
     "conta": {
-      "title": "O sistema confirma quem pode entrar.",
-      "text": "Além da tela, entram em cena regras de acesso, informações e cuidados de segurança.",
+      "title": "Uma explicação se abre quando você escolhe.",
+      "text": "Alguns controles HTML já têm comportamento próprio. Vamos experimentar um deles no bloco de HTML.",
       "focus": [
-        "sistema",
-        "dados"
+        "interface",
+        "sistema"
       ]
     },
     "conteudo": {
-      "title": "Uma lista sugere o que pode interessar.",
-      "text": "Dados podem ajudar a organizar conteúdo e apoiar decisões. Alguém precisa analisá-los com cuidado.",
+      "title": "Você escreve. A página procura um assunto.",
+      "text": "JavaScript pode receber o texto digitado, comparar títulos e atualizar a lista. Veremos isso depois da lógica.",
       "focus": [
-        "dados",
-        "interface"
+        "interface",
+        "sistema"
       ]
     },
     "jogo": {
-      "title": "Outras pessoas aparecem na mesma partida.",
-      "text": "Interface, regras e conexão trabalham juntas para trocar informações entre os participantes.",
+      "title": "Uma estrela coletada muda o placar.",
+      "text": "Uma regra transforma a quantidade de estrelas em pontos. Alguém precisa criar e testar essa regra.",
       "focus": [
-        "interface",
         "sistema",
-        "conexao"
+        "dados"
       ]
     }
   },
@@ -53,25 +53,25 @@ window.WorkshopData = {
   },
   "example": {
     "html": "<main>\n  <div class=\"robo\"><span>• •</span></div>\n  <h1>Olá, turma!</h1>\n  <p id=\"mensagem\">Vamos criar com tecnologia?</p>\n  <button id=\"participar\">Dar energia</button>\n</main>",
-    "css": "/* Experimente trocar a cor e o tamanho! */\n:root { --cor: #c5ec6a; }\n* { box-sizing: border-box; }\nbody {\n  margin: 0; padding: 28px;\n  background: #edf3e4; color: #183323;\n  font-family: system-ui, sans-serif;\n}\nmain { max-width: 440px; margin: auto; }\nh1 { font-size: 32px; margin: 18px 0 12px; }\np { font-size: 14px; line-height: 1.5; }\nbutton {\n  background: var(--cor); color: #183323;\n  padding: 12px 18px; border: 0;\n  border-radius: 10px; cursor: pointer;\n  font: 700 14px system-ui, sans-serif;\n}\n.robo {\n  width: 84px; height: 62px; margin: 16px 0 24px;\n  position: relative; border: 3px solid #345540;\n  border-radius: 16px; text-align: center;\n  background: linear-gradient(0deg, var(--cor) var(--energia, 0%), #f8fbed 0%);\n  animation: flutuar 2s ease-in-out infinite;\n}\n.robo span { font-size: 32px; line-height: 48px; }\n.robo::after {\n  content: ''; position: absolute;\n  width: 18px; height: 5px; background: #345540;\n  bottom: 8px; left: 30px; border-radius: 5px;\n}\n@keyframes flutuar {\n  50% { transform: translateY(-7px); }\n}\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation: none; }\n}",
-    "js": "const ganho = 10;\nlet energia = 0;\nconst botao = document.querySelector('#participar');\nconst mensagem = document.querySelector('#mensagem');\nconst robo = document.querySelector('.robo');\n\nbotao.addEventListener('click', () => {\n  energia = Math.min(100, energia + ganho);\n  mensagem.textContent = `Energia: ${energia}%`;\n  robo.style.setProperty('--energia', `${energia}%`);\n  console.log('Energia do robô:', energia);\n});\n\nconsole.log('Robô pronto! Ganho por clique:', ganho);"
+    "css": ":root {\n  --cor: #c5ec6a;\n}\n\nh1 {\n  font-size: 32px;\n}\n\nbutton {\n  border-radius: 10px;\n}",
+    "js": "const ganho = 10;\nlet energia = 0;\n\nfunction darEnergia() {\n  energia = energia + ganho;\n  if (energia > 100) {\n    energia = 100;\n  }\n  console.log(\"Energia:\", energia);\n  return energia;\n}"
   },
   "request": [
     {
-      "title": "O navegador envia o pedido",
-      "text": "Uma busca ou um acesso pode exigir informações que estão fora do seu dispositivo."
+      "title": "A pessoa faz uma busca na tela",
+      "text": "O front-end recebe o texto, por exemplo: “robótica”. O botão e a lista fazem parte da interface."
     },
     {
-      "title": "O servidor confere as regras",
-      "text": "Ele recebe a solicitação e decide o que consultar e o que a pessoa tem permissão para fazer."
+      "title": "Um serviço procura no catálogo",
+      "text": "O back-end recebe a consulta e aplica as regras da busca. Neste exemplo, procura livros pelo título."
     },
     {
-      "title": "O sistema consulta informações",
-      "text": "Um banco de dados pode guardar conteúdo, preferências e outras informações necessárias ao serviço."
+      "title": "As informações são consultadas",
+      "text": "O catálogo guarda os títulos disponíveis. O serviço reúne os resultados que correspondem à busca."
     },
     {
-      "title": "A resposta volta para a tela",
-      "text": "O navegador recebe o resultado e apresenta a informação. Este é um modelo simplificado do processo."
+      "title": "A interface mostra o resultado",
+      "text": "O front-end apresenta a lista. As partes precisam combinar o formato do pedido e da resposta. O caminho é simplificado e inteiramente visual."
     }
   ],
   "safety": {
@@ -145,7 +145,7 @@ window.WorkshopData = {
     },
     "back": {
       "label": "Back-end",
-      "text": "A parte do servidor: regras, permissões e comunicação com dados.",
+      "text": "A parte do servidor: regras do produto e consulta às informações necessárias.",
       "visual": "regras"
     },
     "full": {
@@ -194,7 +194,7 @@ window.WorkshopData = {
     "software": {
       "area": "DESENVOLVIMENTO DE SOFTWARE",
       "heading": "Transforme uma ideia em uma página.",
-      "text": "Troque o título, escolha uma cor legível e crie uma resposta para o botão.",
+      "text": "Experimente sequência, variáveis, condições e funções. Depois mude o título, a cor e o comportamento de uma página.",
       "action": "Experimentar no laboratório",
       "href": "#laboratorio"
     },
@@ -202,21 +202,21 @@ window.WorkshopData = {
       "area": "SUPORTE / INFRAESTRUTURA",
       "heading": "Entenda o caminho de uma conexão.",
       "text": "Identifique dispositivo, rede e serviço. Pratique como explicar um problema de acesso a outra pessoa.",
-      "action": "Abrir laboratório de suporte",
+      "action": "Rever a demonstração de redes",
       "href": "#lab-infra"
     },
     "dados": {
       "area": "ANÁLISE DE DADOS",
       "heading": "Faça uma pergunta a uma tabela.",
       "text": "Use dados fictícios, organize categorias e compare resultados antes de tirar uma conclusão.",
-      "action": "Abrir laboratório de dados",
+      "action": "Explorar a tabela e o gráfico",
       "href": "#lab-dados"
     },
     "cyber": {
       "area": "CIBERSEGURANÇA",
       "heading": "Observe os cuidados com uma conta.",
       "text": "Conheça a segunda etapa de autenticação e pratique reconhecer uma mensagem suspeita.",
-      "action": "Abrir laboratório de cibersegurança",
+      "action": "Rever o cenário de proteção",
       "href": "#lab-cyber"
     }
   },
@@ -263,7 +263,7 @@ window.WorkshopData = {
       ],
       "correct": 2,
       "explanation": "Suporte e infraestrutura investigam o dispositivo, a conexão e a disponibilidade do serviço, colaborando com outras áreas quando necessário.",
-      "review": "carreiras"
+      "review": "lab-infra"
     },
     {
       "question": "A equipe precisa comparar uma tabela para entender preferências. Qual área tem esse foco?",
@@ -274,7 +274,7 @@ window.WorkshopData = {
       ],
       "correct": 0,
       "explanation": "A análise de dados organiza e compara informações para responder perguntas. O gráfico mostrado na oficina usa dados fictícios.",
-      "review": "carreiras"
+      "review": "lab-dados"
     },
     {
       "question": "Uma mensagem exige sua senha e seu código de acesso com urgência. Qual é a melhor atitude?",
@@ -288,76 +288,7 @@ window.WorkshopData = {
       "review": "detetive"
     }
   ],
-  "notes": {
-    "inicio": {
-      "time": "Abertura",
-      "text": "Convide a turma a entender a tecnologia construindo e testando. Explique o padrão: código, o que ele faz e resultado ao vivo. As demonstrações usam exemplos fictícios e não precisam de contas nem dados pessoais."
-    },
-    "vida-digital": {
-      "time": "Começo da conversa",
-      "text": "Convide a turma a escolher situações familiares: site, conta, recomendação ou jogo. Use as partes destacadas para mostrar que existem processos e pessoas por trás da tela. Faça a transição para a interface que aparece no navegador. Os exemplos apenas apoiam o tema tecnologia."
-    },
-    "linguagens": {
-      "time": "HTML, CSS e JavaScript",
-      "text": "Alterne as três camadas e compare sempre a mesma página. No HTML, conteúdo; no CSS, visual; no JavaScript, resposta ao clique. A demonstração aqui é visual. Para ler ou alterar código, use o link que abre a camada correspondente no laboratório."
-    },
-    "laboratorio": {
-      "time": "HTML → CSS → JavaScript / 5–7 min",
-      "text": "Mostre só HTML e troque o h1. A mudança é automática. Vá para CSS, altere --cor e observe o robô e o botão. Na etapa JS, clique em Dar energia e acompanhe console e preenchimento. Troque ganho de 10 para 50 e clique novamente. Cada edição reinicia o exemplo. Pause Atualizar ao digitar quando quiser preparar várias linhas antes de executar."
-    },
-    "por-tras-do-clique": {
-      "time": "Da página às profissões",
-      "text": "Compare a ação local com a consulta ao sistema. A segunda representação é simplificada e não faz requisições. Ligue as partes da tecnologia às quatro áreas que vamos experimentar a seguir."
-    },
-    "codigo-seguro": {
-      "time": "Retomar os fundamentos",
-      "text": "Conecte a porta do laboratório a contas, permissões e dados. Use a simulação de visitante e editor como uma revisão da autorização. A demonstração anterior combinou duas condições; aqui o recorte é apenas o papel da pessoa. Evite apresentar controles de interface como segurança suficiente de um sistema real."
-    },
-    "detetive": {
-      "time": "Segurança no cotidiano",
-      "text": "Peça à turma que observe urgência, remetente e pedido de senha ou código. Depois mostre o login não iniciado. O objetivo é praticar uma decisão, com exemplos fictícios. Não há caso real obrigatório nesta sequência; um caso poderá ser incluído depois dentro do recorte de segurança que o grupo escolher."
-    },
-    "carreiras": {
-      "time": "Um laboratório por área",
-      "text": "Apresente os quatro papéis e siga a ordem das demonstrações. Os cartões também permitem saltar a um laboratório. Todos usam JavaScript para facilitar a comparação; isso não significa que a profissão trabalhe apenas com essa linguagem. Dentro de desenvolvimento, explique que front-end cuida da interface e back-end das regras e serviços; full stack trabalha com ambos."
-    },
-    "fabrica": {
-      "time": "Conexão entre as áreas",
-      "text": "Retome as quatro experiências e peça à turma quem começaria cada investigação. Os links abrem os laboratórios correspondentes. As áreas colaboram e uma falha pode envolver mais de uma delas."
-    },
-    "quiz": {
-      "time": "Participação da turma",
-      "text": "Conversem antes de escolher uma resposta. As perguntas retomam, na mesma ordem, construção de páginas, funcionamento e responsabilidades profissionais e segurança. Leia a explicação após cada escolha. As respostas são locais e não medem pessoas ou votos de outros aparelhos."
-    },
-    "primeiro-projeto": {
-      "time": "Escolha uma primeira prática",
-      "text": "Deixe a turma escolher uma área e reabra o laboratório para uma alteração. Cada exemplo tem restauração, execução manual e opção de atualização automática. Depois mostre as referências para continuar os estudos."
-    },
-    "encerramento": {
-      "time": "Perguntas e fechamento",
-      "text": "Retome a jornada: o que aparece na tela é construído, precisa funcionar e exige cuidado. Há diferentes pessoas trabalhando com cada parte. Convide a turma a contar o que entendeu e qual área despertou interesse."
-    },
-    "equipe": {
-      "time": "Créditos",
-      "text": "Agradeça ao público e apresente os integrantes. O conteúdo tem como foco tecnologia para ensino médio. As referências de web e segurança estão disponíveis aqui. Exemplos, mensagens e números das simulações são fictícios, sem coleta de dados reais de alunos."
-    },
-    "lab-software": {
-      "time": "Desenvolvimento / 3–4 min",
-      "text": "Pergunte quantos pontos virão com duas estrelas. Colete uma e veja console e placar. Leia a função e o return. Troque 10 por 50: o resultado é recalculado. Clique nas três etapas abaixo do editor para explicar entrada, regra e saída. Diga que desenvolver inclui criar, testar e melhorar, além de escrever código."
-    },
-    "lab-infra": {
-      "time": "Suporte e infraestrutura / 3–4 min",
-      "text": "Comece com rede desligada e servidor ativo. Envie o pacote, ligue a rede e desligue o servidor. Compare o caminho animado com o diagnóstico calculado. Abra o desafio: a função fica sem a verificação de rede. Desligue a rede e mantenha servidor ativo. O código pode informar online enquanto a animação para. Pergunte qual if falta e corrija; Restaurar recupera a solução. Tudo é simulado, sem consultar a rede real."
-    },
-    "lab-dados": {
-      "time": "Análise de dados / 3–4 min",
-      "text": "Leia a lista na ordem Jogos, Vídeos e Música. Peça uma previsão antes de mudar 12 para 30. A barra e o total mudam junto com o código. Compare outra amostra. Explique o acumulador de reduce usando a soma dos três números, sem aprofundar sintaxe. Ressalte que são quantidades fictícias; análise também verifica qualidade e contexto."
-    },
-    "lab-cyber": {
-      "time": "Cibersegurança / 4 min",
-      "text": "Teste visitante com e sem segunda etapa; depois editor nas duas condições. Explique E: só as duas condições abrem a porta. Selecione revisor e use Incluir o papel revisor: a nova regra passa a aceitá-lo com segunda etapa. Mostre console. Diferencie autenticação e autorização; em produção, decisões de autorização ficam no servidor. Não há contas, senhas ou ataques reais."
-    }
-  },
+  "notes": {},
   "webLessons": [
     {
       "label": "HTML / ESTRUTURA",
@@ -366,13 +297,17 @@ window.WorkshopData = {
     },
     {
       "label": "CSS / APARÊNCIA",
-      "text": "As regras escolhem cor, tamanho e movimento. Mude a variável --cor: o botão e a energia do robô usam a nova cor.",
+      "text": "Uma regra escolhe o que mudar e um valor define como. Mude --cor ou font-size. O visual de apoio do cenário já está preparado.",
       "preset": "Experimentar tema roxo →"
     },
     {
       "label": "JS / INTERAÇÃO",
-      "text": "O clique soma energia, atualiza a mensagem e preenche o robô. console.log mostra o valor no console. Mude ganho para 50 e teste.",
+      "text": "ganho é o valor de cada clique. energia muda. if impede passar de 100. O botão preparado chama darEnergia e mostra o retorno no robô; console.log mostra o valor abaixo.",
       "preset": "Energia por clique ×5 →"
     }
-  ]
+  ],
+  "exampleSupport": {
+    "css": "/* Experimente trocar a cor e o tamanho! */\n:root { --cor: #c5ec6a; }\n* { box-sizing: border-box; }\nbody {\n  margin: 0; padding: 28px;\n  background: #edf3e4; color: #183323;\n  font-family: system-ui, sans-serif;\n}\nmain { max-width: 440px; margin: auto; }\nh1 { font-size: 32px; margin: 18px 0 12px; }\np { font-size: 14px; line-height: 1.5; }\nbutton {\n  background: var(--cor); color: #183323;\n  padding: 12px 18px; border: 0;\n  border-radius: 10px; cursor: pointer;\n  font: 700 14px system-ui, sans-serif;\n}\n.robo {\n  width: 84px; height: 62px; margin: 16px 0 24px;\n  position: relative; border: 3px solid #345540;\n  border-radius: 16px; text-align: center;\n  background: linear-gradient(0deg, var(--cor) var(--energia, 0%), #f8fbed 0%);\n  animation: flutuar 2s ease-in-out infinite;\n}\n.robo span { font-size: 32px; line-height: 48px; }\n.robo::after {\n  content: ''; position: absolute;\n  width: 18px; height: 5px; background: #345540;\n  bottom: 8px; left: 30px; border-radius: 5px;\n}\n@keyframes flutuar {\n  50% { transform: translateY(-7px); }\n}\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation: none; }\n}",
+    "js": "const botao = document.querySelector('#participar');\nbotao.addEventListener('click', () => {\n  const valor = darEnergia();\n  document.querySelector('#mensagem').textContent = 'Energia: ' + valor + '%';\n  document.querySelector('.robo').style.setProperty('--energia', valor + '%');\n});"
+  }
 };

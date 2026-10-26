@@ -1,8 +1,8 @@
 {
   "name": "fabrica-de-software-na-pratica",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
-  "description": "Oficina interativa de 130 minutos: web, cibersegurança e carreiras em TI.",
+  "description": "Oficina de 130 minutos: Web, lógica básica e quatro carreiras com práticas visuais.",
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",

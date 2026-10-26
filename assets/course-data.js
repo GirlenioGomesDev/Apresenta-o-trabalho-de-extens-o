@@ -1,50 +1,50 @@
-/* Roteiro de 130 minutos e experimentos progressivos. */
+/* 130 minutos, assuntos contíguos e práticas visuais por área. */
 window.WorkshopCourse = {
   "modules": [
     {
       "id": "comeco",
-      "title": "Curiosidade e a origem da Web",
-      "minutes": 8
+      "title": "Começo · entender a Web",
+      "minutes": 10
     },
     {
       "id": "html",
-      "title": "HTML · conteúdo com significado",
-      "minutes": 18
+      "title": "HTML · organizar o conteúdo",
+      "minutes": 16
     },
     {
       "id": "css",
-      "title": "CSS · aparência, espaço e movimento",
-      "minutes": 18
+      "title": "CSS · dar forma à página",
+      "minutes": 14
     },
     {
       "id": "js",
-      "title": "JavaScript · dados que respondem",
-      "minutes": 20
+      "title": "Lógica e JavaScript · criar respostas",
+      "minutes": 22
     },
     {
       "id": "software",
-      "title": "Software · criar, testar e corrigir",
-      "minutes": 12
+      "title": "Carreira · desenvolvimento de software",
+      "minutes": 10
     },
     {
       "id": "infra",
-      "title": "Suporte e infraestrutura · investigar",
-      "minutes": 12
+      "title": "Carreira · redes, suporte e infraestrutura",
+      "minutes": 16
     },
     {
       "id": "dados",
-      "title": "Dados · perguntar antes de concluir",
+      "title": "Carreira · análise de dados",
       "minutes": 12
     },
     {
       "id": "cyber",
-      "title": "Cibersegurança · pessoas e sistemas",
-      "minutes": 18
+      "title": "Cibersegurança · carreira e proteção",
+      "minutes": 16
     },
     {
       "id": "fechamento",
-      "title": "Missão da turma e próximos passos",
-      "minutes": 12
+      "title": "Participação · escolher, responder e explicar",
+      "minutes": 14
     }
   ],
   "scenes": [
@@ -57,7 +57,7 @@ window.WorkshopCourse = {
     {
       "id": "roteiro",
       "module": "comeco",
-      "minutes": 2,
+      "minutes": 1,
       "title": "Uma jornada de 2h10."
     },
     {
@@ -65,6 +65,12 @@ window.WorkshopCourse = {
       "module": "comeco",
       "minutes": 2,
       "title": "Um toque na tela. Muita coisa por trás."
+    },
+    {
+      "id": "web-na-tela",
+      "module": "comeco",
+      "minutes": 3,
+      "title": "Internet, Web e navegador: cada um tem um papel."
     },
     {
       "id": "origem-web",
@@ -75,20 +81,20 @@ window.WorkshopCourse = {
     {
       "id": "linguagens",
       "module": "html",
-      "minutes": 3,
+      "minutes": 2,
       "title": "Uma página, três responsabilidades."
     },
     {
       "id": "html-estrutura",
       "module": "html",
-      "minutes": 4,
+      "minutes": 3,
       "title": "O navegador lê uma estrutura."
     },
     {
       "id": "lab-html",
       "module": "html",
       "minutes": 5,
-      "title": "HTML já pode ser interativo."
+      "title": "Uma tag, um significado. Uma mudança por vez."
     },
     {
       "id": "html-acessivel",
@@ -100,7 +106,7 @@ window.WorkshopCourse = {
       "id": "lab-html-form",
       "module": "html",
       "minutes": 3,
-      "title": "Um formulário pode orientar."
+      "title": "Dar nome ao campo e orientar o preenchimento."
     },
     {
       "id": "css-historia",
@@ -111,25 +117,37 @@ window.WorkshopCourse = {
     {
       "id": "css-caixa",
       "module": "css",
-      "minutes": 4,
+      "minutes": 3,
       "title": "Por que essa caixa ocupa tanto espaço?"
     },
     {
       "id": "lab-css-layout",
       "module": "css",
-      "minutes": 7,
+      "minutes": 5,
       "title": "O mesmo site. Outros tamanhos de tela."
     },
     {
       "id": "lab-css-motion",
       "module": "css",
-      "minutes": 5,
+      "minutes": 4,
       "title": "Movimento também conta uma história."
+    },
+    {
+      "id": "logica-passos",
+      "module": "js",
+      "minutes": 3,
+      "title": "Programar começa com instruções em ordem."
+    },
+    {
+      "id": "logica-decisoes",
+      "module": "js",
+      "minutes": 3,
+      "title": "Guardar, decidir e repetir."
     },
     {
       "id": "js-modelo",
       "module": "js",
-      "minutes": 3,
+      "minutes": 2,
       "title": "Ação → estado → tela."
     },
     {
@@ -141,43 +159,43 @@ window.WorkshopCourse = {
     {
       "id": "lab-js-feed",
       "module": "js",
-      "minutes": 6,
+      "minutes": 5,
       "title": "Como uma busca decide o que mostrar?"
     },
     {
       "id": "js-desafio",
       "module": "js",
-      "minutes": 2,
+      "minutes": 1,
       "title": "O que significa “funcionar”?"
     },
     {
       "id": "lab-js-carrinho",
       "module": "js",
-      "minutes": 5,
-      "title": "Escolhas se acumulam. Regras precisam acompanhar."
+      "minutes": 4,
+      "title": "Uma soma, uma condição e um limite."
+    },
+    {
+      "id": "carreiras",
+      "module": "software",
+      "minutes": 1,
+      "title": "Quatro áreas. Um bloco para cada uma."
     },
     {
       "id": "por-tras-do-clique",
       "module": "software",
       "minutes": 2,
-      "title": "Da interface aos serviços."
-    },
-    {
-      "id": "carreiras",
-      "module": "software",
-      "minutes": 2,
-      "title": "Quatro áreas. Uma tecnologia que precisa funcionar."
+      "title": "Quem cria a tela? Quem cria as regras?"
     },
     {
       "id": "lab-software",
       "module": "software",
       "minutes": 2,
-      "title": "Aquecimento: uma função reutilizável."
+      "title": "Desenvolvimento: criar, testar e melhorar."
     },
     {
       "id": "grace-hopper",
       "module": "software",
-      "minutes": 2,
+      "minutes": 1,
       "title": "Programar também é tornar ideias compreensíveis."
     },
     {
@@ -196,12 +214,18 @@ window.WorkshopCourse = {
       "id": "lab-infra",
       "module": "infra",
       "minutes": 3,
-      "title": "Aquecimento: investigue os sinais."
+      "title": "Conectar pessoas também é uma profissão."
+    },
+    {
+      "id": "infra-cabo",
+      "module": "infra",
+      "minutes": 5,
+      "title": "Um cabo por fora. Oito contatos por dentro."
     },
     {
       "id": "infra-caminho",
       "module": "infra",
-      "minutes": 2,
+      "minutes": 3,
       "title": "Internet funciona. Então por que o site não abre?"
     },
     {
@@ -213,25 +237,25 @@ window.WorkshopCourse = {
     {
       "id": "lab-infra-missao",
       "module": "infra",
-      "minutes": 4,
-      "title": "A mesma tela de erro pode ter causas diferentes."
+      "minutes": 3,
+      "title": "O mesmo erro na tela pode ter causas diferentes."
     },
     {
       "id": "caso-gitlab",
       "module": "infra",
-      "minutes": 2,
+      "minutes": 1,
       "title": "Ter um backup. Conseguir restaurar."
     },
     {
       "id": "lab-dados",
       "module": "dados",
-      "minutes": 2,
-      "title": "Aquecimento: uma lista vira gráfico."
+      "minutes": 3,
+      "title": "O que esses números ajudam a descobrir?"
     },
     {
       "id": "katherine-johnson",
       "module": "dados",
-      "minutes": 2,
+      "minutes": 1,
       "title": "O computador calculou. Quem verifica o resultado?"
     },
     {
@@ -244,7 +268,7 @@ window.WorkshopCourse = {
       "id": "lab-dados-coleta",
       "module": "dados",
       "minutes": 4,
-      "title": "Limpar, agrupar, calcular. Depois interpretar."
+      "title": "Olhar a tabela antes de confiar no gráfico."
     },
     {
       "id": "dados-vies",
@@ -256,7 +280,7 @@ window.WorkshopCourse = {
       "id": "lab-cyber",
       "module": "cyber",
       "minutes": 3,
-      "title": "Aquecimento: identidade e permissão."
+      "title": "Confirmar a identidade. Conferir a permissão."
     },
     {
       "id": "codigo-seguro",
@@ -267,8 +291,8 @@ window.WorkshopCourse = {
     {
       "id": "lab-cyber-regras",
       "module": "cyber",
-      "minutes": 5,
-      "title": "Ter um papel não significa ter acesso a tudo."
+      "minutes": 3,
+      "title": "Ser editor não dá acesso a todos os arquivos."
     },
     {
       "id": "detetive",
@@ -291,20 +315,20 @@ window.WorkshopCourse = {
     {
       "id": "fabrica",
       "module": "fechamento",
-      "minutes": 2,
+      "minutes": 1,
       "title": "As áreas colaboram para resolver problemas."
     },
     {
       "id": "missao-final",
       "module": "fechamento",
-      "minutes": 4,
+      "minutes": 2,
       "title": "Quatro pistas. Uma equipe para investigar."
     },
     {
       "id": "quiz",
       "module": "fechamento",
-      "minutes": 3,
-      "title": "Revisão da turma: explique sua escolha."
+      "minutes": 8,
+      "title": "A turma escolhe, responde e explica."
     },
     {
       "id": "primeiro-projeto",
@@ -329,47 +353,52 @@ window.WorkshopCourse = {
     "lab-html": {
       "type": "web",
       "files": {
-        "html": "<main>\n  <header>\n    <p>CANAL DA TURMA</p>\n    <h1>O que você quer aprender?</h1>\n  </header>\n  <nav><a href=\"#trilhas\">Ver as trilhas ↓</a></nav>\n  <section id=\"trilhas\" aria-label=\"Trilhas de tecnologia\">\n    <article>\n      <h2>Desenvolvimento web</h2>\n      <p>Criar algo que outra pessoa consegue usar.</p>\n      <details>\n        <summary>O que vamos experimentar?</summary>\n        <p>Estrutura, aparência e interação na mesma página.</p>\n      </details>\n    </article>\n  </section>\n</main>",
-        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "html": "<main>\n  <h1>Olá, turma!</h1>\n  <p>Uma página começa com conteúdo.</p>\n  <details>\n    <summary>O que podemos criar?</summary>\n    <p>Sites, jogos e novas ideias.</p>\n  </details>\n</main>",
+        "css": "",
         "js": ""
       },
       "focus": "html",
-      "question": "O “O que vamos experimentar?” precisa de JavaScript para abrir?",
+      "question": "Ao clicar em “O que podemos criar?”, o texto abre sem JavaScript?",
       "options": [
         "Sim, toda interação exige JavaScript.",
         "Não. O elemento details tem comportamento nativo."
       ],
       "correct": 1,
       "feedback": "Alguns elementos HTML já trazem comportamento. JavaScript amplia as possibilidades; não é necessário recriar cada controle do zero.",
-      "challenge": "Adicione uma segunda trilha. Mantenha um título e uma descrição dentro de um novo article.",
+      "challenge": "Adicione um subtítulo com h2 e uma frase com p, antes de details. Depois troque a saudação e abra a explicação com o mouse ou teclado.",
       "hints": [
-        "Localize o fechamento do primeiro article.",
-        "Copie a estrutura do article antes do fechamento de section e troque o conteúdo."
+        "Uma tag geralmente abre e fecha: <h2>Meu subtítulo</h2>.",
+        "Escreva um novo <p> abaixo do h2. Preserve o main e o details que já existem."
       ],
       "solution": {
-        "html": "<main>\n  <header>\n    <p>CANAL DA TURMA</p>\n    <h1>O que você quer aprender?</h1>\n  </header>\n  <nav><a href=\"#trilhas\">Ver as trilhas ↓</a></nav>\n  <section id=\"trilhas\" aria-label=\"Trilhas de tecnologia\">\n    <article>\n      <h2>Desenvolvimento web</h2>\n      <p>Criar algo que outra pessoa consegue usar.</p>\n      <details>\n        <summary>O que vamos experimentar?</summary>\n        <p>Estrutura, aparência e interação na mesma página.</p>\n      </details>\n    </article>\n    <article>\n      <h2>Segurança digital</h2>\n      <p>Investigar como proteger pessoas e informações.</p>\n    </article>\n  </section>\n</main>"
+        "html": "<main>\n  <h1>Olá, turma!</h1>\n  <p>Uma página começa com conteúdo.</p>\n  <h2>Minha primeira ideia</h2>\n  <p>Um site para recomendar livros.</p>\n  <details>\n    <summary>O que podemos criar?</summary>\n    <p>Sites, jogos e novas ideias.</p>\n  </details>\n</main>"
       },
       "steps": [
         {
+          "label": "Ler uma tag",
+          "text": "Em <h1>Olá, turma!</h1>, h1 marca o título principal. O texto fica entre a abertura e o fechamento."
+        },
+        {
           "label": "Organizar",
-          "text": "header apresenta, nav orienta e section reúne conteúdos relacionados. Os nomes ajudam a explicar a página."
+          "text": "main reúne o conteúdo principal. h2 cria um subtítulo e p marca um parágrafo. A indentação ajuda a enxergar o que está dentro do quê."
         },
         {
-          "label": "Relacionar",
-          "text": "O link aponta para o id trilhas. O navegador encontra esse destino dentro da mesma página."
-        },
-        {
-          "label": "Interagir",
-          "text": "details e summary formam uma interação nativa que pode ser usada com mouse ou teclado."
+          "label": "Experimentar",
+          "text": "details e summary criam uma explicação que abre e fecha com comportamento do próprio navegador. O visual básico é fornecido pelo cenário."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "js": ""
+      },
+      "supportNote": "O cenário visual já está preparado. O editor mostra o código desta aula; os recursos de apoio aparecem na explicação abaixo."
     },
     "lab-html-form": {
       "type": "web",
       "files": {
-        "html": "<main>\n  <h1>Monte um perfil fictício.</h1>\n  <p>Use um nome de personagem; nada será enviado.</p>\n  <form id=\"perfil\">\n    <label for=\"apelido\">Apelido do personagem</label>\n    <input id=\"apelido\" required minlength=\"3\" autocomplete=\"off\">\n    <label for=\"tema\">Trilha de interesse</label>\n    <select id=\"tema\" required>\n      <option value=\"\">Escolha uma trilha</option>\n      <option>Web</option><option>Dados</option><option>Segurança</option>\n    </select>\n    <p><button type=\"button\" id=\"validar\">Validar demonstração</button></p>\n  </form>\n  <output id=\"saida\" aria-live=\"polite\"></output>\n</main>",
-        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
-        "js": "const formulario = document.querySelector('#perfil');\nconst saida = document.querySelector('#saida');\ndocument.querySelector('#validar').addEventListener('click', () => {\n  if (!formulario.reportValidity()) return;\n  const nome = document.querySelector('#apelido').value;\n  const tema = document.querySelector('#tema').value;\n  saida.textContent = `${nome} escolheu ${tema}. Validação local!`;\n  console.log('Campos válidos; nenhum dado enviado.');\n});"
+        "html": "<main>\n  <h1>Crie um personagem</h1>\n  <form id=\"perfil\">\n    <label for=\"apelido\">Apelido do personagem</label>\n    <input id=\"apelido\" required minlength=\"3\">\n    <button type=\"button\" id=\"validar\">Testar campo</button>\n  </form>\n  <output id=\"saida\" aria-live=\"polite\"></output>\n</main>",
+        "css": "",
+        "js": ""
       },
       "focus": "html",
       "question": "Se eu clicar no texto “Apelido do personagem”, o que deve acontecer?",
@@ -381,11 +410,11 @@ window.WorkshopCourse = {
       "feedback": "O for do label aponta para o id do input. Essa relação dá nome ao campo e amplia a área de interação.",
       "challenge": "Exija pelo menos 5 caracteres. Depois teste um apelido de 4 e um de 5 caracteres.",
       "hints": [
-        "A regra já está no atributo minlength.",
-        "A validação ajuda a pessoa, mas sistemas reais também validam no servidor."
+        "Troque o número em minlength, mantendo as aspas.",
+        "Digite no campo da prévia para testar: quatro letras não bastam quando o mínimo é cinco. A checagem é local."
       ],
       "solution": {
-        "html": "<main>\n  <h1>Monte um perfil fictício.</h1>\n  <p>Use um nome de personagem; nada será enviado.</p>\n  <form id=\"perfil\">\n    <label for=\"apelido\">Apelido do personagem</label>\n    <input id=\"apelido\" required minlength=\"5\" autocomplete=\"off\">\n    <label for=\"tema\">Trilha de interesse</label>\n    <select id=\"tema\" required>\n      <option value=\"\">Escolha uma trilha</option>\n      <option>Web</option><option>Dados</option><option>Segurança</option>\n    </select>\n    <p><button type=\"button\" id=\"validar\">Validar demonstração</button></p>\n  </form>\n  <output id=\"saida\" aria-live=\"polite\"></output>\n</main>"
+        "html": "<main>\n  <h1>Crie um personagem</h1>\n  <form id=\"perfil\">\n    <label for=\"apelido\">Apelido do personagem</label>\n    <input id=\"apelido\" required minlength=\"5\">\n    <button type=\"button\" id=\"validar\">Testar campo</button>\n  </form>\n  <output id=\"saida\" aria-live=\"polite\"></output>\n</main>"
       },
       "steps": [
         {
@@ -397,16 +426,21 @@ window.WorkshopCourse = {
           "text": "required exige uma resposta; minlength define o tamanho mínimo do texto."
         },
         {
-          "label": "Retornar",
-          "text": "O JavaScript de apoio pede a validação nativa e escreve uma confirmação local. Não há envio de formulário."
+          "label": "Testar",
+          "text": "O botão preparado pede ao navegador para verificar o campo e mostra uma confirmação local. Na aula, modificamos required e minlength no HTML."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "js": "const formulario = document.querySelector('#perfil');\ndocument.querySelector('#validar').addEventListener('click', () => {\n  if (!formulario.reportValidity()) return;\n  const nome = document.querySelector('#apelido').value;\n  document.querySelector('#saida').textContent = nome + ': campo válido!';\n});"
+      },
+      "supportNote": "O visual e o botão de teste estão preparados com CSS e JavaScript de apoio. Aqui editamos apenas o HTML do campo. Nada é enviado."
     },
     "lab-css-layout": {
       "type": "web",
       "files": {
-        "html": "<main>\n  <h1>Escolha sua próxima descoberta.</h1>\n  <section class=\"grade\" aria-label=\"Trilhas\">\n    <article><span>01 / WEB</span><h2>Interfaces</h2><p>Construir experiências para outras pessoas.</p></article>\n    <article><span>02 / DADOS</span><h2>Perguntas</h2><p>Descobrir padrões e verificar conclusões.</p></article>\n    <article><span>03 / CYBER</span><h2>Proteção</h2><p>Reduzir riscos em sistemas e contas.</p></article>\n  </section>\n</main>",
-        "css": ".grade {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 14px;\n}\n.grade article { margin:0; min-width:0; }\n.grade span { font-size:10px; letter-spacing:1px; }\n\n/* Estilos de apoio à demonstração. */\n* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "html": "<main>\n  <h1>Um cartão ao lado do outro</h1>\n  <div class=\"grade\">\n    <article><h2>Aprender</h2><p>Entender uma ideia.</p></article>\n    <article><h2>Experimentar</h2><p>Mudar uma coisa.</p></article>\n    <article><h2>Compartilhar</h2><p>Explicar o resultado.</p></article>\n  </div>\n</main>",
+        "css": ".grade {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 12px;\n}",
         "js": ""
       },
       "focus": "css",
@@ -419,33 +453,38 @@ window.WorkshopCourse = {
       "feedback": "Responsividade adapta a organização ao espaço disponível. O conteúdo pode continuar o mesmo.",
       "challenge": "Faça as trilhas virarem uma coluna quando faltar espaço. Teste a prévia estreita e a ampla.",
       "hints": [
-        "A grade é definida em grid-template-columns.",
-        "Experimente repeat(auto-fit, minmax(170px, 1fr)). Cada item ganha uma largura mínima, sem fixar três colunas."
+        "1fr 1fr 1fr significa três partes de mesmo tamanho. Só 1fr significa uma coluna.",
+        "Use @media (max-width: 400px) para aplicar uma coluna somente quando a tela for estreita."
       ],
       "solution": {
-        "css": ".grade {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));\n  gap: 14px;\n}\n.grade article { margin:0; min-width:0; }\n.grade span { font-size:10px; letter-spacing:1px; }\n\n/* Estilos de apoio à demonstração. */\n* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n"
+        "css": ".grade {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 12px;\n}\n\n@media (max-width: 400px) {\n  .grade {\n    grid-template-columns: 1fr;\n  }\n}"
       },
       "steps": [
         {
+          "label": "Selecionar",
+          "text": ".grade seleciona o elemento com class=\"grade\". As regras dentro das chaves dizem como ele deve aparecer."
+        },
+        {
           "label": "Distribuir",
-          "text": "display: grid cria uma grade. As colunas dividem o espaço e gap separa os itens."
+          "text": "display: grid organiza em grade. 1fr 1fr 1fr divide a largura em três partes iguais; gap cria o espaço entre elas."
         },
         {
           "label": "Adaptar",
-          "text": "Uma largura mínima impede que o cartão seja comprimido indefinidamente. Quando não cabe, ele muda de linha."
-        },
-        {
-          "label": "Verificar",
-          "text": "Teste larguras diferentes. Um layout deve funcionar para o conteúdo e para a tela, sem depender só do seu notebook."
+          "text": "A solução usa uma condição de largura: em telas de até 400 px, as colunas viram uma só. Compare Ampla e Estreita."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n\n.grade article { min-width:0; margin:0; }",
+        "js": ""
+      },
+      "supportNote": "O cenário visual já está preparado. O editor mostra o código desta aula; os recursos de apoio aparecem na explicação abaixo."
     },
     "lab-css-motion": {
       "type": "web",
       "files": {
         "html": "<main>\n  <h1>Como esse movimento foi criado?</h1>\n  <div class=\"pista\"><div class=\"robo\" aria-label=\"Robô\">•‿•</div></div>\n  <p><button id=\"pausar\">Pausar movimento</button></p>\n  <p id=\"aviso\">Observe a duração e o caminho.</p>\n</main>",
-        "css": ".pista { position:relative; height:130px; background:#dfeacb; border-radius:12px; }\n.robo {\n  position:absolute; left:0; bottom:16px;\n  width:60px; height:54px; padding-top:8px;\n  border:3px solid #345540; border-radius:14px;\n  background:#c5ec6a; text-align:center; font-weight:700;\n  animation: viajar 4s ease-in-out infinite alternate;\n}\n@keyframes viajar {\n  from { left:0; transform:rotate(-5deg); }\n  to { left:calc(100% - 60px); transform:rotate(5deg); }\n}\n.pausado .robo { animation-play-state:paused; }\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation:none; }\n}\n\n/* Estilos de apoio à demonstração. */\n* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
-        "js": "const botao = document.querySelector('#pausar');\nbotao.addEventListener('click', () => {\n  const pausado = document.body.classList.toggle('pausado');\n  botao.textContent = pausado ? 'Continuar movimento' : 'Pausar movimento';\n});"
+        "css": ".robo {\n  animation: viajar 4s ease-in-out infinite alternate;\n}\n\n@keyframes viajar {\n  from { left: 0; }\n  to { left: calc(100% - 60px); }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation: none; }\n}",
+        "js": ""
       },
       "focus": "css",
       "question": "Trocar a duração de 4s para 1s muda o caminho ou a velocidade?",
@@ -461,7 +500,7 @@ window.WorkshopCourse = {
         "Troque 4s por 2s e ease-in-out por linear. Mantenha a opção de reduzir movimento."
       ],
       "solution": {
-        "css": ".pista { position:relative; height:130px; background:#dfeacb; border-radius:12px; }\n.robo {\n  position:absolute; left:0; bottom:16px;\n  width:60px; height:54px; padding-top:8px;\n  border:3px solid #345540; border-radius:14px;\n  background:#c5ec6a; text-align:center; font-weight:700;\n  animation: viajar 2s linear infinite alternate;\n}\n@keyframes viajar {\n  from { left:0; transform:rotate(-5deg); }\n  to { left:calc(100% - 60px); transform:rotate(5deg); }\n}\n.pausado .robo { animation-play-state:paused; }\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation:none; }\n}\n\n/* Estilos de apoio à demonstração. */\n* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n"
+        "css": ".robo {\n  animation: viajar 2s linear infinite alternate;\n}\n\n@keyframes viajar {\n  from { left: 0; }\n  to { left: calc(100% - 60px); }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .robo { animation: none; }\n}"
       },
       "steps": [
         {
@@ -476,14 +515,19 @@ window.WorkshopCourse = {
           "label": "Dar controle",
           "text": "A pessoa pode pausar. A preferência de reduzir movimento é respeitada: animações não devem ser condição para compreender."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n\n.pista { position:relative; height:130px; background:#dfeacb; border-radius:12px; }\n.robo {\n  position:absolute; left:0; bottom:16px;\n  width:60px; height:54px; padding-top:8px;\n  border:3px solid #345540; border-radius:14px;\n  background:#c5ec6a; text-align:center; font-weight:700;\n}\n.pausado .robo { animation-play-state:paused; }",
+        "js": "const botao = document.querySelector('#pausar');\nbotao.addEventListener('click', () => {\n  const pausado = document.body.classList.toggle('pausado');\n  botao.textContent = pausado ? 'Continuar movimento' : 'Pausar movimento';\n});"
+      },
+      "supportNote": "O robô, a pista e o botão de pausa já estão preparados. O CSS deste editor define somente o movimento e respeita a preferência de reduzir animações."
     },
     "lab-js-feed": {
       "type": "web",
       "files": {
         "html": "<main>\n  <h1>Biblioteca de descobertas</h1>\n  <label for=\"busca\">Buscar por título</label>\n  <input id=\"busca\" placeholder=\"Experimente digitar java\" autocomplete=\"off\">\n  <p id=\"contagem\" aria-live=\"polite\"></p>\n  <ul id=\"resultados\"></ul>\n</main>",
-        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\nli { padding:12px 0; border-bottom:1px solid #cbd9bc; }",
-        "js": "const catalogo = [\n  { titulo:'JavaScript no dia a dia', tema:'Web' },\n  { titulo:'Como a internet encontra um site', tema:'Infra' },\n  { titulo:'Dados que contam histórias', tema:'Dados' },\n  { titulo:'Proteja sua conta', tema:'Segurança' }\n];\nconst busca = document.querySelector('#busca');\nconst lista = document.querySelector('#resultados');\n\nfunction filtrar(texto) {\n  return catalogo.filter(item => item.titulo.includes(texto));\n}\nfunction renderizar() {\n  const encontrados = filtrar(busca.value);\n  lista.replaceChildren();\n  encontrados.forEach(item => {\n    const linha = document.createElement('li');\n    linha.textContent = `${item.titulo} · ${item.tema}`;\n    lista.appendChild(linha);\n  });\n  document.querySelector('#contagem').textContent = `${encontrados.length} resultado(s)`;\n  console.log('Resultados:', encontrados.length);\n}\nbusca.addEventListener('input', renderizar);\nrenderizar();"
+        "css": "",
+        "js": "const titulos = [\"HTML: conteúdo\", \"CSS: visual\", \"JavaScript: interação\"];\n\nfunction buscar(texto) {\n  const encontrados = [];\n\n  for (const titulo of titulos) {\n    if (titulo.includes(texto)) {\n      encontrados.push(titulo);\n    }\n  }\n\n  console.log(\"Resultados:\", encontrados.length);\n  return encontrados;\n}"
       },
       "focus": "js",
       "question": "Neste código, “java” encontra o título que começa com “JavaScript”?",
@@ -493,66 +537,76 @@ window.WorkshopCourse = {
       ],
       "correct": 1,
       "feedback": "includes diferencia letras maiúsculas e minúsculas. Normalizar os dois textos ajuda a aplicar uma regra consistente.",
-      "challenge": "Faça “java”, “Java” e “JAVA” encontrarem a mesma trilha. Depois adicione um novo objeto ao catálogo.",
+      "challenge": "Faça a busca encontrar JavaScript mesmo com java, Java ou JAVA. A função recebe o texto digitado e devolve os títulos encontrados para a interface preparada.",
       "hints": [
-        "A mudança deve ficar na função filtrar.",
-        "Converta título e busca com toLowerCase antes de comparar. Isso não resolve automaticamente acentos; é outra decisão de produto."
+        "A comparação inicial diferencia letras maiúsculas e minúsculas. toLowerCase() transforma o texto em minúsculas.",
+        "Compare titulo.toLowerCase() com texto.toLowerCase() dentro de includes. Depois teste java e JAVA."
       ],
       "solution": {
-        "js": "const catalogo = [\n  { titulo:'JavaScript no dia a dia', tema:'Web' },\n  { titulo:'Como a internet encontra um site', tema:'Infra' },\n  { titulo:'Dados que contam histórias', tema:'Dados' },\n  { titulo:'Proteja sua conta', tema:'Segurança' }\n];\nconst busca = document.querySelector('#busca');\nconst lista = document.querySelector('#resultados');\n\nfunction filtrar(texto) {\n  return catalogo.filter(item => item.titulo.toLowerCase().includes(texto.toLowerCase()));\n}\nfunction renderizar() {\n  const encontrados = filtrar(busca.value);\n  lista.replaceChildren();\n  encontrados.forEach(item => {\n    const linha = document.createElement('li');\n    linha.textContent = `${item.titulo} · ${item.tema}`;\n    lista.appendChild(linha);\n  });\n  document.querySelector('#contagem').textContent = `${encontrados.length} resultado(s)`;\n  console.log('Resultados:', encontrados.length);\n}\nbusca.addEventListener('input', renderizar);\nrenderizar();"
+        "js": "const titulos = [\"HTML: conteúdo\", \"CSS: visual\", \"JavaScript: interação\"];\n\nfunction buscar(texto) {\n  const encontrados = [];\n\n  for (const titulo of titulos) {\n    if (titulo.toLowerCase().includes(texto.toLowerCase())) {\n      encontrados.push(titulo);\n    }\n  }\n\n  console.log(\"Resultados:\", encontrados.length);\n  return encontrados;\n}"
       },
       "steps": [
         {
-          "label": "Modelar",
-          "text": "Cada objeto reúne título e tema. A lista é a fonte dos itens que podem aparecer."
+          "label": "Guardar",
+          "text": "titulos guarda uma lista. A função buscar recebe o texto digitado; encontrados começa como uma lista vazia."
         },
         {
-          "label": "Filtrar",
-          "text": "filter mantém os objetos que passam na condição. A regra de busca é uma escolha explícita do código."
+          "label": "Repetir e decidir",
+          "text": "for percorre cada título. if pergunta se ele inclui o texto procurado. Quando inclui, push adiciona o título à lista de resultados."
         },
         {
-          "label": "Renderizar",
-          "text": "O evento input chama a função. Ela refaz a lista visível, atualiza a contagem e registra o resultado no console."
+          "label": "Devolver",
+          "text": "return devolve a lista encontrada. O cenário preparado desenha essa lista ao lado. console.log mostra quantos resultados foram encontrados."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "js": "const campo = document.querySelector('#busca');\nfunction atualizarLista() {\n  const encontrados = buscar(campo.value);\n  const lista = document.querySelector('#resultados');\n  lista.replaceChildren();\n  for (const titulo of encontrados) {\n    const item = document.createElement('li');\n    item.textContent = titulo;\n    lista.appendChild(item);\n  }\n  document.querySelector('#contagem').textContent = encontrados.length + ' resultados';\n}\ncampo.addEventListener('input', atualizarLista);\natualizarLista();"
+      },
+      "supportNote": "A caixa de busca e a atualização visual já estão preparadas. O editor contém a função que decide quais títulos entram no resultado."
     },
     "lab-js-carrinho": {
       "type": "web",
       "files": {
-        "html": "<main>\n  <h1>Monte sua mochila de trilhas.</h1>\n  <p>Você tem um limite de tempo fictício para explorar.</p>\n  <p><button data-trilha=\"0\">+ Web / 30 min</button></p>\n  <p><button data-trilha=\"1\">+ Dados / 40 min</button></p>\n  <p><button data-trilha=\"2\">+ Segurança / 50 min</button></p>\n  <ul id=\"mochila\"></ul>\n  <output id=\"resumo\"></output>\n  <p id=\"feedback\" aria-live=\"polite\"></p>\n  <button id=\"remover\">Remover a última escolha</button>\n</main>",
-        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
-        "js": "const limite = 90;\nconst trilhas = [\n  { nome:'Web', minutos:30 },\n  { nome:'Dados', minutos:40 },\n  { nome:'Segurança', minutos:50 }\n];\nlet escolhidas = [];\nfunction total() {\n  return escolhidas.reduce((soma, item) => soma + item.minutos, 0);\n}\nfunction renderizar() {\n  const lista = document.querySelector('#mochila');\n  lista.replaceChildren();\n  escolhidas.forEach(item => {\n    const li = document.createElement('li');\n    li.textContent = `${item.nome}: ${item.minutos} min`;\n    lista.appendChild(li);\n  });\n  document.querySelector('#resumo').textContent = `${total()} de ${limite} minutos`;\n  console.log('Escolhas:', escolhidas.length, 'Tempo:', total());\n}\ndocument.querySelectorAll('[data-trilha]').forEach(botao => {\n  botao.addEventListener('click', () => {\n    const trilha = trilhas[Number(botao.dataset.trilha)];\n    if (total() + trilha.minutos > limite) {\n      document.querySelector('#feedback').textContent = 'Essa escolha ultrapassa o limite.';\n      return;\n    }\n    escolhidas.push(trilha);\n    document.querySelector('#feedback').textContent = 'Trilha adicionada.';\n    renderizar();\n  });\n});\ndocument.querySelector('#remover').addEventListener('click', () => {\n  escolhidas.pop(); renderizar();\n});\nrenderizar();"
+        "html": "<main>\n  <h1>Monte seu tempo de descoberta</h1>\n  <p>Escolha atividades sem ultrapassar o limite.</p>\n  <button data-minutos=\"30\">Web +30 min</button>\n  <button data-minutos=\"40\">Jogos +40 min</button>\n  <button data-minutos=\"20\">Robótica +20 min</button>\n  <h2 id=\"total\"></h2>\n  <p id=\"feedback\" aria-live=\"polite\"></p>\n  <button id=\"recomecar\">Recomeçar</button>\n</main>",
+        "css": "",
+        "js": "const limite = 90;\nlet total = 0;\n\nfunction adicionar(minutos) {\n  if (total + minutos > limite) {\n    console.log(\"Não cabe no limite.\");\n    return false;\n  }\n\n  total = total + minutos;\n  console.log(\"Total de minutos:\", total);\n  return true;\n}"
       },
       "focus": "js",
-      "question": "Com limite de 90 min, Web (30) + Dados (40) + Segurança (50) cabe?",
+      "question": "Com limite de 90 min, Web (30) + Jogos (40) + Robótica (20) cabe exatamente?",
       "options": [
-        "Sim, porque são só três escolhas.",
-        "Não. O total seria 120 minutos."
+        "Sim: 30 + 40 + 20 = 90.",
+        "Não: chegar ao limite já seria ultrapassar."
       ],
-      "correct": 1,
-      "feedback": "O que importa para essa regra é a soma do tempo, não apenas quantos itens existem.",
-      "challenge": "Impeça que a mesma trilha seja adicionada duas vezes. Teste o limite, uma repetição e a remoção.",
+      "correct": 0,
+      "feedback": "Chegar ao limite é diferente de ultrapassá-lo. A condição usa >, que significa maior que. Compare também com >=, maior ou igual.",
+      "challenge": "Teste uma combinação que dá exatamente 90 min e outra que ultrapassa. Depois mude o limite para 120 min. Antes de executar, a turma deve prever qual escolha passa a caber.",
       "hints": [
-        "A verificação precisa acontecer antes de push.",
-        "some permite perguntar se uma trilha com o mesmo nome já existe na lista."
+        "A constante limite está na primeira linha. total guarda o tempo acumulado.",
+        "Troque 90 por 120. O if recusa somente quando a soma fica maior que o limite; return false encerra essa tentativa."
       ],
       "solution": {
-        "js": "const limite = 90;\nconst trilhas = [\n  { nome:'Web', minutos:30 },\n  { nome:'Dados', minutos:40 },\n  { nome:'Segurança', minutos:50 }\n];\nlet escolhidas = [];\nfunction total() {\n  return escolhidas.reduce((soma, item) => soma + item.minutos, 0);\n}\nfunction renderizar() {\n  const lista = document.querySelector('#mochila');\n  lista.replaceChildren();\n  escolhidas.forEach(item => {\n    const li = document.createElement('li');\n    li.textContent = `${item.nome}: ${item.minutos} min`;\n    lista.appendChild(li);\n  });\n  document.querySelector('#resumo').textContent = `${total()} de ${limite} minutos`;\n  console.log('Escolhas:', escolhidas.length, 'Tempo:', total());\n}\ndocument.querySelectorAll('[data-trilha]').forEach(botao => {\n  botao.addEventListener('click', () => {\n    const trilha = trilhas[Number(botao.dataset.trilha)];\n    if (escolhidas.some(item => item.nome === trilha.nome)) {\n      document.querySelector('#feedback').textContent = 'Essa trilha já está na mochila.';\n      return;\n    }\n    if (total() + trilha.minutos > limite) {\n      document.querySelector('#feedback').textContent = 'Essa escolha ultrapassa o limite.';\n      return;\n    }\n    escolhidas.push(trilha);\n    document.querySelector('#feedback').textContent = 'Trilha adicionada.';\n    renderizar();\n  });\n});\ndocument.querySelector('#remover').addEventListener('click', () => {\n  escolhidas.pop(); renderizar();\n});\nrenderizar();"
+        "js": "const limite = 120;\nlet total = 0;\n\nfunction adicionar(minutos) {\n  if (total + minutos > limite) {\n    console.log(\"Não cabe no limite.\");\n    return false;\n  }\n\n  total = total + minutos;\n  console.log(\"Total de minutos:\", total);\n  return true;\n}"
       },
       "steps": [
         {
-          "label": "Guardar escolhas",
-          "text": "A lista escolhidas representa o estado. push adiciona e pop remove o último elemento."
+          "label": "Guardar valores",
+          "text": "limite é o máximo permitido. total começa em zero e muda quando uma atividade é adicionada."
         },
         {
-          "label": "Aplicar limites",
-          "text": "A função total soma os minutos. O if verifica a próxima escolha antes de alterar o estado."
+          "label": "Tomar a decisão",
+          "text": "if testa a soma antes de mudar o total. Se ultrapassar o limite, a função retorna false e não adiciona a atividade."
         },
         {
-          "label": "Testar sequências",
-          "text": "Não teste só um clique. Combine adicionar, repetir, remover e tentar ultrapassar o limite."
+          "label": "Atualizar",
+          "text": "Quando a escolha cabe, total recebe a soma e a função retorna true. Os botões preparados chamam adicionar e mostram o valor ao lado."
         }
-      ]
+      ],
+      "support": {
+        "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
+        "js": "function desenharTotal() {\n  document.querySelector('#total').textContent = total + ' de ' + limite + ' min';\n}\ndocument.querySelectorAll('[data-minutos]').forEach(botao => {\n  botao.addEventListener('click', () => {\n    const aceito = adicionar(Number(botao.dataset.minutos));\n    document.querySelector('#feedback').textContent = aceito ? 'Atividade adicionada.' : 'Essa escolha ultrapassa o limite.';\n    desenharTotal();\n  });\n});\ndocument.querySelector('#recomecar').addEventListener('click', () => {\n  total = 0;\n  document.querySelector('#feedback').textContent = 'Vamos escolher de novo.';\n  desenharTotal();\n});\ndesenharTotal();"
+      },
+      "supportNote": "Os botões e a atualização do texto já estão preparados. A função adicionar contém a decisão que vamos ler e modificar."
     },
     "lab-software-testes": {
       "type": "function",
@@ -588,123 +642,6 @@ window.WorkshopCourse = {
         {
           "label": "Corrigir",
           "text": "Uma função corrigida precisa preservar os casos que já funcionavam e tratar os limites."
-        }
-      ]
-    },
-    "lab-infra-missao": {
-      "type": "function",
-      "view": "network",
-      "input": {
-        "rede": true,
-        "dns": true,
-        "http": 404,
-        "latencia": 120
-      },
-      "code": "function diagnosticar(sinais) {\n  if (!sinais.rede) return { etapa:'rede', mensagem:'Confira a conexão.' };\n  if (!sinais.dns) return { etapa:'dns', mensagem:'O nome não foi resolvido.' };\n  if (sinais.http === 404) return { etapa:'http', mensagem:'O recurso não existe nesse endereço.' };\n  if (sinais.http === 503) return { etapa:'http', mensagem:'O serviço está indisponível.' };\n  return { etapa:'pronto', mensagem:'Caminho disponível.' };\n}\nconst resultado = diagnosticar(entrada);\nconsole.log('Pista encontrada:', resultado.etapa);\nmostrar(resultado);",
-      "solution": {
-        "code": "function diagnosticar(sinais) {\n  if (!sinais.rede) return { etapa:'rede', mensagem:'Confira a conexão.' };\n  if (!sinais.dns) return { etapa:'dns', mensagem:'O nome não foi resolvido.' };\n  if (sinais.http === 404) return { etapa:'http', mensagem:'O recurso não existe nesse endereço.' };\n  if (sinais.http === 503) return { etapa:'http', mensagem:'O serviço está indisponível.' };\n  if (sinais.latencia > 500) return { etapa:'lento', mensagem:'Caminho disponível, mas lento.' };\n  return { etapa:'pronto', mensagem:'Caminho disponível.' };\n}\nconst resultado = diagnosticar(entrada);\nconsole.log('Pista encontrada:', resultado.etapa);\nmostrar(resultado);"
-      },
-      "question": "Se o serviço respondeu 404, o código deveria apontar primeiro “rede desligada”?",
-      "options": [
-        "Sim, qualquer falha é da rede.",
-        "Não. O serviço respondeu; precisamos examinar o recurso pedido."
-      ],
-      "correct": 1,
-      "feedback": "Investigar é usar a evidência disponível. Esse modelo separa conexão, DNS e resposta HTTP.",
-      "challenge": "Acrescente a pista de lentidão: se o caminho estiver disponível e a latência superar 500 ms, devolva etapa lento.",
-      "hints": [
-        "A nova verificação deve vir depois das falhas de conexão, DNS e HTTP.",
-        "Compare sinais.latencia com 500 antes do retorno pronto."
-      ],
-      "steps": [
-        {
-          "label": "Coletar sinais",
-          "text": "Os controles representam rede, DNS, código HTTP e latência. Eles são dados de um cenário fictício."
-        },
-        {
-          "label": "Priorizar",
-          "text": "Uma etapa depende da anterior. Se não há conexão, não é útil concluir que a resposta do serviço foi boa."
-        },
-        {
-          "label": "Comunicar",
-          "text": "Uma conclusão útil aponta uma pista específica. O modelo não substitui diagnóstico real nem cobre todas as causas."
-        }
-      ]
-    },
-    "lab-dados-coleta": {
-      "type": "function",
-      "view": "analysis",
-      "input": {
-        "incompleto": false,
-        "atipico": false
-      },
-      "code": "const registros = [\n  { tema:'Web', minutos:12 }, { tema:'Web', minutos:18 },\n  { tema:'Dados', minutos:20 }, { tema:'Dados', minutos:22 },\n  { tema:'Segurança', minutos:25 }, { tema:'Segurança', minutos:29 }\n];\nif (entrada.incompleto) registros.push({ tema:'Web', minutos:null });\nif (entrada.atipico) registros.push({ tema:'Web', minutos:300 });\n\nconst validos = registros.filter(r => Number.isFinite(r.minutos) && r.minutos >= 0);\nconst temas = ['Web','Dados','Segurança'];\nconst valores = temas.map(tema => validos.filter(r => r.tema === tema)\n  .reduce((soma, r) => soma + r.minutos, 0));\nconst ordenados = validos.map(r => r.minutos).sort((a,b) => a-b);\nconst total = ordenados.reduce((soma,n) => soma+n,0);\nconst media = total / ordenados.length;\nconst meio = Math.floor(ordenados.length / 2);\nconst mediana = ordenados.length % 2 ? ordenados[meio]\n  : (ordenados[meio-1] + ordenados[meio]) / 2;\nconsole.log('Válidos:', validos.length, 'Descartados:', registros.length-validos.length);\nmostrar({ valores, media, mediana, validos:validos.length,\n  descartados:registros.length-validos.length });",
-      "solution": {
-        "code": "const registros = [\n  { tema:'Web', minutos:12 }, { tema:'Web', minutos:18 },\n  { tema:'Dados', minutos:20 }, { tema:'Dados', minutos:22 },\n  { tema:'Segurança', minutos:25 }, { tema:'Segurança', minutos:29 }\n];\nif (entrada.incompleto) registros.push({ tema:'Web', minutos:null });\nif (entrada.atipico) registros.push({ tema:'Web', minutos:300 });\n\nconst validos = registros.filter(r => Number.isFinite(r.minutos) && r.minutos >= 0 && r.minutos <= 120);\nconst temas = ['Web','Dados','Segurança'];\nconst valores = temas.map(tema => validos.filter(r => r.tema === tema)\n  .reduce((soma, r) => soma + r.minutos, 0));\nconst ordenados = validos.map(r => r.minutos).sort((a,b) => a-b);\nconst total = ordenados.reduce((soma,n) => soma+n,0);\nconst media = total / ordenados.length;\nconst meio = Math.floor(ordenados.length / 2);\nconst mediana = ordenados.length % 2 ? ordenados[meio]\n  : (ordenados[meio-1] + ordenados[meio]) / 2;\nconsole.log('Válidos:', validos.length, 'Descartados:', registros.length-validos.length);\nmostrar({ valores, media, mediana, validos:validos.length,\n  descartados:registros.length-validos.length });"
-      },
-      "question": "Um registro de 300 minutos afeta a média e a mediana da mesma forma?",
-      "options": [
-        "Sim, elas são a mesma medida.",
-        "Não. A média é mais sensível a esse valor extremo."
-      ],
-      "correct": 1,
-      "feedback": "A média usa todos os valores na soma. A mediana depende da posição dos valores ordenados. Nenhuma das duas dispensa contexto.",
-      "challenge": "Para esta atividade, considere que a sessão permitia no máximo 120 minutos. Exclua registros acima desse limite e compare os resultados.",
-      "hints": [
-        "A regra de qualidade está em validos.",
-        "Acrescente o limite à condição do filtro. O limite vem do cenário; não descarte um valor só porque ele é inconveniente."
-      ],
-      "steps": [
-        {
-          "label": "Verificar",
-          "text": "null não é uma duração. Number.isFinite ajuda a manter somente valores numéricos válidos."
-        },
-        {
-          "label": "Agrupar",
-          "text": "O código separa por tema e soma minutos. O gráfico mostra tempo acumulado, não quantidade de pessoas."
-        },
-        {
-          "label": "Comparar",
-          "text": "Média e mediana respondem a perguntas diferentes. Um valor extremo pode deslocar a média sem deslocar tanto a mediana."
-        }
-      ]
-    },
-    "lab-cyber-regras": {
-      "type": "function",
-      "view": "access",
-      "input": {
-        "id": 1,
-        "papel": "editor",
-        "mfa": false
-      },
-      "code": "function autorizar(usuario, pedido) {\n  // Esta versão tem uma falha intencional.\n  return usuario.papel === 'editor';\n}\nconst pedidos = [\n  { nome:'Ler meu rascunho', acao:'ler', dono:1 },\n  { nome:'Editar meu rascunho', acao:'editar', dono:1 },\n  { nome:'Ler outro rascunho', acao:'ler', dono:2 },\n  { nome:'Editar outro rascunho', acao:'editar', dono:2 }\n];\nconst acessos = pedidos.map(pedido => ({\n  nome:pedido.nome, permitido:autorizar(entrada, pedido),\n  esperado:entrada.mfa && pedido.dono === entrada.id &&\n    (pedido.acao === 'ler' || entrada.papel === 'editor')\n}));\nconsole.log('Permissões liberadas:', acessos.filter(a=>a.permitido).length);\nmostrar({ acessos });",
-      "solution": {
-        "code": "function autorizar(usuario, pedido) {\n  const dono = usuario.id === pedido.dono;\n  const acaoPermitida = pedido.acao === 'ler' || usuario.papel === 'editor';\n  return usuario.mfa && dono && acaoPermitida;\n}\nconst pedidos = [\n  { nome:'Ler meu rascunho', acao:'ler', dono:1 },\n  { nome:'Editar meu rascunho', acao:'editar', dono:1 },\n  { nome:'Ler outro rascunho', acao:'ler', dono:2 },\n  { nome:'Editar outro rascunho', acao:'editar', dono:2 }\n];\nconst acessos = pedidos.map(pedido => ({\n  nome:pedido.nome, permitido:autorizar(entrada, pedido),\n  esperado:entrada.mfa && pedido.dono === entrada.id &&\n    (pedido.acao === 'ler' || entrada.papel === 'editor')\n}));\nconsole.log('Permissões liberadas:', acessos.filter(a=>a.permitido).length);\nmostrar({ acessos });"
-      },
-      "question": "Ser editor deveria permitir alterar o rascunho de qualquer pessoa neste cenário?",
-      "options": [
-        "Sim, o papel basta.",
-        "Não. A regra também exige sessão confirmada e o dono correto."
-      ],
-      "correct": 1,
-      "feedback": "A permissão depende do contexto do pedido. Esconder um botão na tela não impõe essa regra em um sistema real.",
-      "challenge": "Faça a decisão coincidir com a política da atividade: sessão confirmada, recurso próprio e ação permitida. Não altere esperado.",
-      "hints": [
-        "Corrija apenas a função autorizar.",
-        "Combine as três verificações com E. Ler o próprio rascunho é permitido aos dois papéis; editar exige editor."
-      ],
-      "steps": [
-        {
-          "label": "Identidade",
-          "text": "O usuário fictício tem id 1. A chave MFA representa uma confirmação já realizada; ela não autentica uma conta real."
-        },
-        {
-          "label": "Contexto",
-          "text": "Cada pedido tem ação e dono. A regra precisa considerar o recurso específico, não só o nome do cargo."
-        },
-        {
-          "label": "Aplicação",
-          "text": "O quadro compara a decisão do código com a política da atividade. Sistemas reais impõem autorização no servidor, em cada operação."
         }
       ]
     }
@@ -745,192 +682,212 @@ window.WorkshopCourse = {
     "react": {
       "label": "React · referência de organização didática",
       "url": "https://react.dev/"
+    },
+    "cable": {
+      "title": "Fluke Networks · Network Cable Testers",
+      "url": "https://www.flukenetworks.com/expertise/learn-about/cable-testing"
     }
   },
   "notes": {
     "inicio": {
-      "time": "1 min · Curiosidade e a origem da Web",
-      "text": "Apresente o roteiro de 130 minutos. Diga que a turma fará previsões, testará código e investigará falhas. O objetivo é conhecer a área praticando, não decorar sintaxe."
+      "time": "1 min / Começo · entender a Web",
+      "text": "Apresente a proposta sem exigir conhecimento anterior. Convide a turma a observar, prever e experimentar. Explique que o grupo vai construir uma página, entender sua lógica e conhecer quatro áreas profissionais."
     },
     "roteiro": {
-      "time": "2 min · Curiosidade e a origem da Web",
-      "text": "Mostre os nove blocos e combine participação por mãos levantadas ou pequenos grupos. O roteiro soma 130 minutos de atividades, sem contar uma pausa opcional. Mantenha os desafios e a discussão para sustentar o tempo; não avance lendo apenas os títulos."
+      "time": "1 min / Começo · entender a Web",
+      "text": "Mostre a ordem dos blocos. Explique que terminaremos um assunto antes de trocar de área. São 130 minutos com conversa e atividades; não uma leitura contínua de texto."
     },
     "vida-digital": {
-      "time": "2 min · Curiosidade e a origem da Web",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "2 min / Começo · entender a Web",
+      "text": "Escolha apenas uma ou duas situações familiares. Peça exemplos do que aparece e do que muda na página. Não antecipe diagnósticos de rede ou segurança: cada área terá seu próprio bloco."
+    },
+    "web-na-tela": {
+      "time": "3 min / Começo · entender a Web",
+      "text": "Pergunte qual aplicativo usam para abrir um site. Diferencie internet, Web e navegador com os três cartões. Passe pelas quatro etapas e só depois habilite o botão. A animação é um modelo, não uma requisição real. Pergunte: onde entram HTML, CSS e JavaScript?"
     },
     "origem-web": {
-      "time": "3 min · Curiosidade e a origem da Web",
-      "text": "Pergunte se a Web e a internet nasceram juntas. Use a diferença entre rede e serviço. Conte os três marcos sem transformar a apresentação em cronologia. Depois peça um exemplo de link que a turma usa; conecte ao HTML."
+      "time": "3 min / Começo · entender a Web",
+      "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos."
     },
     "linguagens": {
-      "time": "3 min · HTML · conteúdo com significado",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "2 min / HTML · organizar o conteúdo",
+      "text": "Compare sempre a mesma página. HTML organiza o conteúdo; CSS dá forma; JavaScript cria a resposta programada. Os links abrem o laboratório já no bloco correspondente, para evitar pular assuntos."
     },
     "html-estrutura": {
-      "time": "4 min · HTML · conteúdo com significado",
-      "text": "Clique em cada parte e peça à turma que diga sua função. Explique que HTML não é apenas desenhar caixas. Título, parágrafo, link e botão comunicam significado. Não transforme as tags em lista para decorar."
+      "time": "3 min / HTML · organizar o conteúdo",
+      "text": "Comece pelo título e pelo parágrafo. Explique que uma tag dá significado ao conteúdo. Mostre a organização visual da página e depois abra o laboratório, com oito linhas de HTML."
     },
     "lab-html": {
-      "time": "5 min · HTML · conteúdo com significado",
-      "text": "Peça uma previsão. Abra o detalhe, teste o link e adicione um article com a turma. Chame um aluno para escolher a nova trilha. Mostre a solução somente depois de uma tentativa."
+      "time": "5 min / HTML · organizar o conteúdo",
+      "text": "Leia uma tag com a turma: abertura, conteúdo e fechamento. Mude primeiro apenas a saudação. Depois peça um subtítulo e uma frase; deixe alguém prever onde aparecerão. Abra e feche details. Visual de apoio separado; nenhuma outra linguagem precisa ser editada nesta etapa."
     },
     "html-acessivel": {
-      "time": "3 min · HTML · conteúdo com significado",
-      "text": "Use Tab e compare. A caixa com barreira é intencional nesta atividade e não deve ser copiada como solução. O objetivo é mostrar que aparência não substitui semântica. Não simule deficiência; apenas teste outra forma real de operação."
+      "time": "3 min / HTML · organizar o conteúdo",
+      "text": "Demonstre usando Tab e Enter. Pergunte qual controle recebe foco. Explique acessibilidade pelo uso real, sem uma lista de termos. Um botão nativo já traz formas de operação que uma caixa clicável não oferece."
     },
     "lab-html-form": {
-      "time": "3 min · HTML · conteúdo com significado",
-      "text": "Teste vazio, escolha ausente, nome curto e nome válido. Troque o mínimo e repita os casos de limite. Reforce que aqui os dados são fictícios e a confirmação é apenas local."
+      "time": "3 min / HTML · organizar o conteúdo",
+      "text": "Clique no label e veja o foco no campo. Deixe vazio, digite um personagem de duas letras e depois de três. Troque minlength de 3 para 5 e teste quatro e cinco letras. O botão está preparado com JavaScript de apoio; o foco desta aula é o HTML."
     },
     "css-historia": {
-      "time": "2 min · CSS · aparência, espaço e movimento",
-      "text": "Troque o tema antes de explicar CSS. Pergunte o que mudou e o que permaneceu. A proposta histórica tinha uma sintaxe diferente da atual; o laboratório usa CSS moderno, não uma reprodução literal do documento de 1994."
+      "time": "2 min / CSS · dar forma à página",
+      "text": "Mostre o mesmo conteúdo em dois temas. Conte a proposta de Håkon Wium Lie em 1994. Pergunte o que mudou e o que permaneceu. O próximo passo é entender espaço e organização."
     },
     "css-caixa": {
-      "time": "4 min · CSS · aparência, espaço e movimento",
-      "text": "Peça uma previsão para cada alteração. Mostre a conta da largura no modelo content-box. A área externa colorida representa margem; não a some à largura da borda como se fosse conteúdo. Depois leia a comparação com border-box."
+      "time": "3 min / CSS · dar forma à página",
+      "text": "Peça uma previsão e mova um controle de cada vez. Padding é espaço interno; borda contorna; margem fica por fora. A soma é uma extensão opcional: primeiro garanta que a turma reconhece as partes."
     },
     "lab-css-layout": {
-      "time": "7 min · CSS · aparência, espaço e movimento",
-      "text": "Reserve tempo para a turma prever a quebra de layout, editar a regra e comparar as duas larguras. Experimente 140, 170 e 240 como largura mínima. Discuta legibilidade e a diferença entre diminuir tudo e reorganizar."
+      "time": "5 min / CSS · dar forma à página",
+      "text": "Mostre as cinco linhas de CSS. Explique seletor, propriedade e valor com a regra da grade. Compare Ampla e Estreita. Use a dica de uma coluna e a solução com media query. Peça que expliquem por que o conteúdo não mudou."
     },
     "lab-css-motion": {
-      "time": "5 min · CSS · aparência, espaço e movimento",
-      "text": "Altere uma propriedade por vez. Peça que a turma descreva o efeito antes de nomear duração e easing. Relacione movimento com feedback de carregamento e confirmação, evitando efeitos sem propósito."
+      "time": "4 min / CSS · dar forma à página",
+      "text": "Leia somente a linha animation antes dos detalhes. Troque 4s por 2s e peça uma previsão. Compare linear e ease-in-out. O botão de pausa e o desenho estão preparados. Respeite reduzir movimento e explique também com a animação parada."
+    },
+    "logica-passos": {
+      "time": "3 min / Lógica e JavaScript · criar respostas",
+      "text": "Convide: alguém quer dar a primeira instrução? Monte um erro de ordem, como pegar antes de andar, e execute um passo por vez. Depois teste andar três vezes e pegar. Peça à turma que explique o erro como instrução, não como culpa do robô. Limpar reinicia o programa e a posição."
+    },
+    "logica-decisoes": {
+      "time": "3 min / Lógica e JavaScript · criar respostas",
+      "text": "Retome o mesmo robô. Variável guarda um valor; condição escolhe o caminho; repetição executa de novo; função dá nome à tarefa. Mude passos de 2 para 3 e depois para 5. Peça previsões antes de mover. Não introduza todos os detalhes de sintaxe nesta tela."
     },
     "js-modelo": {
-      "time": "3 min · JavaScript · dados que respondem",
-      "text": "Clique algumas vezes, peça uma previsão e conte o caminho da informação. Diga que CSS também pode reagir a estados de interação, mas aqui há um valor mantido pelo JavaScript e uma regra que atualiza a tela."
+      "time": "2 min / Lógica e JavaScript · criar respostas",
+      "text": "Clique e acompanhe ação, valor guardado e texto atualizado. Conecte com a variável da tela anterior. A próxima tela abre a função que produz a mudança."
     },
     "laboratorio": {
-      "time": "4 min · JavaScript · dados que respondem",
-      "text": "Use o robô como aquecimento, sem gastar o módulo inteiro no contador. Mostre o clique, o valor de energia no console e a regra que limita 100. Troque ganho e veja o exemplo reiniciar. Em seguida avance para listas, filtros e limites, que são desafios mais completos."
+      "time": "4 min / Lógica e JavaScript · criar respostas",
+      "text": "Abra a etapa JavaScript. Leia ganho, energia, soma, limite e return. O botão preparado chama darEnergia; o cenário atualiza o robô. Troque ganho de 10 para 50 e teste dois cliques. O terceiro continua em 100. console.log mostra os valores. Cada edição reinicia o exemplo."
     },
     "lab-js-feed": {
-      "time": "6 min · JavaScript · dados que respondem",
-      "text": "Antes de revelar a previsão, digite java e observe zero. Não trate como erro do aluno: é a regra escrita. Compare com Java, normalize e repita. Adicione uma trilha escolhida pela turma e encontre-a pela busca."
+      "time": "5 min / Lógica e JavaScript · criar respostas",
+      "text": "Antes de digitar java, peça uma previsão. Explique a função em três partes: recebe texto, percorre títulos e devolve os encontrados. O desenho da lista está preparado. Teste Java e JAVA, use as dicas para normalizar a comparação e compare os resultados. Não é preciso ensinar manipulação completa do DOM agora."
     },
     "js-desafio": {
-      "time": "2 min · JavaScript · dados que respondem",
-      "text": "Relacione requisito, regra e teste. Não basta o programa executar sem erro de sintaxe; ele precisa responder à necessidade combinada. Use o exemplo que a turma acabou de modificar."
+      "time": "1 min / Lógica e JavaScript · criar respostas",
+      "text": "Retome a busca com uma pergunta curta: funcionar significa o quê para a pessoa que usa? Escolham uma alternativa e justifiquem. Evite trocar o assunto: esta tela ainda é sobre o comportamento da busca."
     },
     "lab-js-carrinho": {
-      "time": "5 min · JavaScript · dados que respondem",
-      "text": "Peça que grupos proponham sequências de cliques. Teste uma que cabe, uma que não cabe e uma repetida. Mostre o desafio de duplicação. Leia só a função relevante; não percorra todas as linhas."
-    },
-    "por-tras-do-clique": {
-      "time": "2 min · Software · criar, testar e corrigir",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "4 min / Lógica e JavaScript · criar respostas",
+      "text": "Teste 30 + 40 + 20 = 90. Pergunte se chegar ao limite é ultrapassar. Tente adicionar mais. Mude o limite para 120 e repita. Compare > com >= como extensão opcional. A interface dos botões está preparada; a função contém a regra que a turma lê."
     },
     "carreiras": {
-      "time": "2 min · Software · criar, testar e corrigir",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "1 min / Carreira · desenvolvimento de software",
+      "text": "Use os quatro cartões como mapa, sem abrir exemplos fora de ordem. Diga o que cada área entrega. Código ficará em desenvolvimento; redes, dados e segurança terão atividades visuais. Comece pelo desenvolvimento e só avance quando seu bloco terminar."
+    },
+    "por-tras-do-clique": {
+      "time": "2 min / Carreira · desenvolvimento de software",
+      "text": "Use uma busca de livros para explicar front-end, back-end e full stack. A interface recebe a busca; o serviço procura no catálogo; a resposta vira lista. Não introduza regras de segurança aqui. Elas ficam no bloco de cibersegurança."
     },
     "lab-software": {
-      "time": "2 min · Software · criar, testar e corrigir",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "2 min / Carreira · desenvolvimento de software",
+      "text": "Leia o que é a profissão, por que existe e uma entrega concreta. Peça previsão para uma e duas estrelas. Colete e compare o placar. Troque 10 por 50 na função. Explique que o trabalho também inclui conversar, planejar, testar e melhorar com outras pessoas."
     },
     "grace-hopper": {
-      "time": "2 min · Software · criar, testar e corrigir",
-      "text": "Conecte nomes claros, funções e colaboração ao código que acabaram de alterar. Não diga que Hopper criou sozinha o COBOL nem que esta função JavaScript reproduz o compilador histórico. A história mostra uma contribuição para tornar programação mais acessível."
+      "time": "1 min / Carreira · desenvolvimento de software",
+      "text": "Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa."
     },
     "lab-software-testes": {
-      "time": "3 min · Software · criar, testar e corrigir",
-      "text": "Peça à turma que escolha um teste vermelho e explique a falha. Corrija a função, execute e teste novos pedidos. Não aceite alterar esperado para esconder o problema."
+      "time": "3 min / Carreira · desenvolvimento de software",
+      "text": "Mostre o resultado inicial de 2/5. Teste pedido maior que o estoque e pedido inválido. Peça que expliquem em português qual regra está faltando antes de ler a solução. Use as dicas e compare 5/5 depois. O estoque é uma analogia, não o código do caso Ariane."
     },
     "caso-ariane": {
-      "time": "1 min · Software · criar, testar e corrigir",
-      "text": "Conte o caso de forma breve e conecte aos limites que a turma acabou de testar. Evite explicar uma cadeia de falhas complexa como se fosse causada por um único if. Use a fonte para aprofundar após a oficina."
+      "time": "1 min / Carreira · desenvolvimento de software",
+      "text": "Em um minuto, conte que um sistema usado em outro contexto não tinha sido validado suficientemente nas novas condições. Conecte com os testes anteriores. A falha não se resume ao exemplo da oficina; a fonte oficial está na tela."
     },
     "lab-infra": {
-      "time": "3 min · Suporte e infraestrutura · investigar",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "3 min / Carreira · redes, suporte e infraestrutura",
+      "text": "Apresente a profissão com o chamado do notebook. Diferencie ajudar a pessoa de manter o ambiente. Pergunte quando começou e se outros equipamentos funcionam. Apresente cabo e testador como ferramentas antes de passar à prática física."
+    },
+    "infra-cabo": {
+      "time": "5 min / Carreira · redes, suporte e infraestrutura",
+      "text": "Reserve cinco minutos. Mostre o cabo de demonstração, as duas pontas e os oito contatos. Convide um voluntário a observar ou encaixar conforme o modelo do testador. Peça previsão antes de ligar e compare os indicadores. No simulador, teste cabo inteiro, fio interrompido e vias trocadas. A expectativa aqui é um cabo direto 1:1. Continuidade não comprova velocidade nem acesso à internet. Se o equipamento não vier, use a mesma atividade na simulação."
     },
     "infra-caminho": {
-      "time": "2 min · Suporte e infraestrutura · investigar",
-      "text": "Pergunte se 404 significa sempre internet desligada. Explique o papel de DNS e de uma resposta HTTP sem fingir que esse modelo cobre todas as camadas. Use os três códigos para preparar o diagnóstico."
+      "time": "3 min / Carreira · redes, suporte e infraestrutura",
+      "text": "Depois do cabo, avance para as camadas lógicas: alcançar a rede, encontrar o endereço pelo nome e receber uma resposta do serviço. Explique DNS como procurar o endereço de um nome. HTTP 404 é recurso não encontrado; 503 é indisponibilidade do serviço. Evite tratar todo erro como cabo rompido."
     },
     "radia-perlman": {
-      "time": "1 min · Suporte e infraestrutura · investigar",
-      "text": "Pergunte se adicionar cabos sempre melhora uma rede. Mostre a analogia do ciclo e a organização de um caminho. Não atribua a invenção da internet a uma pessoa nem confunda STP com roteamento de toda a internet."
+      "time": "1 min / Carreira · redes, suporte e infraestrutura",
+      "text": "Conecte ao assunto de redes: caminhos repetidos podem criar loops. Conte a contribuição de Radia Perlman ao STP e alterne a representação. A animação é uma analogia, não uma implementação. A internet teve muitas contribuições."
     },
     "lab-infra-missao": {
-      "time": "4 min · Suporte e infraestrutura · investigar",
-      "text": "Crie três combinações e peça à turma que identifique a primeira verificação relevante. Faça a nova regra de latência e teste 500 e 501, mantendo HTTP 200."
+      "time": "3 min / Carreira · redes, suporte e infraestrutura",
+      "text": "A turma escolhe a primeira etapa a investigar e explica a pista. Comece em 404. Depois desative DNS e depois a conexão, observando qual falha aparece primeiro. Restaure tudo e escolha 200. Nenhum código precisa ser lido, e nenhuma rede real é testada."
     },
     "caso-gitlab": {
-      "time": "2 min · Suporte e infraestrutura · investigar",
-      "text": "Use registros fictícios para comparar cópia antiga e recente. Explique que replicação, backup e teste de recuperação têm funções diferentes. Não use comandos de exclusão reais. Não diga que os repositórios de código do GitLab foram apagados."
+      "time": "1 min / Carreira · redes, suporte e infraestrutura",
+      "text": "Feche infraestrutura com recuperação: clique em perda, cópia antiga e recente. Explique que testar restauração faz parte da disponibilidade. No incidente GitLab de 2017, dados recentes do banco foram perdidos; não diga que os repositórios de código foram apagados."
     },
     "lab-dados": {
-      "time": "2 min · Dados · perguntar antes de concluir",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "3 min / Carreira · análise de dados",
+      "text": "Apresente a profissão e a pergunta da amostra. Leia as quantidades antes das barras. Peça previsão, mude um número e observe. O gráfico usa escala fixa e dados fictícios. Empates e amostra vazia devem ser discutidos sem inventar um vencedor."
     },
     "katherine-johnson": {
-      "time": "2 min · Dados · perguntar antes de concluir",
-      "text": "Katherine Johnson era matemática. A ponte com a análise de dados de hoje é pedagógica, não uma equivalência de cargos. Conecte sua conferência à necessidade de checar entrada, cálculo e interpretação."
+      "time": "1 min / Carreira · análise de dados",
+      "text": "Conte que Katherine Johnson conferiu cálculos computacionais da missão orbital de John Glenn em 1962. Sua atuação era matemática; a ponte pedagógica é verificar resultados e contexto, não equiparar os cargos."
     },
     "dados-pergunta": {
-      "time": "2 min · Dados · perguntar antes de concluir",
-      "text": "Peça que a turma diga quais campos seriam suficientes. Questione a necessidade de nome, endereço ou telefone: não são necessários para a pergunta desta amostra. Explique que minutos e quantidade de pessoas são medidas diferentes."
+      "time": "2 min / Carreira · análise de dados",
+      "text": "Defina a pergunta antes do cálculo: qual tema recebeu mais tempo nesta atividade? Identifique quais campos são necessários. Uma conclusão desta amostra não representa automaticamente todos os alunos."
     },
     "lab-dados-coleta": {
-      "time": "4 min · Dados · perguntar antes de concluir",
-      "text": "Ative registro incompleto e peça uma previsão. Depois ative valor atípico e compare média e mediana. Só então apresente o limite de 120 minutos do cenário e filtre. Discuta por que regras de limpeza precisam ser justificadas."
+      "time": "4 min / Carreira · análise de dados",
+      "text": "Leia duas linhas da tabela. Adicione o campo vazio e diferencie ausência de zero. Adicione 300 min e compare média e mediana. A atividade tem limite conhecido de 120 min; ative essa regra e explique por que o registro precisa ser conferido. Não ensine a excluir todo valor alto. A turma manipula controles e tabela, sem código."
     },
     "dados-vies": {
-      "time": "2 min · Dados · perguntar antes de concluir",
-      "text": "Mantenha os valores visíveis e alterne o eixo. De 15 para 18 há aumento absoluto de 3 e relativo de 20%. Um eixo recortado pode ser legítimo para observar diferenças pequenas, desde que esteja claro; não conclua que todo eixo recortado é fraude."
+      "time": "2 min / Carreira · análise de dados",
+      "text": "Compare o mesmo par de valores, 15 e 18, com e sem eixo recortado. O aumento é 3, ou 20% em relação a 15. Primeiro compare os números, depois a impressão visual. Um eixo recortado exige contexto; não é automaticamente fraude."
     },
     "lab-cyber": {
-      "time": "3 min · Cibersegurança · pessoas e sistemas",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "3 min / Cibersegurança · carreira e proteção",
+      "text": "Só agora comece os exemplos de segurança. Apresente o que a profissão faz e por quê. Teste as quatro combinações de papel e segunda etapa. Explique identidade versus permissão antes de abrir os arquivos da atividade seguinte. Nenhum código, conta ou credencial real é usado."
     },
     "codigo-seguro": {
-      "time": "2 min · Cibersegurança · pessoas e sistemas",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "2 min / Cibersegurança · carreira e proteção",
+      "text": "Compare visitante e editor na simulação de conteúdo. Reforce que confirmar a identidade não equivale a autorizar qualquer ação. A segurança real precisa de verificações no servidor; os controles desta apresentação apenas representam uma decisão."
     },
     "lab-cyber-regras": {
-      "time": "5 min · Cibersegurança · pessoas e sistemas",
-      "text": "Teste editor sem confirmação, depois com confirmação. Observe acessos a recursos de outra pessoa. Troque para leitor e compare leitura e edição. Corrija a função e repita as quatro condições. Não use contas ou endpoints reais."
+      "time": "3 min / Cibersegurança · carreira e proteção",
+      "text": "Comece com sessão desconfirmada. Depois confirme com editor e observe que a conferência do dono está desligada. Peça à turma que identifique a falha e ligue essa conferência. Troque para leitor. Compare ler e editar arquivo próprio e alheio. São decisões visuais, sem editor de código."
     },
     "detetive": {
-      "time": "3 min · Cibersegurança · pessoas e sistemas",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "3 min / Cibersegurança · carreira e proteção",
+      "text": "Peça que observem remetente, urgência e pedido de segredo antes de escolher. Use as mensagens fictícias de phishing e login não iniciado. Cada exemplo e sua explicação ficam neste bloco de segurança."
     },
     "caso-wannacry": {
-      "time": "2 min · Cibersegurança · pessoas e sistemas",
-      "text": "Conecte a disponibilidade ao impacto em pessoas, sem sensacionalismo ou código ofensivo. Não reduza o incidente a usavam Windows XP; houve fatores de correção e preparação. Atualizações, backups e resposta são camadas, não garantias absolutas."
+      "time": "2 min / Cibersegurança · carreira e proteção",
+      "text": "Conte o impacto em serviços de saúde de forma breve e respeitosa. Relacione correções, preparação e resposta. Não reduza tudo a uma versão do Windows nem apresente uma camada como garantia absoluta de proteção."
     },
     "cyber-investiga": {
-      "time": "3 min · Cibersegurança · pessoas e sistemas",
-      "text": "Divida a turma em pequenos grupos ou peça respostas por mãos levantadas. Dê um minuto para escolher uma sequência e outro para justificá-la. Não peça senhas, códigos ou exemplos pessoais de contas da turma."
+      "time": "3 min / Cibersegurança · carreira e proteção",
+      "text": "Convide um voluntário ou uma dupla para explicar a sequência: negar pedido inesperado, verificar no serviço oficial e comunicar. Não peça exemplos pessoais de senhas, códigos ou incidentes da turma."
     },
     "fabrica": {
-      "time": "2 min · Missão da turma e próximos passos",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "1 min / Participação · escolher, responder e explicar",
+      "text": "Revisão final: cada área contribui com uma pergunta diferente. Não reabra todas as demonstrações. Peça à turma que relacione uma situação com o primeiro passo que faria."
     },
     "missao-final": {
-      "time": "4 min · Missão da turma e próximos passos",
-      "text": "Apresente os quatro tickets. Peça que cada grupo escolha um, formule uma hipótese e indique um teste. Revele a pista e reabra o laboratório correspondente. O objetivo é justificar a investigação, não adivinhar um cargo pelo título."
+      "time": "2 min / Participação · escolher, responder e explicar",
+      "text": "Escolham uma das quatro situações. Alguém quer propor uma hipótese? Convide outra pessoa a dizer como testaria. Os links são opcionais para retomar uma atividade, sem dispersar a apresentação."
     },
     "quiz": {
-      "time": "3 min · Missão da turma e próximos passos",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "8 min / Participação · escolher, responder e explicar",
+      "text": "Há oito minutos para a atividade. Escolha a pergunta no seletor e um modo: voluntário, convite ou dupla. Faça a pergunta antes de clicar na resposta. Convite sugerido: posso convidar você? Pode passar a vez. Valorize a justificativa. A ferramenta não sorteia pessoas nem coleta nomes; o apresentador conduz. Se necessário, escolha seis perguntas para discutir com mais calma e retome as demais depois."
     },
     "primeiro-projeto": {
-      "time": "1 min · Missão da turma e próximos passos",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "1 min / Participação · escolher, responder e explicar",
+      "text": "Peça que cada pessoa pense em uma primeira prática: uma página, um diagnóstico, uma tabela ou um cuidado com a conta. Os links permitem continuar após a oficina."
     },
     "encerramento": {
-      "time": "1 min · Missão da turma e próximos passos",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "1 min / Participação · escolher, responder e explicar",
+      "text": "Retome o que aprenderam: organizar conteúdo, dar forma, criar uma regra e reconhecer diferentes profissões. Convide a turma a compartilhar o que ficou curioso para aprender depois."
     },
     "equipe": {
-      "time": "1 min · Missão da turma e próximos passos",
-      "text": "Peça uma previsão antes de revelar o resultado. Faça a interação, deixe a turma explicar o que mudou e conecte com a próxima etapa."
+      "time": "1 min / Participação · escolher, responder e explicar",
+      "text": "Agradeça ao público e apresente os seis integrantes, sem matrículas. As histórias e os casos têm fontes acessíveis nos links. O funcionamento dos exemplos é local."
     }
   },
   "choices": {
@@ -949,100 +906,99 @@ window.WorkshopCourse = {
   },
   "missions": [
     {
-      "title": "A busca não acha “java”.",
-      "area": "Software / Web",
-      "question": "Qual regra compara os textos?",
-      "hint": "Compare maiúsculas e minúsculas, depois repita o teste.",
-      "href": "#lab-js-feed"
+      "area": "Software",
+      "title": "O placar calcula errado.",
+      "question": "Qual entrada você escolheria para testar a regra?",
+      "hint": "Compare uma estrela com duas e observe o resultado esperado.",
+      "href": "#lab-software"
     },
     {
-      "title": "O serviço devolve 503.",
-      "area": "Suporte / Infraestrutura",
-      "question": "A primeira hipótese é internet desligada?",
-      "hint": "A resposta existe. Investigue a disponibilidade do serviço e o contexto.",
-      "href": "#lab-infra-missao"
+      "area": "Redes e suporte",
+      "title": "Um contato não acende no testador.",
+      "question": "O que o teste permite investigar? Ele prova que um site vai abrir?",
+      "hint": "Acompanhe as duas pontas e compare a ligação esperada. Continuidade é só uma parte da investigação.",
+      "href": "#infra-cabo"
     },
     {
-      "title": "A média saltou de repente.",
-      "area": "Análise de dados",
-      "question": "O que mudou na amostra?",
-      "hint": "Verifique valores ausentes e extremos antes de aceitar a conclusão.",
+      "area": "Dados",
+      "title": "A média mudou muito.",
+      "question": "O que você verificaria na tabela antes de apresentar uma conclusão?",
+      "hint": "Compare campos vazios, o valor de 300 min e o limite de 120 min informado para a atividade.",
       "href": "#lab-dados-coleta"
     },
     {
-      "title": "Editor altera outro rascunho.",
       "area": "Cibersegurança",
-      "question": "O papel é suficiente para autorizar esse recurso?",
-      "hint": "Confira identidade, dono e ação permitida no pedido.",
+      "title": "Um editor altera o arquivo de outra pessoa.",
+      "question": "Que parte da regra de acesso deixou de ser conferida?",
+      "hint": "Compare a identidade, o dono do arquivo e a ação permitida para cada papel.",
       "href": "#lab-cyber-regras"
     }
   ],
   "extraQuiz": [
     {
-      "question": "Uma busca não acha “java”, mas acha “Java”. O que investigar primeiro?",
+      "question": "O robô precisa chegar à estrela antes de pegá-la. Qual ideia isso mostra?",
       "options": [
-        "A regra de comparação de texto",
-        "A cor do botão",
-        "A quantidade de cabos da sala"
+        "A ordem das instruções importa.",
+        "Só a cor da página importa.",
+        "Qualquer ordem produz o mesmo resultado."
       ],
       "correct": 0,
-      "explanation": "Compare a expectativa com a função de busca e teste variações de maiúsculas e minúsculas.",
+      "explanation": "Um algoritmo reúne instruções em uma sequência. Pegar antes de chegar à posição certa não realiza a tarefa.",
+      "review": "logica-passos"
+    },
+    {
+      "question": "energia começa em 0 e aumenta a cada clique. Nesse exemplo, energia é o quê?",
+      "options": [
+        "Um endereço de site.",
+        "Uma variável que guarda um valor.",
+        "Uma profissão."
+      ],
+      "correct": 1,
+      "explanation": "Uma variável guarda uma informação que pode mudar durante a execução. A condição verifica o valor antes de continuar.",
+      "review": "logica-decisoes"
+    },
+    {
+      "question": "Uma lista tem três títulos. Qual ideia permite examinar cada um deles?",
+      "options": [
+        "Repetição.",
+        "Trocar o cabo.",
+        "Mudar o tamanho da fonte."
+      ],
+      "correct": 0,
+      "explanation": "Uma repetição executa uma ação para cada item. No laboratório, o for percorre os títulos e o if decide quais entram no resultado.",
       "review": "lab-js-feed"
     },
     {
-      "question": "Uma função passou no teste comum. O que ainda pode faltar?",
+      "question": "Os contatos 1 a 8 de um cabo direto passaram no teste de continuidade. O que isso prova?",
       "options": [
-        "Testar limites e entradas inválidas",
-        "Apagar os testes que falham",
-        "Trocar o nome do arquivo"
+        "Que qualquer site vai abrir.",
+        "Que a velocidade máxima foi certificada.",
+        "Que os contatos verificados têm continuidade; outros testes ainda podem ser necessários."
       ],
-      "correct": 0,
-      "explanation": "Testes precisam representar as condições esperadas de uso, incluindo casos de limite e situações inválidas.",
-      "review": "lab-software-testes"
+      "correct": 2,
+      "explanation": "Um teste simples de continuidade verifica ligações. Ele não certifica desempenho nem confirma que toda a rede ou a internet está funcionando.",
+      "review": "infra-cabo"
     },
     {
-      "question": "No nosso modelo, o serviço responde 404. Qual é a pista?",
+      "question": "Uma atividade dura no máximo 120 min, mas a tabela registra 300 min para uma pessoa fictícia. O que fazer?",
       "options": [
-        "O recurso pedido não foi encontrado",
-        "A rede sempre está desligada",
-        "O backup sempre foi apagado"
+        "Apresentar sem conferir.",
+        "Verificar o registro e o contexto antes de concluir.",
+        "Excluir sempre o maior número de qualquer tabela."
       ],
-      "correct": 0,
-      "explanation": "404 é uma resposta HTTP ligada ao recurso pedido. Não significa automaticamente falta de conexão.",
-      "review": "lab-infra-missao"
-    },
-    {
-      "question": "Um valor muito alto alterou bastante a média. Qual próximo passo é razoável?",
-      "options": [
-        "Verificar contexto e qualidade, e comparar outras medidas",
-        "Excluir qualquer número que não agrade",
-        "Concluir que todo mundo passou a usar mais"
-      ],
-      "correct": 0,
-      "explanation": "Um valor extremo exige investigação. Limpeza e interpretação precisam de regras justificadas, não de preferência pelo resultado.",
+      "correct": 1,
+      "explanation": "Neste cenário há uma regra conhecida: até 120 min. O registro precisa ser investigado. Um valor alto não deve ser removido apenas por ser diferente.",
       "review": "lab-dados-coleta"
     },
     {
-      "question": "Qual conjunto representa a autorização da nossa atividade de rascunhos?",
+      "question": "Confirmar a identidade de alguém dá permissão para alterar qualquer arquivo?",
       "options": [
-        "Papel de editor, sem outras verificações",
-        "Sessão confirmada, recurso próprio e ação permitida",
-        "Ter o botão visível na página"
+        "Sim, identidade e permissão são a mesma coisa.",
+        "Não. A ação e o arquivo também precisam estar autorizados."
       ],
       "correct": 1,
-      "explanation": "A política da atividade considera o contexto completo do pedido. Em produção, a verificação é imposta no servidor.",
+      "explanation": "Autenticação confirma a identidade. Autorização define o que ela pode fazer, considerando a ação e o recurso.",
       "review": "lab-cyber-regras"
-    },
-    {
-      "question": "Uma rotina chamada backup garante recuperação?",
-      "options": [
-        "Sim, o nome da rotina basta",
-        "Não: cópia, atualidade e restauração precisam ser verificadas",
-        "Sim, se o gráfico estiver verde"
-      ],
-      "correct": 1,
-      "explanation": "É preciso saber o que foi copiado, quando e se a restauração funciona. Essa foi a pergunta do cenário inspirado no caso GitLab.",
-      "review": "caso-gitlab"
     }
   ]
 };
