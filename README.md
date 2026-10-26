@@ -1,12 +1,57 @@
 # Fábrica de Software na Prática
 
-Apresentação interativa para alunos do ensino médio sobre **HTML, CSS, JavaScript, cibersegurança e carreiras em TI**. Projeto de extensão do Grupo 04, Ciência da Computação, UNINASSAU Campus Graças, para a Escola Lions de Parnamirim, Recife/PE.
+Uma oficina em código para alunos do ensino médio: **HTML, CSS, JavaScript, cibersegurança e carreiras em TI**, com previsão, demonstração e investigação.
 
-A sequência tem **17 etapas conectadas**. Cada prática aproxima três coisas: **o código editável, o que ele faz e o resultado visual ao vivo**.
+**[Abrir a apresentação publicada](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/)**
 
-## Abrir e apresentar
+A versão 2.0 contém **46 etapas**, **15 laboratórios editáveis**, **12 perguntas de revisão** e um **roteiro sugerido de 130 minutos (2h10)**. O tempo inclui conversa, previsões e resolução dos desafios; uma passagem rápida pelos títulos não corresponde à oficina completa.
 
-Baixe o repositório em **Code → Download ZIP**, extraia a pasta inteira e abra `index.html` em um navegador atualizado. Mantenha `assets` junto do HTML. A apresentação não depende de instalação, conta, CDN ou conexão; os links de estudo precisam de internet.
+O design original foi mantido. A referência react.dev orienta a organização didática: uma ideia por vez, código perto do resultado, mudanças observáveis e desafios progressivos. A oficina continua focada nos assuntos solicitados.
+
+## Roteiro de duas horas e dez minutos
+
+| Bloco | Duração | Prática principal |
+| --- | --- | --- |
+| Curiosidade e origem da Web | 8 min | Distinguir rede, serviço e página; formular perguntas |
+| HTML | 18 min | Estrutura semântica, links, detalhes, controles e validação local |
+| CSS | 18 min | Modelo de caixa, grade responsiva e animação com controle |
+| JavaScript | 20 min | Estado, eventos, busca, listas e aplicação com limites |
+| Desenvolvimento de software | 12 min | Funções, requisitos, testes e entradas inválidas |
+| Suporte / Infraestrutura | 12 min | Conexão, DNS, respostas HTTP, latência e recuperação |
+| Análise de dados | 12 min | Limpeza, agrupamento, média, mediana e interpretação |
+| Cibersegurança | 18 min | Sessão, papel, dono, ação, mensagens e resposta a incidente |
+| Missão da turma e fechamento | 12 min | Investigar tickets, revisar e escolher uma primeira prática |
+
+Cada bloco tem notas na apresentação. O [roteiro completo](docs/ROTEIRO.md) orienta as falas e o [guia dos laboratórios](docs/GUIA_DOS_LABORATORIOS.md) reúne previsões, dicas, desafios e verificações.
+
+## O que mudou nas demonstrações
+
+Os exemplos iniciais foram preservados como aquecimento. A sequência avança para práticas com mais de uma regra:
+
+- Construir uma página com significado e controles utilizáveis pelo teclado.
+- Validar campos fictícios e testar entradas no limite.
+- Reorganizar cartões conforme a largura da prévia.
+- Alterar duração, ritmo e pausa de uma animação.
+- Corrigir uma busca que diferencia maiúsculas e minúsculas.
+- Combinar escolhas, soma de tempo, remoção e limite.
+- Corrigir uma função de estoque sem alterar os resultados esperados dos testes.
+- Distinguir falha de conexão, DNS, recurso ausente, serviço indisponível e lentidão.
+- Comparar registros incompletos, valor extremo, média e mediana.
+- Revisar uma autorização que ignora confirmação de sessão e dono do recurso.
+
+Nos dez novos laboratórios, a turma pode responder a uma **previsão**, editar o código, observar resultado e console, pedir **dicas graduais**, abrir uma **solução** e voltar à própria tentativa. A atualização automática pode ser pausada. **Restaurar** recupera o exemplo.
+
+As partes relevantes de cada exemplo aparecem primeiro no editor; os estilos de apoio ficam separados por comentário. As abas permitem explorar os arquivos. A prévia web tem opções de largura ampla e estreita.
+
+## Pessoas, casos e curiosidade
+
+As histórias entram junto do assunto correspondente: Tim Berners-Lee e a Web; Håkon Wium Lie e a proposta de folhas de estilo; Grace Hopper e a automação da programação; Radia Perlman e a organização de caminhos Ethernet; Katherine Johnson e a conferência de cálculos.
+
+Três casos breves conectam o laboratório ao mundo real: Ariane 5 (testes e contexto), GitLab (backup e restauração) e WannaCry/NHS (continuidade e preparação). As fontes primárias ficam nas próprias telas e em [Fontes e escopo](docs/FONTES.md). As demonstrações são analogias educativas e não reproduzem os sistemas desses casos.
+
+## Abrir uma cópia local
+
+Baixe o repositório em **Code → Download ZIP**, extraia a pasta inteira e abra `index.html` em um navegador atualizado. Mantenha `assets` junto do HTML. Os exemplos e a apresentação não precisam de conta ou conexão; os links externos precisam de internet.
 
 Com Node.js 20 ou superior, também é possível usar:
 
@@ -16,89 +61,53 @@ npm start
 
 Abra `http://localhost:5173`. Não há dependências para instalar.
 
-## Laboratórios ao vivo
-
-| Assunto | Código | Resultado / demonstração |
-| --- | --- | --- |
-| HTML | Título, parágrafo e botão | Troque a saudação e veja o texto mudar |
-| CSS | Cor, forma e animação | Personalize a aparência de um robô |
-| JavaScript | Evento de clique, variável e `console.log` | Dê energia ao robô; acompanhe preenchimento e console |
-| Desenvolvimento de software | Função de pontuação | Colete estrelas, altere o multiplicador e veja o placar |
-| Suporte / Infraestrutura | Condições de diagnóstico | Ligue/desligue rede e servidor; acompanhe um pacote fictício |
-| Análise de dados | Lista e função de soma | Mude os números e veja as barras e o total |
-| Cibersegurança | Regra de autorização com duas condições | Teste papéis e segunda etapa; observe a porta liberar ou bloquear |
-
-**Atualizar ao digitar** vem ativado. As alterações são executadas após uma breve pausa de 350 ms. Desative a opção para preparar várias mudanças antes de clicar em **Executar**. `Ctrl + Enter` / `Cmd + Enter` também executa o laboratório atual.
-
-Cada laboratório de carreira tem três botões que explicam **entrada → regra → resultado**, além de um experimento sugerido, um exemplo alternativo e **Restaurar**. O console mostra as mensagens reais do código e os erros de edição. Os estados são mantidos ao trocar de tela e apagados ao recarregar.
-
-`entrada` e `mostrar` são recursos educativos dos laboratórios de carreira: o primeiro fornece o estado dos controles e o segundo envia os dados para o cenário. Usamos JavaScript como linguagem comum para comparar a lógica; isso não resume as ferramentas de cada profissão.
-
-### Sugestões para apresentar
-
-- **Web:** mude o título; depois a variável de cor; por último, troque o ganho de energia de 10 para 50 e clique no robô.
-- **Software:** pergunte o placar previsto com duas estrelas; colete uma; altere o multiplicador.
-- **Suporte:** compare rede desligada, servidor desligado e caminho disponível. O desafio remove uma verificação: a animação do pacote e a conclusão do código podem discordar. Investigue e corrija.
-- **Dados:** pergunte qual barra crescerá antes de trocar o primeiro número da lista por 30. Compare outra amostra.
-- **Cibersegurança:** teste visitante e editor com e sem segunda etapa. Depois inclua o papel revisor na função e repita os testes.
-
-Cada edição da página web recria a prévia e zera seu estado de interação. Nos laboratórios de carreira, editar o código preserva os controles; **Restaurar** recupera código e controles iniciais.
-
-## Navegação
+## Controles para apresentar
 
 | Ação | Controle |
 | --- | --- |
-| Avançar / voltar | Setas, `Page Down` / `Page Up`, botões inferiores |
-| Avançar | `Espaço`, fora de um campo ou botão |
-| Primeira / última etapa | `Home` / `End` |
-| Tela cheia | `F` ou ícone superior |
-| Roteiro / atalhos | `M` / `?` |
-| Notas de apoio | `N` ou **Notas** |
-| Executar código | Botão **Executar**, `Ctrl + Enter` / `Cmd + Enter` |
-| Fechar painel ou diálogo | `Esc` |
+| Avançar / voltar | Setas, Page Down / Page Up, botões inferiores |
+| Primeira / última etapa | Home / End |
+| Tela cheia | F ou ícone superior |
+| Roteiro por blocos e duração | M ou ícone de roteiro |
+| Notas de apoio | N ou botão Notas |
+| Executar código | Executar ou Ctrl + Enter / Cmd + Enter |
+| Fechar painel ou diálogo | Esc |
 
-Os atalhos de navegação ficam suspensos nos editores. As setas nas abas do laboratório web trocam de arquivo e ativam sua etapa. Nos editores de carreira, `Tab` insere dois espaços. O cronômetro inicia/pausa com um clique; ele pode ser zerado nas notas.
+Durante a edição, os atalhos de navegação são suspensos. Tab insere dois espaços nos novos editores; nas abas, as setas trocam de arquivo. As notas aparecem na própria tela projetada. O cronômetro pode ser iniciado, pausado e zerado.
 
-**As notas aparecem na tela projetada.** Consulte [o roteiro de falas](docs/ROTEIRO.md) antes de apresentar. Links como `index.html#lab-dados` abrem diretamente um assunto. A navegação de voltar do navegador funciona.
+## Ambiente controlado
 
-## Ambiente das demonstrações
+Os dados, pedidos, personagens e estados de rede são fictícios. Não há cadastro, coleta de dados pessoais, votação sincronizada ou acesso a contas reais. Os estados ficam na sessão e desaparecem ao recarregar.
 
-Todos os exemplos são locais e fictícios. O laboratório de suporte não testa a rede da escola. Os gráficos não coletam respostas reais. Os papéis e a segunda etapa não alteram contas ou permissões reais.
+A prévia web usa iframe com origem opaca e conexões bloqueadas. Os laboratórios de funções usam Workers descartáveis dentro de iframes isolados, com interrupção após um segundo e validação dos resultados. Código web que manipula o DOM executa na prévia; evite loops infinitos nessa modalidade. A oficina foi feita para seus exemplos educativos, não para executar programas não confiáveis de terceiros.
 
-A prévia web roda em um iframe com origem opaca, sem acesso ao DOM principal, sem conexão de rede e sem envio de formulários. Nos quatro laboratórios de funções, o código roda em Workers descartáveis dentro de iframes isolados; uma execução é encerrada após um segundo. Resultados são validados antes de alimentar os cenários. Erros preservam o último resultado válido e aparecem no console.
+`entrada` e `mostrar` são recursos dos laboratórios de funções: conectam controles e visualização ao código. Sistemas reais verificam autenticação e autorização no servidor. As regras locais não substituem essa verificação.
 
-O limite de um segundo é dos laboratórios de funções. Código web que manipula DOM executa no iframe: evite loops infinitos nesse exemplo. O material foi feito para as práticas educativas da oficina, não para receber programas não confiáveis de terceiros.
-
-Em sistemas reais, autenticação e autorização devem ser verificadas pelo servidor. A porta animada apenas representa a decisão de uma função.
-
-O quiz coletivo contém seis perguntas, explicação e revisão. Não há votação sincronizada entre aparelhos, ranking individual, cadastro, armazenamento persistente ou coleta de dados pessoais.
+Alguns exemplos começam com um problema **intencional e identificado**. Os testes ou o comportamento mostrado ajudam a investigá-lo. A solução é uma possibilidade de implementação, não uma resposta que a turma precisa decorar.
 
 ## Editar e verificar
 
-| Arquivo | Conteúdo |
+| Arquivo | Responsabilidade |
 | --- | --- |
-| `index.html` | Estrutura, sequência, textos e créditos |
-| `assets/content.js` | Exemplo web, explicações, perguntas e notas |
-| `assets/lab-content.js` | Código, desafios e explicações das quatro carreiras |
-| `assets/live-labs.js` | Editores, console, controles e cenários animados |
-| `assets/lab-engine.js` | Executor isolado e contratos dos resultados |
-| `assets/app.js` e `assets/logic.js` | Navegação, prévia web e quiz |
-| `assets/styles.css`, `assets/story.css`, `assets/live-labs.css` | Aparência, responsividade e animações |
-| `docs/ROTEIRO.md` | Sequência de falas e demonstrações |
-| `docs/FONTES.md` | Referências e escopo dos exemplos |
+| `index.html` | Estrutura, sequência, conceitos, histórias e créditos |
+| `assets/course-data.js` | Roteiro, novos exemplos, previsões, dicas e soluções |
+| `assets/course-labs.js` | Editores, prévias, execução e cenários dos novos laboratórios |
+| `assets/course-logic.js` | Contratos dos resultados e funções do roteiro |
+| `assets/course.js` | Interações de apoio e orientação dos blocos |
+| `assets/course.css` | Estilo das novas partes, mantendo a identidade |
+| `assets/content.js`, `lab-content.js`, `app.js`, `live-labs.js`, `logic.js`, `lab-engine.js` | Exemplos preservados, navegação, quiz e isolamento |
+| `docs/` | Roteiro, guia prático e fontes |
 
 ```bash
 npm run check
 ```
 
-A verificação cobre sintaxe, sequência, âncoras, notas, quiz, isolamento e a execução dos exemplos com entradas e edições diferentes. O GitHub Actions usa o mesmo comando. Antes da apresentação, ensaie os laboratórios no notebook e no projetor, inclusive sem internet. Em telas menores o conteúdo pode rolar; o layout empilha editor e resultado no celular.
+O comando verifica sintaxe, navegação, coerência do roteiro, duração, contratos e comportamento dos exemplos antes e depois das correções. O GitHub Actions executa as verificações a cada alteração.
 
-## Hospedagem estática
-
-O projeto funciona em qualquer hospedagem estática. Para GitHub Pages, selecione **Settings → Pages → Deploy from a branch → main → / (root)** e use o endereço que o GitHub informar após publicar. Não é necessário configurar Pages para abrir a cópia local.
+O GitHub Pages publica automaticamente a branch **main**, pasta **/ (root)**. O arquivo `.nojekyll` mantém a publicação estática. Ensaiem também no notebook e no projetor, inclusive sem internet; em telas menores, editor e resultado ficam empilhados.
 
 ## Equipe
 
 Anita Gallindo Oliveira · Bianka Moura Batista · Emanuele Vitoria Lima de Sousa · Girlenio Gomes da Silva · Pedro Vinícius de Almeida Santana · Vanderson Gabriel Vasconcelos Barbosa.
 
-UNINASSAU, Campus Graças. Atividades Práticas Interdisciplinares de Extensão II, Ciência da Computação, 2026.
+UNINASSAU, Campus Graças. Ciência da Computação, Atividades Práticas Interdisciplinares de Extensão II. Escola Lions de Parnamirim, Recife/PE, 2026.

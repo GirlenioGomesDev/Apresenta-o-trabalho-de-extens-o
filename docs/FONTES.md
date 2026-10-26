@@ -1,33 +1,36 @@
 # Fontes e escopo
 
-Apresentação para alunos do ensino médio com HTML, CSS, JavaScript, cibersegurança e quatro áreas: Desenvolvimento de software, Analista de Suporte/Infraestrutura, Analista de Dados e Cibersegurança.
+Referências primárias e documentação consultadas para a oficina, com verificação em **26 de outubro de 2026**. As histórias são breves e aparecem junto do conceito correspondente.
 
-O projeto acadêmico é “Fábrica de Software na Prática: Desenvolvimento Web, Cibersegurança e Carreiras em TI”, Grupo 04, Ciência da Computação, UNINASSAU Campus Graças. Os assuntos são apresentados por processos visuais, código editável e resultados ao vivo.
+## Pessoas e contribuições
 
-## Referências
+- **CERN · A short history of the Web.** Tim Berners-Lee e a origem da Web no CERN; distinguir Web de internet. <https://home.cern/science/computing/the-birth-of-the-web/short-history-web/>.
+- **W3C · proposta original de Håkon Wium Lie, 1994.** Proposta de folhas de estilo de Håkon Wium Lie em 1994. Sua sintaxe histórica não é apresentada como CSS atual. <https://www.w3.org/People/howcome/p/cascade.html>.
+- **Computer History Museum · entrevista com Grace Hopper.** Entrevista original de Grace Hopper, registrada em 1980. O histórico e o relato contextualizam A-0, FLOW-MATIC e o esforço coletivo ligado ao COBOL. <https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf>.
+- **LACNIC · entrevista com Radia Perlman.** Entrevista direta de Radia Perlman. A analogia visual de caminhos não implementa STP e não atribui a internet a uma única pessoa. <https://blog.lacnic.net/en/an-interview-with-internet-pioneer-radia-perlman/>.
+- **NASA · biografia de Katherine Johnson.** Biografia oficial de Katherine Johnson. A ligação com análise de dados é pedagógica; não equipara seu trabalho de matemática ao cargo atual de analista. <https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography/>.
 
-Referências consultadas na preparação da oficina em 25 de outubro de 2026:
+## Casos reais
 
-1. **MDN Web Docs. HTML.** <https://developer.mozilla.org/pt-BR/docs/Web/HTML>.
-2. **MDN Web Docs. CSS.** <https://developer.mozilla.org/pt-BR/docs/Web/CSS>.
-3. **MDN Web Docs. Guia JavaScript.** <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide>.
-4. **CERT.br. Cartilha de Segurança para Internet.** <https://cartilha.cert.br/>. Fascículos: <https://cartilha.cert.br/fasciculos/>.
-5. **CERT.br. Autenticação.** <https://cartilha.cert.br/fasciculos/autenticacao/fasciculo-autenticacao.pdf>.
+- **ESA · conclusões da investigação, 23/07/1996.** Conclusões da comissão de investigação do voo de 4 de junho de 1996, publicadas em 23 de julho. A função de estoque é uma analogia sobre testes e contexto; não reproduz o software do lançador. <https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report>.
+- **GitLab · postmortem do incidente de 31/01/2017.** Postmortem oficial do incidente de 31 de janeiro, publicado em 10 de fevereiro de 2017. Diferenciar perda de dados do banco e indisponibilidade dos repositórios de código. <https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/>.
+- **NAO · investigação WannaCry e NHS, 2017.** Investigação oficial sobre o ataque de 12 de maio de 2017 e o NHS da Inglaterra. Atualizações, continuidade e preparação são camadas; não são garantia absoluta de segurança. <https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/>.
 
-## Exemplos educativos
+## Conceitos web e segurança
 
-| Laboratório | Origem e limites |
-| --- | --- |
-| Web | Robô, energia e textos criados para a oficina. O clique modifica o DOM, sem enviar dados |
-| Software | Regra fictícia de pontos por estrela. Não representa um produto comercial |
-| Suporte | Estados de rede e servidor fornecidos por controles locais. Nenhum equipamento real é consultado |
-| Dados | Lista inicial fictícia: Jogos 12, Vídeos 8, Música 5. A segunda amostra contém 6, 20 e 9. O código pode alterar os números; não é pesquisa com alunos |
-| Cibersegurança | Função ilustrativa que combina papel autorizado e confirmação de segunda etapa. Não valida identidades, senhas ou contas reais |
+- **MDN Web Docs. HTML.** <https://developer.mozilla.org/pt-BR/docs/Web/HTML>.
+- **MDN Web Docs. CSS.** <https://developer.mozilla.org/pt-BR/docs/Web/CSS>.
+- **MDN Web Docs. Guia JavaScript.** <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide>.
+- **CERT.br. Cartilha de Segurança para Internet.** <https://cartilha.cert.br/>.
+- **React.** Referência de organização didática: exemplos próximos da explicação, evolução gradual e exploração. <https://react.dev/>.
 
-`entrada` e `mostrar` são recursos próprios destes laboratórios, não APIs nativas do JavaScript. Servem para conectar os controles à função e o resultado ao cenário.
+## Limites dos exemplos
 
-A porta animada não substitui autenticação e autorização de um sistema real. A autorização deve ser verificada pelo servidor. A tela separada de permissões demonstra somente o papel, enquanto o laboratório combina papel e segunda etapa.
-
-As mensagens e solicitações de acesso são fictícias. Os exemplos não coletam dados pessoais nem sincronizam respostas entre aparelhos. Os estados são locais à sessão e desaparecem ao recarregar.
-
-Funções profissionais podem se sobrepor e usar ferramentas diferentes entre empresas. Front-end, back-end e full stack são apresentados dentro de Desenvolvimento de software. O material não oferece pesquisa salarial nem garantia de emprego.
+- Todos os conjuntos de dados, personagens, papéis, pedidos e estados de conexão são fictícios.
+- Os laboratórios não consultam equipamentos, contas ou redes reais. Não há malware ou comandos destrutivos.
+- `entrada` e `mostrar` são recursos educativos próprios; não são APIs nativas do JavaScript.
+- A autorização real é aplicada pelo servidor. Trocar um papel na interface não protege um sistema.
+- A regra de excluir durações acima de 120 minutos vem do cenário fictício da atividade, não de uma recomendação geral para remover valores extremos.
+- Um eixo recortado pode servir à análise de pequenas diferenças, desde que seja declarado; a atividade compara a percepção sem mudar os dados.
+- As funções profissionais podem se sobrepor e usar outras ferramentas e linguagens. Não há promessa de emprego ou salário.
+- O material se refere ao projeto de extensão do Grupo 04, Ciência da Computação, UNINASSAU Campus Graças, para alunos do ensino médio.

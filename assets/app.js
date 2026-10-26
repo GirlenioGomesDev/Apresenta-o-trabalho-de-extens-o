@@ -56,6 +56,7 @@
       else link.removeAttribute('aria-current');
     });
     updateNotes();
+    window.dispatchEvent(new Event('workshop-scene-change'));
     window.scrollTo({ top: 0, behavior: 'instant' });
     if (focus) (scene.querySelector('h1, h2') || $('#conteudo')).focus({ preventScroll: true });
   }
@@ -77,7 +78,7 @@
 
   const overview = $('#overview-dialog');
   const help = $('#help-dialog');
-  $('#overview-list').innerHTML = scenes.map((scene, index) => '<a href="#' + scene.id + '"><span>' + String(index + 1).padStart(2, '0') + '</span>' + logic.escapeHTML(scene.dataset.title) + '</a>').join('');
+  $('#overview-list').innerHTML = window.WorkshopCourse.modules.map(module => '<section class="overview-module"><h3>' + logic.escapeHTML(module.title) + '<small>' + module.minutes + ' min</small></h3><div class="overview-module-links">' + scenes.filter(scene => scene.dataset.module === module.id).map(scene => '<a href="#' + scene.id + '"><span>' + String(ids.indexOf(scene.id) + 1).padStart(2, '0') + '</span>' + logic.escapeHTML(scene.dataset.title) + '<small>' + scene.dataset.minutes + ' min</small></a>').join('') + '</div></section>').join('');
 
   function openDialog(dialog) {
     if (dialog.open) { dialog.close(); return; }
@@ -150,6 +151,8 @@
     const editing = event.target.closest('input, textarea, select, [contenteditable="true"]');
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
       if (scenes[current].id === 'laboratorio') { event.preventDefault(); runLab(); return; }
+      const courseHost = scenes[current].querySelector('[data-course-lab]');
+      if (courseHost && window.CourseLabs) { event.preventDefault(); window.CourseLabs.run(courseHost.dataset.courseLab); return; }
       const liveHost = scenes[current].querySelector('[data-live-lab]');
       if (liveHost && window.LiveLabs) { event.preventDefault(); window.LiveLabs.run(liveHost.dataset.liveLab); return; }
     }

@@ -9,13 +9,14 @@ const root = path.resolve(__dirname, '..');
 const context = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/content.js'), 'utf8'), context);
 vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/lab-content.js'), 'utf8'), context);
+vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/course-data.js'), 'utf8'), context);
 const data = context.window.WorkshopData;
 const lessons = context.window.LiveLabLessons;
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ids = [...html.matchAll(/<section class="scene[^>]* id="([^"]+)"/g)].map(match => match[1]);
 
 test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () => {
-  assert.equal(ids.length, 17);
+  assert.equal(ids.length, 46);
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.ok(data.notes[id], 'Notas ausentes para ' + id);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
