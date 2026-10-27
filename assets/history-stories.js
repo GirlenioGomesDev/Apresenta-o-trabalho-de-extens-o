@@ -30,34 +30,28 @@
   $('#origem-web .history-explanation').insertAdjacentHTML('beforeend',photo('next-web-server','NeXT usado como primeiro servidor da Web; fotografado em exposição.'));
   $('#grace-hopper .history-explanation').insertAdjacentHTML('beforeend',photo('univac-team','Grace Hopper e integrantes da equipe da UNIVAC.'));
   $('#radia-perlman .history-explanation').insertAdjacentHTML('beforeend','<p class="history-brief-credit">'+link(data.people['radia-perlman'].source,'Slides da própria Radia: redes e spanning tree')+'</p>');
-  $$('[data-history-timeline]').forEach(nav=>nav.insertAdjacentHTML('beforebegin','<a class="history-overview-link" href="#internet-evolucao">← Ver a linha do tempo completa</a>'));
 
-  const timeline=$('#internet-evolution-buttons');
-  timeline.innerHTML=data.timeline.map((item,index)=>'<button type="button" data-internet-milestone="'+index+'" aria-controls="internet-evolution-panel" aria-pressed="false"><b>'+esc(item.year)+'</b><span>'+esc(item.label)+'</span></button>').join('');
   $('#internet-brief-credits').innerHTML=data.briefCredits.map(person=>'<p><b>'+esc(person.name)+'</b> '+esc(person.text)+' '+link(person.source,'Fonte')+'</p>').join('');
   let selected=1,after=false;
   function nodes(items,connected){return '<div class="evolution-nodes '+(connected?'is-connected':'')+'">'+items.map((item,index)=>'<span style="--node:'+index+'"><i aria-hidden="true">▱</i><b>'+esc(item)+'</b></span>').join('')+'</div>';}
-  function diagram(item){
+  function diagram(item,phase=after){
     switch(item.kind){
-      case 'packets':return after?'<div class="evolution-packets"><span>1 · OLÁ</span><span>2 · TUR</span><span>3 · MA!</span></div>':'<div class="evolution-whole">OLÁ, TURMA!</div>';
-      case 'arpanet':return nodes(['UCLA','SRI','UCSB','Utah'],after);
-      case 'protocol':return '<div class="evolution-protocol"><span>Rede por cabo</span><b>'+(after?'TCP/IP ↔':'?')+'</b><span>Rede por rádio</span></div>';
-      case 'dns':return after?'<div class="evolution-dns"><span>escola.test</span><b>↓ raiz → .test → responsável</b><strong>192.0.2.10</strong></div>':'<div class="evolution-dns"><span>HOSTS.TXT</span><b>Uma lista central de nomes</b><strong>escola → endereço</strong></div>';
-      case 'nsfnet':return nodes(after?['Centro de pesquisa','Universidade A','Universidade B','Universidade C']:['Centro de pesquisa','Universidade A'],after);
-      case 'web':return '<div class="evolution-documents"><span>Documento A</span><b>'+(after?'→':'·')+'</b><span>Documento B</span><b>'+(after?'→':'·')+'</b><span>Documento C</span></div>';
-      case 'openweb':return nodes(after?['Publicar','Navegar','Criar']:['Software da Web'],after);
-      case 'providers':return nodes(after?['Pesquisa','Provedor','Escola','Casa','Empresa']:['Pesquisa','Universidade'],after);
-      default:return nodes(after?['Seu aparelho','Pacotes + IP','DNS','Serviço Web']:['Conectar','Localizar','Abrir','Interagir'],after);
+      case 'packets':return phase?'<div class="evolution-packets"><span>1 · OLÁ</span><span>2 · TUR</span><span>3 · MA!</span></div>':'<div class="evolution-whole">OLÁ, TURMA!</div>';
+      case 'arpanet':return nodes(['UCLA','SRI','UCSB','Utah'],phase);
+      case 'protocol':return '<div class="evolution-protocol"><span>Rede por cabo</span><b>'+(phase?'TCP/IP ↔':'?')+'</b><span>Rede por rádio</span></div>';
+      case 'dns':return phase?'<div class="evolution-dns"><span>escola.test</span><b>↓ raiz → .test → responsável</b><strong>192.0.2.10</strong></div>':'<div class="evolution-dns"><span>HOSTS.TXT</span><b>Uma lista central de nomes</b><strong>escola → endereço</strong></div>';
+      case 'nsfnet':return nodes(phase?['Centro de pesquisa','Universidade A','Universidade B','Universidade C']:['Centro de pesquisa','Universidade A'],phase);
+      case 'web':return '<div class="evolution-documents"><span>Documento A</span><b>'+(phase?'→':'·')+'</b><span>Documento B</span><b>'+(phase?'→':'·')+'</b><span>Documento C</span></div>';
+      case 'openweb':return nodes(phase?['Publicar','Navegar','Criar']:['Software da Web'],phase);
+      case 'providers':return nodes(phase?['Pesquisa','Provedor','Escola','Casa','Empresa']:['Pesquisa','Universidade'],phase);
+      default:return nodes(phase?['Seu aparelho','Pacotes + IP','DNS','Serviço Web']:['Conectar','Localizar','Abrir','Interagir'],phase);
     }
   }
   function showMilestone(){
     const item=data.timeline[selected];
-    $$('[data-internet-milestone]').forEach((button,index)=>button.setAttribute('aria-pressed',String(index===selected)));
     $('#internet-milestone-date').textContent=item.year;$('#internet-milestone-title').textContent=item.title;
     $('#internet-milestone-context').innerHTML=context(item);
     $('#internet-milestone-source').innerHTML=link(item.source,'Fonte deste marco')+(item.lab?' · <a href="#'+item.lab+'">Explorar no laboratório ↗</a>':'');
-    $('#internet-milestone-next').disabled=selected===data.timeline.length-1;
-    $('#internet-milestone-previous').disabled=selected===0;
     showDiagram();
   }
   function showDiagram(){
@@ -70,10 +64,14 @@
     const machine=selected===1?['arpanet-imp','IMP da ARPANET, preservado em museu. Encaminhava pacotes entre computadores.']:selected===5||selected===6?['next-web-server','NeXT usado como primeiro servidor da Web; em exposição.']:null;
     $('#internet-milestone-photo').innerHTML=machine?photo(...machine):'';
   }
-  timeline.addEventListener('click',event=>{const button=event.target.closest('[data-internet-milestone]');if(!button)return;selected=Number(button.dataset.internetMilestone);after=false;showMilestone();});
   $('#internet-milestone-toggle').addEventListener('click',()=>{after=!after;showDiagram();});
-  $('#internet-milestone-next').addEventListener('click',()=>{if(selected<data.timeline.length-1){selected++;after=false;showMilestone();}});
-  $('#internet-milestone-previous').addEventListener('click',()=>{if(selected>0){selected--;after=false;showMilestone();}});showMilestone();
+
+  showMilestone();
+
+  $$('[data-history-milestone]').forEach(host=>{
+    const item=data.timeline[Number(host.dataset.historyMilestone)];
+    host.innerHTML='<div class="historical-milestone-context">'+context(item)+'<p class="milestone-source">'+link(item.source,'Fonte deste marco')+'</p></div><div class="historical-comparison"><article><span class="mini-label">ANTES</span>'+diagram(item,false)+'<p>'+esc(item.before)+'</p></article><article><span class="mini-label">DEPOIS</span>'+diagram(item,true)+'<p>'+esc(item.after)+'</p></article></div>';
+  });
 
   $('#turing-portrait').innerHTML=photo('alan-turing','Alan Turing, retratado em 1951.',true);
   $('#turing-context').innerHTML=context(data.people['alan-turing']);

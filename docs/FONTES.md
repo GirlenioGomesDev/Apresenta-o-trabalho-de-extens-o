@@ -1,4 +1,4 @@
-# Fontes e escopo · versão 2.5
+# Fontes e escopo · versão 2.6
 
 Referências primárias e documentação consultadas para a oficina, com verificação em **26 de outubro de 2026**. As histórias são breves e aparecem junto do conceito correspondente.
 
@@ -117,4 +117,4 @@ O QR leva a uma página HTTPS comum, sem leitor próprio ou pedido de acesso à 
 
 ## Organização atual
 
-O conteúdo histórico, as quatro carreiras, as demonstrações e os casos voltam à apresentação ativa. A faixa de leitura organiza os trechos numerados sem cortar o material. As duas introduções da participação foram retiradas; perguntas de competição ficam no quiz com QR. Há 53 etapas e 160 minutos sugeridos.
+As contribuições e os casos aparecem em ordem cronológica antes das aulas de Web e das práticas das quatro carreiras. A numeração é fixa, com textos e exemplos já visíveis. A barra de foco foi retirada. NSFNET e expansão comercial, já documentadas no panorama, agora aparecem em suas datas. A prévia repetida do robô e os cartões repetidos de HTML/CSS/JS foram consolidados; os laboratórios, os testes e as fotografias permanecem. São 55 páginas e 160 minutos sugeridos. As duas introduções da participação continuam removidas, e as perguntas de competição ficam no quiz próprio com QR.

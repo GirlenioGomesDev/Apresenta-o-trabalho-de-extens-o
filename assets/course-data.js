@@ -1,15 +1,20 @@
-/* Conteúdo integral restaurado, com orientação visual e quiz único. */
+/* Mesmos conteúdos e práticas, em sequência histórica e com numeração fixa. */
 window.WorkshopCourse = {
   "modules": [
     {
       "id": "comeco",
-      "title": "Começo · entender a Web",
-      "minutes": 7
+      "title": "Começo · ponto de partida",
+      "minutes": 4
     },
     {
       "id": "historia",
-      "title": "História da internet · contribuições que se conectam",
-      "minutes": 18
+      "title": "História · contribuições em ordem cronológica",
+      "minutes": 32
+    },
+    {
+      "id": "fundamentos",
+      "title": "Web · entender os papéis",
+      "minutes": 5
     },
     {
       "id": "html",
@@ -19,7 +24,7 @@ window.WorkshopCourse = {
     {
       "id": "css",
       "title": "CSS · dar forma à página",
-      "minutes": 14
+      "minutes": 12
     },
     {
       "id": "js",
@@ -29,26 +34,26 @@ window.WorkshopCourse = {
     {
       "id": "software",
       "title": "Carreira · desenvolvimento de software",
-      "minutes": 10
+      "minutes": 6
     },
     {
       "id": "infra",
       "title": "Carreira · redes, suporte e infraestrutura",
-      "minutes": 16
+      "minutes": 14
     },
     {
       "id": "dados",
       "title": "Carreira · análise de dados",
-      "minutes": 12
+      "minutes": 11
     },
     {
       "id": "cyber",
       "title": "Cibersegurança · carreira e proteção",
-      "minutes": 21
+      "minutes": 14
     },
     {
       "id": "fechamento",
-      "title": "Participação · escolher, responder e explicar",
+      "title": "Participação · quiz e próximos passos",
       "minutes": 24
     }
   ],
@@ -64,7 +69,7 @@ window.WorkshopCourse = {
       "id": "roteiro",
       "module": "comeco",
       "minutes": 1,
-      "title": "Uma jornada de 2h30.",
+      "title": "Uma jornada de 2h40.",
       "chapter": "abertura"
     },
     {
@@ -75,46 +80,153 @@ window.WorkshopCourse = {
       "chapter": "abertura"
     },
     {
-      "id": "web-na-tela",
-      "module": "comeco",
-      "minutes": 3,
-      "title": "Internet, Web e navegador: cada um tem um papel.",
-      "chapter": "abertura"
-    },
-    {
-      "id": "internet-evolucao",
+      "id": "alan-turing",
       "module": "historia",
       "minutes": 5,
-      "title": "A internet começou conectando pesquisadores.",
-      "chapter": "historia"
+      "title": "Turing: regras, máquinas e proteção da informação.",
+      "chapter": "historia",
+      "historyYear": "1936–1940",
+      "historySort": 1936
+    },
+    {
+      "id": "grace-hopper",
+      "module": "historia",
+      "minutes": 1,
+      "title": "Programar também é tornar ideias compreensíveis.",
+      "chapter": "historia",
+      "historyYear": "1952–1959",
+      "historySort": 1952
+    },
+    {
+      "id": "katherine-johnson",
+      "module": "historia",
+      "minutes": 1,
+      "title": "O computador calculou. Quem verifica o resultado?",
+      "chapter": "historia",
+      "historyYear": "1962",
+      "historySort": 1962
     },
     {
       "id": "internet-pacotes",
       "module": "historia",
       "minutes": 3,
       "title": "Uma mensagem pode viajar em partes.",
-      "chapter": "historia"
+      "chapter": "historia",
+      "historyYear": "1964–1965",
+      "historySort": 1964
+    },
+    {
+      "id": "internet-evolucao",
+      "module": "historia",
+      "minutes": 3,
+      "title": "A internet começou conectando pesquisadores.",
+      "chapter": "historia",
+      "historyYear": "1969",
+      "historySort": 1969
     },
     {
       "id": "internet-protocolos",
       "module": "historia",
       "minutes": 4,
       "title": "Redes diferentes precisam combinar como conversar.",
-      "chapter": "historia"
+      "chapter": "historia",
+      "historyYear": "1974–1983",
+      "historySort": 1974
     },
     {
       "id": "internet-dns",
       "module": "historia",
       "minutes": 3,
       "title": "Uma lista central ficou pequena para tantas máquinas.",
-      "chapter": "historia"
+      "chapter": "historia",
+      "historyYear": "1983",
+      "historySort": 1983
+    },
+    {
+      "id": "radia-perlman",
+      "module": "historia",
+      "minutes": 1,
+      "title": "Mais conexões. Mais cuidado com os caminhos.",
+      "chapter": "historia",
+      "historyYear": "1985",
+      "historySort": 1985
+    },
+    {
+      "id": "historia-nsfnet",
+      "module": "historia",
+      "minutes": 1,
+      "title": "A pesquisa chega a mais instituições.",
+      "chapter": "historia",
+      "historyYear": "1986",
+      "historySort": 1986
     },
     {
       "id": "origem-web",
       "module": "historia",
       "minutes": 3,
       "title": "A Web começou com uma necessidade.",
-      "chapter": "historia"
+      "chapter": "historia",
+      "historyYear": "1989–1993",
+      "historySort": 1989
+    },
+    {
+      "id": "css-historia",
+      "module": "historia",
+      "minutes": 2,
+      "title": "O conteúdo fica. O visual se transforma.",
+      "chapter": "historia",
+      "historyYear": "1994",
+      "historySort": 1994
+    },
+    {
+      "id": "historia-expansao",
+      "module": "historia",
+      "minutes": 1,
+      "title": "O acesso cresce além da pesquisa.",
+      "chapter": "historia",
+      "historyYear": "1995",
+      "historySort": 1995
+    },
+    {
+      "id": "caso-ariane",
+      "module": "historia",
+      "minutes": 1,
+      "title": "Caso real: testar o contexto importa.",
+      "chapter": "historia",
+      "historyYear": "1996",
+      "historySort": 1996
+    },
+    {
+      "id": "caso-gitlab",
+      "module": "historia",
+      "minutes": 1,
+      "title": "Ter um backup. Conseguir restaurar.",
+      "chapter": "historia",
+      "historyYear": "Jan. 2017",
+      "historySort": 2017
+    },
+    {
+      "id": "caso-wannacry",
+      "module": "historia",
+      "minutes": 2,
+      "title": "Quando uma falha digital interrompe um serviço real.",
+      "chapter": "historia",
+      "historyYear": "Maio 2017",
+      "historySort": 2017
+    },
+    {
+      "id": "web-na-tela",
+      "module": "fundamentos",
+      "minutes": 3,
+      "title": "Internet, Web e navegador: cada um tem um papel.",
+      "chapter": "web"
+    },
+    {
+      "id": "por-tras-do-clique",
+      "module": "fundamentos",
+      "minutes": 2,
+      "title": "Quem cria a tela? Quem cria as regras?",
+      "chapter": "web"
     },
     {
       "id": "linguagens",
@@ -149,13 +261,6 @@ window.WorkshopCourse = {
       "module": "html",
       "minutes": 3,
       "title": "Dar nome ao campo e orientar o preenchimento.",
-      "chapter": "web"
-    },
-    {
-      "id": "css-historia",
-      "module": "css",
-      "minutes": 2,
-      "title": "O conteúdo fica. O visual se transforma.",
       "chapter": "web"
     },
     {
@@ -236,13 +341,6 @@ window.WorkshopCourse = {
       "chapter": "carreiras"
     },
     {
-      "id": "por-tras-do-clique",
-      "module": "software",
-      "minutes": 2,
-      "title": "Quem cria a tela? Quem cria as regras?",
-      "chapter": "carreiras"
-    },
-    {
       "id": "lab-software",
       "module": "software",
       "minutes": 2,
@@ -250,24 +348,10 @@ window.WorkshopCourse = {
       "chapter": "carreiras"
     },
     {
-      "id": "grace-hopper",
-      "module": "software",
-      "minutes": 1,
-      "title": "Programar também é tornar ideias compreensíveis.",
-      "chapter": "carreiras"
-    },
-    {
       "id": "lab-software-testes",
       "module": "software",
       "minutes": 3,
       "title": "Passar no primeiro teste não é passar em todos.",
-      "chapter": "carreiras"
-    },
-    {
-      "id": "caso-ariane",
-      "module": "software",
-      "minutes": 1,
-      "title": "Caso real: testar o contexto importa.",
       "chapter": "carreiras"
     },
     {
@@ -292,13 +376,6 @@ window.WorkshopCourse = {
       "chapter": "carreiras"
     },
     {
-      "id": "radia-perlman",
-      "module": "infra",
-      "minutes": 1,
-      "title": "Mais conexões. Mais cuidado com os caminhos.",
-      "chapter": "carreiras"
-    },
-    {
       "id": "lab-infra-missao",
       "module": "infra",
       "minutes": 3,
@@ -306,24 +383,10 @@ window.WorkshopCourse = {
       "chapter": "carreiras"
     },
     {
-      "id": "caso-gitlab",
-      "module": "infra",
-      "minutes": 1,
-      "title": "Ter um backup. Conseguir restaurar.",
-      "chapter": "carreiras"
-    },
-    {
       "id": "lab-dados",
       "module": "dados",
       "minutes": 3,
       "title": "O que esses números ajudam a descobrir?",
-      "chapter": "carreiras"
-    },
-    {
-      "id": "katherine-johnson",
-      "module": "dados",
-      "minutes": 1,
-      "title": "O computador calculou. Quem verifica o resultado?",
       "chapter": "carreiras"
     },
     {
@@ -355,13 +418,6 @@ window.WorkshopCourse = {
       "chapter": "carreiras"
     },
     {
-      "id": "alan-turing",
-      "module": "cyber",
-      "minutes": 5,
-      "title": "Turing: regras, máquinas e proteção da informação.",
-      "chapter": "carreiras"
-    },
-    {
       "id": "codigo-seguro",
       "module": "cyber",
       "minutes": 2,
@@ -380,13 +436,6 @@ window.WorkshopCourse = {
       "module": "cyber",
       "minutes": 3,
       "title": "Confiança, pressa e pedidos inesperados.",
-      "chapter": "carreiras"
-    },
-    {
-      "id": "caso-wannacry",
-      "module": "cyber",
-      "minutes": 2,
-      "title": "Quando uma falha digital interrompe um serviço real.",
       "chapter": "carreiras"
     },
     {
@@ -766,23 +815,23 @@ window.WorkshopCourse = {
   },
   "notes": {
     "inicio": {
-      "time": "1 min / Começo · entender a Web",
+      "time": "1 min / Começo · ponto de partida",
       "text": "Apresente a proposta sem exigir conhecimento anterior. Convide a turma a observar, prever e experimentar. Explique que o grupo vai construir uma página, entender sua lógica e conhecer quatro áreas profissionais."
     },
     "roteiro": {
-      "time": "1 min / Roteiro",
-      "text": "Mostre os seis capítulos: começo, história da internet, Web e lógica, quatro carreiras, quiz e equipe. A oficina completa sugere 160 minutos, com demonstrações e conversa. Use a faixa de leitura numerada para orientar o olhar: contexto, exemplo e prática. Os botões de foco destacam uma parte por vez, mantendo o material disponível."
+      "time": "1 min / Começo · ponto de partida",
+      "text": "Apresente a ordem: história da tecnologia, Web e lógica, carreiras e quiz. O histórico segue 1936 até 2017 antes das práticas atuais. As marcações 01, 02 e 03 são fixas: tudo fica visível, sem botões de foco. O roteiro sugere 160 minutos, incluindo demonstrações e conversa."
     },
     "vida-digital": {
-      "time": "2 min / Começo · entender a Web",
+      "time": "2 min / Começo · ponto de partida",
       "text": "Escolha apenas uma ou duas situações familiares. Peça exemplos do que aparece e do que muda na página. Não antecipe diagnósticos de rede ou segurança: cada área terá seu próprio bloco."
     },
     "web-na-tela": {
-      "time": "3 min / Começo · entender a Web",
+      "time": "3 min / Web · entender os papéis",
       "text": "Pergunte qual aplicativo usam para abrir um site. Diferencie internet, Web e navegador com os três cartões. Passe pelas quatro etapas e só depois habilite o botão. A animação é um modelo, não uma requisição real. Pergunte: onde entram HTML, CSS e JavaScript?"
     },
     "origem-web": {
-      "time": "3 min / História da internet",
+      "time": "3 min / História · contribuições em ordem cronológica",
       "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos. No acréscimo visual, compare os documentos antes e depois de conectar os links. Hipertexto existia antes; a contribuição da Web reuniu documentos e padrões acessíveis pela internet. Nos cartões de Berners-Lee, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "linguagens": {
@@ -806,8 +855,8 @@ window.WorkshopCourse = {
       "text": "Clique no label e veja o foco no campo. Deixe vazio, digite um personagem de duas letras e depois de três. Troque minlength de 3 para 5 e teste quatro e cinco letras. O botão está preparado com JavaScript de apoio; o foco desta aula é o HTML."
     },
     "css-historia": {
-      "time": "2 min / CSS · dar forma à página",
-      "text": "Mostre o mesmo conteúdo em dois temas. Conte a proposta de Håkon Wium Lie em 1994. Pergunte o que mudou e o que permaneceu. O próximo passo é entender espaço e organização. Nos cartões de Lie, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
+      "time": "2 min / História · contribuições em ordem cronológica",
+      "text": "Na data de 1994, conte a necessidade de separar o conteúdo de sua apresentação. Mostre o mesmo texto em dois visuais e a contribuição de Håkon Wium Lie, com os textos e a fotografia originais. Esta é a história da ideia; a prática de CSS vem depois, junto dos exemplos de código."
     },
     "css-caixa": {
       "time": "3 min / CSS · dar forma à página",
@@ -851,10 +900,10 @@ window.WorkshopCourse = {
     },
     "carreiras": {
       "time": "1 min / Carreira · desenvolvimento de software",
-      "text": "Apresente as quatro áreas e percorra um bloco inteiro antes de mudar. Em cada uma, siga as marcações: o que é a área, o trabalho na prática e o mercado com cargos e salários. As demonstrações, os testes, os casos reais e as pessoas permanecem em suas etapas. O guia no alto destaca a parte que deve ser lida agora."
+      "text": "Apresente as quatro áreas e percorra um bloco inteiro antes de mudar. A leitura possui marcações fixas, com os conteúdos já visíveis: o que é a área, trabalho na prática e mercado com cargos e salários. As demonstrações e os testes foram preservados. As pessoas e os casos históricos já foram apresentados no início, em ordem de datas."
     },
     "por-tras-do-clique": {
-      "time": "2 min / Carreira · desenvolvimento de software",
+      "time": "2 min / Web · entender os papéis",
       "text": "Use uma busca de livros para explicar front-end, back-end e full stack. A interface recebe a busca; o serviço procura no catálogo; a resposta vira lista. Não introduza regras de segurança aqui. Elas ficam no bloco de cibersegurança. Abaixo, os três cartões retomam os conceitos de HTML, CSS e JavaScript e abrem os laboratórios já existentes, sem substituí-los."
     },
     "lab-software": {
@@ -862,7 +911,7 @@ window.WorkshopCourse = {
       "text": "Leia o que é a profissão, por que existe e uma entrega concreta. Peça previsão para uma e duas estrelas. Colete e compare o placar. Troque 10 por 50 na função. Explique que o trabalho também inclui conversar, planejar, testar e melhorar com outras pessoas. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "grace-hopper": {
-      "time": "1 min / Carreira · desenvolvimento de software",
+      "time": "1 min / História · contribuições em ordem cronológica",
       "text": "Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa. Nos cartões de Hopper, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "lab-software-testes": {
@@ -870,8 +919,8 @@ window.WorkshopCourse = {
       "text": "Mostre o resultado inicial de 2/5. Teste pedido maior que o estoque e pedido inválido. Peça que expliquem em português qual regra está faltando antes de ler a solução. Use as dicas e compare 5/5 depois. O estoque é uma analogia, não o código do caso Ariane."
     },
     "caso-ariane": {
-      "time": "1 min / Carreira · desenvolvimento de software",
-      "text": "Em um minuto, conte que um sistema usado em outro contexto não tinha sido validado suficientemente nas novas condições. Conecte com os testes anteriores. A falha não se resume ao exemplo da oficina; a fonte oficial está na tela."
+      "time": "1 min / História · contribuições em ordem cronológica",
+      "text": "Apresente o caso de 1996 e relacione o problema a testar condições novas e limites. O experimento de estoque virá no bloco de desenvolvimento; não é uma reprodução do software do lançador. Continue para o caso do GitLab em janeiro de 2017."
     },
     "lab-infra": {
       "time": "3 min / Carreira · redes, suporte e infraestrutura",
@@ -886,7 +935,7 @@ window.WorkshopCourse = {
       "text": "Depois do cabo, avance para as camadas lógicas: alcançar a rede, encontrar o endereço pelo nome e receber uma resposta do serviço. Explique DNS como procurar o endereço de um nome. HTTP 404 é recurso não encontrado; 503 é indisponibilidade do serviço. Evite tratar todo erro como cabo rompido."
     },
     "radia-perlman": {
-      "time": "1 min / Carreira · redes, suporte e infraestrutura",
+      "time": "1 min / História · contribuições em ordem cronológica",
       "text": "Conecte ao assunto de redes: caminhos repetidos podem criar loops. Conte a contribuição de Radia Perlman ao STP e alterne a representação. A animação é uma analogia, não uma implementação. A internet teve muitas contribuições. Nos cartões de Perlman, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "lab-infra-missao": {
@@ -894,7 +943,7 @@ window.WorkshopCourse = {
       "text": "A turma escolhe a primeira etapa a investigar e explica a pista. Comece em 404. Depois desative DNS e depois a conexão, observando qual falha aparece primeiro. Restaure tudo e escolha 200. Nenhum código precisa ser lido, e nenhuma rede real é testada."
     },
     "caso-gitlab": {
-      "time": "1 min / Carreira · redes, suporte e infraestrutura",
+      "time": "1 min / História · contribuições em ordem cronológica",
       "text": "Feche infraestrutura com recuperação: clique em perda, cópia antiga e recente. Explique que testar restauração faz parte da disponibilidade. No incidente GitLab de 2017, dados recentes do banco foram perdidos; não diga que os repositórios de código foram apagados."
     },
     "lab-dados": {
@@ -902,7 +951,7 @@ window.WorkshopCourse = {
       "text": "Apresente a profissão e a pergunta da amostra. Leia as quantidades antes das barras. Peça previsão, mude um número e observe. O gráfico usa escala fixa e dados fictícios. Empates e amostra vazia devem ser discutidos sem inventar um vencedor. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "katherine-johnson": {
-      "time": "1 min / Carreira · análise de dados",
+      "time": "1 min / História · contribuições em ordem cronológica",
       "text": "Conte que Katherine Johnson conferiu cálculos computacionais da missão orbital de John Glenn em 1962. Sua atuação era matemática; a ponte pedagógica é verificar resultados e contexto, não equiparar os cargos. Nos cartões de Johnson, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "dados-pergunta": {
@@ -934,8 +983,8 @@ window.WorkshopCourse = {
       "text": "Peça que observem remetente, urgência e pedido de segredo antes de escolher. Use as mensagens fictícias de phishing e login não iniciado. Cada exemplo e sua explicação ficam neste bloco de segurança."
     },
     "caso-wannacry": {
-      "time": "2 min / Cibersegurança · carreira e proteção",
-      "text": "Conte o impacto em serviços de saúde de forma breve e respeitosa. Relacione correções, preparação e resposta. Não reduza tudo a uma versão do Windows nem apresente uma camada como garantia absoluta de proteção."
+      "time": "2 min / História · contribuições em ordem cronológica",
+      "text": "Encerre o histórico em maio de 2017. Conte o impacto nos serviços do NHS e a importância de correções, preparação e resposta. O caso já existente permanece breve e com fonte. A próxima parte explica a Web atual antes das práticas de HTML, CSS e JavaScript."
     },
     "cyber-investiga": {
       "time": "3 min / Cibersegurança · carreira e proteção",
@@ -950,40 +999,48 @@ window.WorkshopCourse = {
       "text": "Escolham uma das quatro situações. Alguém quer propor uma hipótese? Convide outra pessoa a dizer como testaria. Os links são opcionais para retomar uma atividade, sem dispersar a apresentação."
     },
     "quiz": {
-      "time": "21 min / Quiz com QR",
+      "time": "21 min / Participação · quiz e próximos passos",
       "text": "Crie a sala no painel e projete o QR. Os alunos entram pelo navegador com um apelido. São dez perguntas, cem pontos por acerto e empates compartilhados. A rodada fecha quando todos respondem, o prazo termina ou o apresentador pede o resultado. Comente a explicação e o placar antes de avançar. O quiz exige internet; o token do apresentador não faz parte do QR."
     },
     "primeiro-projeto": {
-      "time": "1 min / Participação · escolher, responder e explicar",
+      "time": "1 min / Participação · quiz e próximos passos",
       "text": "Peça que cada pessoa pense em uma primeira prática: uma página, um diagnóstico, uma tabela ou um cuidado com a conta. Os links permitem continuar após a oficina."
     },
     "encerramento": {
-      "time": "1 min / Participação · escolher, responder e explicar",
+      "time": "1 min / Participação · quiz e próximos passos",
       "text": "Retome o que aprenderam: organizar conteúdo, dar forma, criar uma regra e reconhecer diferentes profissões. Convide a turma a compartilhar o que ficou curioso para aprender depois."
     },
     "equipe": {
-      "time": "1 min / Participação · escolher, responder e explicar",
+      "time": "1 min / Participação · quiz e próximos passos",
       "text": "Apresente a equipe, agradeça e deixe as fontes disponíveis. As histórias, fotografias, simulações e laboratórios estão preservados. Os exemplos da aula funcionam localmente; a competição simultânea exige internet."
     },
     "internet-pacotes": {
-      "time": "3 min / História da internet",
+      "time": "3 min / História · contribuições em ordem cronológica",
       "text": "Conte as contribuições independentes de Paul Baran e Donald Davies e o marco coletivo da ARPANET em 1969. Não atribua a rede inteira a duas pessoas. No laboratório, leia uma mensagem, divida-a em partes numeradas e envie uma de cada vez. A ordem de chegada é diferente, mas a reorganização recupera a mensagem. Bloqueie o caminho A e compare com B; sem nenhum caminho, o envio deve parar. A numeração e o desenho são modelos didáticos, não uma implementação dos protocolos históricos. Nos cartões de Baran e Davies, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-protocolos": {
-      "time": "4 min / História da internet",
+      "time": "4 min / História · contribuições em ordem cronológica",
       "text": "Mostre as redes diferentes. Conte o artigo de Cerf e Kahn em 1974 e a transição planejada da ARPANET para TCP/IP em 1º de janeiro de 1983. Teste antes e depois de ativar o conjunto comum nos dois lados. O desenho interno de cada rede permanece diferente. IP encaminha; TCP dá suporte a um fluxo confiável nas pontas. O equipamento não traduz qualquer protocolo por mágica. Nos cartões de Cerf e Kahn, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-dns": {
-      "time": "3 min / História da internet",
+      "time": "3 min / História · contribuições em ordem cronológica",
       "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-evolucao": {
-      "time": "5 min / História da internet",
-      "text": "Comece pela necessidade da ARPANET: compartilhar computadores e recursos de centros de pesquisa, com financiamento da ARPA. Explore a visão geral no marco de 1969; a linha do tempo também mostra as propostas anteriores de pacotes. Selecione um marco, peça uma previsão e compare antes/depois. Mostre NSFNET em 1986, o software da Web sem royalties em 1993 e a expansão comercial em 1995. A ARPANET foi desativada em 1990: a internet resulta da interligação de redes, não de uma simples troca de nome ou de um único ato de abertura. Os desenhos são modelos, não mapas históricos. Depois volte ao detalhe dos pacotes."
+      "time": "3 min / História · contribuições em ordem cronológica",
+      "text": "Esta etapa trata apenas da ARPANET em 1969. O panorama anterior foi distribuído em ordem: pacotes, ARPANET, protocolos, DNS, caminhos sem loop, NSFNET, Web, CSS e expansão comercial. Compare antes e depois dos quatro centros e mostre o IMP. As citações de Licklider e Roberts permanecem aqui."
     },
     "alan-turing": {
-      "time": "5 min / Carreiras · Cibersegurança",
+      "time": "5 min / História · contribuições em ordem cronológica",
       "text": "Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. Retome a segurança atual: conferir identidade e permissões."
+    },
+    "historia-nsfnet": {
+      "time": "1 min / História · contribuições em ordem cronológica",
+      "text": "Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes."
+    },
+    "historia-expansao": {
+      "time": "1 min / História · contribuições em ordem cronológica",
+      "text": "Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes."
     }
   },
   "choices": {
@@ -1012,8 +1069,8 @@ window.WorkshopCourse = {
     {
       "id": "historia",
       "number": "01",
-      "title": "História da internet",
-      "description": "ARPANET, pacotes, redes, DNS e Web até o cotidiano."
+      "title": "História da tecnologia",
+      "description": "Das ideias de computação às redes, Web e casos reais, em ordem de datas."
     },
     {
       "id": "web",
@@ -1038,6 +1095,98 @@ window.WorkshopCourse = {
       "number": "05",
       "title": "Equipe",
       "description": "Integrantes e referências."
+    }
+  ],
+  "historicalOrder": [
+    {
+      "id": "alan-turing",
+      "year": "1936–1940",
+      "sort": 1936,
+      "label": "Turing"
+    },
+    {
+      "id": "grace-hopper",
+      "year": "1952–1959",
+      "sort": 1952,
+      "label": "Hopper"
+    },
+    {
+      "id": "katherine-johnson",
+      "year": "1962",
+      "sort": 1962,
+      "label": "Katherine"
+    },
+    {
+      "id": "internet-pacotes",
+      "year": "1964–1965",
+      "sort": 1964,
+      "label": "Pacotes"
+    },
+    {
+      "id": "internet-evolucao",
+      "year": "1969",
+      "sort": 1969,
+      "label": "ARPANET"
+    },
+    {
+      "id": "internet-protocolos",
+      "year": "1974–1983",
+      "sort": 1974,
+      "label": "TCP/IP"
+    },
+    {
+      "id": "internet-dns",
+      "year": "1983",
+      "sort": 1983,
+      "label": "DNS"
+    },
+    {
+      "id": "radia-perlman",
+      "year": "1985",
+      "sort": 1985,
+      "label": "Radia"
+    },
+    {
+      "id": "historia-nsfnet",
+      "year": "1986",
+      "sort": 1986,
+      "label": "NSFNET"
+    },
+    {
+      "id": "origem-web",
+      "year": "1989–1993",
+      "sort": 1989,
+      "label": "Web"
+    },
+    {
+      "id": "css-historia",
+      "year": "1994",
+      "sort": 1994,
+      "label": "CSS"
+    },
+    {
+      "id": "historia-expansao",
+      "year": "1995",
+      "sort": 1995,
+      "label": "Provedores"
+    },
+    {
+      "id": "caso-ariane",
+      "year": "1996",
+      "sort": 1996,
+      "label": "Ariane 5"
+    },
+    {
+      "id": "caso-gitlab",
+      "year": "Jan. 2017",
+      "sort": 2017,
+      "label": "GitLab"
+    },
+    {
+      "id": "caso-wannacry",
+      "year": "Maio 2017",
+      "sort": 2017,
+      "label": "WannaCry"
     }
   ]
 };

@@ -201,10 +201,10 @@
     const scene=document.querySelector('.scene:not([hidden])');if(!scene)return;
     const meta=course.scenes.find(item=>item.id===scene.id);if(!meta)return;
     const module=course.modules.find(item=>item.id===meta.module),index=course.modules.indexOf(module);
-    const shortNames={comeco:'Web',html:'HTML',css:'CSS',js:'Lógica e JavaScript',software:'Software',infra:'Redes e suporte',dados:'Dados',cyber:'Cibersegurança',fechamento:'Participação'};
+    const shortNames={comeco:'Começo',fundamentos:'Fundamentos da Web',html:'HTML',css:'CSS',js:'Lógica e JavaScript',software:'Software',infra:'Redes e suporte',dados:'Dados',cyber:'Cibersegurança',fechamento:'Participação'};
     const chapter=course.chapters.find(item=>item.id===meta.chapter);
     const minutes=course.scenes.filter(item=>item.module===module.id&&item.chapter===chapter.id).reduce((sum,item)=>sum+item.minutes,0);
-    const label=chapter.id==='creditos'?'Equipe':(meta.chapter==='carreiras'?'Carreiras · ':'')+(shortNames[module.id]||'História da internet');
+    const label=chapter.id==='creditos'?'Equipe':(meta.chapter==='carreiras'?'Carreiras · ':'')+(shortNames[module.id]||chapter.title);
     if($('#course-current-block'))$('#course-current-block').textContent=chapter.number+' / '+label+' / '+minutes+' min';
   }
   window.addEventListener('workshop-scene-change',orient);orient();

@@ -6,7 +6,7 @@ const course=context.window.WorkshopCourse,data=context.window.WorkshopExtension
 test('os seis capítulos preservam história, Web, carreiras e o quiz único',()=>{
  const chapters=logic.groupedChapters(course);
  assert.deepEqual(Array.from(chapters,ch=>ch.number),['00','01','02','03','04','05']);
- assert.deepEqual(Array.from(chapters,ch=>ch.minutes),[7,18,52,59,23,1]);
+ assert.deepEqual(Array.from(chapters,ch=>ch.minutes),[4,32,55,45,23,1]);
  assert.equal(chapters.find(ch=>ch.id==='desafio').start,'quiz');
  assert.match(html,/id="internet-evolucao"/);assert.doesNotMatch(html,/id="(?:fabrica|missao-final)"/);
  assert.match(html,/href="#quiz" data-chapter-link="desafio"/);
@@ -22,7 +22,7 @@ test('as faixas de quatro áreas continuam ligadas a cargos e fontes',()=>{
 });
 test('os assuntos permanecem agrupados e o quiz integrado continua acessível',()=>{
  const ids=Array.from(course.scenes,s=>s.id);
- for(const [a,b] of [['internet-evolucao','internet-pacotes'],['origem-web','linguagens'],['lab-html-form','css-historia'],['lab-css-motion','logica-passos'],['carreiras','por-tras-do-clique'],['lab-infra','lab-dados'],['lab-dados','lab-cyber']])assert.ok(ids.indexOf(a)<ids.indexOf(b));
+ for(const [a,b] of [['internet-pacotes','internet-evolucao'],['origem-web','css-historia'],['caso-wannacry','web-na-tela'],['por-tras-do-clique','linguagens'],['lab-css-motion','logica-passos'],['carreiras','lab-software'],['lab-infra','lab-dados'],['lab-dados','lab-cyber']])assert.ok(ids.indexOf(a)<ids.indexOf(b));
  assert.match(html,/Front-end[\s\S]*Back-end/);assert.match(html,/assets\/reading-guide\.js/);
  assert.match(html,/data-quiz-src="competicao.html\?modo=host&amp;embutido=1"/);
 });

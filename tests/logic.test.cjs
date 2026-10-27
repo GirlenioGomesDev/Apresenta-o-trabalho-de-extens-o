@@ -16,7 +16,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ids = [...html.matchAll(/<section class="scene[^>]* id="([^"]+)"/g)].map(match => match[1]);
 
 test('links internos e notas cobrem todas as etapas, sem âncoras órfãs', () => {
-  assert.equal(ids.length, 53);
+  assert.equal(ids.length, 55);
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.ok(data.notes[id], 'Notas ausentes para ' + id);
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
@@ -39,7 +39,7 @@ test('as quatro áreas continuam identificadas no conteúdo de apoio',()=>{
 });
 
 test('a sequência liga construção, funcionamento, proteção e profissões', () => {
-  const flow = ['vida-digital','web-na-tela','internet-evolucao','internet-pacotes','internet-protocolos','internet-dns','origem-web','linguagens','html-estrutura','lab-html','css-historia','lab-css-layout','logica-passos','logica-decisoes','laboratorio','carreiras','por-tras-do-clique','lab-software','lab-infra','lab-dados','lab-cyber','quiz'];
+  const flow = ['vida-digital','alan-turing','grace-hopper','katherine-johnson','internet-pacotes','internet-evolucao','internet-protocolos','internet-dns','radia-perlman','historia-nsfnet','origem-web','css-historia','historia-expansao','caso-ariane','caso-gitlab','caso-wannacry','web-na-tela','por-tras-do-clique','linguagens','html-estrutura','lab-html','css-caixa','lab-css-layout','logica-passos','logica-decisoes','laboratorio','carreiras','lab-software','infra-cabo','lab-dados','lab-cyber','quiz'];
   for (let index = 1; index < flow.length; index += 1) {
     assert.ok(ids.indexOf(flow[index - 1]) < ids.indexOf(flow[index]));
   }

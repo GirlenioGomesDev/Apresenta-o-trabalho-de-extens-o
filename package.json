@@ -1,8 +1,8 @@
 {
   "name": "fabrica-de-software-na-pratica",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "private": true,
-  "description": "Oficina visual completa de tecnologia com história, carreiras, laboratórios, leitura guiada e quiz próprio.",
+  "description": "Oficina completa com histórico em ordem de datas, numeração fixa, práticas e quiz próprio.",
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",

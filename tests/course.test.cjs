@@ -19,8 +19,8 @@ function execute(code,input){
 }
 function scriptValue(code,expression){return plain(vm.runInNewContext(code+'\n'+expression,{console:{log(){}}}));}
 
-test('os dez blocos restaurados somam 160 min e cada assunto ocupa uma sequência contínua',()=>{
-  assert.equal(course.modules.length,10);assert.equal(course.scenes.length,53);
+test('os onze blocos em sequência somam 160 min e cada assunto ocupa uma sequência contínua',()=>{
+  assert.equal(course.modules.length,11);assert.equal(course.scenes.length,55);
   assert.deepEqual(sections.map(match=>match[1]),Array.from(course.scenes,scene=>scene.id));
   assert.equal(course.scenes.reduce((sum,scene)=>sum+scene.minutes,0),160);
   const seen=new Set();let current;

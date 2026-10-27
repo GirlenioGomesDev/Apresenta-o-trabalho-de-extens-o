@@ -1,8 +1,8 @@
-/* Orienta o olhar sem excluir ou esconder o conteúdo da oficina. */
+/* Numeração fixa para indicar a ordem de leitura. Não cria etapas, botões ou conteúdo oculto. */
 (function(){
   'use strict';
   const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>Array.from(root.querySelectorAll(s));
-  const esc=window.WorkshopLogic.escapeHTML,plans=new Map();
+  const esc=window.WorkshopLogic.escapeHTML;
   const careerJobs={
     software:{jobs:['Desenvolvedor front-end','Desenvolvedor back-end','Desenvolvedor full-stack','Desenvolvedor mobile'],source:'https://learn.microsoft.com/pt-br/training/career-paths/developer'},
     infra:{jobs:['Analista de suporte','Analista de infraestrutura','Administrador de redes','Administrador de sistemas'],source:'https://learn.microsoft.com/pt-br/training/career-paths/administrator'},
@@ -11,14 +11,16 @@
   };
   const group=(title,...selectors)=>({title,selectors});
   const custom={
-    roteiro:[group('Conheça o caminho','#course-agenda'),group('Como vamos aprender','.learning-rhythm')],
+    roteiro:[group('Conheça o caminho','#course-agenda'),group('Como vamos aprender','.learning-rhythm'),group('Acompanhe as datas','.historical-index')],
     'vida-digital':[group('Escolha uma situação','.experience-options'),group('Veja o que está por trás','.experience-board')],
     'web-na-tela':[group('Separe os três conceitos','.web-basics'),group('Acompanhe a página nascer','.web-walkthrough')],
-    'internet-evolucao':[group('Entenda a necessidade','.course-lead'),group('Escolha um marco','.evolution-timeline'),group('Compare o antes e o depois','.evolution-panel','.milestone-navigation'),group('Conheça outras contribuições','.history-brief-credits')],
+    'internet-evolucao':[group('Entenda a necessidade','.course-lead'),group('Compare o antes e o depois','.evolution-panel'),group('Conheça outras contribuições','.history-brief-credits')],
+    'historia-nsfnet':[group('Leia o contexto','.historical-milestone-context'),group('Compare a mudança','.historical-comparison')],
+    'historia-expansao':[group('Leia o contexto','.historical-milestone-context'),group('Compare a mudança','.historical-comparison')],
     'internet-pacotes':[group('Conheça as contribuições','.internet-people'),group('Compare o problema e a solução','.internet-contribution > div:last-child'),group('Envie e reconstrua a mensagem','.packet-history-lab')],
     'internet-protocolos':[group('Conheça as contribuições','.internet-people'),group('Compare as redes','.internet-contribution > div:last-child'),group('Teste a comunicação','.internet-lab')],
     'internet-dns':[group('Entenda a necessidade','.internet-people'),group('Veja a mudança','.internet-contribution > div:last-child'),group('Siga a busca pelo endereço','.internet-lab')],
-    linguagens:[group('Escolha uma responsabilidade','.language-list'),group('Veja a mesma página','.language-browser','.layer-browser'),group('Leia o que mudou','.layer-explanation')],
+    linguagens:[group('Conteúdo e estrutura','.language-static-card:nth-child(1)'),group('Aparência e organização','.language-static-card:nth-child(2)'),group('Ações e respostas','.language-static-card:nth-child(3)')],
     'html-estrutura':[group('Enxergue a estrutura','.semantic-tree'),group('Veja a página','.semantic-page'),group('Entenda o elemento','.semantic-explanation')],
     'html-acessivel':[group('Compare os controles','.accessibility-compare'),group('Confira o resultado','#accessibility-feedback','.lesson-reveal')],
     'css-caixa':[group('Mude uma medida','.box-controls>label'),group('Veja o espaço ocupado','.box-diagram'),group('Confira a soma','.box-equation','.lesson-reveal')],
@@ -27,7 +29,7 @@
     'js-modelo':[group('Provoque uma mudança','.state-cycle','#state-feedback'),group('Entenda cada parte','.concept-three')],
     'js-desafio':[group('Compare com a expectativa','.expectation-grid'),group('Leia o resultado do teste','.experiment-takeaway')],
     carreiras:[group('Entenda as quatro entregas','.lead'),group('Escolha e explore uma área','.career-map')],
-    'por-tras-do-clique':[group('Conheça os papéis','.software-roles'),group('Acompanhe uma ação','.route-tabs','#local-route','#server-route'),group('Retome HTML, CSS e JS','.career-web-foundations')],
+    'por-tras-do-clique':[group('Conheça os papéis','.software-roles'),group('Acompanhe uma ação','.route-tabs','#local-route','#server-route')],
     'infra-cabo':[group('Teste o cabo no modelo','.cable-simulator'),group('Compare com o equipamento','.physical-demo')],
     'infra-caminho':[group('Observe uma camada por vez','.infra-layer-cards'),group('Leia as pistas','.concept-caption','.status-meanings')],
     'lab-infra-missao':[group('Monte o cenário','.diagnostic-controls'),group('Observe a evidência','.diagnostic-path','.diagnostic-conclusion'),group('Teste uma hipótese','.investigation-choices')],
@@ -59,7 +61,7 @@
     if(!explanation||!context)return;
     const application=document.createElement('div');application.className='history-application';
     Array.from(explanation.children).filter(el=>el!==context).forEach(el=>application.append(el));explanation.append(application);
-    custom[scene.id]=[group('Conheça a pessoa','.history-person'),group('Necessidade, ideia e legado','.history-explanation>.history-context'),group('Veja a contribuição em ação','.history-application'),group('Experimente no laboratório','.internet-lab')];
+    custom[scene.id]=[group('Conheça a pessoa','.history-person'),group('Entenda a necessidade','.history-explanation>.history-context>div:nth-child(1)'),group('Veja como surgiu','.history-explanation>.history-context>div:nth-child(2)'),group('Reconheça o legado','.history-explanation>.history-context>div:nth-child(3)'),group('Veja a contribuição em ação','.history-application'),group('Experimente no laboratório','.internet-lab')];
   });
   function defaultGroups(scene){
     if($('[data-course-lab]',scene))return [group('Entenda o experimento','.experiment-orientation'),group('Edite e observe o resultado','.course-workspace'),group('Experimente e explique','.course-challenge','.course-code-steps','.course-step-explanation')];
@@ -80,22 +82,10 @@
       unique.forEach(el=>used.add(el));groups.push({title:entry.title,nodes:unique});
     }
     if(!groups.length)return;
-    const nav=document.createElement('nav');nav.className='reading-guide';nav.setAttribute('aria-label','Ordem de leitura desta etapa');
-    nav.innerHTML='<div class="reading-guide-caption"><span>SIGA A LEITURA</span><b class="reading-guide-status" aria-live="polite"></b><div><button type="button" data-guide-back aria-label="Destacar trecho anterior">←</button><button type="button" data-guide-next>Próximo trecho →</button></div></div><ol>'+groups.map((g,i)=>'<li><button type="button" data-reading-focus="'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(g.title)+'</button></li>').join('')+'</ol>';
-    const heading=$('h1,h2',scene);let anchor=heading;while(anchor&&anchor.parentElement!==scene)anchor=anchor.parentElement;if(anchor)anchor.after(nav);else scene.prepend(nav);
-    const state={scene,groups,nav,current:0};plans.set(scene.id,state);
-    groups.forEach((g,i)=>g.nodes.forEach((el,j)=>{el.classList.add('reading-region');el.dataset.readingStep=String(i);if(j===0){el.classList.add('reading-region-start');el.dataset.readingNumber=String(i+1).padStart(2,'0');el.dataset.readingTitle=g.title;}}));
-    nav.addEventListener('click',e=>{const step=e.target.closest('[data-reading-focus]');if(step)focus(state,Number(step.dataset.readingFocus),true);else if(e.target.closest('[data-guide-next]'))focus(state,state.current+1,true);else if(e.target.closest('[data-guide-back]'))focus(state,state.current-1,true);});
-    focus(state,0,false);
-  }
-  function focus(state,index,scroll){
-    index=Math.max(0,Math.min(state.groups.length-1,index));state.current=index;
-    state.groups.forEach((g,i)=>g.nodes.forEach(el=>el.classList.toggle('is-reading-current',i===index)));
-    $$('[data-reading-focus]',state.nav).forEach((b,i)=>{b.setAttribute('aria-current',i===index?'step':'false');});
-    $('.reading-guide-status',state.nav).textContent=(index+1)+' de '+state.groups.length+' · '+state.groups[index].title;
-    $('[data-guide-back]',state.nav).disabled=index===0;$('[data-guide-next]',state.nav).disabled=index===state.groups.length-1;
-    if(scroll){const target=state.groups[index].nodes.find(el=>!el.hidden)||state.groups[index].nodes[0];target.style.scrollMarginTop=Math.ceil(parseFloat(getComputedStyle(state.nav).top)+state.nav.getBoundingClientRect().height+18)+'px';target.scrollIntoView({behavior:'instant',block:'start'});}
+    groups.forEach((g,i)=>g.nodes.forEach((el,j)=>{
+      el.classList.add('reading-region');el.dataset.readingOrder=String(i+1);
+      if(j===0){el.classList.add('reading-region-start');el.dataset.readingNumber=String(i+1).padStart(2,'0');el.dataset.readingTitle=g.title;}
+    }));
   }
   $$('.scene').forEach(build);
-  window.addEventListener('workshop-scene-change',()=>{const scene=$('.scene:not([hidden])'),state=plans.get(scene?.id);if(state)focus(state,0,false);});
 })();

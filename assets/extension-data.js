@@ -6,7 +6,7 @@ window.WorkshopExtension = {
   salaryUnitSource: 'https://www.fiap.com.br/radar-tech/post/salarios-em-tecnologia-2026-quanto-ganham-as-principais-profissoes-tech-no-brasil/',
   careers: {
     software: {
-      label: 'Desenvolvimento', href: '#por-tras-do-clique',
+      label: 'Desenvolvimento', href: '#lab-software',
       scene: 'lab-software',
       market: 'O guia de 2026 destaca desenvolvedores e analistas de sistemas entre os perfis buscados pelas empresas.',
       skills: ['Programação', 'Testes', 'Trabalho em equipe'],

@@ -11,5 +11,17 @@ test('o quiz com QR substitui o seletor antigo sem retirar as práticas das áre
  assert.doesNotMatch(html,/quiz-question-picker|data-choice-answer|id="(?:fabrica|missao-final)"/);
  assert.match(html,/quiz-competition-frame/);assert.match(html,/href="#quiz" data-chapter-link="desafio"/);
  const labs=fs.readFileSync(path.join(root,'assets/course-labs.js'),'utf8');assert.match(labs,/experiment-orientation/);assert.doesNotMatch(labs,/class="predict-ribbon"/);
- for(const id of ['cable-test','network-connected','data-extreme','axis-toggle','cyber-gate-try','access-owner-rule','turing-tape-next','turing-clue-next'])assert.ok(html.includes('id="'+id+'"'),'Prática ausente: '+id);
+ for(const id of ['cable-scenario','cable-test','network-connected','network-dns','network-http','backup-records','data-incomplete','data-extreme','data-context-rule','axis-toggle','cyber-gate-try','permission-try','access-owner-rule','turing-tape-next','turing-clue-next','switch-theme'])assert.ok(html.includes('id="'+id+'"'),'Prática ausente: '+id);
+});
+
+test('a sequência histórica segue as datas e termina antes das aulas de Web e das carreiras',()=>{
+ const histories=course.scenes.filter(s=>s.chapter==='historia');
+ assert.equal(histories.length,15);
+ assert.deepEqual(Array.from(histories,s=>s.id),Array.from(course.historicalOrder,s=>s.id));
+ const dates=Array.from(histories,s=>s.historySort);assert.deepEqual(dates,dates.slice().sort((a,b)=>a-b));
+ const firstWeb=course.scenes.findIndex(s=>s.chapter==='web');
+ for(const entry of histories)assert.ok(course.scenes.indexOf(entry)<firstWeb);
+ assert.equal(histories[0].id,'alan-turing');assert.equal(histories.at(-1).id,'caso-wannacry');
+ for(const id of ['historia-nsfnet','historia-expansao'])assert.ok(html.includes('id="'+id+'"'));
+ assert.doesNotMatch(html,/id="layer-browser"|class="career-web-foundations"/);
 });

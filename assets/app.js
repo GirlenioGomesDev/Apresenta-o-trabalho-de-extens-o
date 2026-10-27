@@ -214,30 +214,6 @@
   $$('[data-request-step]').forEach(button => button.addEventListener('click', () => setRequestStep(Number(button.dataset.requestStep))));
   $('#request-next').addEventListener('click', () => setRequestStep((requestStep + 1) % data.request.length));
 
-  let layerClicks = 0;
-  function setLanguage(language) {
-    const content = data.languages[language];
-    selectButtons('[data-language]', 'data-language', language);
-    $('#language-heading').textContent = content.heading;
-    $('#language-text').textContent = content.text;
-    $('#layer-browser').dataset.layer = language;
-    $('#layer-action').disabled = language !== 'js';
-    $('#layer-message').textContent = '';
-    const labLink = $('#language-lab-link');
-    labLink.setAttribute('href', {html:'#lab-html',css:'#lab-css-layout',js:'#laboratorio'}[language]);
-    if (language === 'js') labLink.dataset.labEntry = '3';
-    else delete labLink.dataset.labEntry;
-    layerClicks = 0;
-    $('.layer-robot').style.setProperty('--energia', '0%');
-  }
-  $$('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
-  $('#layer-action').addEventListener('click', () => {
-    layerClicks += 1;
-    const energia = Math.min(100, layerClicks * 10);
-    $('#layer-message').textContent = 'Energia: ' + energia + '%';
-    $('.layer-robot').style.setProperty('--energia', energia + '%');
-  });
-
   $$('[data-route-mode]').forEach(button => button.addEventListener('click', () => {
     const mode = button.dataset.routeMode;
     selectButtons('[data-route-mode]', 'data-route-mode', mode);
