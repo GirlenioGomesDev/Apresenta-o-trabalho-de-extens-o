@@ -3,27 +3,27 @@ const logic=require('../assets/extension-logic.js'),qr=require('../assets/quiz-q
 const root=path.resolve(__dirname,'..'),context={window:{}};
 for(const f of ['content.js','course-data.js','extension-data.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'assets',f),'utf8'),context);
 const course=context.window.WorkshopCourse,data=context.window.WorkshopExtension,html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-test('os cinco capítulos seguem Web, carreiras e participação direta no quiz',()=>{
+test('os seis capítulos preservam história, Web, carreiras e o quiz único',()=>{
  const chapters=logic.groupedChapters(course);
- assert.deepEqual(Array.from(chapters,ch=>ch.number),['00','01','02','03','04']);
- assert.deepEqual(Array.from(chapters,ch=>ch.minutes),[4,69,24,22,1]);
+ assert.deepEqual(Array.from(chapters,ch=>ch.number),['00','01','02','03','04','05']);
+ assert.deepEqual(Array.from(chapters,ch=>ch.minutes),[7,18,52,59,23,1]);
  assert.equal(chapters.find(ch=>ch.id==='desafio').start,'quiz');
- assert.doesNotMatch(html,/data-chapter(?:-link)?="historia"|id="(?:fabrica|missao-final|internet-evolucao)"/);
+ assert.match(html,/id="internet-evolucao"/);assert.doesNotMatch(html,/id="(?:fabrica|missao-final)"/);
  assert.match(html,/href="#quiz" data-chapter-link="desafio"/);
 });
 test('as faixas de quatro áreas continuam ligadas a cargos e fontes',()=>{
- const source=fs.readFileSync(path.join(root,'assets/career-clean.js'),'utf8');
+ const source=fs.readFileSync(path.join(root,'assets/reading-guide.js'),'utf8');
  for(const [id,career] of Object.entries(data.careers)){
-  assert.ok(html.includes('data-clean-career="'+id+'"'));
+  assert.ok(html.includes('data-career-context="'+id+'"'));
   for(const sample of career.salaries){assert.match(sample.job,/Júnior/);assert.ok(sample.high>=sample.low);assert.ok(sample.source.startsWith('https://www.roberthalf.com/'));}
  }
- assert.match(source,/O QUE É A ÁREA/);assert.match(source,/O QUE FAZ NO DIA A DIA/);assert.match(source,/ALGUNS CARGOS/);
+ assert.match(html,/CONHEÇA A PROFISSÃO/);assert.match(html,/O QUE FAZ NO DIA A DIA/);assert.match(source,/EXEMPLOS DE CARGOS/);
  assert.equal(logic.salaryRange({low:6050,high:8750}),'6.050–8.750');assert.throws(()=>logic.salaryRange({low:10,high:1}));
 });
-test('a trajetória de Web mantém front-end e back-end antes de HTML, CSS e JavaScript',()=>{
+test('os assuntos permanecem agrupados e o quiz integrado continua acessível',()=>{
  const ids=Array.from(course.scenes,s=>s.id);
- for(const [a,b] of [['web-na-tela','por-tras-do-clique'],['por-tras-do-clique','linguagens'],['lab-html-form','css-aparencia'],['lab-css-motion','logica-passos']])assert.ok(ids.indexOf(a)<ids.indexOf(b));
- assert.match(html,/Front-end[\s\S]*Back-end/);assert.match(html,/web-learning-trail/);
+ for(const [a,b] of [['internet-evolucao','internet-pacotes'],['origem-web','linguagens'],['lab-html-form','css-historia'],['lab-css-motion','logica-passos'],['carreiras','por-tras-do-clique'],['lab-infra','lab-dados'],['lab-dados','lab-cyber']])assert.ok(ids.indexOf(a)<ids.indexOf(b));
+ assert.match(html,/Front-end[\s\S]*Back-end/);assert.match(html,/assets\/reading-guide\.js/);
  assert.match(html,/data-quiz-src="competicao.html\?modo=host&amp;embutido=1"/);
 });
 test('o QR leva apenas à entrada da sala e não carrega credencial do apresentador',()=>{

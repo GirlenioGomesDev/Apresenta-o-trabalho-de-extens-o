@@ -1,63 +1,73 @@
 # Fábrica de Software na Prática
 
-Apresentação interativa para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
+Oficina interativa para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/)** · versão 2.4.0
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/)** · versão 2.5.0
 
-## Uma oficina de 2 horas
+## Conteúdo completo, com uma ordem para acompanhar
 
-São **26 etapas, 120 minutos sugeridos e cinco capítulos**. O tempo inclui previsões, experimentos e conversa com a turma.
+São **53 etapas, seis capítulos e 160 minutos sugeridos (2h40)**. O roteiro inclui tempo para conversa e demonstrações. As histórias, pessoas, fotografias, laboratórios, atividades de carreira e casos reais foram reintegrados. Apenas as duas introduções da participação, `fabrica` e `missao-final`, foram retiradas; Participar abre diretamente o quiz com QR.
 
-| Capítulo | Caminho | Tempo |
+| Capítulo | Conteúdo | Tempo |
 | --- | --- | ---: |
-| 00 · Começo | Situações próximas dos alunos e roteiro. | 4 min |
-| 01 · Web | Entender a página → HTML → CSS → lógica e JavaScript. | 69 min |
-| 02 · Carreiras | Software, suporte/infraestrutura, dados e cibersegurança. | 24 min |
-| 03 · Participar | Quiz próprio de dez perguntas e próximos passos. | 22 min |
-| 04 · Equipe | Créditos e fontes. | 1 min |
+| 00 · Começo | O cotidiano e os papéis de internet, Web e navegador. | 7 min |
+| 01 · Internet | ARPANET, linha do tempo, pessoas e contribuições, pacotes, protocolos, DNS e Web. | 18 min |
+| 02 · Web + lógica | HTML, CSS, sequência, condições e JavaScript com código ao vivo. | 52 min |
+| 03 · Carreiras | Desenvolvimento, suporte/infraestrutura, dados e cibersegurança, com exemplos e práticas. | 59 min |
+| 04 · Participar | Quiz de dez perguntas por QR e próximos passos. | 23 min |
+| 05 · Equipe | Integrantes e referências. | 1 min |
 
-- A Web evolui uma ideia por vez, com exemplos e sete laboratórios ativos: seis do curso e o laboratório do robô. Código e resultado ficam próximos.
-- Carreiras mostram apenas conceito, o que o profissional faz, exemplos de cargos, faixa salarial identificada e fontes. Há um seletor para cada uma das quatro áreas.
-- Participar abre diretamente o quiz. A aba Internet e as duas introduções da participação saíram da navegação.
-- O design mantém a base em creme e verde, com cores mais vivas, fonte Manrope local e letras maiores.
-- Roteiro, notas, cronômetro, tela cheia e navegação por teclado continuam disponíveis.
+A faixa **Siga a leitura** numera os trechos de cada etapa. Clique em um trecho ou em **Próximo trecho** para destacá-lo e trazê-lo à tela. O material continua disponível na página. Nas quatro carreiras, o caminho é **conheça a área → veja o trabalho na prática → explore cargos e salários**. Nas contribuições históricas, o contexto liga necessidade, surgimento e uso ou legado atual à representação visual.
 
-Veja o [roteiro dos apresentadores](docs/ROTEIRO.md), as [fontes](docs/FONTES.md) e a [operação do quiz](docs/QUIZ.md).
+O contraste foi reforçado para projeção: fundo verde escuro, blocos de leitura claros, letras maiores e destaques em verde vivo. A fonte Manrope é local. O roteiro, as notas, o cronômetro, os atalhos e a tela cheia continuam disponíveis.
 
-## Competição integrada
+## Exemplos que permanecem
 
-Em **Participar**, escolha o tempo e clique em **Criar sala e mostrar QR**. Os alunos abrem a câmera do Android ou iPhone, tocam no link e escolhem um apelido. O apresentador inicia e avança as rodadas.
+- Linha do tempo com nove marcos e comparação visual antes/depois; onze pessoas contextualizadas e quinze fotos locais com créditos.
+- Nove laboratórios de código ativos: seis da Web, o robô, o placar de software e os testes da regra de estoque.
+- Cabo e continuidade, investigação de conexão/DNS/HTTP, caminhos sem loop e restauração de backup.
+- Gráficos editáveis, registros incompletos, valores fora do contexto, média, mediana e comparação de eixos.
+- Identidade e permissão, portão visual, política de acesso a arquivos, mensagens suspeitas e resposta a incidentes.
+- Experimentos de Turing e os casos Ariane, GitLab e WannaCry.
+- Mercado, cargos, salários identificados e links às fontes junto de cada área.
 
-São dez perguntas, 100 pontos por acerto e empate compartilhado. Após cada pergunta, todos recebem a resposta comentada e o placar atualizado automaticamente. Não há conta nem aplicativo a instalar. O quiz usa código próprio deste repositório e um banco compartilhado entre os participantes.
+Infraestrutura, dados e cibersegurança mantêm práticas visuais sem editor de código. Os testes aplicados às demonstrações continuam; as perguntas de múltipla escolha da competição ficam no quiz, sem o seletor antigo ou perguntas avulsas nos laboratórios.
 
-**A competição exige internet.** Os exemplos da aula e laboratórios continuam locais. O QR contém um endereço HTTPS normal e o código da sala; o controle do apresentador não é compartilhado com os alunos.
+Veja o [roteiro](docs/ROTEIRO.md), as [fontes](docs/FONTES.md), os [créditos das fotografias](docs/IMAGENS.md) e a [operação do quiz](docs/QUIZ.md).
+
+## Competição própria integrada
+
+Em **04 · Participar**, escolha 30, 45 ou 60 segundos e clique em **Criar sala e mostrar QR**. Os alunos abrem o link HTTPS pela câmera do Android/iPhone e escolhem um apelido. O apresentador inicia e avança as rodadas. Cada acerto vale 100 pontos; empates dividem a posição. Resposta comentada e placar aparecem automaticamente após cada pergunta.
+
+O quiz usa código próprio deste repositório e um banco compartilhado, sem conta ou aplicativo a instalar. A competição exige internet. Os exemplos da aula e laboratórios continuam locais. O QR contém só o endereço de entrada e o código da sala, sem o token do apresentador.
 
 ## Rodar localmente
 
-Use **Node.js 22.13 ou superior**, sem instalar dependências:
+Use **Node.js 22.13+**, sem instalar dependências:
 
 ```sh
 npm start
 ```
 
-Abra o endereço mostrado no terminal. Esse comando serve o material e a API do quiz, com SQLite local em `.quiz/local.sqlite` (ignorado pelo Git). Para simular um aluno local, abra `competicao.html?sala=CODIGO` no mesmo servidor. O QR projetado aponta sempre para a versão pública da oficina.
+O comando serve a apresentação e a API própria com SQLite local em `.quiz/local.sqlite`, ignorado pelo Git. Para simular um aluno localmente, abra `competicao.html?sala=CODIGO` no mesmo servidor. O QR aponta para a oficina pública.
 
 ```sh
 npm run check
 ```
 
-A verificação cobre ordem e duração das etapas, exemplos, ausência de editores nas carreiras, dez perguntas e as regras reais do quiz: permissão do apresentador, respostas únicas, prazos, pontuação, empates, dez rodadas, concorrência e CORS.
+A verificação cobre conteúdo restaurado, ordem e duração, exemplos, nove laboratórios, modelos de rede/dados/acesso, fotografias, linha do tempo e dez rodadas do quiz, com prazo, pontos, empates, permissão e concorrência.
 
 ## Editar e publicar
 
-- `index.html`: conteúdo e telas da oficina.
-- `assets/course-data.js`: sequência, notas, tempo e exemplos.
-- `assets/course*.js`, `assets/app.js` e os arquivos de laboratório: interações da aula.
-- `assets/career-clean.js`: quatro áreas e ligações às fontes.
-- `assets/clarity.css`: tipografia e ajustes visuais desta versão.
-- `competicao.html`, `assets/quiz-live.*` e `assets/quiz-embed.js`: telas do apresentador/aluno e integração na oficina.
-- `server/quiz-service.mjs`, `server/quiz-questions.mjs` e `server/quiz-schema.sql`: API, perguntas, regras e banco do quiz.
+- `index.html`: conteúdo e telas.
+- `assets/course-data.js`: sequência, duração, notas e exemplos do curso.
+- `assets/app.js`, `course.js`, `course-labs.js`, `live-labs.js` e arquivos de lógica: interações e laboratórios preservados.
+- `assets/extension*` e `history-stories*`: contribuições históricas, fotos, linha do tempo e contexto das carreiras.
+- `assets/reading-guide.js`: orientação por trecho; adiciona ordem e destaque sem excluir o material.
+- `assets/projection.css`: contraste e legibilidade para projeção; `clarity.css` contém a fonte local e a base tipográfica.
+- `competicao.html`, `assets/quiz-live.*` e `quiz-embed.js`: competição própria e integração.
+- `server/`: API, banco de perguntas, regras e esquema do quiz; `worker.mjs` é um adaptador D1.
 
-O GitHub Pages publica a raiz de `main`. O workflow **Verificar apresentação** roda os testes. O Pages hospeda arquivos estáticos; a API própria roda no runtime do projeto existente com D1. Alterações no servidor precisam ser publicadas também nesse runtime; um push no Pages, sozinho, não atualiza a API. Detalhes em [QUIZ.md](docs/QUIZ.md).
+O GitHub Pages publica a raiz de `main`; o workflow **Verificar apresentação** executa os testes. O Pages hospeda arquivos estáticos. A API própria usa D1 no runtime do projeto existente. Alterações no servidor precisam ser publicadas também nesse runtime; um push no Pages atualiza apenas o frontend. A sincronização está descrita em [QUIZ.md](docs/QUIZ.md).
 
-Arquivos históricos de versões anteriores permanecem no repositório como referência e não são carregados pela apresentação atual. Créditos: Manrope sob SIL OFL em `assets/manrope-ofl.txt`; gerador QR Nayuki sob MIT, preservado no cabeçalho de `assets/quiz-qr-vendor.js`.
+Créditos: Manrope sob SIL OFL em `assets/manrope-ofl.txt`; gerador QR Nayuki sob MIT, preservado no cabeçalho de `assets/quiz-qr-vendor.js`.

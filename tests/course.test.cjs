@@ -19,10 +19,10 @@ function execute(code,input){
 }
 function scriptValue(code,expression){return plain(vm.runInNewContext(code+'\n'+expression,{console:{log(){}}}));}
 
-test('os sete blocos somam 120 min e cada assunto ocupa uma sequência contínua',()=>{
-  assert.equal(course.modules.length,7);assert.equal(course.scenes.length,26);
+test('os dez blocos restaurados somam 160 min e cada assunto ocupa uma sequência contínua',()=>{
+  assert.equal(course.modules.length,10);assert.equal(course.scenes.length,53);
   assert.deepEqual(sections.map(match=>match[1]),Array.from(course.scenes,scene=>scene.id));
-  assert.equal(course.scenes.reduce((sum,scene)=>sum+scene.minutes,0),120);
+  assert.equal(course.scenes.reduce((sum,scene)=>sum+scene.minutes,0),160);
   const seen=new Set();let current;
   for(const scene of course.scenes){
     if(scene.module!==current){assert.ok(!seen.has(scene.module),'Bloco retomado fora de ordem: '+scene.module);seen.add(scene.module);current=scene.module;}
@@ -32,11 +32,12 @@ test('os sete blocos somam 120 min e cada assunto ocupa uma sequência contínua
   for(const total of logic.totals(course))assert.equal(total.minutes,course.modules.find(module=>module.id===total.id).minutes);
 });
 
-test('carreiras reúne as quatro áreas sem os antigos laboratórios',()=>{
- const careers=sections.find(match=>match[1]==='carreiras')[0];
- for(const area of ['software','infra','dados','cyber'])assert.ok(careers.includes('data-clean-career="'+area+'"'));
- assert.doesNotMatch(careers,/<(?:textarea|pre|code)\b|data-course-lab=/);
- for(const id of ['lab-infra','lab-dados','lab-cyber','fabrica','missao-final'])assert.ok(!course.scenes.some(scene=>scene.id===id));
+test('as quatro carreiras mantêm práticas, sem código em infraestrutura, dados e segurança',()=>{
+ for(const id of ['lab-software','lab-software-testes','infra-cabo','lab-infra-missao','lab-dados-coleta','lab-cyber-regras'])assert.ok(course.scenes.some(scene=>scene.id===id));
+ for(const id of ['lab-infra','infra-cabo','lab-infra-missao','lab-dados','lab-dados-coleta','lab-cyber','lab-cyber-regras']){
+  const section=sections.find(match=>match[1]===id)[0];assert.doesNotMatch(section,/<(?:textarea|pre|code)\b|data-course-lab=/);
+ }
+ for(const id of ['fabrica','missao-final'])assert.ok(!course.scenes.some(scene=>scene.id===id));
 });
 
 test('seis laboratórios web mostram código da aula com recursos de apoio identificados',()=>{

@@ -349,7 +349,42 @@
   });
   resetLab();
 
-  function setCareer(id) { window.CleanCareers?.select(id); }
+  $$('[data-scenario]').forEach(button => button.addEventListener('click', () => {
+    const value = button.dataset.scenario;
+    selectButtons('[data-scenario]', 'data-scenario', value);
+    $('#phishing-scenario').hidden = value !== 'phishing';
+    $('#mfa-scenario').hidden = value !== 'mfa';
+  }));
+  const decisionFeedback = {
+    'phishing-open': { target: 'phishing', good: false, text: 'A pressa aumenta o risco. A mensagem pede senha e código, usa um número desconhecido e ameaça suspender a conta. Confirme pelo aplicativo ou site oficial, sem abrir o link.' },
+    'phishing-check': { target: 'phishing', good: true, text: 'Boa decisão. Procure o serviço pelo aplicativo ou site oficial. Urgência, pedido de senha e código e origem desconhecida são sinais de alerta. Um logotipo não comprova autenticidade.' },
+    'mfa-approve': { target: 'mfa', good: false, text: 'Aprovar pode liberar o acesso de outra pessoa. Se você não iniciou o login, negue e revise a atividade da conta pelo serviço oficial.' },
+    'mfa-deny': { target: 'mfa', good: true, text: 'Boa decisão. Negue a solicitação inesperada. Revise as sessões e a atividade da conta pelo canal oficial e proteja as credenciais se houver indícios de comprometimento.' }
+  };
+  $$('[data-decision]').forEach(button => button.addEventListener('click', () => {
+    const feedback = decisionFeedback[button.dataset.decision];
+    const target = $('#' + feedback.target + '-feedback');
+    target.textContent = feedback.text;
+    target.classList.toggle('good', feedback.good);
+    target.classList.toggle('warning', !feedback.good);
+    button.closest('.detective-actions').querySelectorAll('.decision-button').forEach(option => option.classList.toggle('selected', option === button));
+  }));
+
+  let selectedRole = 'visitante';
+  $$('[data-role]').forEach(button => button.addEventListener('click', () => {
+    selectedRole = button.dataset.role;
+    selectButtons('[data-role]', 'data-role', selectedRole);
+    $('#permission-status').textContent = 'Papel selecionado: ' + (selectedRole === 'editor' ? 'editor autorizado.' : 'visitante.') + ' Tente editar o conteúdo.';
+  }));
+  $('#permission-try').addEventListener('click', () => {
+    $('#permission-status').textContent = logic.canEdit(selectedRole)
+      ? 'Permitido nesta simulação: o papel de editor tem autorização. Em um sistema real, o servidor deve verificar essa permissão.'
+      : 'Acesso negado nesta simulação: visitantes podem consultar, mas não alterar o conteúdo.';
+  });
+
+  function setCareer(id) {
+    $$('[data-career-card]').forEach(card => card.classList.toggle('active', card.dataset.careerCard === id));
+  }
 
   function setStart(id) {
     const item = data.starts[id];

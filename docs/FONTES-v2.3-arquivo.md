@@ -1,6 +1,6 @@
 # Arquivo de fontes da versão 2.3
 
-Referências dos módulos históricos retirados da apresentação ativa na versão 2.4.
+Registro das referências da versão 2.3, cujo conteúdo foi reintegrado à apresentação na versão 2.5.
 
 # Fontes e escopo
 

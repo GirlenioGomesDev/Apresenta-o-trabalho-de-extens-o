@@ -2,7 +2,7 @@
 
 ## Conduzir a competição
 
-1. Abra a oficina e clique em **03 · Participar**. A competição aparece diretamente nessa etapa.
+1. Abra a oficina e clique em **04 · Participar**. A competição aparece diretamente nessa etapa.
 2. Escolha 30, 45 ou 60 segundos por pergunta e clique em **Criar sala e mostrar QR**.
 3. Projete o QR. Cada aluno usa a câmera do Android/iPhone, toca no link HTTPS e escolhe um apelido. Também é possível usar o link ou o código de seis caracteres.
 4. Veja os participantes aparecerem automaticamente e clique em **Começar a primeira pergunta**.
