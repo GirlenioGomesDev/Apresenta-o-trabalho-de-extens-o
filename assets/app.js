@@ -78,7 +78,13 @@
 
   const overview = $('#overview-dialog');
   const help = $('#help-dialog');
-  $('#overview-list').innerHTML = window.WorkshopCourse.modules.map(module => '<section class="overview-module"><h3>' + logic.escapeHTML(module.title) + '<small>' + module.minutes + ' min</small></h3><div class="overview-module-links">' + scenes.filter(scene => scene.dataset.module === module.id).map(scene => '<a href="#' + scene.id + '"><span>' + String(ids.indexOf(scene.id) + 1).padStart(2, '0') + '</span>' + logic.escapeHTML(scene.dataset.title) + '<small>' + scene.dataset.minutes + ' min</small></a>').join('') + '</div></section>').join('');
+  const groupedChapters = window.WorkshopExtensionLogic.groupedChapters(window.WorkshopCourse);
+  $('#overview-list').innerHTML = groupedChapters.map(chapter => {
+    const chapterScenes = scenes.filter(scene => scene.dataset.chapter === chapter.id);
+    const modules = window.WorkshopCourse.modules.filter(module => chapterScenes.some(scene => scene.dataset.module === module.id));
+    const groups = modules.map(module => '<section class="overview-module"><h3>' + logic.escapeHTML(module.title) + '<small>' + chapterScenes.filter(scene => scene.dataset.module === module.id).reduce((sum,scene) => sum + Number(scene.dataset.minutes),0) + ' min</small></h3><div class="overview-module-links">' + chapterScenes.filter(scene => scene.dataset.module === module.id).map(scene => '<a href="#' + scene.id + '"><span>' + String(ids.indexOf(scene.id) + 1).padStart(2, '0') + '</span>' + logic.escapeHTML(scene.dataset.title) + '<small>' + scene.dataset.minutes + ' min</small></a>').join('') + '</div></section>').join('');
+    return '<section class="overview-chapter" data-overview-chapter="' + chapter.id + '"><h2><span>' + chapter.number + '</span>' + logic.escapeHTML(chapter.title) + '<small>' + chapter.minutes + ' min</small></h2>' + groups + '</section>';
+  }).join('');
 
   function openDialog(dialog) {
     if (dialog.open) { dialog.close(); return; }

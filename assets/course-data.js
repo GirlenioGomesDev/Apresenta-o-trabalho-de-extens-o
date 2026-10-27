@@ -1,10 +1,15 @@
-/* 130 minutos, assuntos contíguos e práticas visuais por área. */
+/* Roteiro preservado, com história da internet e cibersegurança em Carreiras. */
 window.WorkshopCourse = {
   "modules": [
     {
       "id": "comeco",
       "title": "Começo · entender a Web",
-      "minutes": 10
+      "minutes": 7
+    },
+    {
+      "id": "historia",
+      "title": "História da internet · contribuições que se conectam",
+      "minutes": 13
     },
     {
       "id": "html",
@@ -52,301 +57,372 @@ window.WorkshopCourse = {
       "id": "inicio",
       "module": "comeco",
       "minutes": 1,
-      "title": "Tecnologia por trás da tela"
+      "title": "Tecnologia por trás da tela",
+      "chapter": "abertura"
     },
     {
       "id": "roteiro",
       "module": "comeco",
       "minutes": 1,
-      "title": "Uma jornada de 2h10."
+      "title": "Uma jornada de 2h20.",
+      "chapter": "abertura"
     },
     {
       "id": "vida-digital",
       "module": "comeco",
       "minutes": 2,
-      "title": "Um toque na tela. Muita coisa por trás."
+      "title": "Um toque na tela. Muita coisa por trás.",
+      "chapter": "abertura"
     },
     {
       "id": "web-na-tela",
       "module": "comeco",
       "minutes": 3,
-      "title": "Internet, Web e navegador: cada um tem um papel."
+      "title": "Internet, Web e navegador: cada um tem um papel.",
+      "chapter": "abertura"
+    },
+    {
+      "id": "internet-pacotes",
+      "module": "historia",
+      "minutes": 3,
+      "title": "Uma mensagem pode viajar em partes.",
+      "chapter": "historia"
+    },
+    {
+      "id": "internet-protocolos",
+      "module": "historia",
+      "minutes": 4,
+      "title": "Redes diferentes precisam combinar como conversar.",
+      "chapter": "historia"
+    },
+    {
+      "id": "internet-dns",
+      "module": "historia",
+      "minutes": 3,
+      "title": "Uma lista central ficou pequena para tantas máquinas.",
+      "chapter": "historia"
     },
     {
       "id": "origem-web",
-      "module": "comeco",
+      "module": "historia",
       "minutes": 3,
-      "title": "A Web começou com uma necessidade."
+      "title": "A Web começou com uma necessidade.",
+      "chapter": "historia"
     },
     {
       "id": "linguagens",
       "module": "html",
       "minutes": 2,
-      "title": "Uma página, três responsabilidades."
+      "title": "Uma página, três responsabilidades.",
+      "chapter": "web"
     },
     {
       "id": "html-estrutura",
       "module": "html",
       "minutes": 3,
-      "title": "O navegador lê uma estrutura."
+      "title": "O navegador lê uma estrutura.",
+      "chapter": "web"
     },
     {
       "id": "lab-html",
       "module": "html",
       "minutes": 5,
-      "title": "Uma tag, um significado. Uma mudança por vez."
+      "title": "Uma tag, um significado. Uma mudança por vez.",
+      "chapter": "web"
     },
     {
       "id": "html-acessivel",
       "module": "html",
       "minutes": 3,
-      "title": "Funciona no mouse. E no teclado?"
+      "title": "Funciona no mouse. E no teclado?",
+      "chapter": "web"
     },
     {
       "id": "lab-html-form",
       "module": "html",
       "minutes": 3,
-      "title": "Dar nome ao campo e orientar o preenchimento."
+      "title": "Dar nome ao campo e orientar o preenchimento.",
+      "chapter": "web"
     },
     {
       "id": "css-historia",
       "module": "css",
       "minutes": 2,
-      "title": "O conteúdo fica. O visual se transforma."
+      "title": "O conteúdo fica. O visual se transforma.",
+      "chapter": "web"
     },
     {
       "id": "css-caixa",
       "module": "css",
       "minutes": 3,
-      "title": "Por que essa caixa ocupa tanto espaço?"
+      "title": "Por que essa caixa ocupa tanto espaço?",
+      "chapter": "web"
     },
     {
       "id": "lab-css-layout",
       "module": "css",
       "minutes": 5,
-      "title": "O mesmo site. Outros tamanhos de tela."
+      "title": "O mesmo site. Outros tamanhos de tela.",
+      "chapter": "web"
     },
     {
       "id": "lab-css-motion",
       "module": "css",
       "minutes": 4,
-      "title": "Movimento também conta uma história."
+      "title": "Movimento também conta uma história.",
+      "chapter": "web"
     },
     {
       "id": "logica-passos",
       "module": "js",
       "minutes": 3,
-      "title": "Programar começa com instruções em ordem."
+      "title": "Programar começa com instruções em ordem.",
+      "chapter": "web"
     },
     {
       "id": "logica-decisoes",
       "module": "js",
       "minutes": 3,
-      "title": "Guardar, decidir e repetir."
+      "title": "Guardar, decidir e repetir.",
+      "chapter": "web"
     },
     {
       "id": "js-modelo",
       "module": "js",
       "minutes": 2,
-      "title": "Ação → estado → tela."
+      "title": "Ação → estado → tela.",
+      "chapter": "web"
     },
     {
       "id": "laboratorio",
       "module": "js",
       "minutes": 4,
-      "title": "Do clique ao console: o primeiro experimento"
+      "title": "Do clique ao console: o primeiro experimento",
+      "chapter": "web"
     },
     {
       "id": "lab-js-feed",
       "module": "js",
       "minutes": 5,
-      "title": "Como uma busca decide o que mostrar?"
+      "title": "Como uma busca decide o que mostrar?",
+      "chapter": "web"
     },
     {
       "id": "js-desafio",
       "module": "js",
       "minutes": 1,
-      "title": "O que significa “funcionar”?"
+      "title": "O que significa “funcionar”?",
+      "chapter": "web"
     },
     {
       "id": "lab-js-carrinho",
       "module": "js",
       "minutes": 4,
-      "title": "Uma soma, uma condição e um limite."
+      "title": "Uma soma, uma condição e um limite.",
+      "chapter": "web"
     },
     {
       "id": "carreiras",
       "module": "software",
       "minutes": 1,
-      "title": "Quatro áreas. Um bloco para cada uma."
+      "title": "Quatro áreas. Um bloco para cada uma.",
+      "chapter": "carreiras"
     },
     {
       "id": "por-tras-do-clique",
       "module": "software",
       "minutes": 2,
-      "title": "Quem cria a tela? Quem cria as regras?"
+      "title": "Quem cria a tela? Quem cria as regras?",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-software",
       "module": "software",
       "minutes": 2,
-      "title": "Desenvolvimento: criar, testar e melhorar."
+      "title": "Desenvolvimento: criar, testar e melhorar.",
+      "chapter": "carreiras"
     },
     {
       "id": "grace-hopper",
       "module": "software",
       "minutes": 1,
-      "title": "Programar também é tornar ideias compreensíveis."
+      "title": "Programar também é tornar ideias compreensíveis.",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-software-testes",
       "module": "software",
       "minutes": 3,
-      "title": "Passar no primeiro teste não é passar em todos."
+      "title": "Passar no primeiro teste não é passar em todos.",
+      "chapter": "carreiras"
     },
     {
       "id": "caso-ariane",
       "module": "software",
       "minutes": 1,
-      "title": "Caso real: testar o contexto importa."
+      "title": "Caso real: testar o contexto importa.",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-infra",
       "module": "infra",
       "minutes": 3,
-      "title": "Conectar pessoas também é uma profissão."
+      "title": "Conectar pessoas também é uma profissão.",
+      "chapter": "carreiras"
     },
     {
       "id": "infra-cabo",
       "module": "infra",
       "minutes": 5,
-      "title": "Um cabo por fora. Oito contatos por dentro."
+      "title": "Um cabo por fora. Oito contatos por dentro.",
+      "chapter": "carreiras"
     },
     {
       "id": "infra-caminho",
       "module": "infra",
       "minutes": 3,
-      "title": "Internet funciona. Então por que o site não abre?"
+      "title": "Internet funciona. Então por que o site não abre?",
+      "chapter": "carreiras"
     },
     {
       "id": "radia-perlman",
       "module": "infra",
       "minutes": 1,
-      "title": "Mais conexões. Mais cuidado com os caminhos."
+      "title": "Mais conexões. Mais cuidado com os caminhos.",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-infra-missao",
       "module": "infra",
       "minutes": 3,
-      "title": "O mesmo erro na tela pode ter causas diferentes."
+      "title": "O mesmo erro na tela pode ter causas diferentes.",
+      "chapter": "carreiras"
     },
     {
       "id": "caso-gitlab",
       "module": "infra",
       "minutes": 1,
-      "title": "Ter um backup. Conseguir restaurar."
+      "title": "Ter um backup. Conseguir restaurar.",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-dados",
       "module": "dados",
       "minutes": 3,
-      "title": "O que esses números ajudam a descobrir?"
+      "title": "O que esses números ajudam a descobrir?",
+      "chapter": "carreiras"
     },
     {
       "id": "katherine-johnson",
       "module": "dados",
       "minutes": 1,
-      "title": "O computador calculou. Quem verifica o resultado?"
+      "title": "O computador calculou. Quem verifica o resultado?",
+      "chapter": "carreiras"
     },
     {
       "id": "dados-pergunta",
       "module": "dados",
       "minutes": 2,
-      "title": "Qual pergunta esses dados respondem?"
+      "title": "Qual pergunta esses dados respondem?",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-dados-coleta",
       "module": "dados",
       "minutes": 4,
-      "title": "Olhar a tabela antes de confiar no gráfico."
+      "title": "Olhar a tabela antes de confiar no gráfico.",
+      "chapter": "carreiras"
     },
     {
       "id": "dados-vies",
       "module": "dados",
       "minutes": 2,
-      "title": "Os números não mudaram. E a impressão?"
+      "title": "Os números não mudaram. E a impressão?",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-cyber",
       "module": "cyber",
       "minutes": 3,
-      "title": "Confirmar a identidade. Conferir a permissão."
+      "title": "Confirmar a identidade. Conferir a permissão.",
+      "chapter": "carreiras"
     },
     {
       "id": "codigo-seguro",
       "module": "cyber",
       "minutes": 2,
-      "title": "Cada pessoa precisa de qual acesso?"
+      "title": "Cada pessoa precisa de qual acesso?",
+      "chapter": "carreiras"
     },
     {
       "id": "lab-cyber-regras",
       "module": "cyber",
       "minutes": 3,
-      "title": "Ser editor não dá acesso a todos os arquivos."
+      "title": "Ser editor não dá acesso a todos os arquivos.",
+      "chapter": "carreiras"
     },
     {
       "id": "detetive",
       "module": "cyber",
       "minutes": 3,
-      "title": "Confiança, pressa e pedidos inesperados."
+      "title": "Confiança, pressa e pedidos inesperados.",
+      "chapter": "carreiras"
     },
     {
       "id": "caso-wannacry",
       "module": "cyber",
       "minutes": 2,
-      "title": "Quando uma falha digital interrompe um serviço real."
+      "title": "Quando uma falha digital interrompe um serviço real.",
+      "chapter": "carreiras"
     },
     {
       "id": "cyber-investiga",
       "module": "cyber",
       "minutes": 3,
-      "title": "Uma boa resposta começa com boas perguntas."
+      "title": "Uma boa resposta começa com boas perguntas.",
+      "chapter": "carreiras"
     },
     {
       "id": "fabrica",
       "module": "fechamento",
       "minutes": 1,
-      "title": "As áreas colaboram para resolver problemas."
+      "title": "As áreas colaboram para resolver problemas.",
+      "chapter": "desafio"
     },
     {
       "id": "missao-final",
       "module": "fechamento",
       "minutes": 2,
-      "title": "Quatro pistas. Uma equipe para investigar."
+      "title": "Quatro pistas. Uma equipe para investigar.",
+      "chapter": "desafio"
     },
     {
       "id": "quiz",
       "module": "fechamento",
       "minutes": 8,
-      "title": "A turma escolhe, responde e explica."
+      "title": "A turma escolhe, responde e explica.",
+      "chapter": "desafio"
     },
     {
       "id": "primeiro-projeto",
       "module": "fechamento",
       "minutes": 1,
-      "title": "Qual parte você quer explorar depois?"
+      "title": "Qual parte você quer explorar depois?",
+      "chapter": "desafio"
     },
     {
       "id": "encerramento",
       "module": "fechamento",
       "minutes": 1,
-      "title": "Você também pode começar a construir."
+      "title": "Você também pode começar a construir.",
+      "chapter": "desafio"
     },
     {
       "id": "equipe",
       "module": "fechamento",
       "minutes": 1,
-      "title": "Equipe, histórias e fontes verificadas."
+      "title": "Equipe, histórias e fontes verificadas.",
+      "chapter": "creditos"
     }
   ],
   "experiments": {
@@ -695,7 +771,7 @@ window.WorkshopCourse = {
     },
     "roteiro": {
       "time": "1 min / Começo · entender a Web",
-      "text": "Mostre a ordem dos blocos. Explique que terminaremos um assunto antes de trocar de área. São 130 minutos com conversa e atividades; não uma leitura contínua de texto."
+      "text": "Mostre a ordem dos blocos. Explique que terminaremos um assunto antes de trocar de área. São 130 minutos com conversa e atividades; não uma leitura contínua de texto. O módulo de história acrescenta dez minutos ao roteiro anterior; todas as durações antigas foram mantidas."
     },
     "vida-digital": {
       "time": "2 min / Começo · entender a Web",
@@ -706,8 +782,8 @@ window.WorkshopCourse = {
       "text": "Pergunte qual aplicativo usam para abrir um site. Diferencie internet, Web e navegador com os três cartões. Passe pelas quatro etapas e só depois habilite o botão. A animação é um modelo, não uma requisição real. Pergunte: onde entram HTML, CSS e JavaScript?"
     },
     "origem-web": {
-      "time": "3 min / Começo · entender a Web",
-      "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos."
+      "time": "3 min / História da internet",
+      "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos. No acréscimo visual, compare os documentos antes e depois de conectar os links. Hipertexto existia antes; a contribuição da Web reuniu documentos e padrões acessíveis pela internet."
     },
     "linguagens": {
       "time": "2 min / HTML · organizar o conteúdo",
@@ -775,15 +851,15 @@ window.WorkshopCourse = {
     },
     "carreiras": {
       "time": "1 min / Carreira · desenvolvimento de software",
-      "text": "Use os quatro cartões como mapa, sem abrir exemplos fora de ordem. Diga o que cada área entrega. Código ficará em desenvolvimento; redes, dados e segurança terão atividades visuais. Comece pelo desenvolvimento e só avance quando seu bloco terminar."
+      "text": "Use os quatro cartões como mapa, sem abrir exemplos fora de ordem. Diga o que cada área entrega. Código ficará em desenvolvimento; redes, dados e segurança terão atividades visuais. Comece pelo desenvolvimento e só avance quando seu bloco terminar. A cibersegurança agora integra o capítulo 03, com os demais conteúdos de carreira. A navegação interna mantém todas as atividades existentes."
     },
     "por-tras-do-clique": {
       "time": "2 min / Carreira · desenvolvimento de software",
-      "text": "Use uma busca de livros para explicar front-end, back-end e full stack. A interface recebe a busca; o serviço procura no catálogo; a resposta vira lista. Não introduza regras de segurança aqui. Elas ficam no bloco de cibersegurança."
+      "text": "Use uma busca de livros para explicar front-end, back-end e full stack. A interface recebe a busca; o serviço procura no catálogo; a resposta vira lista. Não introduza regras de segurança aqui. Elas ficam no bloco de cibersegurança. Abaixo, os três cartões retomam os conceitos de HTML, CSS e JavaScript e abrem os laboratórios já existentes, sem substituí-los."
     },
     "lab-software": {
       "time": "2 min / Carreira · desenvolvimento de software",
-      "text": "Leia o que é a profissão, por que existe e uma entrega concreta. Peça previsão para uma e duas estrelas. Colete e compare o placar. Troque 10 por 50 na função. Explique que o trabalho também inclui conversar, planejar, testar e melhorar com outras pessoas."
+      "text": "Leia o que é a profissão, por que existe e uma entrega concreta. Peça previsão para uma e duas estrelas. Colete e compare o placar. Troque 10 por 50 na função. Explique que o trabalho também inclui conversar, planejar, testar e melhorar com outras pessoas. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "grace-hopper": {
       "time": "1 min / Carreira · desenvolvimento de software",
@@ -799,7 +875,7 @@ window.WorkshopCourse = {
     },
     "lab-infra": {
       "time": "3 min / Carreira · redes, suporte e infraestrutura",
-      "text": "Apresente a profissão com o chamado do notebook. Diferencie ajudar a pessoa de manter o ambiente. Pergunte quando começou e se outros equipamentos funcionam. Apresente cabo e testador como ferramentas antes de passar à prática física."
+      "text": "Apresente a profissão com o chamado do notebook. Diferencie ajudar a pessoa de manter o ambiente. Pergunte quando começou e se outros equipamentos funcionam. Apresente cabo e testador como ferramentas antes de passar à prática física. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "infra-cabo": {
       "time": "5 min / Carreira · redes, suporte e infraestrutura",
@@ -823,7 +899,7 @@ window.WorkshopCourse = {
     },
     "lab-dados": {
       "time": "3 min / Carreira · análise de dados",
-      "text": "Apresente a profissão e a pergunta da amostra. Leia as quantidades antes das barras. Peça previsão, mude um número e observe. O gráfico usa escala fixa e dados fictícios. Empates e amostra vazia devem ser discutidos sem inventar um vencedor."
+      "text": "Apresente a profissão e a pergunta da amostra. Leia as quantidades antes das barras. Peça previsão, mude um número e observe. O gráfico usa escala fixa e dados fictícios. Empates e amostra vazia devem ser discutidos sem inventar um vencedor. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "katherine-johnson": {
       "time": "1 min / Carreira · análise de dados",
@@ -843,7 +919,7 @@ window.WorkshopCourse = {
     },
     "lab-cyber": {
       "time": "3 min / Cibersegurança · carreira e proteção",
-      "text": "Só agora comece os exemplos de segurança. Apresente o que a profissão faz e por quê. Teste as quatro combinações de papel e segunda etapa. Explique identidade versus permissão antes de abrir os arquivos da atividade seguinte. Nenhum código, conta ou credencial real é usado."
+      "text": "Só agora comece os exemplos de segurança. Apresente o que a profissão faz e por quê. Teste as quatro combinações de papel e segunda etapa. Explique identidade versus permissão antes de abrir os arquivos da atividade seguinte. Nenhum código, conta ou credencial real é usado. O painel adicional informa mercado e um cargo júnior de referência do Guia Robert Half 2026. A faixa é P25–P75, não piso ou teto de toda a profissão; valores variam por região e empresa. Em dados, BI é um exemplo da área. Não rotule os valores como CLT, líquidos ou brutos, pois isso não foi especificado nas páginas consultadas."
     },
     "codigo-seguro": {
       "time": "2 min / Cibersegurança · carreira e proteção",
@@ -888,6 +964,18 @@ window.WorkshopCourse = {
     "equipe": {
       "time": "1 min / Participação · escolher, responder e explicar",
       "text": "Agradeça ao público e apresente os seis integrantes, sem matrículas. As histórias e os casos têm fontes acessíveis nos links. O funcionamento dos exemplos é local."
+    },
+    "internet-pacotes": {
+      "time": "3 min / História da internet",
+      "text": "Conte as contribuições independentes de Paul Baran e Donald Davies e o marco coletivo da ARPANET em 1969. Não atribua a rede inteira a duas pessoas. No laboratório, leia uma mensagem, divida-a em partes numeradas e envie uma de cada vez. A ordem de chegada é diferente, mas a reorganização recupera a mensagem. Bloqueie o caminho A e compare com B; sem nenhum caminho, o envio deve parar. A numeração e o desenho são modelos didáticos, não uma implementação dos protocolos históricos."
+    },
+    "internet-protocolos": {
+      "time": "4 min / História da internet",
+      "text": "Mostre as redes diferentes. Conte o artigo de Cerf e Kahn em 1974 e a transição planejada da ARPANET para TCP/IP em 1º de janeiro de 1983. Teste antes e depois de ativar o conjunto comum nos dois lados. O desenho interno de cada rede permanece diferente. IP encaminha; TCP dá suporte a um fluxo confiável nas pontas. O equipamento não traduz qualquer protocolo por mágica."
+    },
+    "internet-dns": {
+      "time": "3 min / História da internet",
+      "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993."
     }
   },
   "choices": {
@@ -999,6 +1087,44 @@ window.WorkshopCourse = {
       "correct": 1,
       "explanation": "Autenticação confirma a identidade. Autorização define o que ela pode fazer, considerando a ação e o recurso.",
       "review": "lab-cyber-regras"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "abertura",
+      "number": "00",
+      "title": "Começo",
+      "description": "O que já conhecemos da Web."
+    },
+    {
+      "id": "historia",
+      "number": "01",
+      "title": "História da internet",
+      "description": "Pacotes → redes → DNS → Web."
+    },
+    {
+      "id": "web",
+      "number": "02",
+      "title": "Web + lógica",
+      "description": "HTML, CSS, JavaScript e raciocínio."
+    },
+    {
+      "id": "carreiras",
+      "number": "03",
+      "title": "Carreiras",
+      "description": "Desenvolvimento · Suporte / Infra · Dados · Cyber."
+    },
+    {
+      "id": "desafio",
+      "number": "04",
+      "title": "Participar",
+      "description": "Escolher, responder e explicar."
+    },
+    {
+      "id": "creditos",
+      "number": "05",
+      "title": "Equipe",
+      "description": "Integrantes e referências."
     }
   ]
 };

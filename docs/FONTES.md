@@ -39,3 +39,35 @@ Referências primárias e documentação consultadas para a oficina, com verific
 - Um eixo recortado pode servir à análise de pequenas diferenças, desde que seja declarado; a atividade compara a percepção sem mudar os dados.
 - As funções profissionais podem se sobrepor e usar outras ferramentas e linguagens. Não há promessa de emprego ou salário.
 - O material se refere ao projeto de extensão do Grupo 04, Ciência da Computação, UNINASSAU Campus Graças, para alunos do ensino médio.
+
+## Acréscimos verificados em 27 de outubro de 2026
+
+### Internet: história e modelos visuais
+
+- **Paul Baran · RAND, 1964.** Relatório original sobre redes distribuídas e mensagens em blocos. <https://www.rand.org/pubs/research_memoranda/RM3420.html>.
+- **Donald Davies e equipe · NPL, 1965.** Linha do tempo institucional, seção de comutação de pacotes. O trabalho foi independente do de Baran; outras equipes também contribuíram. <https://www.npl.co.uk/about-us/history/timeline>.
+- **DARPA · ARPANET.** Marco da primeira transmissão UCLA–SRI em 29/10/1969 e contexto coletivo da rede inicial. Não atribuir toda a rede a uma pessoa. <https://www.darpa.mil/news/features/arpanet>.
+- **Internet Society · relato dos participantes, 1997.** Artigo coassinado por Vint Cerf, Bob Kahn e outros participantes, com o trabalho de 1974 e a evolução da interligação de redes. <https://www.internetsociety.org/internet/history-internet/brief-history-internet/>.
+- **Jon Postel · RFC 801, 1981.** Plano original de transição NCP/TCP, com meta em 1º/01/1983. A adoção não ocorreu instantaneamente em todas as redes do mundo. <https://www.rfc-editor.org/rfc/rfc801.html>.
+- **Paul Mockapetris · RFC 882, novembro de 1983.** Documento original do sistema de nomes. Ele registra a existência anterior de nomes e da tabela HOSTS.TXT; a contribuição é a organização distribuída. <https://www.rfc-editor.org/rfc/rfc882.html>.
+- O trecho existente sobre **Tim Berners-Lee e CERN, 1989–1993**, encerra o módulo em ordem cronológica. Hipertexto já existia; o modelo não afirma que a Web inventou a ideia de links.
+
+Os laboratórios são analogias locais: numeração de partes e reorganização nas pontas; caminhos alternativos apenas quando disponíveis; protocolos comuns nas duas redes; DNS hierárquico sem cache. Não fazem consultas reais nem reproduzem integralmente os protocolos históricos.
+
+### Carreiras, salários e mercado
+
+Fonte principal: **Guia Salarial Robert Half 2026**, referência nacional. Faixas entre P25 e P75 para o cargo júnior indicado, não mínimo/máximo de toda a profissão nem média salarial de todos os trabalhadores brasileiros.
+
+| Área | Cargo de referência | P25 | P75 | Fonte da faixa |
+| --- | --- | ---: | ---: | --- |
+| Software | Desenvolvedor(a) Full-Stack Júnior | R$ 6.050 | R$ 8.750 | <https://www.roberthalf.com/br/pt/vagas-detalhes/desenvolvedora-full-stack-junior> |
+| Suporte / Infra | Analista de Suporte Júnior | R$ 3.350 | R$ 5.650 | <https://www.roberthalf.com/br/pt/vagas-detalhes/analista-de-suporte-junior> |
+| Suporte / Infra | Analista de Infraestrutura Júnior | R$ 4.400 | R$ 7.450 | Tabela de cargos relacionados na mesma fonte de suporte. |
+| Dados | Analista de BI Júnior | R$ 5.600 | R$ 9.000 | <https://www.roberthalf.com/br/pt/vagas-detalhes/analista-de-bi-junior> |
+| Cyber | Analista de Segurança Júnior | R$ 6.200 | R$ 10.400 | <https://www.roberthalf.com/br/pt/vagas-detalhes/analista-de-seguranca-junior> |
+
+- **Metodologia primária:** projeções de entrada em novas contratações, baseadas em profissionais colocados pela consultoria no Brasil; não incluem bônus, benefícios ou outras remunerações. Percentis variam com experiência e qualificação dentro de uma função. As páginas não explicitam CLT, líquido ou bruto; esses rótulos não foram acrescentados. <https://www.roberthalf.com/br/pt/insights/guia-salarial>.
+- **Mercado em 2026:** as frases sobre desenvolvimento, infraestrutura/redes, dados/BI e cibersegurança são resumos curtos das áreas e perfis citados no guia de Tecnologia. <https://www.roberthalf.com/br/pt/insights/guia-salarial/tecnologia>.
+- **Unidade mensal:** leitura metodológica corroborada pela FIAP, fonte institucional secundária, que explicita valores mensais em reais no resumo do guia. Os números de cada cargo foram conferidos nas tabelas primárias da Robert Half. <https://www.fiap.com.br/radar-tech/post/salarios-em-tecnologia-2026-quanto-ganham-as-principais-profissoes-tech-no-brasil/>.
+
+BI é um exemplo dentro da área de dados. A faixa de suporte não é combinada à de infraestrutura; o seletor apresenta cada cargo separadamente. Não há promessa de vaga ou remuneração garantida.

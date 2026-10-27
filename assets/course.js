@@ -4,7 +4,7 @@
   const course=window.WorkshopCourse, esc=window.WorkshopLogic.escapeHTML;
   const $=selector=>document.querySelector(selector);
   const $$=selector=>Array.from(document.querySelectorAll(selector));
-  $('#course-agenda').innerHTML=course.modules.map((module,index)=>'<a href="#'+window.CourseLogic.moduleStart(course.scenes,module.id)+'"><span>'+String(index+1).padStart(2,'0')+'</span><b>'+esc(module.title)+'</b><small>'+module.minutes+' min</small></a>').join('');
+  $('#course-agenda').innerHTML=window.WorkshopExtensionLogic.groupedChapters(course).map(chapter=>'<a href="#'+chapter.start+'"><span>'+chapter.number+'</span><b>'+esc(chapter.title)+'<em>'+esc(chapter.description)+'</em></b><small>'+chapter.minutes+' min</small></a>').join('');
   const structures={
     cabecalho:{title:'Cabeçalho: o começo da leitura.',text:'Elementos bem escolhidos ajudam pessoas, navegadores e tecnologias assistivas a entender a organização.'},
     principal:{title:'Conteúdo principal: o assunto da página.',text:'A estrutura indica qual conteúdo é central. Títulos também ajudam a percorrer e compreender esse conteúdo.'},
@@ -203,7 +203,8 @@
     const meta=course.scenes.find(item=>item.id===scene.id);if(!meta)return;
     const module=course.modules.find(item=>item.id===meta.module),index=course.modules.indexOf(module);
     const shortNames={comeco:'Web',html:'HTML',css:'CSS',js:'Lógica e JavaScript',software:'Software',infra:'Redes e suporte',dados:'Dados',cyber:'Cibersegurança',fechamento:'Participação'};
-    if($('#course-current-block'))$('#course-current-block').textContent=String(index+1).padStart(2,'0')+' / '+shortNames[module.id]+' / '+module.minutes+' min';
+    const chapter=course.chapters.find(item=>item.id===meta.chapter);
+    if($('#course-current-block'))$('#course-current-block').textContent=chapter.number+' / '+(meta.chapter==='carreiras'?'Carreiras · ':'')+(shortNames[module.id]||'História da internet')+' / '+module.minutes+' min';
   }
   window.addEventListener('workshop-scene-change',orient);orient();
 })();

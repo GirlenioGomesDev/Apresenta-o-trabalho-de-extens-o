@@ -1,13 +1,13 @@
 {
   "name": "fabrica-de-software-na-pratica",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
-  "description": "Oficina de 130 minutos: Web, lógica básica e quatro carreiras com práticas visuais.",
+  "description": "Oficina interativa de 140 minutos: história da internet, Web, lógica e carreiras em TI.",
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",
-    "test": "node --test tests/logic.test.cjs tests/course.test.cjs",
-    "check": "node --check assets/logic.js && node --check assets/content.js && node --check assets/app.js && node --check assets/lab-engine.js && node --check assets/lab-content.js && node --check assets/live-labs.js && node --check assets/course-data.js && node --check assets/course-logic.js && node --check assets/course-labs.js && node --check assets/course.js && node --test tests/logic.test.cjs tests/course.test.cjs"
+    "test": "node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs",
+    "check": "node --check assets/logic.js && node --check assets/content.js && node --check assets/app.js && node --check assets/lab-engine.js && node --check assets/lab-content.js && node --check assets/live-labs.js && node --check assets/course-data.js && node --check assets/course-logic.js && node --check assets/course-labs.js && node --check assets/course.js && node --check assets/extension-data.js && node --check assets/extension-logic.js && node --check assets/extension.js && node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs"
   },
   "engines": {
     "node": ">=20"

@@ -4,9 +4,9 @@ Apresentação interativa para alunos do ensino médio · Grupo 04 · UNINASSAU 
 
 **Abrir a apresentação:** https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/
 
-## Oficina de 2h10
+## Oficina de 2h20
 
-São 50 etapas em nove blocos consecutivos: Web, HTML, CSS, lógica e JavaScript, desenvolvimento de software, redes e infraestrutura, análise de dados, cibersegurança e participação da turma.
+São 53 etapas em dez blocos consecutivos: começo, história da internet, HTML, CSS, lógica e JavaScript, desenvolvimento de software, redes e infraestrutura, análise de dados, cibersegurança e participação da turma.
 
 - Design em creme e verde, com navegação por teclado, roteiro, cronômetro e notas de apresentação.
 - Web explicada com exemplos visuais: internet, navegador e página têm papéis diferentes.
@@ -19,6 +19,12 @@ São 50 etapas em nove blocos consecutivos: Web, HTML, CSS, lógica e JavaScript
 - Doze perguntas selecionáveis e três formas de conduzir a participação: voluntário, convite ou dupla.
 
 O tempo proposto inclui a participação da turma e as demonstrações. Consulte o [roteiro dos apresentadores](docs/ROTEIRO.md) e as [fontes](docs/FONTES.md).
+
+## Acréscimos desta versão
+
+A navegação reúne cibersegurança em **03 · Carreiras**, com as demais áreas. O novo capítulo **01 · História da internet** compara contribuições em ordem cronológica: Baran e Davies, ARPANET, Cerf e Kahn, Mockapetris e a Web de Berners-Lee. Os três novos laboratórios visuais acrescentam dez minutos; os exemplos e as durações das 50 etapas anteriores foram preservados.
+
+As carreiras ganham painéis de mercado e faixas nacionais de cargos júnior do Guia Robert Half 2026, com cargo, percentis e fontes. Os conceitos de HTML, CSS e JavaScript foram acrescentados abaixo de front-end e back-end, com links para os laboratórios existentes.
 
 ## Rodar
 
@@ -44,6 +50,7 @@ A verificação valida a sintaxe, as regras das práticas, os testes dos exemplo
 - `assets/course.js` e `assets/course-logic.js`: simulações visuais e suas regras.
 - `assets/course-labs.js`: código da aula, execução isolada e resultado ao lado.
 - `assets/course.css`: estilos que estendem o design aprovado.
+- `assets/extension-data.js`, `extension-logic.js`, `extension.js` e `extension.css`: acréscimos isolados de história e carreiras.
 
 Os estilos e as ligações de apoio de cada cenário são identificados; o editor mantém o foco no trecho ensinado. O código editável roda em ambiente isolado. As atividades de dados, rede e acesso usam exemplos fictícios e não consultam serviços externos.
 
@@ -51,4 +58,4 @@ Os estilos e as ligações de apoio de cada cenário são identificados; o edito
 
 GitHub Pages publica automaticamente a raiz da branch `main`. O arquivo `.nojekyll` mantém a publicação estática. O workflow `Verificar apresentação` executa `npm run check`.
 
-Versão 2.1.0.
+Versão 2.2.0.
