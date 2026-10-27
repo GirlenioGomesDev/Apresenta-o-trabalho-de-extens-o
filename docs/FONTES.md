@@ -71,3 +71,20 @@ Fonte principal: **Guia Salarial Robert Half 2026**, referência nacional. Faixa
 - **Unidade mensal:** leitura metodológica corroborada pela FIAP, fonte institucional secundária, que explicita valores mensais em reais no resumo do guia. Os números de cada cargo foram conferidos nas tabelas primárias da Robert Half. <https://www.fiap.com.br/radar-tech/post/salarios-em-tecnologia-2026-quanto-ganham-as-principais-profissoes-tech-no-brasil/>.
 
 BI é um exemplo dentro da área de dados. A faixa de suporte não é combinada à de infraestrutura; o seletor apresenta cada cargo separadamente. Não há promessa de vaga ou remuneração garantida.
+
+
+## Contexto das contribuições e evolução · versão 2.3 · 27/10/2026
+
+As dez pessoas que já apareciam foram mantidas, com mensagens curtas sobre necessidade, surgimento e uso ou legado atual. Turing foi acrescentado dentro de cibersegurança como contexto anterior à internet. As outras contribuições entram como citações breves, sem novas biografias.
+
+- **DARPA · ARPANET:** financiamento da ARPA, contrato com BBN, quatro centros em 1969 e primeira transmissão UCLA–SRI. Compartilhamento de computação e pesquisa; a internet não foi uma simples renomeação após uma abertura ao público. <https://www.darpa.mil/news/features/arpanet>.
+- **NSF · Birth of the Commercial Internet:** lançamento da rede NSFNET em 1986 e encerramento do backbone dedicado em 1995, no processo de expansão comercial. <https://www.nsf.gov/impacts/internet>.
+- **Internet Society · relato dos participantes:** origens, muitas equipes, contribuições independentes, protocolo de 1974 e evolução, migração de 1983, encerramento da ARPANET em 1990. <https://www.internetsociety.org/internet/history-internet/brief-history-internet/>.
+- **CERN · história da Web:** necessidade de compartilhar documentos, Tim Berners-Lee, colaboração de Robert Cailliau, proposta de 1989, ferramentas de 1990, divulgação de 1991 e software sem royalties em 30/04/1993. Esse último evento não é a abertura de toda a internet. <https://home.cern/science/computing/the-birth-of-the-web/short-history-web/>.
+- **W3C · CSS1:** Håkon Wium Lie e Bert Bos assinam a recomendação de 17/12/1996. A proposta de Lie de 10/10/1994 continua citada em sua cena. <https://www.w3.org/TR/REC-CSS1/>.
+- **Radia Perlman · slides da própria pesquisadora (USENIX 2006):** pontes, loops e spanning tree. A animação já existente é uma analogia; não implementa STP nem afirma que ele roteia toda a internet. <https://www.usenix.org/legacy/events/usenix06/tech/slides/perlman_2006.pdf>.
+- **Alan Turing · artigo original de 1936:** modelo de computação, símbolos, regras e máquina universal. O exemplo de fita apenas ilustra leitura, escrita e movimento. <https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf>.
+- **The National Museum of Computing · Turing e Welchman:** abordagem da Bombe, trechos prováveis e diagonal board. <https://www.tnmoc.org/bh-6-enter-turing-and-welchman>.
+- **The National Museum of Computing · contribuição polonesa:** avanços de Rejewski e equipes polonesas, compartilhados antes da guerra. <https://www.tnmoc.org/bh-3-the-polish-connection>.
+
+A Bombe era eletromecânica, distinta de Colossus. O trabalho de Turing, Welchman e muitas equipes ajudou o esforço aliado; não atribuir a vitória a uma pessoa. As seis hipóteses e três pistas do experimento são fictícias e não reproduzem a criptografia Enigma. As fotos, seus créditos e licenças estão em [IMAGENS.md](IMAGENS.md).

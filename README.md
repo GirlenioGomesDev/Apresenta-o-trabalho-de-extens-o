@@ -4,9 +4,9 @@ Apresentação interativa para alunos do ensino médio · Grupo 04 · UNINASSAU 
 
 **Abrir a apresentação:** https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/
 
-## Oficina de 2h20
+## Oficina de 2h30
 
-São 53 etapas em dez blocos consecutivos: começo, história da internet, HTML, CSS, lógica e JavaScript, desenvolvimento de software, redes e infraestrutura, análise de dados, cibersegurança e participação da turma.
+São 55 etapas em dez blocos consecutivos: começo, história da internet, HTML, CSS, lógica e JavaScript, desenvolvimento de software, redes e infraestrutura, análise de dados, cibersegurança e participação da turma.
 
 - Design em creme e verde, com navegação por teclado, roteiro, cronômetro e notas de apresentação.
 - Web explicada com exemplos visuais: internet, navegador e página têm papéis diferentes.
@@ -15,16 +15,18 @@ São 53 etapas em dez blocos consecutivos: começo, história da internet, HTML,
 - Carreiras com o que são, por que existem, atividades, ferramentas e uma entrega concreta.
 - Redes, dados e cibersegurança com simulações visuais sem editor de código.
 - Atividade com cabo e testador de continuidade, com alternativa visual se o equipamento não estiver disponível.
-- Histórias de cinco pessoas e três casos reais dentro dos seus assuntos, com fontes.
+- Histórias de contribuições da tecnologia e três casos reais dentro dos seus assuntos, com fontes.
 - Doze perguntas selecionáveis e três formas de conduzir a participação: voluntário, convite ou dupla.
 
 O tempo proposto inclui a participação da turma e as demonstrações. Consulte o [roteiro dos apresentadores](docs/ROTEIRO.md) e as [fontes](docs/FONTES.md).
 
 ## Acréscimos desta versão
 
-A navegação reúne cibersegurança em **03 · Carreiras**, com as demais áreas. O novo capítulo **01 · História da internet** compara contribuições em ordem cronológica: Baran e Davies, ARPANET, Cerf e Kahn, Mockapetris e a Web de Berners-Lee. Os três novos laboratórios visuais acrescentam dez minutos; os exemplos e as durações das 50 etapas anteriores foram preservados.
+As pessoas já presentes ganham contexto curto: por que a contribuição foi necessária, como surgiu e como aparece ou deixa legado hoje. A linha do tempo interativa introduz a ARPANET e reúne nove marcos, de pacotes à expansão acadêmica, Web e provedores. Cada marco permite comparar antes e depois, com links para os laboratórios visuais existentes.
 
-As carreiras ganham painéis de mercado e faixas nacionais de cargos júnior do Guia Robert Half 2026, com cargo, percentis e fontes. Os conceitos de HTML, CSS e JavaScript foram acrescentados abaixo de front-end e back-end, com links para os laboratórios existentes.
+Turing aparece dentro de cibersegurança, com a contribuição coletiva ao esforço aliado, fotos de Enigma e de uma reconstrução da Bombe, uma fita de regras e um modelo de eliminação de hipóteses. Esses exemplos não simulam Enigma. Quinze fotos locais possuem créditos e licenças em [IMAGENS.md](docs/IMAGENS.md); o retrato de Davies tem link à fonte oficial. As duas novas etapas somam dez minutos; os laboratórios e as durações das 53 etapas anteriores foram preservados.
+
+A navegação mantém cibersegurança em **03 · Carreiras**, com desenvolvimento, suporte/infraestrutura e dados. Os painéis de mercado e salários, os conceitos web e os exemplos de código continuam disponíveis.
 
 ## Rodar
 
@@ -50,7 +52,8 @@ A verificação valida a sintaxe, as regras das práticas, os testes dos exemplo
 - `assets/course.js` e `assets/course-logic.js`: simulações visuais e suas regras.
 - `assets/course-labs.js`: código da aula, execução isolada e resultado ao lado.
 - `assets/course.css`: estilos que estendem o design aprovado.
-- `assets/extension-data.js`, `extension-logic.js`, `extension.js` e `extension.css`: acréscimos isolados de história e carreiras.
+- `assets/extension-data.js`, `extension-logic.js`, `extension.js` e `extension.css`: acréscimos de história e carreiras.
+- `assets/history-stories-*`, `history-stories.js` e `history-stories.css`: contexto das pessoas, fotografias, linha do tempo e experiências de Turing.
 
 Os estilos e as ligações de apoio de cada cenário são identificados; o editor mantém o foco no trecho ensinado. O código editável roda em ambiente isolado. As atividades de dados, rede e acesso usam exemplos fictícios e não consultam serviços externos.
 

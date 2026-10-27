@@ -4,27 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f5ef">
-  <meta name="description" content="Oficina interativa de 140 minutos para o ensino médio: HTML, CSS, JavaScript, cibersegurança e carreiras. Lógica básica, código ao vivo, carreiras com atividades visuais e demonstração de redes. Grupo 04, UNINASSAU.">
+  <meta name="description" content="Oficina interativa de 150 minutos para o ensino médio: HTML, CSS, JavaScript, cibersegurança e carreiras. Lógica básica, código ao vivo, carreiras com atividades visuais e demonstração de redes. Grupo 04, UNINASSAU.">
   <title>Fábrica de Software na Prática · Grupo 04</title>
-  <link rel="icon" href="assets/favicon.svg?v=6" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css?v=6">
-  <link rel="stylesheet" href="assets/story.css?v=6">
-  <script src="assets/logic.js?v=6" defer></script>
-  <script src="assets/content.js?v=6" defer></script>
-  <link rel="stylesheet" href="assets/live-labs.css?v=6">
-  <script src="assets/lab-engine.js?v=6" defer></script>
-  <script src="assets/lab-content.js?v=6" defer></script>
-  <link rel="stylesheet" href="assets/course.css?v=6">
-  <script src="assets/course-data.js?v=6" defer></script>
-  <script src="assets/course-logic.js?v=6" defer></script>
-  <link rel="stylesheet" href="assets/extension.css?v=6">
-  <script src="assets/extension-data.js?v=6" defer></script>
-  <script src="assets/extension-logic.js?v=6" defer></script>
-  <script src="assets/app.js?v=6" defer></script>
-  <script src="assets/live-labs.js?v=6" defer></script>
-  <script src="assets/course-labs.js?v=6" defer></script>
-  <script src="assets/course.js?v=6" defer></script>
-  <script src="assets/extension.js?v=6" defer></script>
+  <link rel="icon" href="assets/favicon.svg?v=7" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=7">
+  <link rel="stylesheet" href="assets/story.css?v=7">
+  <script src="assets/logic.js?v=7" defer></script>
+  <script src="assets/content.js?v=7" defer></script>
+  <link rel="stylesheet" href="assets/live-labs.css?v=7">
+  <script src="assets/lab-engine.js?v=7" defer></script>
+  <script src="assets/lab-content.js?v=7" defer></script>
+  <link rel="stylesheet" href="assets/course.css?v=7">
+  <script src="assets/course-data.js?v=7" defer></script>
+  <script src="assets/course-logic.js?v=7" defer></script>
+  <link rel="stylesheet" href="assets/extension.css?v=7">
+  <script src="assets/extension-data.js?v=7" defer></script>
+  <script src="assets/extension-logic.js?v=7" defer></script>
+  <script src="assets/app.js?v=7" defer></script>
+  <script src="assets/live-labs.js?v=7" defer></script>
+  <script src="assets/course-labs.js?v=7" defer></script>
+  <script src="assets/course.js?v=7" defer></script>
+  <script src="assets/extension.js?v=7" defer></script>
+  <link rel="stylesheet" href="assets/history-stories.css?v=7">
+  <script src="assets/history-stories-data.js?v=7" defer></script>
+  <script src="assets/history-stories-logic.js?v=7" defer></script>
+  <script src="assets/history-stories.js?v=7" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -43,7 +47,7 @@
 
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="Fábrica de Software, início"><span class="brand-mark">&lt;/&gt;</span><span>fábrica<span class="brand-light">.de.software</span></span></a>
-    <span class="topbar-context">OFICINA / 140 MIN <span class="context-divider">/</span> <span id="course-current-block">COMEÇO</span></span>
+    <span class="topbar-context">OFICINA / 150 MIN <span class="context-divider">/</span> <span id="course-current-block">COMEÇO</span></span>
     <div class="topbar-actions">
       <button class="timer" id="timer-toggle" title="Iniciar ou pausar cronômetro" aria-label="Iniciar cronômetro"><span class="status-dot"></span><span id="timer-value">00:00</span></button>
       <button class="icon-button" id="overview-open" aria-label="Abrir roteiro" title="Roteiro (M)"><svg><use href="#i-menu"/></svg></button>
@@ -55,7 +59,7 @@
     <span class="rail-label">A OFICINA</span>
     <nav>
       <a href="#inicio" data-chapter-link="abertura"><span class="rail-number">00</span><span class="rail-name">Começo</span></a>
-      <a href="#internet-pacotes" data-chapter-link="historia"><span class="rail-number">01</span><span class="rail-name">Internet</span></a>
+      <a href="#internet-evolucao" data-chapter-link="historia"><span class="rail-number">01</span><span class="rail-name">Internet</span></a>
       <a href="#linguagens" data-chapter-link="web"><span class="rail-number">02</span><span class="rail-name">Web + lógica</span></a>
       <a href="#carreiras" data-chapter-link="carreiras"><span class="rail-number">03</span><span class="rail-name">Carreiras</span></a>
       <a href="#fabrica" data-chapter-link="desafio"><span class="rail-number">04</span><span class="rail-name">Participar</span></a>
@@ -71,7 +75,7 @@
         <h1 tabindex="-1">Fábrica de<br>Software<br><span class="accent-underline">na prática<span class="title-dot">.</span></span></h1>
         <p class="lead">Como a web funciona, como se proteger<br class="desktop-only"> e quem trabalha com tudo isso.</p>
         <div class="hero-actions"><a class="button primary" href="#roteiro">Vamos começar <svg><use href="#i-arrow"/></svg></a><a class="text-link" href="#lab-html">Ir para o laboratório <span>↗</span></a></div>
-        <div class="institution"><span class="institution-line"></span><span>UNINASSAU <b>Campus Graças</b><br>Uma oficina para alunos do ensino médio / 2h20</span></div>
+        <div class="institution"><span class="institution-line"></span><span>UNINASSAU <b>Campus Graças</b><br>Uma oficina para alunos do ensino médio / 2h30</span></div>
       </div>
       <div class="hero-lab" aria-label="As camadas de uma página e seu resultado visual">
         <div class="hero-orbit">POR TRÁS DO QUE VOCÊ USA <span>WEB / SEGURANÇA / CARREIRAS</span></div>
@@ -81,10 +85,10 @@
       </div>
     </section>
 
-    <section class="scene course-scene" id="roteiro" hidden data-module="comeco" data-minutes="1" data-chapter="abertura" data-title="Uma jornada de 2h20.">
+    <section class="scene course-scene" id="roteiro" hidden data-module="comeco" data-minutes="1" data-chapter="abertura" data-title="Uma jornada de 2h30.">
       <div class="course-eyebrow"><p class="eyebrow">CURIOSIDADE E A ORIGEM DA WEB</p><span class="lesson-duration">1 MIN / CONVERSA + PRÁTICA</span></div>
-      <h2 class="scene-title compact" tabindex="-1">Uma jornada de 2h20.</h2><p class="course-lead">Um assunto por vez: observar, fazer uma previsão, experimentar e explicar com as próprias palavras.</p>
-      <div class="course-agenda" id="course-agenda"></div><div class="learning-rhythm"><span>01 <b>Imagine</b><small>Faça uma previsão.</small></span><span>02 <b>Experimente</b><small>Mude uma coisa no exemplo.</small></span><span>03 <b>Investigue</b><small>Compare e explique o resultado.</small></span></div><p class="course-small">Roteiro sugerido de 140 minutos, incluindo demonstrações, desafios e conversa. O ritmo depende da participação da turma.</p>
+      <h2 class="scene-title compact" tabindex="-1">Uma jornada de 2h30.</h2><p class="course-lead">Um assunto por vez: observar, fazer uma previsão, experimentar e explicar com as próprias palavras.</p>
+      <div class="course-agenda" id="course-agenda"></div><div class="learning-rhythm"><span>01 <b>Imagine</b><small>Faça uma previsão.</small></span><span>02 <b>Experimente</b><small>Mude uma coisa no exemplo.</small></span><span>03 <b>Investigue</b><small>Compare e explique o resultado.</small></span></div><p class="course-small">Roteiro sugerido de 150 minutos, incluindo demonstrações, desafios e conversa. O ritmo depende da participação da turma.</p>
       <p class="story-bridge"><span>A SEGUIR</span>Vamos continuar: Um toque na tela. Muita coisa por trás.<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
     </section>
 
@@ -104,6 +108,21 @@
       <div class="web-walkthrough"><div class="web-step-buttons" aria-label="Etapas de abrir uma página"><button data-web-step="0" aria-pressed="true">1. Pedir a página</button><button data-web-step="1" aria-pressed="false">2. Ler o conteúdo</button><button data-web-step="2" aria-pressed="false">3. Organizar o visual</button><button data-web-step="3" aria-pressed="false">4. Responder ao clique</button></div><div class="web-example" data-web-phase="0"><div class="visual-browser-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>pagina.exemplo / endereço fictício</span></div><div class="web-example-body"><span class="mini-label">UMA PÁGINA DE EXEMPLO</span><h3 id="web-example-title">O navegador pede os arquivos.</h3><p id="web-example-text">Vamos acompanhar o que ele faz com cada parte.</p><button id="web-example-button" disabled>Gostei dessa ideia!</button><p id="web-example-response" role="status"></p></div></div></div>
       <p class="concept-caption">Uma página pode usar arquivos de várias origens. Aqui acompanhamos um caminho simplificado, sem acessar nenhum serviço.</p>
       <p class="story-bridge"><span>A SEGUIR</span>Agora que sabemos os papéis, vamos conhecer de onde veio essa ideia.<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
+    </section>
+
+    <section class="scene course-scene history-evolution" id="internet-evolucao" hidden data-module="historia" data-minutes="5" data-chapter="historia" data-title="A internet começou conectando pesquisadores.">
+      <div class="course-eyebrow"><p class="eyebrow">01 / HISTÓRIA DA INTERNET · A VISÃO GERAL</p><span class="lesson-duration">5 MIN / EXPLORAR A LINHA DO TEMPO</span></div>
+      <h2 class="scene-title compact" tabindex="-1">Antes dos sites,<br>compartilhar computadores.</h2>
+      <p class="course-lead">Em 1969, a ARPANET começou a conectar centros de pesquisa, com financiamento da ARPA, ligada à defesa dos EUA. O objetivo era compartilhar recursos à distância. A internet cresceu pela interligação de redes; seu uso se ampliou ao longo de várias etapas.</p>
+      <nav class="evolution-timeline" id="internet-evolution-buttons" aria-label="Marcos da evolução da internet"></nav>
+      <div class="evolution-panel" id="internet-evolution-panel">
+        <div class="milestone-copy"><span class="mini-label" id="internet-milestone-date"></span><h3 id="internet-milestone-title"></h3><div id="internet-milestone-context"></div><p class="milestone-source" id="internet-milestone-source"></p></div>
+        <div class="milestone-model"><span class="mini-label">COMPARE O PROBLEMA E A MUDANÇA</span><div class="milestone-visual" id="internet-milestone-visual" aria-label="Representação visual do marco selecionado"></div><p class="milestone-caption" id="internet-milestone-caption" role="status"></p><button type="button" class="button secondary milestone-toggle" id="internet-milestone-toggle" aria-pressed="false">Mostrar a mudança →</button><div id="internet-milestone-photo"></div></div>
+      </div>
+      <div class="milestone-navigation"><button type="button" id="internet-milestone-previous">← Marco anterior</button><span class="mini-label">ESCOLHA UM ANO E COMPARE</span><button type="button" id="internet-milestone-next">Próximo marco →</button></div>
+      <p class="internet-model-note">Representações didáticas, sem escala ou mapa histórico exato. O domínio .test e o endereço 192.0.2.10 são fictícios. A abertura do software da Web em 1993 é diferente da expansão comercial da internet.</p>
+      <div class="history-brief-credits" id="internet-brief-credits"></div>
+      <p class="story-bridge"><span>A SEGUIR</span>Voltando à base dessa história: como uma mensagem consegue viajar em partes?<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
     </section>
 
     <section class="scene course-scene internet-history-scene" id="internet-pacotes" hidden data-module="historia" data-minutes="3" data-chapter="historia" data-title="Uma mensagem pode viajar em partes.">
@@ -399,7 +418,21 @@
       <div class="career-explainer"><div class="career-identity"><span class="lab-person" aria-hidden="true"><i class="person-antenna"></i><i class="person-head"><b></b><b></b></i><i class="person-body"></i><i class="person-arm left"></i><i class="person-arm right"></i><i class="person-leg left"></i><i class="person-leg right"></i></span><span class="mini-label">CONHEÇA A PROFISSÃO</span><h3>Cibersegurança</h3><p>Reduz riscos para pessoas, informações e serviços digitais.</p></div><div class="career-explainer-grid"><article><span>POR QUE EXISTE?</span><p>Contas, arquivos e serviços precisam continuar disponíveis e ser usados pelas pessoas certas.</p></article><article><span>O QUE FAZ NO DIA A DIA?</span><p>Revisa acessos, acompanha sinais de risco, orienta pessoas e participa da resposta a incidentes.</p></article><article><span>FERRAMENTAS E CONHECIMENTOS</span><p>Sistemas, redes, registros de atividade e controles de acesso. Hoje vamos tomar decisões em cenários visuais.</p></article><article><span>UMA ENTREGA CONCRETA</span><p>Uma regra de acesso revisada, uma orientação clara ou uma resposta coordenada a um incidente.</p></article></div></div>
       <div class="career-context-addition" data-career-context="cyber"></div>
       <div class="cyber-visual-workspace"><div class="cyber-live-visual"><div class="cyber-gate-scene"><span class="gate-zone-label">PEDIDO DE ACESSO FICTÍCIO</span><div class="cyber-avatar"><span class="lab-person" aria-hidden="true"><i class="person-antenna"></i><i class="person-head"><b></b><b></b></i><i class="person-body"></i><i class="person-arm left"></i><i class="person-arm right"></i><i class="person-leg left"></i><i class="person-leg right"></i></span></div><div class="security-gate"><div class="gate-lamp"></div><span class="gate-frame"></span><span class="gate-door"><svg><use href="#i-lock"/></svg></span></div><span class="protected-zone">ÁREA DE<br>EDIÇÃO</span></div><div class="cyber-controls"><label>Papel <select id="cyber-gate-role"><option value="visitante">Visitante</option><option value="editor">Editor autorizado</option></select></label><label class="second-step-control"><input type="checkbox" id="cyber-gate-confirmed"> Segunda etapa confirmada</label><button id="cyber-gate-try" class="button primary">Testar acesso →</button></div><p id="cyber-gate-feedback" class="experiment-feedback" role="status">Escolham uma combinação e façam uma previsão antes de testar.</p></div><div class="concept-two"><article><span>IDENTIDADE</span><h3>É mesmo você?</h3><p>Autenticação confirma a identidade. Uma segunda etapa ajuda nessa confirmação.</p></article><article><span>PERMISSÃO</span><h3>Você pode fazer isso?</h3><p>Autorização define quais ações aquela pessoa pode realizar. Confirmar a identidade não dá acesso a tudo.</p></article></div></div>
-      <p class="story-bridge"><span>A SEGUIR</span>Confirmar a identidade é uma parte. Vamos conferir também a ação permitida.<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
+      <p class="story-bridge"><span>A SEGUIR</span>Antes das regras de acesso, uma história sobre proteger e investigar informações.<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
+    </section>
+
+    <section class="scene course-scene" id="alan-turing" hidden data-module="cyber" data-minutes="5" data-chapter="carreiras" data-title="Turing: regras, máquinas e proteção da informação.">
+      <div class="course-eyebrow"><p class="eyebrow">03 / CIBERSEGURANÇA · UM CONTEXTO ANTERIOR À INTERNET</p><span class="lesson-duration">5 MIN / HISTÓRIA + EXPERIMENTO</span></div>
+      <h2 class="scene-title compact" tabindex="-1">Informação protegida.<br>Uma corrida para compreendê-la.</h2>
+      <div class="turing-layout"><div id="turing-portrait"></div><div><span class="mini-label">ALAN TURING / BLETCHLEY PARK / SEGUNDA GUERRA</span><div id="turing-context"></div></div></div>
+      <p class="turing-team" id="turing-team"></p>
+      <div class="turing-machine-pair" id="turing-machines"></div>
+      <div class="turing-lab">
+        <div class="turing-tabs" aria-label="Experimentos sobre as ideias de Turing"><button type="button" data-turing-mode="tape" aria-pressed="true" aria-controls="turing-panel-tape">1936 · Seguir regras</button><button type="button" data-turing-mode="clues" aria-pressed="false" aria-controls="turing-panel-clues">1940 · Eliminar hipóteses</button></div>
+        <div data-turing-panel="tape" id="turing-panel-tape"><h3>O mesmo computador. Programas diferentes.</h3><p>Em 1936, Turing investigou o que significa calcular seguindo regras. Seu modelo matemático lê e escreve símbolos numa fita. Uma máquina universal pode simular outras ao receber sua descrição.</p><p><b>Nossa regra:</b> ler 0 → escrever 1; ler 1 → escrever 0; mover uma casa à direita. Ao terminar esta fita, parar.</p><div class="turing-tape" id="turing-tape" aria-label="Fita didática com quatro posições"></div><div class="internet-lab-actions"><button type="button" class="button primary" id="turing-tape-next">Executar uma regra →</button><button type="button" id="turing-tape-reset">Recomeçar ↺</button></div><p class="internet-feedback" id="turing-tape-feedback" role="status"></p><p class="internet-model-note">Uma ilustração de execução passo a passo. Não é um computador físico construído por Turing em 1936. Programas têm limites; nem todo problema é computável.</p><a class="source-link" href="https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf" target="_blank" rel="noopener noreferrer">Fonte: artigo original de Turing, 1936 ↗</a></div>
+        <div data-turing-panel="clues" id="turing-panel-clues" hidden><h3>Uma pista pode eliminar muitas possibilidades.</h3><p>A Bombe ajudava a investigar configurações da Enigma usando relações lógicas e trechos prováveis das mensagens. Pessoas ainda precisavam preparar, operar e conferir o trabalho.</p><div class="turing-expected"><span>PISTAS / TRECHO ESPERADO</span><output id="turing-expected-text" aria-label="Letras esperadas reveladas pelas pistas">???</output><small>Compare cada posição com as leituras das hipóteses.</small></div><div class="turing-hypotheses" id="turing-hypotheses" aria-label="Hipóteses fictícias de H1 a H6"></div><div class="internet-lab-actions"><button type="button" class="button primary" id="turing-clue-next">Aplicar próxima pista →</button><button type="button" id="turing-clue-reset">Recomeçar ↺</button></div><p class="internet-feedback" id="turing-hypotheses-feedback" role="status"></p><p class="internet-model-note">Seis hipóteses, leituras e pistas inventadas para explicar eliminação lógica. Não é uma simulação da Enigma ou da Bombe. A criptografia atual usa outros sistemas.</p><a class="source-link" href="https://www.tnmoc.org/bh-6-enter-turing-and-welchman" target="_blank" rel="noopener noreferrer">Fonte: The National Museum of Computing · Turing e Welchman ↗</a></div>
+      </div>
+      <p class="story-bridge"><span>A SEGUIR</span>Hoje, proteger informação também exige definir quem pode fazer cada ação. Vamos conferir as permissões.<svg aria-hidden="true"><use href="#i-arrow"/></svg></p>
     </section>
 
     <section class="scene" id="codigo-seguro" hidden data-module="cyber" data-minutes="2" data-chapter="carreiras" data-title="Cada pessoa precisa de qual acesso?">
@@ -482,16 +515,17 @@
     <section class="scene" id="equipe" hidden data-module="fechamento" data-minutes="1" data-chapter="creditos" data-title="Equipe, histórias e fontes verificadas.">
       <p class="eyebrow">QUEM CONSTRUIU ESTA CONVERSA</p>
       <h2 class="scene-title compact" tabindex="-1">Conhecimento<br>que se compartilha.</h2>
-      <div class="credits-layout"><div><span class="mini-label">GRUPO 04 / CIÊNCIA DA COMPUTAÇÃO</span><ul class="team-list"><li>Anita Gallindo Oliveira</li><li>Bianka Moura Batista</li><li>Emanuele Vitoria Lima de Sousa</li><li>Girlenio Gomes da Silva</li><li>Pedro Vinícius de Almeida Santana</li><li>Vanderson Gabriel Vasconcelos Barbosa</li></ul><p class="credits-institution">UNINASSAU, Campus Graças<br>Atividades Práticas Interdisciplinares de Extensão II<br>Escola Lions de Parnamirim, Recife/PE</p></div><div class="references"><span class="mini-label">REFERÊNCIAS DA OFICINA</span><p><a href="#roteiro">Roteiro de 140 minutos e práticas ↗</a></p><p>Uma introdução visual à web, à segurança digital e às quatro áreas de carreira abordadas nesta oficina.</p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTML, CSS e JavaScript <span>↗</span></a><a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">CERT.br: Cartilha de Segurança para Internet <span>↗</span></a><a href="https://github.com/GirlenioGomesDev/Apresenta-o-trabalho-de-extens-o" target="_blank" rel="noopener noreferrer">Código desta apresentação no GitHub <span>↗</span></a><p class="footnote">Fontes históricas e casos conferidos em 26/10/2026. Mensagens, permissões, conexão e dados mostrados são exemplos educativos. Nenhum dado real de alunos é coletado.</p></div></div>
+      <div class="credits-layout"><div><span class="mini-label">GRUPO 04 / CIÊNCIA DA COMPUTAÇÃO</span><ul class="team-list"><li>Anita Gallindo Oliveira</li><li>Bianka Moura Batista</li><li>Emanuele Vitoria Lima de Sousa</li><li>Girlenio Gomes da Silva</li><li>Pedro Vinícius de Almeida Santana</li><li>Vanderson Gabriel Vasconcelos Barbosa</li></ul><p class="credits-institution">UNINASSAU, Campus Graças<br>Atividades Práticas Interdisciplinares de Extensão II<br>Escola Lions de Parnamirim, Recife/PE</p></div><div class="references"><span class="mini-label">REFERÊNCIAS DA OFICINA</span><p><a href="#roteiro">Roteiro de 150 minutos e práticas ↗</a></p><p>Uma introdução visual à web, à segurança digital e às quatro áreas de carreira abordadas nesta oficina.</p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTML, CSS e JavaScript <span>↗</span></a><a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">CERT.br: Cartilha de Segurança para Internet <span>↗</span></a><a href="https://github.com/GirlenioGomesDev/Apresenta-o-trabalho-de-extens-o" target="_blank" rel="noopener noreferrer">Código desta apresentação no GitHub <span>↗</span></a><p class="footnote">Fontes históricas e casos conferidos em 26/10/2026. Mensagens, permissões, conexão e dados mostrados são exemplos educativos. Nenhum dado real de alunos é coletado.</p></div></div>
     </section>
     <noscript><div class="no-script">Ative o JavaScript para navegar e usar as demonstrações. O conteúdo e as instruções também estão no README e no roteiro do repositório.</div></noscript>
   </main>
 
-  <footer class="presentation-footer"><div class="footer-location"><span id="scene-number">01</span><span class="footer-slash">/</span><span id="scene-total">46</span><span class="footer-scene-title" id="footer-title">Fábrica de Software na Prática</span></div><div class="footer-middle"><button id="notes-toggle" aria-expanded="false" aria-controls="presenter-notes"><svg><use href="#i-notes"/></svg> Notas <kbd>N</kbd></button><button id="help-open" aria-label="Ver atalhos de teclado">Atalhos <kbd>?</kbd></button></div><div class="footer-navigation"><button class="nav-previous" id="previous-scene" aria-label="Etapa anterior" disabled><svg><use href="#i-back"/></svg></button><button class="nav-next" id="next-scene">Próximo <svg><use href="#i-arrow"/></svg></button></div><div class="progress-track" role="progressbar" aria-label="Progresso da apresentação" aria-valuemin="1" aria-valuemax="46" aria-valuenow="1"><div id="presentation-progress"></div></div></footer>
+  <footer class="presentation-footer"><div class="footer-location"><span id="scene-number">01</span><span class="footer-slash">/</span><span id="scene-total">55</span><span class="footer-scene-title" id="footer-title">Fábrica de Software na Prática</span></div><div class="footer-middle"><button id="notes-toggle" aria-expanded="false" aria-controls="presenter-notes"><svg><use href="#i-notes"/></svg> Notas <kbd>N</kbd></button><button id="help-open" aria-label="Ver atalhos de teclado">Atalhos <kbd>?</kbd></button></div><div class="footer-navigation"><button class="nav-previous" id="previous-scene" aria-label="Etapa anterior" disabled><svg><use href="#i-back"/></svg></button><button class="nav-next" id="next-scene">Próximo <svg><use href="#i-arrow"/></svg></button></div><div class="progress-track" role="progressbar" aria-label="Progresso da apresentação" aria-valuemin="1" aria-valuemax="55" aria-valuenow="1"><div id="presentation-progress"></div></div></footer>
 
   <aside id="presenter-notes" class="presenter-notes" aria-label="Notas para quem apresenta" hidden><div class="notes-header"><span class="mini-label">APOIO À APRESENTAÇÃO</span><button class="icon-button" id="notes-close" aria-label="Fechar notas"><svg><use href="#i-close"/></svg></button></div><h2 id="notes-title"></h2><p id="notes-time" class="mono"></p><p id="notes-text"></p><p class="footnote">Estas notas aparecem na mesma tela da apresentação.</p><button id="timer-reset" class="text-link">Zerar cronômetro ↺</button></aside>
   <dialog id="overview-dialog" class="overview-dialog" aria-labelledby="overview-title"><div class="dialog-heading"><div><span class="mini-label">A OFICINA COMPLETA</span><h2 id="overview-title">Escolha uma etapa.</h2></div><button class="icon-button" data-close-dialog aria-label="Fechar roteiro"><svg><use href="#i-close"/></svg></button></div><nav id="overview-list"></nav></dialog>
   <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><h2 id="help-title">Atalhos para apresentar</h2><button class="icon-button" data-close-dialog aria-label="Fechar atalhos"><svg><use href="#i-close"/></svg></button></div><dl class="shortcut-list"><div><dt>Avançar ou voltar</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd></div><div><dt>Avançar</dt><dd><kbd>Espaço</kbd> <kbd>Page Down</kbd></dd></div><div><dt>Início ou última etapa</dt><dd><kbd>Home</kbd> <kbd>End</kbd></dd></div><div><dt>Tela cheia</dt><dd><kbd>F</kbd></dd></div><div><dt>Roteiro</dt><dd><kbd>M</kbd></dd></div><div><dt>Notas na própria tela</dt><dd><kbd>N</kbd></dd></div><div><dt>Executar código no laboratório</dt><dd><kbd>Ctrl</kbd> + <kbd>Enter</kbd></dd></div><div><dt>Fechar painel ou diálogo</dt><dd><kbd>Esc</kbd></dd></div></dl><p class="footnote">Os atalhos de navegação ficam suspensos durante a edição de código e o uso de campos. Em celular ou tablet, use os botões.</p></dialog>
+  <dialog id="history-photo-dialog" class="history-photo-dialog" aria-labelledby="history-photo-title"><div class="dialog-heading"><h2 id="history-photo-title">Fotografia histórica</h2><button type="button" class="icon-button" data-close-dialog aria-label="Fechar fotografia"><svg><use href="#i-close"/></svg></button></div><img id="history-photo-large" alt=""><p id="history-photo-credit"></p></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>

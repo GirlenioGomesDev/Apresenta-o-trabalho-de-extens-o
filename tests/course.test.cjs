@@ -19,10 +19,10 @@ function execute(code,input){
 }
 function scriptValue(code,expression){return plain(vm.runInNewContext(code+'\n'+expression,{console:{log(){}}}));}
 
-test('os dez blocos somam 140 min e cada assunto ocupa uma sequência contínua',()=>{
-  assert.equal(course.modules.length,10);assert.equal(course.scenes.length,53);
+test('os dez blocos somam 150 min e cada assunto ocupa uma sequência contínua',()=>{
+  assert.equal(course.modules.length,10);assert.equal(course.scenes.length,55);
   assert.deepEqual(sections.map(match=>match[1]),Array.from(course.scenes,scene=>scene.id));
-  assert.equal(course.scenes.reduce((sum,scene)=>sum+scene.minutes,0),140);
+  assert.equal(course.scenes.reduce((sum,scene)=>sum+scene.minutes,0),150);
   const seen=new Set();let current;
   for(const scene of course.scenes){
     if(scene.module!==current){assert.ok(!seen.has(scene.module),'Bloco retomado fora de ordem: '+scene.module);seen.add(scene.module);current=scene.module;}

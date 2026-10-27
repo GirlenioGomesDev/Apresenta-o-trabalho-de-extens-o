@@ -1,0 +1,435 @@
+/* Contexto histórico curto e fontes das fotografias. */
+window.WorkshopHistory = {
+  "checkedAt": "2026-10-27",
+  "assets": {
+    "paul-baran": {
+      "originalTitle": "Paul Baran.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Paul_Baran.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Paul_Baran.jpg",
+      "artist": "Andreu Veà, WiWiW.org",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 175,
+      "height": 237,
+      "src": "assets/history-paul-baran.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "vint-cerf": {
+      "originalTitle": "Vinton Cerf.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Vinton_Cerf.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Vinton_Cerf.jpg",
+      "artist": "U.S. Embassy in New Zealand (acervo)",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "width": 300,
+      "height": 337,
+      "src": "assets/history-vint-cerf.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "bob-kahn": {
+      "originalTitle": "Robert E. Kahn.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Robert_E._Kahn.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Robert_E._Kahn.jpg",
+      "artist": "Paul Morse",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "width": 153,
+      "height": 195,
+      "src": "assets/history-bob-kahn.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "paul-mockapetris": {
+      "originalTitle": "Paul Mockapetris.JPG",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Paul_Mockapetris.JPG/500px-Paul_Mockapetris.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Paul_Mockapetris.JPG",
+      "artist": "Jordiipa",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 500,
+      "height": 375,
+      "src": "assets/history-paul-mockapetris.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "tim-berners-lee": {
+      "originalTitle": "Tim Berners-Lee April 2009.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Tim_Berners-Lee_April_2009.jpg/500px-Tim_Berners-Lee_April_2009.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tim_Berners-Lee_April_2009.jpg",
+      "artist": "Enrique Dans from Madrid, Spain",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "width": 500,
+      "height": 690,
+      "src": "assets/history-tim-berners-lee.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "hakon-wium-lie": {
+      "originalTitle": "Håkon-Wium-Lie-2009-03.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/H%C3%A5kon-Wium-Lie-2009-03.jpg/500px-H%C3%A5kon-Wium-Lie-2009-03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:H%C3%A5kon-Wium-Lie-2009-03.jpg",
+      "artist": "Kmosman",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 500,
+      "height": 558,
+      "src": "assets/history-hakon-wium-lie.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "alan-turing": {
+      "originalTitle": "Alan Turing (1951).jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Alan_Turing_%281951%29.jpg/500px-Alan_Turing_%281951%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Alan_Turing_(1951).jpg",
+      "artist": "Elliott &amp; Fry",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "width": 500,
+      "height": 667,
+      "src": "assets/history-alan-turing.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "grace-hopper": {
+      "originalTitle": "Grace Hopper.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Grace_Hopper.jpg/500px-Grace_Hopper.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Grace_Hopper.jpg",
+      "artist": "James S. Davis",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "width": 500,
+      "height": 586,
+      "src": "assets/history-grace-hopper.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "radia-perlman": {
+      "originalTitle": "Radia Perlman 2009.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Radia_Perlman_2009.jpg/500px-Radia_Perlman_2009.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Radia_Perlman_2009.jpg",
+      "artist": "Scientist-100 at English Wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "width": 500,
+      "height": 750,
+      "src": "assets/history-radia-perlman.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "katherine-johnson": {
+      "originalTitle": "Katherine Johnson 1983.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Katherine_Johnson_1983.jpg/500px-Katherine_Johnson_1983.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Katherine_Johnson_1983.jpg",
+      "artist": "NASA",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "width": 500,
+      "height": 625,
+      "src": "assets/history-katherine-johnson.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "bombe-reconstruction": {
+      "originalTitle": "Bombe-rebuild.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Bombe-rebuild.jpg/960px-Bombe-rebuild.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombe-rebuild.jpg",
+      "artist": "Tom Yates",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 960,
+      "height": 702,
+      "src": "assets/history-bombe-reconstruction.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "enigma": {
+      "originalTitle": "An Enigma machine.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/An_Enigma_machine.jpg/960px-An_Enigma_machine.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:An_Enigma_machine.jpg",
+      "artist": "Robert-brook",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "width": 562,
+      "height": 750,
+      "src": "assets/history-enigma.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "univac-team": {
+      "originalTitle": "Grace Hopper and UNIVAC.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Grace_Hopper_and_UNIVAC.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "width": 513,
+      "height": 450,
+      "src": "assets/history-univac-team.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "next-web-server": {
+      "originalTitle": "First Web Server.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/First_Web_Server.jpg/960px-First_Web_Server.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg",
+      "artist": "User:Coolcaesar at en.wikipedia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 960,
+      "height": 720,
+      "src": "assets/history-next-web-server.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    },
+    "arpanet-imp": {
+      "originalTitle": "BBN Interface Message Processor CHM.agr.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/BBN_Interface_Message_Processor_CHM.agr.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:BBN_Interface_Message_Processor_CHM.agr.jpg",
+      "artist": "ArnoldReinhold",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "width": 562,
+      "height": 750,
+      "src": "assets/history-arpanet-imp.jpg",
+      "changes": "Redimensionamento para a apresentação; enquadramento de exibição ajustado com CSS."
+    }
+  },
+  "people": {
+    "paul-baran": {
+      "name": "Paul Baran",
+      "scene": "internet-pacotes",
+      "photo": "paul-baran",
+      "why": "Manter a comunicação mesmo quando partes de uma rede falhassem.",
+      "how": "Na RAND, propôs uma rede distribuída e mensagens em blocos, publicados em 1964.",
+      "today": "Dados em pacotes e caminhos alternativos são ideias presentes nas redes atuais.",
+      "source": "https://www.rand.org/pubs/research_memoranda/RM3420.html"
+    },
+    "donald-davies": {
+      "name": "Donald Davies",
+      "scene": "internet-pacotes",
+      "photo": null,
+      "why": "Compartilhar uma conexão entre computadores, aproveitando melhor seus intervalos de transmissão.",
+      "how": "No NPL, sua equipe desenvolveu a comutação de pacotes em 1965, independentemente de Baran.",
+      "today": "Uma página ou mensagem continua viajando dividida em pacotes.",
+      "photoNote": "Homenagem a Davies em Treorchy; não é um retrato.",
+      "portraitLink": "https://www.npl.co.uk/about-us/history/famous/donald-davies",
+      "source": "https://www.npl.co.uk/about-us/history/timeline"
+    },
+    "vint-cerf": {
+      "name": "Vint Cerf",
+      "scene": "internet-protocolos",
+      "photo": "vint-cerf",
+      "why": "Computadores em redes diferentes precisavam trocar informações.",
+      "how": "Com Kahn, publicou em 1974 uma proposta de comunicação entre redes, que evoluiu para TCP/IP.",
+      "today": "Padrões comuns permitem conectar a rede da escola a outras redes.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+    },
+    "bob-kahn": {
+      "name": "Bob Kahn",
+      "scene": "internet-protocolos",
+      "photo": "bob-kahn",
+      "why": "Era preciso interligar redes por cabo, rádio e satélite sem substituir cada uma.",
+      "how": "Desenvolveu com Cerf uma arquitetura aberta à interligação de tecnologias diferentes.",
+      "today": "Wi-Fi e redes cabeadas podem participar da mesma internet usando protocolos comuns.",
+      "source": "https://www.darpa.mil/news/features/arpanet"
+    },
+    "paul-mockapetris": {
+      "name": "Paul Mockapetris",
+      "scene": "internet-dns",
+      "photo": "paul-mockapetris",
+      "why": "Uma lista central de nomes e endereços era difícil de manter com tantas máquinas.",
+      "how": "Descreveu o DNS em 1983: uma hierarquia que distribui responsabilidades pelas informações.",
+      "today": "Ao digitar um domínio, uma consulta DNS pode localizar o endereço do serviço.",
+      "source": "https://www.rfc-editor.org/rfc/rfc882.html"
+    },
+    "tim-berners-lee": {
+      "name": "Tim Berners-Lee",
+      "scene": "origem-web",
+      "photo": "tim-berners-lee",
+      "why": "Pesquisadores no CERN precisavam compartilhar documentos entre equipes e computadores diferentes.",
+      "how": "Em 1989, propôs combinar hipertexto com a internet. Em 1990, já havia navegador e servidor.",
+      "today": "Seguimos links para estudar, comprar e usar aplicações no navegador. A Web usa a internet.",
+      "extra": "Robert Cailliau colaborou no desenvolvimento e na divulgação da Web. Foi um trabalho que reuniu outras pessoas.",
+      "extraSource": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+    },
+    "hakon-wium-lie": {
+      "name": "Håkon Wium Lie",
+      "scene": "css-historia",
+      "photo": "hakon-wium-lie",
+      "why": "Autores queriam definir a aparência das páginas sem perder as preferências de quem as lia.",
+      "how": "Propôs folhas de estilo para HTML em 1994. A cascata combina regras de fontes diferentes.",
+      "today": "CSS controla cores, espaços e layouts que se adaptam à tela, separado do conteúdo.",
+      "extra": "Bert Bos colaborou no CSS; ele e Lie assinam a recomendação CSS1 de 1996.",
+      "extraSource": "https://www.w3.org/TR/REC-CSS1/",
+      "source": "https://www.w3.org/People/howcome/p/cascade.html"
+    },
+    "grace-hopper": {
+      "name": "Grace Hopper",
+      "scene": "grace-hopper",
+      "photo": "grace-hopper",
+      "why": "Programar exigia instruções difíceis de ler e repetir muito trabalho.",
+      "how": "Criou A-0 em 1952 e, com sua equipe, desenvolveu FLOW-MATIC, que influenciou o COBOL.",
+      "today": "Linguagens e tradutores permitem escrever intenções legíveis. COBOL ainda aparece em sistemas de negócios.",
+      "extra": "O COBOL foi resultado de um esforço coletivo do CODASYL; Hopper não o criou sozinha.",
+      "extraSource": "https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf",
+      "source": "https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf"
+    },
+    "radia-perlman": {
+      "name": "Radia Perlman",
+      "scene": "radia-perlman",
+      "photo": "radia-perlman",
+      "why": "Caminhos extras em redes Ethernet davam alternativas, mas também podiam criar ciclos de mensagens.",
+      "how": "Em 1985, desenvolveu o algoritmo do Spanning Tree Protocol: selecionar conexões sem ciclos.",
+      "today": "STP e suas evoluções ajudam a organizar redes Ethernet. Caminhos de reserva podem assumir quando necessário.",
+      "source": "https://www.usenix.org/legacy/events/usenix06/tech/slides/perlman_2006.pdf"
+    },
+    "katherine-johnson": {
+      "name": "Katherine Johnson",
+      "scene": "katherine-johnson",
+      "photo": "katherine-johnson",
+      "why": "Um voo espacial precisava de trajetórias calculadas e resultados conferidos com cuidado.",
+      "how": "Analisou a trajetória de Alan Shepard em 1961 e conferiu os números do computador para John Glenn em 1962.",
+      "today": "Seu exemplo ensina a validar resultados automáticos: em ciência, em modelos e na análise de dados.",
+      "source": "https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography/"
+    },
+    "alan-turing": {
+      "name": "Alan Turing",
+      "scene": "alan-turing",
+      "photo": "alan-turing",
+      "why": "Na Segunda Guerra, os Aliados precisavam obter informações de mensagens cifradas pela Enigma.",
+      "how": "Turing desenvolveu uma abordagem para a Bombe; Gordon Welchman acrescentou uma melhoria decisiva ao projeto.",
+      "today": "A Bombe é histórica. O legado mais amplo de Turing ajuda a entender programas e limites da computação.",
+      "extra": "O trabalho aproveitou avanços dos criptanalistas poloneses, como Marian Rejewski, e dependeu de engenheiros, operadores e outras equipes. Ajudou o esforço aliado; não venceu a guerra sozinho.",
+      "extraSource": "https://www.tnmoc.org/bh-3-the-polish-connection",
+      "source": "https://www.tnmoc.org/bh-6-enter-turing-and-welchman"
+    }
+  },
+  "timeline": [
+    {
+      "year": "1964–1965",
+      "sort": 1964,
+      "label": "Pacotes",
+      "title": "Compartilhar o caminho em pequenas partes.",
+      "why": "Comunicar com eficiência e lidar com falhas eram desafios diferentes das primeiras pesquisas.",
+      "how": "Baran, na RAND, e Davies, no NPL, desenvolveram propostas independentemente.",
+      "today": "Arquivos e mensagens atravessam as redes em pacotes.",
+      "kind": "packets",
+      "before": "Uma mensagem inteira ocupa o exemplo.",
+      "after": "Partes numeradas compartilham os caminhos.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+      "lab": "internet-pacotes"
+    },
+    {
+      "year": "1969",
+      "sort": 1969,
+      "label": "ARPANET",
+      "title": "Computadores caros. Pesquisadores distantes.",
+      "why": "Centros de pesquisa queriam compartilhar computadores e recursos à distância.",
+      "how": "Financiada pela ARPA, a ARPANET conectou quatro centros em 1969. UCLA e SRI trocaram a primeira mensagem em 29 de outubro.",
+      "today": "A ARPANET foi uma das bases das redes atuais. Ela foi desativada em 1990; a internet continuou crescendo.",
+      "kind": "arpanet",
+      "before": "Centros do modelo ainda isolados.",
+      "after": "Centros conectados podem compartilhar recursos.",
+      "source": "https://www.darpa.mil/news/features/arpanet",
+      "lab": "internet-pacotes"
+    },
+    {
+      "year": "1974 → 1983",
+      "sort": 1974,
+      "label": "TCP/IP",
+      "title": "Uma rede passa a conversar com outra.",
+      "why": "As redes por cabo, rádio e satélite tinham tecnologias próprias.",
+      "how": "A proposta de Cerf e Kahn de 1974 evoluiu; em 1º de janeiro de 1983, a ARPANET migrou para TCP/IP.",
+      "today": "Uma rede de redes: a conexão local pode trocar dados com outras usando protocolos comuns.",
+      "kind": "protocol",
+      "before": "Redes sem o conjunto comum do modelo.",
+      "after": "TCP/IP permite interligar as redes diferentes.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+      "lab": "internet-protocolos"
+    },
+    {
+      "year": "Nov. 1983",
+      "sort": 1983,
+      "label": "DNS",
+      "title": "Encontrar um serviço pelo nome.",
+      "why": "Uma tabela central de nomes ficava difícil de atualizar à medida que a rede crescia.",
+      "how": "Paul Mockapetris documentou um sistema distribuído de nomes: o DNS.",
+      "today": "O domínio ajuda a localizar informações, como o endereço de um servidor.",
+      "kind": "dns",
+      "before": "Lista central: nomes já existiam antes do DNS.",
+      "after": "Responsabilidades distribuídas para responder à consulta.",
+      "source": "https://www.rfc-editor.org/rfc/rfc882.html",
+      "lab": "internet-dns"
+    },
+    {
+      "year": "1986",
+      "sort": 1986,
+      "label": "NSFNET",
+      "title": "A pesquisa chega a mais instituições.",
+      "why": "Mais pesquisadores precisavam acessar centros de supercomputação.",
+      "how": "A NSF lançou a rede NSFNET em 1986, ampliando conexões acadêmicas.",
+      "today": "Foi parte da expansão da infraestrutura da internet; não era uma rede doméstica como a atual.",
+      "kind": "nsfnet",
+      "before": "Acesso limitado no exemplo.",
+      "after": "Outras instituições alcançam os centros de pesquisa.",
+      "source": "https://www.nsf.gov/impacts/internet"
+    },
+    {
+      "year": "1989 → 1991",
+      "sort": 1989,
+      "label": "Web",
+      "title": "A informação ganha links.",
+      "why": "Cientistas precisavam compartilhar documentos entre computadores e equipes.",
+      "how": "Tim Berners-Lee propôs a Web em 1989. Navegador e servidor funcionavam em 1990; a divulgação se ampliou em 1991.",
+      "today": "Páginas e aplicações no navegador usam a Web, um serviço sobre a internet.",
+      "kind": "web",
+      "before": "Documentos do modelo sem links entre si.",
+      "after": "Os links conectam um documento a outro.",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/",
+      "lab": "origem-web"
+    },
+    {
+      "year": "1993",
+      "sort": 1993,
+      "label": "Web aberta",
+      "title": "Mais gente pode construir para a Web.",
+      "why": "A Web precisava poder ser adotada e implementada amplamente.",
+      "how": "Em 30 de abril de 1993, o CERN disponibilizou seu software da Web sem cobrança de royalties.",
+      "today": "É um marco da adoção de uma Web aberta, onde diferentes pessoas podem publicar e criar.",
+      "kind": "openweb",
+      "before": "Tecnologia em difusão.",
+      "after": "Software disponibilizado sem royalties favorece a adoção.",
+      "source": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/",
+      "lab": "origem-web"
+    },
+    {
+      "year": "1995",
+      "sort": 1995,
+      "label": "Provedores",
+      "title": "O acesso cresce além da pesquisa.",
+      "why": "A demanda por conexão crescia e empresas já construíam redes comerciais.",
+      "how": "A NSF encerrou seu backbone dedicado em 1995, na transição para infraestrutura comercial.",
+      "today": "Contratamos provedores para conectar casas, escolas e empresas. A expansão foi gradual e mundial.",
+      "kind": "providers",
+      "before": "A pesquisa é o foco desta etapa do modelo.",
+      "after": "Provedores ampliam os caminhos de acesso.",
+      "source": "https://www.nsf.gov/impacts/internet"
+    },
+    {
+      "year": "Hoje",
+      "sort": 2026,
+      "label": "No seu dia",
+      "title": "Muitas invenções em uma ação cotidiana.",
+      "why": "Precisamos conectar aparelhos e serviços, encontrar informação e usá-la com segurança.",
+      "how": "Pacotes, protocolos, DNS, Web e muitas outras contribuições trabalham em conjunto.",
+      "today": "Uma aula on-line, uma compra ou um link reúnem várias camadas dessa história.",
+      "kind": "today",
+      "before": "Pense em cada contribuição separadamente.",
+      "after": "Conectar, localizar, abrir e interagir: as camadas se combinam.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+      "lab": "web-na-tela"
+    }
+  ],
+  "briefCredits": [
+    {
+      "name": "J. C. R. Licklider",
+      "text": "Imaginou o compartilhamento de informação em computadores conectados e liderou pesquisas da ARPA.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+    },
+    {
+      "name": "Larry Roberts e equipes da BBN",
+      "text": "Participaram do planejamento e da construção da ARPANET. Uma rede nasceu do trabalho de muitas equipes.",
+      "source": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+    }
+  ]
+};

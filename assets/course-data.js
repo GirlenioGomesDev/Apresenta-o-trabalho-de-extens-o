@@ -9,7 +9,7 @@ window.WorkshopCourse = {
     {
       "id": "historia",
       "title": "História da internet · contribuições que se conectam",
-      "minutes": 13
+      "minutes": 18
     },
     {
       "id": "html",
@@ -44,7 +44,7 @@ window.WorkshopCourse = {
     {
       "id": "cyber",
       "title": "Cibersegurança · carreira e proteção",
-      "minutes": 16
+      "minutes": 21
     },
     {
       "id": "fechamento",
@@ -64,7 +64,7 @@ window.WorkshopCourse = {
       "id": "roteiro",
       "module": "comeco",
       "minutes": 1,
-      "title": "Uma jornada de 2h20.",
+      "title": "Uma jornada de 2h30.",
       "chapter": "abertura"
     },
     {
@@ -80,6 +80,13 @@ window.WorkshopCourse = {
       "minutes": 3,
       "title": "Internet, Web e navegador: cada um tem um papel.",
       "chapter": "abertura"
+    },
+    {
+      "id": "internet-evolucao",
+      "module": "historia",
+      "minutes": 5,
+      "title": "A internet começou conectando pesquisadores.",
+      "chapter": "historia"
     },
     {
       "id": "internet-pacotes",
@@ -345,6 +352,13 @@ window.WorkshopCourse = {
       "module": "cyber",
       "minutes": 3,
       "title": "Confirmar a identidade. Conferir a permissão.",
+      "chapter": "carreiras"
+    },
+    {
+      "id": "alan-turing",
+      "module": "cyber",
+      "minutes": 5,
+      "title": "Turing: regras, máquinas e proteção da informação.",
       "chapter": "carreiras"
     },
     {
@@ -771,7 +785,7 @@ window.WorkshopCourse = {
     },
     "roteiro": {
       "time": "1 min / Começo · entender a Web",
-      "text": "Mostre a ordem dos blocos. Explique que terminaremos um assunto antes de trocar de área. São 130 minutos com conversa e atividades; não uma leitura contínua de texto. O módulo de história acrescenta dez minutos ao roteiro anterior; todas as durações antigas foram mantidas."
+      "text": "Mostre a ordem dos blocos. Explique que terminaremos um assunto antes de trocar de área. São 150 minutos sugeridos, com conversa e atividades; não uma leitura contínua. A visão geral da história e o experimento de Turing acrescentam dez minutos. Os laboratórios anteriores continuam iguais."
     },
     "vida-digital": {
       "time": "2 min / Começo · entender a Web",
@@ -783,7 +797,7 @@ window.WorkshopCourse = {
     },
     "origem-web": {
       "time": "3 min / História da internet",
-      "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos. No acréscimo visual, compare os documentos antes e depois de conectar os links. Hipertexto existia antes; a contribuição da Web reuniu documentos e padrões acessíveis pela internet."
+      "text": "Conte a necessidade de compartilhar documentos no CERN. Use a linha do tempo: proposta em 1989, navegador e servidor ao fim de 1990, software sem royalties em 1993. A Web usa a internet; não são sinônimos. No acréscimo visual, compare os documentos antes e depois de conectar os links. Hipertexto existia antes; a contribuição da Web reuniu documentos e padrões acessíveis pela internet. Nos cartões de Berners-Lee, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "linguagens": {
       "time": "2 min / HTML · organizar o conteúdo",
@@ -807,7 +821,7 @@ window.WorkshopCourse = {
     },
     "css-historia": {
       "time": "2 min / CSS · dar forma à página",
-      "text": "Mostre o mesmo conteúdo em dois temas. Conte a proposta de Håkon Wium Lie em 1994. Pergunte o que mudou e o que permaneceu. O próximo passo é entender espaço e organização."
+      "text": "Mostre o mesmo conteúdo em dois temas. Conte a proposta de Håkon Wium Lie em 1994. Pergunte o que mudou e o que permaneceu. O próximo passo é entender espaço e organização. Nos cartões de Lie, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "css-caixa": {
       "time": "3 min / CSS · dar forma à página",
@@ -863,7 +877,7 @@ window.WorkshopCourse = {
     },
     "grace-hopper": {
       "time": "1 min / Carreira · desenvolvimento de software",
-      "text": "Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa."
+      "text": "Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa. Nos cartões de Hopper, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "lab-software-testes": {
       "time": "3 min / Carreira · desenvolvimento de software",
@@ -887,7 +901,7 @@ window.WorkshopCourse = {
     },
     "radia-perlman": {
       "time": "1 min / Carreira · redes, suporte e infraestrutura",
-      "text": "Conecte ao assunto de redes: caminhos repetidos podem criar loops. Conte a contribuição de Radia Perlman ao STP e alterne a representação. A animação é uma analogia, não uma implementação. A internet teve muitas contribuições."
+      "text": "Conecte ao assunto de redes: caminhos repetidos podem criar loops. Conte a contribuição de Radia Perlman ao STP e alterne a representação. A animação é uma analogia, não uma implementação. A internet teve muitas contribuições. Nos cartões de Perlman, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "lab-infra-missao": {
       "time": "3 min / Carreira · redes, suporte e infraestrutura",
@@ -903,7 +917,7 @@ window.WorkshopCourse = {
     },
     "katherine-johnson": {
       "time": "1 min / Carreira · análise de dados",
-      "text": "Conte que Katherine Johnson conferiu cálculos computacionais da missão orbital de John Glenn em 1962. Sua atuação era matemática; a ponte pedagógica é verificar resultados e contexto, não equiparar os cargos."
+      "text": "Conte que Katherine Johnson conferiu cálculos computacionais da missão orbital de John Glenn em 1962. Sua atuação era matemática; a ponte pedagógica é verificar resultados e contexto, não equiparar os cargos. Nos cartões de Johnson, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "dados-pergunta": {
       "time": "2 min / Carreira · análise de dados",
@@ -967,15 +981,23 @@ window.WorkshopCourse = {
     },
     "internet-pacotes": {
       "time": "3 min / História da internet",
-      "text": "Conte as contribuições independentes de Paul Baran e Donald Davies e o marco coletivo da ARPANET em 1969. Não atribua a rede inteira a duas pessoas. No laboratório, leia uma mensagem, divida-a em partes numeradas e envie uma de cada vez. A ordem de chegada é diferente, mas a reorganização recupera a mensagem. Bloqueie o caminho A e compare com B; sem nenhum caminho, o envio deve parar. A numeração e o desenho são modelos didáticos, não uma implementação dos protocolos históricos."
+      "text": "Conte as contribuições independentes de Paul Baran e Donald Davies e o marco coletivo da ARPANET em 1969. Não atribua a rede inteira a duas pessoas. No laboratório, leia uma mensagem, divida-a em partes numeradas e envie uma de cada vez. A ordem de chegada é diferente, mas a reorganização recupera a mensagem. Bloqueie o caminho A e compare com B; sem nenhum caminho, o envio deve parar. A numeração e o desenho são modelos didáticos, não uma implementação dos protocolos históricos. Nos cartões de Baran e Davies, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-protocolos": {
       "time": "4 min / História da internet",
-      "text": "Mostre as redes diferentes. Conte o artigo de Cerf e Kahn em 1974 e a transição planejada da ARPANET para TCP/IP em 1º de janeiro de 1983. Teste antes e depois de ativar o conjunto comum nos dois lados. O desenho interno de cada rede permanece diferente. IP encaminha; TCP dá suporte a um fluxo confiável nas pontas. O equipamento não traduz qualquer protocolo por mágica."
+      "text": "Mostre as redes diferentes. Conte o artigo de Cerf e Kahn em 1974 e a transição planejada da ARPANET para TCP/IP em 1º de janeiro de 1983. Teste antes e depois de ativar o conjunto comum nos dois lados. O desenho interno de cada rede permanece diferente. IP encaminha; TCP dá suporte a um fluxo confiável nas pontas. O equipamento não traduz qualquer protocolo por mágica. Nos cartões de Cerf e Kahn, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-dns": {
       "time": "3 min / História da internet",
-      "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993."
+      "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
+    },
+    "internet-evolucao": {
+      "time": "5 min / História da internet",
+      "text": "Comece pela necessidade da ARPANET: compartilhar computadores e recursos de centros de pesquisa, com financiamento da ARPA. Explore a visão geral no marco de 1969; a linha do tempo também mostra as propostas anteriores de pacotes. Selecione um marco, peça uma previsão e compare antes/depois. Mostre NSFNET em 1986, o software da Web sem royalties em 1993 e a expansão comercial em 1995. A ARPANET foi desativada em 1990: a internet resulta da interligação de redes, não de uma simples troca de nome ou de um único ato de abertura. Os desenhos são modelos, não mapas históricos. Depois volte ao detalhe dos pacotes."
+    },
+    "alan-turing": {
+      "time": "5 min / Carreiras · Cibersegurança",
+      "text": "Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. Retome a segurança atual: conferir identidade e permissões."
     }
   },
   "choices": {
@@ -1100,7 +1122,7 @@ window.WorkshopCourse = {
       "id": "historia",
       "number": "01",
       "title": "História da internet",
-      "description": "Pacotes → redes → DNS → Web."
+      "description": "ARPANET, pacotes, redes, DNS e Web até o cotidiano."
     },
     {
       "id": "web",

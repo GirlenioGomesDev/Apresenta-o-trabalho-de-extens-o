@@ -11,8 +11,8 @@ const course=context.window.WorkshopCourse,data=context.window.WorkshopExtension
 test('a navegação reúne cyber em Carreiras 03 e mantém os seis capítulos',()=>{
   const chapters=logic.groupedChapters(course);
   assert.deepEqual(Array.from(chapters,chapter=>chapter.number),['00','01','02','03','04','05']);
-  assert.equal(chapters.reduce((sum,chapter)=>sum+chapter.minutes,0),140);
-  assert.deepEqual(Array.from(chapters,chapter=>chapter.minutes),[7,13,52,54,13,1]);
+  assert.equal(chapters.reduce((sum,chapter)=>sum+chapter.minutes,0),150);
+  assert.deepEqual(Array.from(chapters,chapter=>chapter.minutes),[7,18,52,59,13,1]);
   const careers=chapters.find(chapter=>chapter.id==='carreiras');
   assert.equal(careers.number,'03');assert.ok(careers.scenes.some(scene=>scene.id==='lab-cyber'));
   assert.ok(careers.scenes.some(scene=>scene.id==='detetive'));
