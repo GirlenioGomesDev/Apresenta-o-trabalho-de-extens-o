@@ -2,63 +2,62 @@
 
 Apresentação interativa para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**Abrir a apresentação:** https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/)** · versão 2.4.0
 
-## Oficina de 2h30
+## Uma oficina de 2 horas
 
-São 55 etapas em dez blocos consecutivos: começo, história da internet, HTML, CSS, lógica e JavaScript, desenvolvimento de software, redes e infraestrutura, análise de dados, cibersegurança e participação da turma.
+São **26 etapas, 120 minutos sugeridos e cinco capítulos**. O tempo inclui previsões, experimentos e conversa com a turma.
 
-- Design em creme e verde, com navegação por teclado, roteiro, cronômetro e notas de apresentação.
-- Web explicada com exemplos visuais: internet, navegador e página têm papéis diferentes.
-- Nove laboratórios de código em Web e desenvolvimento, com exemplos mais curtos, resultado ao vivo, dicas e solução.
-- Lógica básica antes dos exemplos de JavaScript: sequência, variáveis, condições, repetição e função.
-- Carreiras com o que são, por que existem, atividades, ferramentas e uma entrega concreta.
-- Redes, dados e cibersegurança com simulações visuais sem editor de código.
-- Atividade com cabo e testador de continuidade, com alternativa visual se o equipamento não estiver disponível.
-- Histórias de contribuições da tecnologia e três casos reais dentro dos seus assuntos, com fontes.
-- Doze perguntas selecionáveis e três formas de conduzir a participação: voluntário, convite ou dupla.
+| Capítulo | Caminho | Tempo |
+| --- | --- | ---: |
+| 00 · Começo | Situações próximas dos alunos e roteiro. | 4 min |
+| 01 · Web | Entender a página → HTML → CSS → lógica e JavaScript. | 69 min |
+| 02 · Carreiras | Software, suporte/infraestrutura, dados e cibersegurança. | 24 min |
+| 03 · Participar | Quiz próprio de dez perguntas e próximos passos. | 22 min |
+| 04 · Equipe | Créditos e fontes. | 1 min |
 
-O tempo proposto inclui a participação da turma e as demonstrações. Consulte o [roteiro dos apresentadores](docs/ROTEIRO.md) e as [fontes](docs/FONTES.md).
+- A Web evolui uma ideia por vez, com exemplos e sete laboratórios ativos: seis do curso e o laboratório do robô. Código e resultado ficam próximos.
+- Carreiras mostram apenas conceito, o que o profissional faz, exemplos de cargos, faixa salarial identificada e fontes. Há um seletor para cada uma das quatro áreas.
+- Participar abre diretamente o quiz. A aba Internet e as duas introduções da participação saíram da navegação.
+- O design mantém a base em creme e verde, com cores mais vivas, fonte Manrope local e letras maiores.
+- Roteiro, notas, cronômetro, tela cheia e navegação por teclado continuam disponíveis.
 
-## Acréscimos desta versão
+Veja o [roteiro dos apresentadores](docs/ROTEIRO.md), as [fontes](docs/FONTES.md) e a [operação do quiz](docs/QUIZ.md).
 
-As pessoas já presentes ganham contexto curto: por que a contribuição foi necessária, como surgiu e como aparece ou deixa legado hoje. A linha do tempo interativa introduz a ARPANET e reúne nove marcos, de pacotes à expansão acadêmica, Web e provedores. Cada marco permite comparar antes e depois, com links para os laboratórios visuais existentes.
+## Competição integrada
 
-Turing aparece dentro de cibersegurança, com a contribuição coletiva ao esforço aliado, fotos de Enigma e de uma reconstrução da Bombe, uma fita de regras e um modelo de eliminação de hipóteses. Esses exemplos não simulam Enigma. Quinze fotos locais possuem créditos e licenças em [IMAGENS.md](docs/IMAGENS.md); o retrato de Davies tem link à fonte oficial. As duas novas etapas somam dez minutos; os laboratórios e as durações das 53 etapas anteriores foram preservados.
+Em **Participar**, escolha o tempo e clique em **Criar sala e mostrar QR**. Os alunos abrem a câmera do Android ou iPhone, tocam no link e escolhem um apelido. O apresentador inicia e avança as rodadas.
 
-A navegação mantém cibersegurança em **03 · Carreiras**, com desenvolvimento, suporte/infraestrutura e dados. Os painéis de mercado e salários, os conceitos web e os exemplos de código continuam disponíveis.
+São dez perguntas, 100 pontos por acerto e empate compartilhado. Após cada pergunta, todos recebem a resposta comentada e o placar atualizado automaticamente. Não há conta nem aplicativo a instalar. O quiz usa código próprio deste repositório e um banco compartilhado entre os participantes.
 
-## Rodar
+**A competição exige internet.** Os exemplos da aula e laboratórios continuam locais. O QR contém um endereço HTTPS normal e o código da sala; o controle do apresentador não é compartilhado com os alunos.
 
-Sem instalar dependências, abra `index.html` ou use Node.js 20 ou superior:
+## Rodar localmente
+
+Use **Node.js 22.13 ou superior**, sem instalar dependências:
 
 ```sh
 npm start
 ```
 
-Abra o endereço exibido no terminal. O conteúdo e as simulações funcionam sem internet; os links das referências precisam de conexão.
+Abra o endereço mostrado no terminal. Esse comando serve o material e a API do quiz, com SQLite local em `.quiz/local.sqlite` (ignorado pelo Git). Para simular um aluno local, abra `competicao.html?sala=CODIGO` no mesmo servidor. O QR projetado aponta sempre para a versão pública da oficina.
 
 ```sh
 npm run check
 ```
 
-A verificação valida a sintaxe, as regras das práticas, os testes dos exemplos, a ordem dos blocos, os links e a ausência de editores nas carreiras visuais.
+A verificação cobre ordem e duração das etapas, exemplos, ausência de editores nas carreiras, dez perguntas e as regras reais do quiz: permissão do apresentador, respostas únicas, prazos, pontuação, empates, dez rodadas, concorrência e CORS.
 
-## Editar
+## Editar e publicar
 
-- `index.html`: telas e conteúdo visual.
-- `assets/content.js`: exemplo inicial, dados de apoio e perguntas básicas.
-- `assets/course-data.js`: ordem, minutos, notas, desafios e exemplos dos laboratórios.
-- `assets/course.js` e `assets/course-logic.js`: simulações visuais e suas regras.
-- `assets/course-labs.js`: código da aula, execução isolada e resultado ao lado.
-- `assets/course.css`: estilos que estendem o design aprovado.
-- `assets/extension-data.js`, `extension-logic.js`, `extension.js` e `extension.css`: acréscimos de história e carreiras.
-- `assets/history-stories-*`, `history-stories.js` e `history-stories.css`: contexto das pessoas, fotografias, linha do tempo e experiências de Turing.
+- `index.html`: conteúdo e telas da oficina.
+- `assets/course-data.js`: sequência, notas, tempo e exemplos.
+- `assets/course*.js`, `assets/app.js` e os arquivos de laboratório: interações da aula.
+- `assets/career-clean.js`: quatro áreas e ligações às fontes.
+- `assets/clarity.css`: tipografia e ajustes visuais desta versão.
+- `competicao.html`, `assets/quiz-live.*` e `assets/quiz-embed.js`: telas do apresentador/aluno e integração na oficina.
+- `server/quiz-service.mjs`, `server/quiz-questions.mjs` e `server/quiz-schema.sql`: API, perguntas, regras e banco do quiz.
 
-Os estilos e as ligações de apoio de cada cenário são identificados; o editor mantém o foco no trecho ensinado. O código editável roda em ambiente isolado. As atividades de dados, rede e acesso usam exemplos fictícios e não consultam serviços externos.
+O GitHub Pages publica a raiz de `main`. O workflow **Verificar apresentação** roda os testes. O Pages hospeda arquivos estáticos; a API própria roda no runtime do projeto existente com D1. Alterações no servidor precisam ser publicadas também nesse runtime; um push no Pages, sozinho, não atualiza a API. Detalhes em [QUIZ.md](docs/QUIZ.md).
 
-## Publicação
-
-GitHub Pages publica automaticamente a raiz da branch `main`. O arquivo `.nojekyll` mantém a publicação estática. O workflow `Verificar apresentação` executa `npm run check`.
-
-Versão 2.2.0.
+Arquivos históricos de versões anteriores permanecem no repositório como referência e não são carregados pela apresentação atual. Créditos: Manrope sob SIL OFL em `assets/manrope-ofl.txt`; gerador QR Nayuki sob MIT, preservado no cabeçalho de `assets/quiz-qr-vendor.js`.

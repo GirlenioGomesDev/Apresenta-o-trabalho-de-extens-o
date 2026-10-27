@@ -349,52 +349,7 @@
   });
   resetLab();
 
-  $$('[data-factory]').forEach(button => button.addEventListener('click', () => {
-    const index = Number(button.dataset.factory);
-    const item = data.factory[index];
-    selectButtons('[data-factory]', 'data-factory', index);
-    $('#factory-deliverable').textContent = item.deliverable;
-    $('#factory-text').textContent = item.text;
-    $('#factory-career-link').dataset.careerEntry = item.career;
-    $('#factory-career-link').setAttribute('href', '#lab-' + item.career);
-    $$('[data-team]').forEach(label => label.classList.toggle('active', label.dataset.team === item.career));
-  }));
-  $$('[data-scenario]').forEach(button => button.addEventListener('click', () => {
-    const value = button.dataset.scenario;
-    selectButtons('[data-scenario]', 'data-scenario', value);
-    $('#phishing-scenario').hidden = value !== 'phishing';
-    $('#mfa-scenario').hidden = value !== 'mfa';
-  }));
-  const decisionFeedback = {
-    'phishing-open': { target: 'phishing', good: false, text: 'A pressa aumenta o risco. A mensagem pede senha e código, usa um número desconhecido e ameaça suspender a conta. Confirme pelo aplicativo ou site oficial, sem abrir o link.' },
-    'phishing-check': { target: 'phishing', good: true, text: 'Boa decisão. Procure o serviço pelo aplicativo ou site oficial. Urgência, pedido de senha e código e origem desconhecida são sinais de alerta. Um logotipo não comprova autenticidade.' },
-    'mfa-approve': { target: 'mfa', good: false, text: 'Aprovar pode liberar o acesso de outra pessoa. Se você não iniciou o login, negue e revise a atividade da conta pelo serviço oficial.' },
-    'mfa-deny': { target: 'mfa', good: true, text: 'Boa decisão. Negue a solicitação inesperada. Revise as sessões e a atividade da conta pelo canal oficial e proteja as credenciais se houver indícios de comprometimento.' }
-  };
-  $$('[data-decision]').forEach(button => button.addEventListener('click', () => {
-    const feedback = decisionFeedback[button.dataset.decision];
-    const target = $('#' + feedback.target + '-feedback');
-    target.textContent = feedback.text;
-    target.classList.toggle('good', feedback.good);
-    target.classList.toggle('warning', !feedback.good);
-    button.closest('.detective-actions').querySelectorAll('.decision-button').forEach(option => option.classList.toggle('selected', option === button));
-  }));
-
-  let selectedRole = 'visitante';
-  $$('[data-role]').forEach(button => button.addEventListener('click', () => {
-    selectedRole = button.dataset.role;
-    selectButtons('[data-role]', 'data-role', selectedRole);
-    $('#permission-status').textContent = 'Papel selecionado: ' + (selectedRole === 'editor' ? 'editor autorizado.' : 'visitante.') + ' Tente editar o conteúdo.';
-  }));
-  $('#permission-try').addEventListener('click', () => {
-    $('#permission-status').textContent = logic.canEdit(selectedRole)
-      ? 'Permitido nesta simulação: o papel de editor tem autorização. Em um sistema real, o servidor deve verificar essa permissão.'
-      : 'Acesso negado nesta simulação: visitantes podem consultar, mas não alterar o conteúdo.';
-  });
-
-  function setCareer(id) {
-    $$('[data-career-card]').forEach(card => card.classList.toggle('active', card.dataset.careerCard === id));
-  }
+  function setCareer(id) { window.CleanCareers?.select(id); }
 
   function setStart(id) {
     const item = data.starts[id];
@@ -412,60 +367,5 @@
   }
   $$('[data-start]').forEach(button => button.addEventListener('click', () => setStart(button.dataset.start)));
 
-  let quizIndex = 0;
-  let quizAnswers = Array(data.quiz.length).fill(null);
-  let quizFinished = false;
-  const quizHost = $('#quiz-content');
-  const esc = logic.escapeHTML;
-  const quizPicker = $('#quiz-question-picker');
-  quizPicker.innerHTML = data.quiz.map((question,index) => '<option value="' + index + '">' + String(index + 1).padStart(2,'0') + '. ' + esc(question.question) + '</option>').join('');
-  quizPicker.addEventListener('change', () => { quizIndex = Number(quizPicker.value); quizFinished = false; renderQuiz(true); });
-  const participationPrompts = {
-    voluntario: 'Alguém quer responder? O que fez você escolher essa alternativa?',
-    convite: 'Posso convidar você para responder? Pode passar a vez. Qual pista ajudou na sua escolha?',
-    dupla: 'Conversem em dupla por alguns instantes. Quem quer compartilhar a resposta e o motivo?'
-  };
-  $$('[data-participation]').forEach(button => button.addEventListener('click', () => {
-    selectButtons('[data-participation]','data-participation',button.dataset.participation);
-    $('#participation-prompt').textContent = participationPrompts[button.dataset.participation];
-  }));
-
-  function renderQuiz(focusQuestion = false) {
-    if (quizFinished) { renderQuizResult(); return; }
-    quizPicker.value = String(quizIndex);
-    const question = data.quiz[quizIndex];
-    const answer = quizAnswers[quizIndex];
-    const answered = answer != null;
-    const allAnswered = quizAnswers.every(answer => answer != null);
-    const progress = data.quiz.map((_, index) => '<span class="' + (quizAnswers[index] != null ? 'filled' : '') + '"></span>').join('');
-    quizHost.innerHTML = '<div class="quiz-meta"><span>PERGUNTA ' + String(quizIndex + 1).padStart(2, '0') + ' / ' + String(data.quiz.length).padStart(2, '0') + '</span><span class="quiz-mini-progress" aria-hidden="true">' + progress + '</span></div><h3 class="quiz-question" tabindex="-1">' + esc(question.question) + '</h3><div class="quiz-options">' + question.options.map((option, index) => {
-      const correct = answered && index === question.correct;
-      const wrong = answered && index === answer && index !== question.correct;
-      const state = correct ? ' <span class="answer-state">CORRETA ✓</span>' : wrong ? ' <span class="answer-state">SUA RESPOSTA</span>' : '';
-      return '<button class="quiz-option' + (correct ? ' correct' : '') + (wrong ? ' wrong' : '') + '" data-answer="' + index + '"' + (answered ? ' disabled' : '') + '><span class="answer-letter">' + String.fromCharCode(65 + index) + '</span><span>' + esc(option) + '</span>' + state + '</button>';
-    }).join('') + '</div><div class="quiz-feedback' + (!answered ? ' waiting' : '') + '" role="status">' + (answered ? '<strong>' + (answer === question.correct ? 'Isso mesmo. ' : 'Vamos entender. ') + '</strong>' + esc(question.explanation) : 'Conversem antes de escolher. A explicação aparece depois da resposta.') + '</div><div class="quiz-controls"><button class="text-link" data-quiz-previous' + (quizIndex === 0 ? ' disabled' : '') + '>← Pergunta anterior</button><button class="button primary" data-quiz-next' + (!answered ? ' disabled' : '') + '>' + (allAnswered ? 'Ver resultado' : 'Próxima pergunta') + ' <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>';
-    $$('[data-answer]').forEach(button => button.addEventListener('click', () => {
-      quizAnswers = logic.recordAnswer(quizAnswers, quizIndex, Number(button.dataset.answer), data.quiz);
-      renderQuiz();
-      $('[data-quiz-next]').focus({ preventScroll: true });
-    }));
-    $('[data-quiz-previous]').addEventListener('click', () => { quizIndex = Math.max(0, quizIndex - 1); renderQuiz(true); });
-    $('[data-quiz-next]').addEventListener('click', () => {
-      if (quizAnswers[quizIndex] == null) return;
-      if (quizAnswers.every(answer => answer != null)) quizFinished = true;
-      else if (quizIndex === data.quiz.length - 1) quizIndex = quizAnswers.findIndex(answer => answer == null);
-      else quizIndex += 1;
-      renderQuiz(true);
-    });
-    if (focusQuestion) $('.quiz-question').focus({ preventScroll: true });
-  }
-
-  function renderQuizResult() {
-    const score = logic.scoreQuiz(data.quiz, quizAnswers);
-    quizHost.innerHTML = '<div class="quiz-result"><div class="quiz-score"><span class="mini-label">RESULTADO DA TURMA</span><strong>' + score + '<small> / ' + data.quiz.length + '</small></strong><h3>' + (score === data.quiz.length ? 'Conceitos conectados!' : 'Vamos continuar aprendendo.') + '</h3><p>O resultado ajuda a retomar a conversa. Usem as referências para praticar o que ficou mais difícil.</p></div><div><span class="mini-label">REVISÃO DAS RESPOSTAS</span><ol class="quiz-review">' + data.quiz.map((question, index) => '<li><span>' + (quizAnswers[index] === question.correct ? '✓' : '↺') + '</span><div>' + esc(question.question) + '<br><strong>' + esc(question.options[question.correct]) + '</strong>' + (quizAnswers[index] !== question.correct ? ' <a href="#' + question.review + '">Rever assunto</a>' : '') + '</div></li>').join('') + '</ol></div></div><div class="quiz-controls"><button class="text-link" data-quiz-restart>Recomeçar o quiz ↺</button><button class="button primary" data-quiz-review>Revisar explicações <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>';
-    $('[data-quiz-restart]').addEventListener('click', () => { quizAnswers = Array(data.quiz.length).fill(null); quizIndex = 0; quizFinished = false; renderQuiz(true); });
-    $('[data-quiz-review]').addEventListener('click', () => { quizFinished = false; quizIndex = 0; renderQuiz(true); });
-  }
-  renderQuiz();
   renderScene(logic.resolveIndex(location.hash, ids), false);
 })();

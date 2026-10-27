@@ -203,21 +203,21 @@ window.WorkshopData = {
       "heading": "Entenda o caminho de uma conexão.",
       "text": "Identifique dispositivo, rede e serviço. Pratique como explicar um problema de acesso a outra pessoa.",
       "action": "Rever a demonstração de redes",
-      "href": "#lab-infra"
+      "href": "#carreiras"
     },
     "dados": {
       "area": "ANÁLISE DE DADOS",
       "heading": "Faça uma pergunta a uma tabela.",
       "text": "Use dados fictícios, organize categorias e compare resultados antes de tirar uma conclusão.",
       "action": "Explorar a tabela e o gráfico",
-      "href": "#lab-dados"
+      "href": "#carreiras"
     },
     "cyber": {
       "area": "CIBERSEGURANÇA",
       "heading": "Observe os cuidados com uma conta.",
       "text": "Conheça a segunda etapa de autenticação e pratique reconhecer uma mensagem suspeita.",
       "action": "Rever o cenário de proteção",
-      "href": "#lab-cyber"
+      "href": "#carreiras"
     }
   },
   "quiz": [
