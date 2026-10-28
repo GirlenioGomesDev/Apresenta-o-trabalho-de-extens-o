@@ -9,7 +9,8 @@
     return '<figure class="history-photo '+(portrait?'history-portrait':'history-machine')+'"><button type="button" data-history-photo="'+esc(key)+'" aria-label="Ampliar foto: '+esc(caption)+'"><img src="'+esc(asset.src)+'" alt="'+esc(caption)+'" width="'+asset.width+'" height="'+asset.height+'" loading="lazy" decoding="async"><span aria-hidden="true">↗</span></button><figcaption><span>'+esc(caption)+'</span><details><summary>Crédito da foto</summary><p>'+link(asset.page,asset.artist||'Acervo Wikimedia Commons')+' · '+(asset.licenseUrl?link(asset.licenseUrl,asset.license==='Public domain'?'Domínio público':asset.license):esc(asset.license==='Public domain'?'Domínio público':asset.license))+'. '+esc(asset.changes)+'</p></details></figcaption></figure>';
   }
   function context(person,small=false){
-    return '<dl class="history-context '+(small?'history-person-context':'')+'">'+[['POR QUE FOI NECESSÁRIO?',person.why],['COMO SURGIU?',person.how],['ONDE APARECE HOJE?',person.today]].map(([label,text])=>'<div><dt>'+label+'</dt><dd>'+esc(text)+'</dd></div>').join('')+'</dl>';
+    const brief=['alan-turing','grace-hopper'].includes(person.scene);
+    return '<dl class="history-context '+(small?'history-person-context':'')+'">'+[[brief?'QUEM FOI E QUAL ERA O DESAFIO?':'POR QUE FOI NECESSÁRIO?',person.why],[brief?'O QUE FEZ?':'COMO SURGIU?',person.how],['ONDE APARECE HOJE?',person.today]].map(([label,text])=>'<div><dt>'+label+'</dt><dd>'+esc(text)+'</dd></div>').join('')+'</dl>';
   }
   Object.values(data.people).forEach(person=>{
     const scene=$('#'+person.scene);if(!scene)return;

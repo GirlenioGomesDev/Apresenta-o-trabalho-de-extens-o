@@ -913,7 +913,7 @@ window.WorkshopCourse = {
     },
     "grace-hopper": {
       "time": "1 min / História · contribuições em ordem cronológica",
-      "text": "Conte primeiro o trabalho repetitivo: copiar rotinas de cálculo e ajustar os endereços para montar um programa. Grace observou que o computador podia fazer essa montagem. Compare os quadros: copiar e ajustar manualmente, depois pedir rotinas por referência com o A-0 de 1952. A sequência 01 e 02 é ilustrativa; não é sintaxe histórica. Separe as etapas seguintes: FLOW-MATIC usou instruções próximas do inglês, com trabalho de Hopper e sua equipe; COBOL veio de um esforço coletivo por uma linguagem comum de negócios. Explique rotina como trecho reaproveitável e compilador como tradutor de instruções. A-0 foi pioneiro e não equivale a um compilador moderno completo. Relacione o legado a reduzir repetição e tornar regras compreensíveis, sem atribuir a Hopper todas as linguagens atuais."
+      "text": "Grace foi matemática e programadora. O pontapé inicial foi evitar copiar e ajustar trechos de programa à mão. Compare antes e depois no A-0, de 1952: pedir trechos prontos e automatizar sua montagem. FLOW-MATIC e o esforço coletivo do COBOL vieram depois. Relacione ao reaproveitamento de instruções e aos tradutores atuais."
     },
     "lab-software-testes": {
       "time": "3 min / Carreira · desenvolvimento de software",
@@ -1033,7 +1033,7 @@ window.WorkshopCourse = {
     },
     "alan-turing": {
       "time": "5 min / História · contribuições em ordem cronológica",
-      "text": "Apresente duas contribuições distintas: o modelo de regras de 1936 e a investigação de mensagens na guerra. Comece pela necessidade de entender mensagens interceptadas. Use as fotos para distinguir Enigma, que cifra letras, de Bombe, que ajuda a investigar configurações. Na nova demonstração, pressione A cinco vezes: as rodas mudam e surge BDZGO. Reinicie a receptora na mesma posição para recuperar AAAAA; compare com AAB para mostrar a importância da configuração. Não diga que a Enigma transmitia pelo rádio: pessoas anotavam as letras e as transmitiam. Destaque a base polonesa, Turing, Welchman, engenheiros, operadoras e analistas. Só depois use a aba 1940: as seis hipóteses são fictícias e mostram eliminação por pistas, não o cálculo real da Bombe. A fita da aba 1936 explica seguir uma regra; não decifra a Enigma. Escolha as interações para o tempo disponível, sem ler todos os cartões."
+      "text": "Apresente Turing como matemático britânico. O desafio da guerra era ler mensagens protegidas pela Enigma. Mostre uma tecla, as rodas e a lâmpada; compare as posições iniciais da receptora. Explique em uma frase: pistas e a Bombe aceleravam testes de configuração, com contribuição polonesa, de Welchman, engenheiros, operadoras e analistas. Escolha uma prática curta abaixo: a fita de regras ou a analogia de eliminação de hipóteses."
     },
     "historia-nsfnet": {
       "time": "1 min / História · contribuições em ordem cronológica",

@@ -52,11 +52,11 @@ Escolha apenas uma ou duas situações familiares. Peça exemplos do que aparece
 
 ### 04. Turing: regras, máquinas e proteção da informação. · 1936–1940 · 5 min
 
-Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. A relação com a segurança atual será retomada no bloco de carreiras. Agora siga para as ferramentas de programação de Hopper.
+Apresente Turing como matemático britânico. O desafio da guerra era ler mensagens protegidas pela Enigma. Mostre uma tecla, as rodas e a lâmpada; compare as posições iniciais da receptora. Explique em uma frase: pistas e a Bombe aceleravam testes de configuração, com contribuição polonesa, de Welchman, engenheiros, operadoras e analistas. Escolha uma prática curta abaixo: a fita de regras ou a analogia de eliminação de hipóteses.
 
 ### 05. Programar também é tornar ideias compreensíveis. · 1952–1959 · 1 min
 
-Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa. Nos cartões de Hopper, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia.
+Grace foi matemática e programadora. O pontapé inicial foi evitar copiar e ajustar trechos de programa à mão. Compare antes e depois no A-0, de 1952: pedir trechos prontos e automatizar sua montagem. FLOW-MATIC e o esforço coletivo do COBOL vieram depois. Relacione ao reaproveitamento de instruções e aos tradutores atuais.
 
 ### 06. O computador calculou. Quem verifica o resultado? · 1962 · 1 min
 
@@ -250,7 +250,7 @@ Convide um voluntário ou uma dupla para explicar a sequência: negar pedido ine
 
 ### 52. Quiz da turma: dez perguntas para competir. · 21 min
 
-Crie a sala no painel e projete o QR. Os alunos entram pelo navegador com um apelido. São dez perguntas, cem pontos por acerto e empates compartilhados. A rodada fecha quando todos respondem, o prazo termina ou o apresentador pede o resultado. Comente a explicação e o placar antes de avançar. O quiz exige internet; o token do apresentador não faz parte do QR.
+Crie a sala no painel e projete o QR. Os alunos entram pelo navegador com um apelido. São dez perguntas, cem pontos por acerto e empates compartilhados. Escolha de 2 a 3 minutos por pergunta. Pelo QR, o aluno só digita o nome; no celular, seleciona e confirma sua alternativa. O tempo esgotado bloqueia novos envios, mas o resultado só aparece ao clicar em Revelar resposta e explicação. O ranking final mostra todos por acertos. Comente a explicação e o placar antes de avançar. O quiz exige internet; o token do apresentador não faz parte do QR.
 
 ### 53. Qual parte você quer explorar depois? · 1 min
 

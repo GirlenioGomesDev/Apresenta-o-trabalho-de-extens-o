@@ -2,7 +2,7 @@
 
 Oficina para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.8.0#inicio)** · versão 2.8.0
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.8.1&rev=17#inicio)** · versão 2.8.1
 
 ## Contexto para quem está começando - versão 2.8
 

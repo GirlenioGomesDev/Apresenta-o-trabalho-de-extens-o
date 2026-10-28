@@ -3,13 +3,13 @@
 ## Conduzir a competição
 
 1. Abra a oficina e clique em **04 · Participar**. A competição aparece diretamente nessa etapa.
-2. Escolha 30, 45 ou 60 segundos por pergunta e clique em **Criar sala e mostrar QR**.
-3. Projete o QR. Cada aluno usa a câmera do Android/iPhone, toca no link HTTPS e escolhe um apelido. Também é possível usar o link ou o código de seis caracteres.
+2. Escolha 2, 2 minutos e 30 segundos ou 3 minutos por pergunta e clique em **Criar sala e mostrar QR**.
+3. Projete o QR. Cada aluno usa a câmera do Android/iPhone, toca no link HTTPS e digita seu nome. Pelo QR, a sala é fixa e não há campo para editar o código. Na entrada sem QR, é possível informar o código de seis caracteres.
 4. Veja os participantes aparecerem automaticamente e clique em **Começar a primeira pergunta**.
-5. A rodada fecha quando todos os participantes cadastrados respondem, o tempo acaba ou o apresentador pede o resultado. Leia a explicação e veja o placar. Clique em **Próxima pergunta** quando a turma estiver pronta.
-6. Depois da décima pergunta, abra a classificação final. A opção de nova competição cria outra sala.
+5. O aluno seleciona uma alternativa, pode trocá-la e toca em **Confirmar resposta**. Apenas esse botão envia sua escolha. Quando todos respondem ou o tempo acaba, o gabarito continua oculto. Ao terminar o prazo, novas respostas são bloqueadas. Clique em **Revelar resposta e explicação** para mostrar a letra correta, o motivo, os acertos/erros individuais nos celulares e o placar. Depois clique em **Próxima pergunta**.
+6. Depois da décima pergunta, abra o ranking final de todos os participantes, ordenado por número de acertos. A opção de nova competição cria outra sala.
 
-Cada acerto vale **100 pontos**, até 1.000. Não há bônus de velocidade; quem soma o mesmo total divide a posição. Vale a primeira resposta de cada participante por rodada. O servidor controla prazo, resposta e pontuação. Uma atualização da página restaura a sessão no mesmo navegador, quando o armazenamento local está disponível.
+Cada acerto vale **100 pontos**, até 1.000. Não há bônus de velocidade; quem soma o mesmo total divide a posição. Vale a primeira resposta confirmada de cada participante por rodada. O servidor controla prazo, resposta e pontuação. Uma atualização da página restaura a sessão no mesmo navegador, quando o armazenamento local está disponível.
 
 Todos precisam de internet. O site não pede instalação, conta ou permissão de câmera; a leitura acontece no aplicativo de câmera do aparelho. O QR contém somente o endereço público `competicao.html?sala=CODIGO`. O token do apresentador não faz parte do link.
 
@@ -25,7 +25,7 @@ Todos precisam de internet. O site não pede instalação, conta ou permissão d
 - `server/quiz-schema.sql`: salas, participantes e respostas. As chaves únicas impedem pontos duplicados.
 - `server/quiz-local-db.mjs`: adaptador SQLite local compatível com as operações D1 usadas pela API.
 
-Gabarito e explicação não são enviados durante uma pergunta aberta. O servidor guarda hashes dos tokens. Alunos não podem controlar as rodadas. Cada sala dura 24 horas; salas vencidas são removidas quando uma nova é criada. O limite configurado é de 200 participantes por sala e 200 salas ainda válidas; isso é um limite de aplicação, não uma medição de capacidade sob carga.
+Gabarito e explicação só são enviados depois que o apresentador revela, inclusive quando todos responderam ou o tempo esgotou. O servidor guarda hashes dos tokens. Alunos não podem controlar as rodadas. Cada sala dura 24 horas; salas vencidas são removidas quando uma nova é criada. O limite configurado é de 200 participantes por sala e 200 salas ainda válidas; isso é um limite de aplicação, não uma medição de capacidade sob carga.
 
 ## API
 

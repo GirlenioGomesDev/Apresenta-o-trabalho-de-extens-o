@@ -257,9 +257,9 @@ window.WorkshopHistory = {
       "name": "Grace Hopper",
       "scene": "grace-hopper",
       "photo": "grace-hopper",
-      "why": "Programadores copiavam trechos de cálculos e ajustavam endereços de memória à mão. A repetição consumia tempo e favorecia erros; Hopper quis deixar essa montagem para o computador.",
-      "how": "Em 1952, seu A-0 automatizou a combinação de rotinas já preparadas. Depois, Hopper e sua equipe desenvolveram o FLOW-MATIC, com instruções próximas do inglês, que influenciou o COBOL.",
-      "today": "Hoje usamos linguagens, tradutores e bibliotecas para descrever tarefas e reaproveitar soluções. Compilador é um programa que traduz instruções; o A-0 foi uma etapa pioneira dessa história.",
+      "why": "Grace Hopper foi uma matemática e programadora americana. Montar programas exigia copiar cálculos e ajustar posições na memória; ela quis automatizar esse trabalho repetitivo.",
+      "how": "Em 1952, desenvolveu o A-0 para reunir trechos de programa já prontos. Depois, sua equipe criou o FLOW-MATIC, usando palavras próximas do inglês.",
+      "today": "O FLOW-MATIC influenciou o COBOL, criado coletivamente em 1959. Hoje, linguagens e tradutores ajudam a escrever programas sem lidar diretamente com cada operação da máquina.",
       "extra": "O COBOL foi resultado de um esforço coletivo do CODASYL; Hopper não o criou sozinha.",
       "extraSource": "https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf",
       "source": "https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf"
@@ -286,10 +286,10 @@ window.WorkshopHistory = {
       "name": "Alan Turing",
       "scene": "alan-turing",
       "photo": "alan-turing",
-      "why": "Mensagens militares eram transformadas em letras cifradas pela Enigma. Interceptar o rádio não bastava: era preciso descobrir as configurações para compreender o texto.",
-      "how": "Turing ajudou a conceber a Bombe, uma máquina para testar hipóteses de configuração. Gordon Welchman melhorou o projeto; outras equipes construíram, operaram e conferiram o trabalho.",
-      "today": "A Bombe pertence à história. O trabalho mostra como lógica, máquinas e equipes podem investigar um problema. A ideia de seguir regras também aparece nos programas atuais.",
-      "extra": "O trabalho aproveitou avanços dos criptanalistas poloneses Marian Rejewski, Jerzy Różycki e Henryk Zygalski. Engenheiros, operadoras e analistas também foram essenciais. Turing ajudou o esforço aliado; não venceu a guerra sozinho.",
+      "why": "Alan Turing foi um matemático britânico. Na Segunda Guerra, mensagens militares eram escondidas pela Enigma; o desafio era descobrir suas configurações para ler o texto.",
+      "how": "Turing ajudou a projetar a Bombe: uma máquina que acelerava o teste de configurações. Pistas de palavras prováveis permitiam eliminar tentativas incompatíveis.",
+      "today": "Sua ideia de executar regras passo a passo ajuda a entender os programas atuais. Na guerra, lógica, máquinas e trabalho em equipe ajudaram a decifrar mensagens.",
+      "extra": "Os poloneses Marian Rejewski, Jerzy Różycki e Henryk Zygalski abriram caminho. Gordon Welchman, Harold Keen, engenheiros, operadoras e analistas também contribuíram. Turing não venceu a guerra sozinho.",
       "extraSource": "https://www.tnmoc.org/bh-3-the-polish-connection",
       "source": "https://www.tnmoc.org/bh-6-enter-turing-and-welchman"
     }

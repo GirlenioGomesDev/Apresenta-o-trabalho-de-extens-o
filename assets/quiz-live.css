@@ -44,3 +44,13 @@
   .quiz-embedded .quiz-main {padding:24px 20px 28px}
   .quiz-embedded .quiz-room-header {flex-wrap:wrap}
 }
+
+/* Selecionar não envia: a confirmação e o resultado têm rótulos próprios. */
+.quiz-fixed-room {padding:12px 15px;background:#edf5df;border:1px solid #c9dbb9;border-radius:8px}
+.quiz-fixed-room b {font-family:Consolas,monospace;letter-spacing:1px}
+.quiz-explanation h2 {margin-bottom:10px}
+.quiz-explanation .quiz-verdict {font-size:20px;font-weight:800;margin:0 0 14px}
+.quiz-explanation.is-incorrect {background:#fff0e6;border-color:#a44d24}
+.quiz-explanation.is-incorrect :is(p,h2,.quiz-kicker) {color:#713b20}
+.quiz-explanation.unanswered {background:#eef1e8;border-color:#6a785e}
+.quiz-ranking li>strong small>span {display:block;text-align:right;font-size:11px;color:#34573b}

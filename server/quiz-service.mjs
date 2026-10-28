@@ -32,24 +32,14 @@ async function identity(db,r,credential){
   if(!player)throw new QuizError('Sua entrada não foi reconhecida. Entre novamente na sala.',401);
   return {role:'player',...player};
 }
-async function settle(db,r){
-  if(r.phase!=='question')return r;
-  const counts=await db.prepare('SELECT (SELECT COUNT(*) FROM quiz_players WHERE room_code = ?) AS players, (SELECT COUNT(*) FROM quiz_answers WHERE room_code = ? AND question_index = ?) AS answered').bind(r.code,r.code,r.question_index).first();
-  if(Date.now()>=r.deadline||(counts.players>0&&counts.answered>=counts.players)){
-    await db.prepare("UPDATE quiz_rooms SET phase = 'results', version = version + 1 WHERE code = ? AND phase = 'question' AND question_index = ?").bind(r.code,r.question_index).run();
-    return room(db,r.code);
-  }
-  return r;
-}
 async function rankings(db,r){
   const revealed=r.phase==='question'?r.question_index-1:r.question_index;
   const {results}=await db.prepare('SELECT p.id, p.name, COALESCE(SUM(CASE WHEN a.question_index <= ? THEN a.points ELSE 0 END),0) AS score, COALESCE(SUM(CASE WHEN a.question_index <= ? AND a.points > 0 THEN 1 ELSE 0 END),0) AS correct FROM quiz_players p LEFT JOIN quiz_answers a ON a.player_id = p.id AND a.room_code = p.room_code WHERE p.room_code = ? GROUP BY p.id, p.name ORDER BY score DESC, p.joined_at ASC, p.id ASC').bind(revealed,revealed,r.code).all();
   let last=-1,lastRank=0;return results.map((p,index)=>{if(p.score!==last){last=p.score;lastRank=index+1;}return {...p,rank:lastRank};});
 }
 async function state(db,r,who){
-  r=await settle(db,r);
   const counts=await db.prepare('SELECT (SELECT COUNT(*) FROM quiz_players WHERE room_code = ?) AS players, (SELECT COUNT(*) FROM quiz_answers WHERE room_code = ? AND question_index = ?) AS answered').bind(r.code,r.code,r.question_index).first();
-  const result={code:r.code,phase:r.phase,version:r.version,serverTime:Date.now(),expiresAt:r.expires_at,deadline:r.deadline,duration:r.duration,total:questions.length,playerCount:counts.players,answeredCount:counts.answered,role:who.role,questionIndex:r.question_index};
+  const result={code:r.code,phase:r.phase,version:r.version,serverTime:Date.now(),expiresAt:r.expires_at,deadline:r.deadline,duration:r.duration,answeringClosed:r.phase==='question'&&Date.now()>=r.deadline,total:questions.length,playerCount:counts.players,answeredCount:counts.answered,role:who.role,questionIndex:r.question_index};
   if(who.role==='guest')return result;
   if(r.question_index>=0)result.question=publicQuestion(r.question_index,r.phase==='results'||r.phase==='finished');
   if(who.role==='player'){
@@ -66,7 +56,7 @@ async function state(db,r,who){
   return result;
 }
 async function create(db,input){
-  const duration=[30,45,60].includes(input.duration)?input.duration:45;
+  const duration=[120,150,180].includes(input.duration)?input.duration:150;
   await db.prepare('DELETE FROM quiz_rooms WHERE expires_at < ?').bind(Date.now()).run();
   const active=await db.prepare('SELECT COUNT(*) AS total FROM quiz_rooms').first();if(active.total>=200)throw new QuizError('Há muitas salas ativas. Tente mais tarde.',429);
   const hostToken=secret(),digest=await hash(hostToken),now=Date.now();
@@ -131,7 +121,7 @@ export async function handleQuizRequest(request,env){
   try{
     if(!env.DB)throw new QuizError('A sala está indisponível. Tente novamente em instantes.',503);
     const path=new URL(request.url).pathname.replace(/^\/api\/quiz/,'').replace(/\/$/,'');
-    if(path==='/health'&&request.method==='GET'){await env.DB.prepare('SELECT 1 AS ok').first();return respond({ok:true,version:'2.4.0'});}
+    if(path==='/health'&&request.method==='GET'){await env.DB.prepare('SELECT 1 AS ok').first();return respond({ok:true,version:'2.8.1'});}
     if(path==='/rooms'&&request.method==='POST')return respond(await create(env.DB,await body(request)),201);
     const match=path.match(/^\/rooms\/([^/]+)\/(state|join|control|answer)$/);if(!match)throw new QuizError('Caminho não encontrado.',404);
     const code=cleanCode(decodeURIComponent(match[1])),action=match[2];let r=await room(env.DB,code);
@@ -139,7 +129,7 @@ export async function handleQuizRequest(request,env){
     const who=await identity(env.DB,r,token(request));
     if(action==='state'&&request.method==='GET')return respond(await state(env.DB,r,who));
     if(request.method!=='POST')throw new QuizError('Método não permitido.',405);
-    r=await settle(env.DB,r);const input=await body(request);
+    const input=await body(request);
     if(action==='control')return respond(await control(env.DB,r,who,input));
     if(action==='answer')return respond(await answer(env.DB,r,who,input));
     throw new QuizError('Caminho não encontrado.',404);
