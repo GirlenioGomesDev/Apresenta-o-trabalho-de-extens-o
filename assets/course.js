@@ -18,7 +18,11 @@
   $('#semantic-action').addEventListener('click',()=>{$('#semantic-feedback').textContent='Uma ação com nome e resultado perceptível.';});
   $('[data-fake-control]').addEventListener('click',()=>{$('#accessibility-feedback').textContent='A caixa respondeu ao mouse. Agora tente encontrá-la usando apenas Tab.';});
   $('#native-control').addEventListener('click',()=>{$('#accessibility-feedback').textContent='O controle nativo funciona com mouse, Enter ou Espaço quando está em foco.';});
-  $('#switch-theme').addEventListener('click',()=>$('#theme-comparison').classList.toggle('alternate'));
+  $('#switch-theme').addEventListener('click',()=>{
+    const alternate=$('#theme-comparison').classList.toggle('alternate');
+    $('#switch-theme').setAttribute('aria-pressed',String(alternate));
+    $('#switch-theme').textContent=alternate?'Voltar ao visual claro ↺':'Trocar apenas o visual ↻';
+  });
   function updateBox(){
     const padding=Number($('#box-padding').value),border=Number($('#box-border').value);
     $('#box-padding-value').textContent=padding+' px';$('#box-border-value').textContent=border+' px';
@@ -143,14 +147,17 @@
   function showNetwork(){
     const result=window.CourseLogic.networkStatus(networkInput());$('#network-evidence').textContent=result.evidence;
     $$('[data-network-hop]').forEach(hop=>hop.classList.toggle('current',hop.dataset.networkHop===result.stage));
-    $$('[data-network-guess]').forEach(button=>{button.setAttribute('aria-pressed','false');button.classList.remove('selected');});
+    $$('[data-network-guess]').forEach(button=>{button.setAttribute('aria-pressed','false');button.classList.remove('selected');button.removeAttribute('data-outcome');});
+    $('#network-feedback').removeAttribute('data-outcome');
     $('#network-feedback').textContent='Qual etapa você investigaria primeiro? Escolha uma hipótese e explique a pista.';
   }
   ['#network-connected','#network-dns','#network-http'].forEach(selector=>$(selector).addEventListener('change',showNetwork));
   $$('[data-network-guess]').forEach(button=>button.addEventListener('click',()=>{
     const result=window.CourseLogic.networkStatus(networkInput());
-    $$('[data-network-guess]').forEach(other=>{other.setAttribute('aria-pressed',String(other===button));other.classList.toggle('selected',other===button);});
-    $('#network-feedback').textContent=button.dataset.networkGuess===result.stage?'A hipótese combina com a primeira pista deste cenário. '+result.evidence:'Vamos comparar as pistas: '+result.evidence;
+    const matches=button.dataset.networkGuess===result.stage;
+    $$('[data-network-guess]').forEach(other=>{other.setAttribute('aria-pressed',String(other===button));other.classList.toggle('selected',other===button);other.removeAttribute('data-outcome');});
+    button.dataset.outcome=matches?'match':'review';$('#network-feedback').dataset.outcome=button.dataset.outcome;
+    $('#network-feedback').textContent=matches?'A hipótese combina com a primeira pista deste cenário. '+result.evidence:'Vamos comparar as pistas: '+result.evidence;
   }));showNetwork();
 
   function showPoll(){

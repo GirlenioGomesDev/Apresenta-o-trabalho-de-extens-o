@@ -24,7 +24,10 @@ test('os assuntos permanecem agrupados e o quiz integrado continua acessível',(
  const ids=Array.from(course.scenes,s=>s.id);
  for(const [a,b] of [['internet-pacotes','internet-evolucao'],['origem-web','css-historia'],['caso-wannacry','web-na-tela'],['por-tras-do-clique','linguagens'],['lab-css-motion','logica-passos'],['carreiras','lab-software'],['lab-infra','lab-dados'],['lab-dados','lab-cyber']])assert.ok(ids.indexOf(a)<ids.indexOf(b));
  assert.match(html,/Front-end[\s\S]*Back-end/);assert.match(html,/assets\/reading-guide\.js/);
- assert.match(html,/data-quiz-src="competicao.html\?modo=host&amp;embutido=1"/);
+ const embed=html.match(/data-quiz-src="([^"]+)"/);assert.ok(embed,'O quiz precisa estar incorporado à apresentação.');
+ const address=new URL(embed[1].replaceAll('&amp;','&'),'https://example.test/');
+ assert.equal(address.pathname,'/competicao.html');assert.equal(address.searchParams.get('modo'),'host');
+ assert.equal(address.searchParams.get('embutido'),'1');assert.equal(address.searchParams.has('token'),false);
 });
 test('o QR leva apenas à entrada da sala e não carrega credencial do apresentador',()=>{
  const url=qr.joinURL('https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/competicao.html?modo=host&token=segredo#velho','ABC234');

@@ -343,7 +343,12 @@
     target.textContent = feedback.text;
     target.classList.toggle('good', feedback.good);
     target.classList.toggle('warning', !feedback.good);
-    button.closest('.detective-actions').querySelectorAll('.decision-button').forEach(option => option.classList.toggle('selected', option === button));
+    button.closest('.detective-actions').querySelectorAll('.decision-button').forEach(option => {
+      option.classList.toggle('selected', option === button);
+      option.setAttribute('aria-pressed', String(option === button));
+      option.removeAttribute('data-outcome');
+    });
+    button.dataset.outcome = feedback.good ? 'match' : 'review';
   }));
 
   let selectedRole = 'visitante';

@@ -41,7 +41,7 @@ Escolha apenas uma ou duas situações familiares. Peça exemplos do que aparece
 
 ### 04. Turing: regras, máquinas e proteção da informação. · 1936–1940 · 5 min
 
-Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. Retome a segurança atual: conferir identidade e permissões.
+Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. A relação com a segurança atual será retomada no bloco de carreiras. Agora siga para as ferramentas de programação de Hopper.
 
 ### 05. Programar também é tornar ideias compreensíveis. · 1952–1959 · 1 min
 
@@ -57,7 +57,7 @@ Conte as contribuições independentes de Paul Baran e Donald Davies e o marco c
 
 ### 08. A internet começou conectando pesquisadores. · 1969 · 3 min
 
-Esta etapa trata apenas da ARPANET em 1969. O panorama anterior foi distribuído em ordem: pacotes, ARPANET, protocolos, DNS, caminhos sem loop, NSFNET, Web, CSS e expansão comercial. Compare antes e depois dos quatro centros e mostre o IMP. As citações de Licklider e Roberts permanecem aqui.
+Em 1969, centros de pesquisa precisavam compartilhar recursos computacionais à distância. Compare os quatro centros antes e depois das conexões e mostre a fotografia do IMP. Cite Licklider e Larry Roberts como parte do esforço coletivo. A ARPANET é um marco da formação da internet, não a Web nem uma rede pública doméstica. Em seguida, explique a necessidade de interligar redes diferentes.
 
 ### 09. Redes diferentes precisam combinar como conversar. · 1974–1983 · 4 min
 
@@ -65,7 +65,7 @@ Mostre as redes diferentes. Conte o artigo de Cerf e Kahn em 1974 e a transiçã
 
 ### 10. Uma lista central ficou pequena para tantas máquinas. · 1983 · 3 min
 
-Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia.
+Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Siga para 1985: Radia Perlman tratou de outra necessidade das redes, organizar caminhos Ethernet sem ciclos. Depois virão NSFNET e Web; DNS e STP atuam em aspectos diferentes da comunicação. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia.
 
 ### 11. Mais conexões. Mais cuidado com os caminhos. · 1985 · 1 min
 
@@ -73,7 +73,7 @@ Conecte ao assunto de redes: caminhos repetidos podem criar loops. Conte a contr
 
 ### 12. A pesquisa chega a mais instituições. · 1986 · 1 min
 
-Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes.
+Em 1986, a NSFNET conectou pesquisadores a centros de supercomputação e ampliou o alcance acadêmico. Compare as instituições antes e depois. Ela foi importante para expandir a infraestrutura da internet; não era uma rede doméstica como a atual. A próxima etapa mostra a necessidade de compartilhar documentos sobre essa infraestrutura.
 
 ### 13. A Web começou com uma necessidade. · 1989–1993 · 3 min
 
@@ -85,7 +85,7 @@ Na data de 1994, conte a necessidade de separar o conteúdo de sua apresentaçã
 
 ### 15. O acesso cresce além da pesquisa. · 1995 · 1 min
 
-Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes.
+Em 1995, a NSF encerrou o backbone da NSFNET em um contexto de expansão das redes comerciais. Explique isso como parte de um processo de ampliação do acesso, não como uma data única em que a internet passou a existir ou se tornou pública. Agora os três casos reais, de 1996 e 2017, mostram por que criar sistemas também exige testar, recuperar e proteger.
 
 ### 16. Caso real: testar o contexto importa. · 1996 · 1 min
 
@@ -93,7 +93,7 @@ Apresente o caso de 1996 e relacione o problema a testar condições novas e lim
 
 ### 17. Ter um backup. Conseguir restaurar. · Jan. 2017 · 1 min
 
-Feche infraestrutura com recuperação: clique em perda, cópia antiga e recente. Explique que testar restauração faz parte da disponibilidade. No incidente GitLab de 2017, dados recentes do banco foram perdidos; não diga que os repositórios de código foram apagados.
+Continue o histórico em janeiro de 2017. Clique em perda, cópia antiga e recente para comparar o que é recuperável. No incidente GitLab, dados recentes do banco foram perdidos; os repositórios de código não foram apagados. A demonstração prepara a ideia de disponibilidade que será retomada em carreiras. Siga para o WannaCry em maio de 2017.
 
 ### 18. Quando uma falha digital interrompe um serviço real. · Maio 2017 · 2 min
 

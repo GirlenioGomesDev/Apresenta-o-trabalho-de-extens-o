@@ -1,0 +1,185 @@
+/* Cores por superfície. Um componente escuro muda texto e fundo juntos. */
+.scene {
+  --ui-text: #f1f7e9;
+  --ui-muted: #d1e2c5;
+  --ui-link: #d5f7a8;
+  --ui-focus: #d7ff8d;
+  color: var(--ui-text);
+  animation:none;
+}
+.scene :is(.reading-region,.hero-result,.course-result,.function-result,.browser-preview,
+  .course-support-note,.experiment-feedback,.course-output-warning,.starting-detail,
+  .web-example,.theme-comparison,.local-route-node,.semantic-page,.accessibility-compare>div,
+  .data-question-board,.service-recovery,.evidence-tags,.history-photo>button) {
+  --ui-text: #183b2b;
+  --ui-muted: #395740;
+  --ui-link: #235c35;
+  --ui-focus: #235c35;
+  color: var(--ui-text);
+}
+.scene :is(.course-editor,.function-editor,.code-editor,.hero-browser,
+  .course-console,.live-console,.web-live-console,.theme-comparison.alternate) {
+  --ui-text: #edf6e5;
+  --ui-muted: #c0d5b6;
+  --ui-link: #d6f5a9;
+  --ui-focus: #d7ff8d;
+  color: var(--ui-text);
+}
+/* A especificidade iguala as regras anteriores; os filhos usam a cor da superfície. */
+.scene.scene :is(h2,h3,h4,p,li,dd,dt,label,summary,figcaption,small,span,b,strong,em,output,th,td,a,i) {
+  color: var(--ui-text);
+}
+.scene.scene :is(.mini-label,.eyebrow,.course-small,.course-lead,.lead,.concept-caption,
+  .course-support-note,.experiment-feedback,.history-date,.history-endpoint,.history-brief-credit,
+  .axis-label,.tree-root,.box-margin-label,.local-route-arrow,.hero-caption,.hero-orbit,
+  .result-address,.preview-footer,.gate-zone-label,.protected-zone,.permission-label,
+  .condition-result,.code-line-numbers,.course-line-gutter,.offline-label,.result-state) {
+  color: var(--ui-text);
+}
+.scene.scene :is(.source-link,.text-link,.references>a,.starting-resources a) {
+  color: var(--ui-link);
+}
+.scene.scene :is(.course-question,.history-brief-credit) {color:var(--ui-text)!important}
+.scene.scene .history-brief-credit {font-size:17px!important;line-height:1.8!important}
+.scene.scene .history-photo details p {
+  color:var(--ui-muted)!important;
+  font-size:14px!important;
+  line-height:1.75!important;
+}
+.scene.scene .history-photo :is(summary,a) {color:var(--ui-link);font-size:14px}
+.scene.scene .history-photo>button>span {color:#254b30;background:#f2f7e8}
+.scene.scene :is(.hero-caption,.hero-orbit,.hero-concept-list>div>span,
+  .hero-concept-list small,.result-address,.result-bottom,.preview-footer,
+  .visual-browser-bar,.lab-context-navigation>span,.offline-label) {font-size:14px;line-height:1.65}
+.scene.scene .hero-visual {--ui-text:#edf6e5;--ui-muted:#c0d5b6;color:var(--ui-text)}
+.scene.scene .hero-result {--ui-text:#183b2b;--ui-muted:#395740;color:var(--ui-text)}
+.scene.scene .hero-result h2 {color:var(--ui-text)}
+.scene.scene :is(.internet-person-initials,.safety-symbol) {color:#244c30}
+.scene.scene :is(.evolution-nodes,.evolution-whole,.evolution-packets,
+  .evolution-protocol,.evolution-documents,.evolution-dns,.network-loop) {
+  --ui-text:#254b30;--ui-muted:#395740;color:var(--ui-text);
+}
+.scene.scene .incident-poster {--ui-text:#183b2b;color:var(--ui-text)}
+.scene.scene .incident-poster :is(.rocket-illustration,.backup-glyph,.service-illustration) {color:#285637}
+.scene.scene .reading-region:is(.lead,.course-lead,.experiment-feedback) {color:#183b2b}
+.scene.scene .reading-region-start::before,.scene.scene .reading-region-start::after {pointer-events:none}
+
+/* Texto, seleção e foco seguem o mesmo contrato em todas as demonstrações. */
+.scene.scene button,.scene.scene a.button {color:var(--ui-text);min-height:44px}
+.scene.scene button :is(span,b,small,strong) {color:var(--ui-text)}
+.scene.scene :is(button[aria-pressed=true],button[aria-selected=true],button.active,button.selected) {
+  --ui-text:#15331f;--ui-muted:#2d4d31;--ui-link:#174c28;--ui-focus:#204d2d;
+  color:var(--ui-text);background:#c6f175;border-color:#456f37;
+  box-shadow:inset 0 -3px #345e32;
+}
+.scene.scene :is(.button.primary,.run-button,#hero-try,.semantic-page button,.visual-control-row button) {
+  --ui-text:#15331f;--ui-muted:#2d4d31;--ui-focus:#244f2b;
+  color:#15331f;background:#c6f175;border:1px solid #88b657;
+}
+.scene.scene :is(.button.secondary,.course-challenge button,.backup-simulation button) {
+  --ui-text:#21452e;--ui-muted:#395740;--ui-focus:#235c35;
+  color:#21452e;background:#f0f6e8;border:1px solid #789667;
+  border-radius:7px;padding:11px 15px;
+}
+.scene.scene button:disabled {
+  opacity:1;box-shadow:none;background:#e1e7dc;color:#465b48;border-color:#9baa92;
+  --ui-text:#465b48;--ui-muted:#465b48;cursor:not-allowed;
+}
+.scene.scene button:not(:disabled):hover,.scene.scene a.button:hover {outline:2px solid var(--ui-focus);outline-offset:2px}
+.scene.scene :is(button,a,summary,input,select,textarea):focus-visible {outline:3px solid var(--ui-focus);outline-offset:4px}
+.scene.scene .history-photo>button {min-height:0}
+.scene.scene input:not([type=checkbox]):not([type=range]),.scene.scene select {
+  color:#183b2b;background:#f8fbf1;border-color:#789667;min-height:44px;
+}
+.scene.scene input::placeholder {color:#4b6350;opacity:1}
+.scene.scene input:is([type=checkbox],[type=range]) {accent-color:#2c6a3a}
+.scene.scene .lab-stage-controls button:not(.active),.scene.scene .starting-options button:not(.active) {color:var(--ui-text)}
+.scene.scene .course-line-gutter,.scene.scene .code-line-numbers {color:#c0d5b6}
+.scene.scene .course-console [role=log]:empty::before {color:#c0d5b6}
+.scene.scene .course-code-highlight {color:#edf6e5}
+.scene.scene .course-code-highlight .token-keyword {color:#d8c0ff}
+.scene.scene .course-code-highlight .token-string {color:#dcf3a4}
+.scene.scene .course-code-highlight .token-number {color:#ffd8ac}
+.scene.scene .course-code-highlight .token-comment {color:#bbd0b4}
+.scene.scene :is(.console-entry.error,.console-entry.warn) {color:#ffd0ad}
+.scene.scene .course-has-error [data-course-status] {color:#ffd0ad}
+.scene.scene :is(.test-pass,.policy-match) {--ui-text:#214b30;color:#214b30}
+.scene.scene :is(.test-fail,.policy-mismatch,.condition-result:not(.condition-true)) {
+  --ui-text:#744016;--ui-muted:#744016;color:#744016;
+}
+.scene.scene :is(.policy-mismatch,.test-fail) {background:#fff0da;border-color:#aa723c}
+.scene.scene .record-present {color:#21492d;background:#d3e7b5}
+.scene.scene .record-missing {opacity:1;color:#72532f;background:#f2e9da;text-decoration:line-through}
+.scene.scene .record-excluded {opacity:1;color:#744016;background:#fff0da}
+.scene.scene .cable-end :is(span,b),.scene.scene .turing-tape span {color:#284e31}
+.scene.scene .turing-hypotheses .candidate-rejected {opacity:1;color:#514b40;background:#ebe8df}
+.scene.scene .turing-hypotheses .candidate-rejected :is(b,small,i) {color:#514b40}
+.scene.scene .game-stars .picked {color:#66531b}
+.scene.scene .chronology-stamp {--ui-text:#edf6e5;color:var(--ui-text)}
+.scene.scene .career-subnav {--ui-text:#e9f6df;--ui-link:#d5f7a8;color:var(--ui-text)}
+.scene.scene .career-subnav a.active {--ui-text:#15331f;color:var(--ui-text);background:#c6f175}
+.scene.scene .story-bridge {--ui-text:#e3eed7;color:var(--ui-text)}
+.scene.scene .course-lab-tools {--ui-text:#edf6e5;color:var(--ui-text);flex-wrap:wrap}
+.scene.scene .course-lab-tools>span {font-size:13px}
+.scene.scene :is(.course-run-row [role=status],.live-console-heading [role=status],.live-console-heading,.course-console>span) {font-size:13px;line-height:1.6}
+.scene.scene :is(.course-result-toolbar,.live-result-toolbar,.course-file-tabs) {min-height:54px;height:auto;flex-wrap:wrap;padding-top:5px;padding-bottom:5px}
+.scene.scene :is(.course-result-toolbar>b,.live-result-toolbar,.course-result-toolbar>span:last-child) {font-size:13px;line-height:1.6}
+.scene.scene .course-editor-view {height:364px}
+.scene.scene .course-code-stack {height:332px}
+.scene.scene .course-code-stack>textarea,.scene.scene .course-code-highlight,.scene.scene .course-line-gutter {font-size:16px;line-height:27px}
+.scene.scene .course-code-steps button {padding:13px 16px;border-radius:7px}
+.scene.scene .course-code-steps button span {font-size:14px}
+.scene.scene .course-challenge>span,.scene.scene .test-results small {font-size:15px}
+.scene.scene .course-challenge>div {gap:16px}
+.scene.scene .course-frame-width.narrow {max-width:100%}
+.scene.scene .web-live-console {background:#17251d;border-color:#5f7857}
+.scene.scene .lab-bottom {--ui-text:#edf6e5;color:var(--ui-text)}
+.scene.scene .lab-bottom.reading-region {--ui-text:#183b2b}
+.scene.scene .web-lab-live-tools {color:var(--ui-text)}
+.scene.scene .web-lesson-note {--ui-text:#183b2b;color:var(--ui-text)}
+.scene.scene .lab-context-navigation {--ui-text:#dcebd0;color:var(--ui-text)}
+.scene.scene .diagnostic-path i,.scene.scene .career-mini-case i {color:var(--ui-text)}
+.scene.scene .editor-pane {--ui-text:#edf6e5;--ui-muted:#c0d5b6;--ui-focus:#d7ff8d;color:var(--ui-text)}
+.scene.scene .discussion-prompt {--ui-text:#183b2b;color:var(--ui-text)}
+.scene.scene #history-dns-result,.scene.scene #box-demo>span,
+.scene.scene #poll-reset,.scene.scene #data-reset,.scene.scene #command-list .empty-program {color:#254b30}
+.scene.scene #command-list :is(b,small) {color:#254b30;font-size:14px}
+.scene.scene #turing-expected-text {color:#254b30}
+.scene.scene .theme-comparison {transition:border-radius .25s}
+.scene.scene button[data-outcome=review],.scene.scene .decision-feedback.warning,
+.scene.scene .experiment-feedback[data-outcome=review] {
+  --ui-text:#744016;--ui-muted:#744016;--ui-focus:#744016;
+  color:#744016;background:#fff0da;border-color:#aa723c;
+}
+.scene.scene button[data-outcome=review] {box-shadow:inset 0 -3px #98632e}
+.scene.scene .experience-options button {border-radius:7px;row-gap:9px;margin:3px 0}
+.scene.scene .experience-options button>span,.scene.scene .starting-options button>span {font-size:14px;color:var(--ui-text)}
+.scene.scene .experience-options b {font-size:20px}
+.scene.scene .experience-options small,.scene.scene .behind-layers small {font-size:17px}
+.scene.scene .hero-concept-list b {font-size:18px}
+.scene.scene .hero-concept-list small {font-size:14px}
+.scene.scene .hero-caption {bottom:-44px}
+.topbar .icon-button:hover {background:#31533c;color:#f1f7e9}
+.topbar :is(button,a):focus-visible,.presentation-footer :is(button,a):focus-visible {outline:3px solid #d7ff8d;outline-offset:4px}
+.overview-dialog,.help-dialog,.presenter-notes,.history-photo-dialog {background:#edf4e3;color:#183b2b}
+.overview-dialog :is(h2,h3,a,small,span),.help-dialog :is(p,b,kbd),.presenter-notes :is(p,li),.history-photo-dialog :is(p,a) {color:#254a31}
+@media(max-width:900px) {
+  .scene.scene .course-workspace,.scene.scene .function-workspace {grid-template-columns:1fr}
+  .scene.scene .course-code-stack>textarea,.scene.scene .course-code-highlight,.scene.scene .course-line-gutter {font-size:14px;line-height:25px}
+}
+@media(max-width:700px) {
+  .scene.scene .course-code-steps {grid-template-columns:1fr}
+  .scene.scene .course-run-row {flex-wrap:wrap;row-gap:12px}
+  .scene.scene .course-run-row [role=status] {max-width:none;flex-basis:100%}
+  .scene.scene .course-lab-tools>span {flex-basis:100%}
+  .scene.scene .course-result-toolbar {gap:10px;padding:12px}
+  .scene.scene .course-result-toolbar>span:last-child {margin-left:0}
+  .scene.scene .hero-caption {bottom:-35px;font-size:12px}
+  .scene.scene .experience-options {grid-template-columns:1fr}
+  .scene.scene .experience-options b {font-size:18px}
+  .scene.scene .experience-options small,.scene.scene .behind-layers small {font-size:15px}
+  .scene.scene .test-results small {font-size:14px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .scene.scene *, .scene.scene *::before, .scene.scene *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

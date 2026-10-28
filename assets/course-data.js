@@ -557,7 +557,7 @@ window.WorkshopCourse = {
       ],
       "support": {
         "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
-        "js": "const formulario = document.querySelector('#perfil');\ndocument.querySelector('#validar').addEventListener('click', () => {\n  if (!formulario.reportValidity()) return;\n  const nome = document.querySelector('#apelido').value;\n  document.querySelector('#saida').textContent = nome + ': campo válido!';\n});"
+        "js": "const formulario = document.querySelector('#perfil');\nconst campo = document.querySelector('#apelido');\nconst saida = document.querySelector('#saida');\nfunction validarCampo() {\n  const minimo = Math.max(0, campo.minLength);\n  const mensagem = campo.required && !campo.value\n    ? 'Preencha o apelido antes de testar.'\n    : campo.value && campo.value.length < minimo\n      ? 'Use pelo menos ' + minimo + ' caracteres.' : '';\n  campo.setCustomValidity(mensagem);\n  if (!formulario.reportValidity()) {\n    saida.textContent = campo.validationMessage || 'Confira o campo antes de continuar.';\n    return;\n  }\n  saida.textContent = campo.value + ': campo válido!';\n}\ncampo.addEventListener('input', () => {\n  campo.setCustomValidity('');\n  saida.textContent = '';\n});\ndocument.querySelector('#validar').addEventListener('click', validarCampo);\nformulario.addEventListener('submit', event => {\n  event.preventDefault();\n  validarCampo();\n});"
       },
       "supportNote": "O visual e o botão de teste estão preparados com CSS e JavaScript de apoio. Aqui editamos apenas o HTML do campo. Nada é enviado."
     },
@@ -688,7 +688,7 @@ window.WorkshopCourse = {
         "css": "* { box-sizing: border-box; }\nbody { margin:0; padding:24px; background:#edf3e4; color:#183323; font:15px/1.6 system-ui,sans-serif; }\nmain { max-width:620px; margin:auto; }\nh1 { font-size:28px; line-height:1.15; }\nh2 { font-size:20px; }\narticle, .painel { background:#fffef8; padding:18px; margin:14px 0; border:1px solid #cfdbc0; border-radius:12px; }\nbutton { background:#c5ec6a; color:#183323; border:0; border-radius:7px; padding:10px 14px; font:600 14px system-ui; cursor:pointer; }\ninput,select { max-width:100%; padding:10px; font:14px system-ui; border:1px solid #a8bc95; border-radius:6px; }\nlabel { display:block; margin:12px 0; }\na,summary { color:#325b30; cursor:pointer; }\nbutton:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #526f36; outline-offset:3px; }\noutput { display:block; margin-top:14px; font-weight:600; }\n",
         "js": "const campo = document.querySelector('#busca');\nfunction atualizarLista() {\n  const encontrados = buscar(campo.value);\n  const lista = document.querySelector('#resultados');\n  lista.replaceChildren();\n  for (const titulo of encontrados) {\n    const item = document.createElement('li');\n    item.textContent = titulo;\n    lista.appendChild(item);\n  }\n  document.querySelector('#contagem').textContent = encontrados.length + ' resultados';\n}\ncampo.addEventListener('input', atualizarLista);\natualizarLista();"
       },
-      "supportNote": "A caixa de busca e a atualização visual já estão preparadas. O editor contém a função que decide quais títulos entram no resultado."
+      "supportNote": "A caixa de busca e a atualização visual já estão preparadas. O editor contém a função que decide quais títulos entram no resultado. A comparação inicial diferencia maiúsculas de minúsculas: compare Java e java. O desafio é melhorar essa regra."
     },
     "lab-js-carrinho": {
       "type": "web",
@@ -768,7 +768,8 @@ window.WorkshopCourse = {
           "label": "Corrigir",
           "text": "Uma função corrigida precisa preservar os casos que já funcionavam e tratar os limites."
         }
-      ]
+      ],
+      "supportNote": "A regra inicial está incompleta de propósito. Os testes vermelhos mostram os casos que vamos corrigir; use as dicas e compare com a solução."
     }
   },
   "sources": {
@@ -944,7 +945,7 @@ window.WorkshopCourse = {
     },
     "caso-gitlab": {
       "time": "1 min / História · contribuições em ordem cronológica",
-      "text": "Feche infraestrutura com recuperação: clique em perda, cópia antiga e recente. Explique que testar restauração faz parte da disponibilidade. No incidente GitLab de 2017, dados recentes do banco foram perdidos; não diga que os repositórios de código foram apagados."
+      "text": "Continue o histórico em janeiro de 2017. Clique em perda, cópia antiga e recente para comparar o que é recuperável. No incidente GitLab, dados recentes do banco foram perdidos; os repositórios de código não foram apagados. A demonstração prepara a ideia de disponibilidade que será retomada em carreiras. Siga para o WannaCry em maio de 2017."
     },
     "lab-dados": {
       "time": "3 min / Carreira · análise de dados",
@@ -1024,23 +1025,23 @@ window.WorkshopCourse = {
     },
     "internet-dns": {
       "time": "3 min / História · contribuições em ordem cronológica",
-      "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Faça a transição para a Web de Tim Berners-Lee, de 1989 a 1993. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
+      "text": "Mostre que nomes já existiam na lista HOSTS.TXT. A contribuição descrita por Paul Mockapetris na RFC 882, de novembro de 1983, foi organizar um sistema distribuído. Escolha um nome fictício, avance pela hierarquia e só depois revele o endereço. A demonstração omite cache e não consulta a rede. DNS não baixa o conteúdo da página. Siga para 1985: Radia Perlman tratou de outra necessidade das redes, organizar caminhos Ethernet sem ciclos. Depois virão NSFNET e Web; DNS e STP atuam em aspectos diferentes da comunicação. Nos cartões de Mockapetris, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
     },
     "internet-evolucao": {
       "time": "3 min / História · contribuições em ordem cronológica",
-      "text": "Esta etapa trata apenas da ARPANET em 1969. O panorama anterior foi distribuído em ordem: pacotes, ARPANET, protocolos, DNS, caminhos sem loop, NSFNET, Web, CSS e expansão comercial. Compare antes e depois dos quatro centros e mostre o IMP. As citações de Licklider e Roberts permanecem aqui."
+      "text": "Em 1969, centros de pesquisa precisavam compartilhar recursos computacionais à distância. Compare os quatro centros antes e depois das conexões e mostre a fotografia do IMP. Cite Licklider e Larry Roberts como parte do esforço coletivo. A ARPANET é um marco da formação da internet, não a Web nem uma rede pública doméstica. Em seguida, explique a necessidade de interligar redes diferentes."
     },
     "alan-turing": {
       "time": "5 min / História · contribuições em ordem cronológica",
-      "text": "Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. Retome a segurança atual: conferir identidade e permissões."
+      "text": "Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. A relação com a segurança atual será retomada no bloco de carreiras. Agora siga para as ferramentas de programação de Hopper."
     },
     "historia-nsfnet": {
       "time": "1 min / História · contribuições em ordem cronológica",
-      "text": "Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes."
+      "text": "Em 1986, a NSFNET conectou pesquisadores a centros de supercomputação e ampliou o alcance acadêmico. Compare as instituições antes e depois. Ela foi importante para expandir a infraestrutura da internet; não era uma rede doméstica como a atual. A próxima etapa mostra a necessidade de compartilhar documentos sobre essa infraestrutura."
     },
     "historia-expansao": {
       "time": "1 min / História · contribuições em ordem cronológica",
-      "text": "Siga a data deste marco. Leia a necessidade, como surgiu e seu legado atual. Compare os dois desenhos ao mesmo tempo. O conteúdo vem do panorama histórico anterior e agora ocupa seu lugar cronológico, sem repetir a demonstração nas páginas seguintes."
+      "text": "Em 1995, a NSF encerrou o backbone da NSFNET em um contexto de expansão das redes comerciais. Explique isso como parte de um processo de ampliação do acesso, não como uma data única em que a internet passou a existir ou se tornou pública. Agora os três casos reais, de 1996 e 2017, mostram por que criar sistemas também exige testar, recuperar e proteger."
     }
   },
   "choices": {

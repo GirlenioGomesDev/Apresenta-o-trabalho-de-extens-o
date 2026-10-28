@@ -2,7 +2,17 @@
 
 Oficina para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.6.0#inicio)** · versão 2.6.0
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.0#inicio)** · versão 2.7.0
+
+## Revisão de funcionamento e contraste - versão 2.7
+
+- Cores passam a acompanhar a superfície clara ou escura, inclusive após selecionar um controle ou trocar o tema do exemplo.
+- Rótulos, console, resultados, estados desativados e placar ganharam contraste e foco visível. A troca de página não usa mais um efeito que apaga o conteúdo durante a entrada.
+- O formulário informa a recusa, acompanha mudanças de `minlength` e limpa uma confirmação anterior quando o campo é editado. O envio continua local.
+- Os desafios que começam com código incompleto agora explicam essa intenção antes da prática. As notas do apresentador foram alinhadas à ordem histórica existente.
+- 41 testes automatizados, revisão das 55 páginas no navegador e em largura de 390 px, além de uma competição de dez rodadas entre apresentador e aluno de teste.
+
+O registro de correções e da cobertura está em [REVISAO.md](docs/REVISAO.md). O conteúdo, as práticas e a ordem dos módulos foram preservados.
 
 ## Mesmos conteúdos, leitura numerada e sequência cronológica
 
