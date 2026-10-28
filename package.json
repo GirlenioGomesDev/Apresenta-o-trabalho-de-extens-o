@@ -1,6 +1,6 @@
 {
   "name": "fabrica-de-software-na-pratica",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "private": true,
   "description": "Oficina completa com histórico em ordem de datas, numeração fixa, práticas e quiz próprio.",
   "scripts": {

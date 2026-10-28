@@ -63,6 +63,11 @@
 .scene.scene .incident-poster :is(.rocket-illustration,.backup-glyph,.service-illustration) {color:#285637}
 .scene.scene .reading-region:is(.lead,.course-lead,.experiment-feedback) {color:#183b2b}
 .scene.scene .reading-region-start::before,.scene.scene .reading-region-start::after {pointer-events:none}
+/* O título numerado precisa de espaço mesmo em blocos com padding próprio. */
+.scene.scene .reading-region-start {padding-top:110px}
+@media(max-width:700px) {
+  .scene.scene .reading-region-start {padding-top:124px}
+}
 
 /* Texto, seleção e foco seguem o mesmo contrato em todas as demonstrações. */
 .scene.scene button,.scene.scene a.button {color:var(--ui-text);min-height:44px}
@@ -131,7 +136,9 @@
 .scene.scene .course-code-steps button span {font-size:14px}
 .scene.scene .course-challenge>span,.scene.scene .test-results small {font-size:15px}
 .scene.scene .course-challenge>div {gap:16px}
-.scene.scene .course-frame-width.narrow {max-width:100%}
+.scene.scene .course-frame-width {height:auto;flex:none;transition:none}
+.scene.scene .course-frame-width.narrow {width:360px;max-width:100%}
+.scene.scene .course-frame-width>iframe {height:410px}
 .scene.scene .web-live-console {background:#17251d;border-color:#5f7857}
 .scene.scene .lab-bottom {--ui-text:#edf6e5;color:var(--ui-text)}
 .scene.scene .lab-bottom.reading-region {--ui-text:#183b2b}

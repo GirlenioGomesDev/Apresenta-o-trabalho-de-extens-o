@@ -17,3 +17,30 @@
 .quiz-main .quiz-button:disabled {opacity:1;color:#465b48;background:#e1e7dc;border:1px dashed #8a9f7a;cursor:not-allowed}
 .quiz-main .quiz-answer:disabled {opacity:1}
 .quiz-main .quiz-trophy {color:#37753c}
+
+/* O quiz mantém o próprio respiro mesmo dentro da apresentação. */
+.quiz-embedded .quiz-main {
+  padding:clamp(24px,3.5vw,44px);
+  max-width:1360px;
+  min-width:0;
+}
+.quiz-welcome {grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.quiz-lobby {grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+.quiz-lobby-footer {grid-template-columns:minmax(0,1fr) auto}
+#quiz-app,.quiz-welcome>*,.quiz-lobby>*,.quiz-lobby-footer>*,.quiz-ranking li>b {min-width:0}
+.quiz-main :is(h1,h2,p,.quiz-kicker,.quiz-answer b,.quiz-ranking li>b) {overflow-wrap:anywhere}
+.quiz-qr-card {width:100%;justify-self:center}
+.quiz-round-footer>.quiz-button {max-width:100%;white-space:normal}
+@media(max-width:900px) {
+  .quiz-welcome {grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .quiz-lobby {grid-template-columns:minmax(0,1fr) minmax(220px,.75fr)}
+  .quiz-lobby-footer {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:700px) {
+  .quiz-welcome,.quiz-lobby {grid-template-columns:minmax(0,1fr)}
+  .quiz-embedded .quiz-welcome {min-height:auto}
+}
+@media(max-width:650px) {
+  .quiz-embedded .quiz-main {padding:24px 20px 28px}
+  .quiz-embedded .quiz-room-header {flex-wrap:wrap}
+}

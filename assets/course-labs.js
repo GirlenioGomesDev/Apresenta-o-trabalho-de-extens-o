@@ -64,7 +64,25 @@
     status(state,'Executando…');log(state,undefined,'log',true);
     if(state.lesson.type==='web'){
       state.token='web-'+state.id+'-'+Math.random();
-      state.frame.srcdoc=logic.buildPreview({html:state.files.html||'',css:(state.lesson.support?.css||'')+'\n'+(state.files.css||''),js:(state.files.js||'')+'\n'+(state.lesson.support?.js||''),stage:3,token:state.token});
+      // A altura acompanha a quebra de linhas ao alternar Ampla/Estreita.
+      // O token e a janela emissora são conferidos no receptor abaixo.
+      const reportSize=`\n(function(){
+        let pending=false,lastHeight=0;
+        function measure(){
+          if(pending)return;pending=true;
+          requestAnimationFrame(()=>{
+            pending=false;
+            const height=Math.ceil(document.body.getBoundingClientRect().height);
+            if(height===lastHeight)return;lastHeight=height;
+            parent.postMessage({kind:'workshop-preview-size',token:${JSON.stringify(state.token)},height},'*');
+          });
+        }
+        if(typeof ResizeObserver==='function')new ResizeObserver(measure).observe(document.body);
+        window.addEventListener('resize',measure);window.addEventListener('load',measure);
+        if(document.fonts)document.fonts.ready.then(measure);
+        measure();
+      })();`;
+      state.frame.srcdoc=logic.buildPreview({html:state.files.html||'',css:(state.lesson.support?.css||'')+'\n'+(state.files.css||''),js:(state.files.js||'')+'\n'+(state.lesson.support?.js||'')+reportSize,stage:3,token:state.token});
       status(state,'Prévia atualizada · editar reinicia o exemplo');
     }else{
       state.requestId++;
@@ -161,6 +179,11 @@
     for(const state of labs.values()){
       const message=event.data;if(event.source!==state.frame.contentWindow||!message||message.token!==state.token)continue;
       if(state.lesson.type==='web'){
+        if(message.kind==='workshop-preview-size'){
+          const height=Number(message.height);
+          if(Number.isFinite(height)&&height>0)state.frame.style.height=Math.max(410,Math.min(1800,height+8))+'px';
+          return;
+        }
         if(!['workshop-console','workshop-error'].includes(message.kind))return;
         log(state,message.message,message.kind==='workshop-error'?'error':message.level);
         if(message.kind==='workshop-error')status(state,'Erro no exemplo · confira o console',true);return;

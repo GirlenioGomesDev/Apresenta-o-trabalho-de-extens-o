@@ -1,3 +1,24 @@
+# Ajustes das imagens - versão 2.7.1
+
+| Pendência | Correção |
+| --- | --- |
+| Texto do quiz encostado na borda esquerda, inclusive ao mostrar o QR. | Margem interna responsiva no próprio quiz embutido; a grade reserva espaço para texto e QR. |
+| Ao selecionar Estreita, títulos invadiam outros cartões ou eram cortados. | Quebra de palavras dentro dos cartões, preenchimento adaptável e prévia de até 360 px. |
+| O conteúdo reorganizado em uma coluna ultrapassava a altura original da prévia. | A altura acompanha o conteúdo e as mudanças de largura. A mensagem de ajuste é aceita somente do iframe e token correspondentes, com limites de altura. |
+| Número e título de leitura podiam sobrepor o começo do desafio ou de outro bloco. | Espaço superior reservado também em componentes com preenchimento próprio, com ajuste para telas menores. |
+
+Verificação desta revisão:
+
+- 41 testes automatizados aprovados (`npm run check`).
+- 55 páginas conferidas no computador e em uma área de 390 px: sem transbordamento horizontal ou colisão entre o título numerado e o começo do conteúdo.
+- Seis laboratórios Web conferidos em tela menor, sem transbordamento horizontal no resultado.
+- Troca Ampla/Estreita, solução em uma coluna, edição ao vivo e restauração. A prévia cresceu de 410 para 626 px ao receber mais conteúdo e voltou a 410 px ao restaurar.
+- Quiz em larguras de 320, 390, 700, 768, 1024 e 1366 px. Criação da sala, QR, entrada de aluno, pergunta, resposta e placar de 100 pontos verificados no ambiente de teste.
+
+O exercício de grade conserva as três colunas do código inicial; a solução usa `@media` para reorganizar em uma coluna. O conteúdo passa a permanecer dentro de cada cartão durante essa comparação. Histórias, fotos, cronograma, carreiras e práticas foram preservados. Os testes de largura foram realizados no navegador, sem aparelhos físicos Android ou iOS.
+
+---
+
 # Revisão da apresentação - versão 2.7
 
 ## Correções confirmadas

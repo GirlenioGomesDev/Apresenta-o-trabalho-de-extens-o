@@ -2,7 +2,14 @@
 
 Oficina para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.0#inicio)** · versão 2.7.0
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.1#inicio)** · versão 2.7.1
+
+## Ajustes das imagens - versão 2.7.1
+
+- O quiz embutido mantém margem interna em todas as telas, incluindo QR, perguntas e placar.
+- A prévia Estreita usa até 360 px. Títulos quebram dentro dos cartões e a altura acompanha o conteúdo durante a edição e ao mudar a largura.
+- Os títulos numerados têm espaço reservado acima do texto, inclusive em desafios e blocos com preenchimento próprio.
+- Conferência das 55 páginas no computador e em 390 px, dos seis laboratórios Web em tela menor e do quiz em seis larguras entre 320 e 1366 px. Os 41 testes automatizados passaram.
 
 ## Revisão de funcionamento e contraste - versão 2.7
 
