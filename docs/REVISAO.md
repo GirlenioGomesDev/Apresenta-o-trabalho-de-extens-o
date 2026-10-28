@@ -1,3 +1,17 @@
+# Acabamento visual - versão 2.7.2
+
+| Problema observado | Correção |
+| --- | --- |
+| Na abertura, a legenda branca ficava sobre o cartão claro e próxima do botão Testar ideia. | Cartões e legenda acompanham o fluxo e a altura real do conteúdo. A legenda fica abaixo do cartão, sobre o fundo escuro. |
+| O quadro escuro da abertura era coberto pelo cartão do resultado. | Os três exemplos de HTML, CSS e JavaScript ficam inteiros, mantendo cores e inclinação dos cartões. |
+| Abas, faixas salariais, nomes, opções e alguns diagramas podiam ultrapassar seus próprios cartões, mesmo sem uma barra de rolagem na página. | Grades, preenchimentos, quebras de linha e larguras mínimas foram ajustados. Abas menores continuam disponíveis e utilizáveis. |
+| Rótulos de rede podiam passar por uma cor quase branca sobre uma superfície clara. | O texto muda imediatamente de cor; transformações e sombras mantêm sua transição. |
+| O caminho do diagnóstico aparecia antes dos controles, com números de leitura fora da sequência visual. | A estrutura mostra primeiro os controles (01), depois a evidência (02) e a hipótese (03). O caminho fica vertical em telas menores. |
+
+A revisão mantém os conteúdos, as demonstrações, as fotografias, os dados das carreiras e o cronograma. Foram conferidos contraste, transbordamento da página, limites internos dos cartões e títulos numerados nas 55 páginas no computador e em larguras simuladas de 320 e 390 px. A verificação de largura no navegador não equivale a um ensaio em celulares físicos.
+
+---
+
 # Ajustes das imagens - versão 2.7.1
 
 | Pendência | Correção |

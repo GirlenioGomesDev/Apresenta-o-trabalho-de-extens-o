@@ -2,7 +2,14 @@
 
 Oficina para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.1#inicio)** · versão 2.7.1
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.2#inicio)** · versão 2.7.2
+
+## Acabamento visual - versão 2.7.2
+
+- A legenda da abertura acompanha a altura dos cartões e fica abaixo do resultado. HTML, CSS e JavaScript aparecem inteiros no quadro escuro.
+- Abas do laboratório, faixas salariais, controles, nomes e diagramas se adaptam à largura disponível.
+- O diagnóstico de rede apresenta controles, evidência e hipótese na ordem de leitura; em telas menores, o caminho fica vertical.
+- Os rótulos do diagnóstico mudam de estado sem uma transição que os deixe temporariamente apagados.
 
 ## Ajustes das imagens - versão 2.7.1
 

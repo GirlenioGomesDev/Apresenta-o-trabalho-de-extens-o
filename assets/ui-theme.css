@@ -190,3 +190,115 @@
 @media(prefers-reduced-motion:reduce) {
   .scene.scene *, .scene.scene *::before, .scene.scene *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* A abertura acompanha a altura real dos cartões: a legenda nunca fica sobre eles. */
+.scene.scene .hero-lab {
+  display:flex;flex-direction:column;gap:20px;height:auto;min-width:0;
+  padding:8px;margin:0 0 0 auto;
+}
+.scene.scene .hero-orbit {
+  position:static;width:auto;gap:10px 20px;flex-wrap:wrap;line-height:1.7;
+}
+.scene.scene .hero-code-window {
+  position:relative;inset:auto;width:calc(100% - 16px);margin:6px 8px;
+  transform:rotate(-1.2deg);flex:none;
+  --ui-text:#edf6e5;--ui-muted:#c0d5b6;
+}
+.scene.scene .hero-concept-list {padding:10px 18px 16px}
+.scene.scene .hero-concept-list>div {
+  grid-template-columns:24px minmax(98px,.8fr) minmax(0,1.5fr);gap:10px;
+  padding:10px 0;min-width:0;
+}
+.scene.scene .hero-concept-list :is(b,small) {min-width:0;line-height:1.65}
+.scene.scene .hero-result {
+  position:relative;inset:auto;width:calc(100% - 28px);margin:0 0 0 24px;
+  transform:rotate(1deg);flex:none;
+}
+.scene.scene .result-address {
+  display:grid;grid-template-columns:5px minmax(0,1fr) auto;align-items:center;
+  overflow-wrap:anywhere;
+}
+.scene.scene .result-bottom {gap:12px;align-items:center;line-height:1.7}
+.scene.scene .result-bottom>span:last-child {min-width:0;overflow-wrap:anywhere}
+.scene.scene .hero-caption {
+  position:relative;inset:auto;margin:6px 8px 0;padding-left:28px;
+  font-size:14px;line-height:1.8;color:#edf6e5;
+}
+@media(max-width:700px) {
+  .scene.scene .hero-lab {padding:0;margin:0 auto;gap:22px}
+  .scene.scene .hero-code-window {width:calc(100% - 8px);margin:4px;transform:rotate(-.7deg)}
+  .scene.scene .hero-result {width:calc(100% - 12px);margin-left:8px;transform:rotate(.6deg)}
+  .scene.scene .hero-orbit {font-size:12px}
+  .scene.scene .hero-caption {font-size:13px;margin:0 4px}
+  .scene.scene .hero-concept-list>div {gap:8px}
+  .scene.scene .hero-concept-list small {font-size:14px}
+}
+
+/* Rótulos mudam de estado sem passar por uma cor apagada. */
+.scene.scene :is(.diagnostic-path span,.network-node>span,.backup-simulation>div>span,.gate-lamp) {
+  transition:transform .2s,box-shadow .2s;
+}
+.scene.scene .visual-investigation {display:flex;flex-direction:column;gap:24px}
+.scene.scene .visual-investigation>.diagnostic-controls {order:1;margin:0}
+.scene.scene .visual-investigation>.diagnostic-path {order:2;margin:0}
+.scene.scene .visual-investigation>.diagnostic-conclusion {order:3;margin:0}
+.scene.scene .visual-investigation>.investigation-choices {order:4;margin:0}
+.scene.scene .visual-investigation>.experiment-feedback {order:5;margin:0}
+.scene.scene .diagnostic-path {grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr) 14px minmax(0,1fr) 14px minmax(0,1fr)}
+.scene.scene .diagnostic-path span {min-width:0;overflow-wrap:anywhere}
+.scene.scene .reading-region {min-width:0}
+.scene.scene .salary-range {white-space:normal;overflow-wrap:anywhere;max-width:100%}
+.scene.scene .salary-position-label,.scene.scene .salary-position-label select {min-width:0;width:100%}
+.scene.scene :is(.career-identity,.career-explainer-grid,.career-explainer-grid article,.history-person) {min-width:0;overflow-wrap:anywhere}
+.scene.scene .history-person h3 {overflow-wrap:anywhere}
+.scene.scene :is(h2,h3,h4,.career-map-card) {overflow-wrap:anywhere;min-width:0}
+.scene.scene .course-eyebrow {flex-wrap:wrap;gap:14px}
+.scene.scene .lesson-duration {white-space:normal;max-width:100%;overflow-wrap:anywhere}
+.scene.scene .internet-people :is(article,article>div) {min-width:0;overflow-wrap:anywhere}
+.scene.scene .historical-comparison .evolution-nodes>span {min-width:0;flex:1 1 110px;max-width:100%;overflow-wrap:anywhere}
+.scene.scene .web-lab-live-tools {flex-wrap:wrap;gap:16px}
+.scene.scene .web-lab-live-tools>* {min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.scene.scene .editor-toolbar {flex-wrap:wrap;gap:10px;padding:10px 12px}
+.scene.scene .editor-tabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex:1 1 100%;width:100%;gap:3px}
+.scene.scene .editor-tabs button {min-width:0;padding:12px 6px;font:14px/1.6 var(--mono)}
+.scene.scene .editor-corner {margin-left:auto;font-size:12px}
+.scene.scene .accent-underline::after {left:0;width:98%}
+.scene.scene .network-loop {max-width:100%;margin-bottom:38px}
+.scene.scene .network-loop>span:nth-child(2) {left:0}
+.scene.scene .network-loop>span:nth-child(3) {right:0}
+@keyframes network-cycle {
+  0%,100% {left:50%;top:18px}
+  33% {left:8px;top:133px}
+  66% {left:calc(100% - 15px);top:133px}
+}
+@keyframes network-path {
+  0%,100% {left:8px;top:133px;opacity:0}
+  15% {opacity:1}
+  50% {left:50%;top:18px}
+  85% {opacity:1}
+  95% {left:calc(100% - 15px);top:133px;opacity:0}
+}
+@media(max-width:700px) {
+  .scene.scene .learning-rhythm {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .scene.scene .learning-rhythm>div {min-width:0;overflow-wrap:anywhere}
+  .scene.scene .data-clean-workspace,.scene.scene .permission-layout {grid-template-columns:minmax(0,1fr)}
+  .scene.scene .data-clean-workspace>* {min-width:0;max-width:100%}
+  .scene.scene .data-table-wrap {max-width:100%;min-width:0;overflow-x:auto}
+  .scene.scene .safety-tabs {flex-wrap:wrap;gap:10px}
+  .scene.scene .safety-tabs button {min-width:0;flex:1 0 110px;white-space:normal;overflow-wrap:anywhere}
+  .scene.scene .cable-toolbar {flex-wrap:wrap;gap:16px}
+  .scene.scene .cable-toolbar :is(label,select) {min-width:0;max-width:100%;width:100%}
+  .scene.scene .story-bridge {display:block;overflow-wrap:anywhere}
+  .scene.scene .story-bridge>span {display:block;margin-bottom:10px}
+  .scene.scene .story-bridge>svg {display:inline-block;vertical-align:middle;margin-left:12px}
+  .scene.scene .salary-range {font-size:clamp(20px,6vw,28px)}
+  .scene.scene .editor-tabs button {font-size:11px}
+  .scene.scene .diagnostic-path {grid-template-columns:minmax(0,1fr);gap:10px}
+  .scene.scene .diagnostic-path span {min-width:0;width:100%;padding:16px;overflow-wrap:anywhere}
+  .scene.scene .diagnostic-path i {transform:rotate(90deg);line-height:1.2}
+}
+@media(max-width:380px) {
+  .scene.scene .learning-rhythm,.scene.scene .behind-layers {grid-template-columns:minmax(0,1fr)}
+  .scene.scene .editor-tabs {grid-template-columns:minmax(0,1fr)}
+  .scene.scene .editor-tabs button {font-size:13px}
+}
