@@ -913,7 +913,7 @@ window.WorkshopCourse = {
     },
     "grace-hopper": {
       "time": "1 min / História · contribuições em ordem cronológica",
-      "text": "Conte brevemente a contribuição de Grace Hopper para ferramentas e linguagens que aproximam a programação de descrições mais compreensíveis. A criação de COBOL envolveu um esforço coletivo; não atribua tudo a uma pessoa. Nos cartões de Hopper, explique a necessidade da época, a contribuição e o uso ou legado atual. Use as fotos ampliáveis sem transformar a atividade em uma biografia."
+      "text": "Conte primeiro o trabalho repetitivo: copiar rotinas de cálculo e ajustar os endereços para montar um programa. Grace observou que o computador podia fazer essa montagem. Compare os quadros: copiar e ajustar manualmente, depois pedir rotinas por referência com o A-0 de 1952. A sequência 01 e 02 é ilustrativa; não é sintaxe histórica. Separe as etapas seguintes: FLOW-MATIC usou instruções próximas do inglês, com trabalho de Hopper e sua equipe; COBOL veio de um esforço coletivo por uma linguagem comum de negócios. Explique rotina como trecho reaproveitável e compilador como tradutor de instruções. A-0 foi pioneiro e não equivale a um compilador moderno completo. Relacione o legado a reduzir repetição e tornar regras compreensíveis, sem atribuir a Hopper todas as linguagens atuais."
     },
     "lab-software-testes": {
       "time": "3 min / Carreira · desenvolvimento de software",
@@ -1033,7 +1033,7 @@ window.WorkshopCourse = {
     },
     "alan-turing": {
       "time": "5 min / História · contribuições em ordem cronológica",
-      "text": "Contextualize como uma história anterior à internet, ligada à proteção da informação. Mostre Enigma e a reconstrução da Bombe; a Bombe é eletromecânica, não é o Colossus. Explique que Turing, Welchman, criptanalistas poloneses, engenheiros, operadores e outras equipes contribuíram para o esforço aliado. Turing não venceu a guerra sozinho. Compare as duas abas: o modelo matemático de 1936 mostra seguir regras; o exemplo de seis hipóteses mostra eliminar incompatibilidades. Nenhuma atividade reproduz a Enigma ou os cálculos reais da Bombe. Relacione o legado da computação programável ao aparelho que roda diferentes programas, sem afirmar que todo problema é computável. A relação com a segurança atual será retomada no bloco de carreiras. Agora siga para as ferramentas de programação de Hopper."
+      "text": "Apresente duas contribuições distintas: o modelo de regras de 1936 e a investigação de mensagens na guerra. Comece pela necessidade de entender mensagens interceptadas. Use as fotos para distinguir Enigma, que cifra letras, de Bombe, que ajuda a investigar configurações. Na nova demonstração, pressione A cinco vezes: as rodas mudam e surge BDZGO. Reinicie a receptora na mesma posição para recuperar AAAAA; compare com AAB para mostrar a importância da configuração. Não diga que a Enigma transmitia pelo rádio: pessoas anotavam as letras e as transmitiam. Destaque a base polonesa, Turing, Welchman, engenheiros, operadoras e analistas. Só depois use a aba 1940: as seis hipóteses são fictícias e mostram eliminação por pistas, não o cálculo real da Bombe. A fita da aba 1936 explica seguir uma regra; não decifra a Enigma. Escolha as interações para o tempo disponível, sem ler todos os cartões."
     },
     "historia-nsfnet": {
       "time": "1 min / História · contribuições em ordem cronológica",

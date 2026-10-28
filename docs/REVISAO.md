@@ -1,3 +1,17 @@
+# Contexto didático - versão 2.8
+
+Foram acrescentados 45 blocos de contexto: problema, situação inicial, mudança e orientação sobre o que observar. As 11 pessoas anteriores mantêm nome, retrato, fonte e contribuição, com termos explicados em frases mais diretas.
+
+Enigma ganhou uma demonstração de tecla, rotores, lâmpada e leitura na receptora. O recorte calcula a configuração I–II–III / refletor B / anéis AAA, sem cabos no painel. O trabalho coletivo da investigação e a função da Bombe são explicados separadamente. Os modelos anteriores de fita e seis hipóteses continuam.
+
+Grace ganhou uma comparação da montagem manual com o A-0, a motivação para reduzir cópia e ajuste de endereços e a distinção entre A-0, FLOW-MATIC e COBOL. O diagrama é identificado como uma representação da ideia, com fontes primárias e institucionais.
+
+Validação: 46 testes automatizados, incluindo sequências conhecidas da Enigma, reciprocidade, avanço dos rotores, configuração diferente e entradas inválidas. No navegador, foram conferidos cinco toques, decifragem, troca de posição e restauração, além das práticas anteriores de fita e hipóteses. As 55 páginas passaram pela medição de contraste, limites internos dos cartões e títulos numerados no computador, em 320 px e em 390 px. Isso não equivale a teste em aparelhos físicos.
+
+55 páginas, sequência, nove laboratórios anteriores, fotografias, carreiras e quiz preservados. O cronograma continua sugerido; as notas orientam a escolher interações e evitar ler todos os cartões.
+
+---
+
 # Acabamento visual - versão 2.7.2
 
 | Problema observado | Correção |

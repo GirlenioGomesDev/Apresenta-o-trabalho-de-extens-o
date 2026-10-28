@@ -118,3 +118,17 @@ O QR leva a uma página HTTPS comum, sem leitor próprio ou pedido de acesso à 
 ## Organização atual
 
 As contribuições e os casos aparecem em ordem cronológica antes das aulas de Web e das práticas das quatro carreiras. A numeração é fixa, com textos e exemplos já visíveis. A barra de foco foi retirada. NSFNET e expansão comercial, já documentadas no panorama, agora aparecem em suas datas. A prévia repetida do robô e os cartões repetidos de HTML/CSS/JS foram consolidados; os laboratórios, os testes e as fotografias permanecem. São 55 páginas e 160 minutos sugeridos. As duas introduções da participação continuam removidas, e as perguntas de competição ficam no quiz próprio com QR.
+
+
+## Contexto didático e recorte da Enigma · versão 2.8 · 28/10/2026
+
+- **ASD · Enigma cipher machine:** finalidade, rotores, painel de cabos e transmissão das letras cifradas em Morse pelo rádio. <https://www.asd.gov.au/about/history/asd-stories/2022-04-01-enigma-cipher-machine>.
+- **The National Museum of Computing · Turing and Welchman:** abordagem da Bombe, melhoria de Welchman e trabalho de engenharia. <https://www.tnmoc.org/bh-6-enter-turing-and-welchman>.
+- **TNMOC · The Polish Connection:** contribuições de Rejewski, Różycki e Zygalski, compartilhadas com britânicos e franceses antes da guerra. <https://www.tnmoc.org/bh-3-the-polish-connection>.
+- **TNMOC · Menus and Cribs:** trechos prováveis, testes de configurações, paradas falsas e conferência posterior. A analogia com seis hipóteses não reproduz a Bombe. <https://www.tnmoc.org/bh-16-menus-and-cribs>.
+- **Virtual Enigma · documentação do simulador:** fiação, percurso elétrico, reciprocidade, avanço e passo duplo. O recorte do projeto fixa I–II–III, refletor B e anéis AAA, sem pares no painel de cabos. Não implementa todos os modelos ou procedimentos militares. <https://enigma.virtualcolossus.co.uk/technical.html>.
+- **Crypto Museum · Enigma wiring:** catálogo técnico de fiações e descrição de sua medição. <https://www.cryptomuseum.com/crypto/enigma/wiring.htm>.
+- **Grace Hopper · entrevista de 1980, CHM, pp. 6–7:** rotina copiada manualmente, ajuste de endereços e motivação da montagem automática. As explicações são paráfrases. <https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf>.
+- **Centre for Computing History · A-0:** rotinas em fita, referências para buscá-las e evolução posterior até FLOW-MATIC. A sequência 01 e 02 no desenho é ilustrativa, não um programa histórico. <https://www.computinghistory.org.uk/det/5487/Grace%20Hopper%20completes%20the%20A-0%20Compiler>.
+
+Os demais blocos antes/depois usam os cenários e fontes dos módulos existentes. As comparações de rede, Web, dados, acesso e incidentes distinguem uma etapa do exemplo de uma reconstituição histórica integral. Os desenhos de Katherine e do Ariane 5 não calculam trajetórias nem reproduzem software de voo.

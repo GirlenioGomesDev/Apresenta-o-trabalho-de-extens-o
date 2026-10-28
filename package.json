@@ -1,13 +1,13 @@
 {
   "name": "fabrica-de-software-na-pratica",
-  "version": "2.7.2",
+  "version": "2.8.0",
   "private": true,
   "description": "Oficina completa com histórico em ordem de datas, numeração fixa, práticas e quiz próprio.",
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",
-    "test": "node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs tests/history-stories.test.cjs tests/reading-guide.test.cjs tests/quiz-live.test.mjs tests/ui-regressions.test.cjs",
-    "check": "node --check assets/logic.js && node --check assets/content.js && node --check assets/app.js && node --check assets/lab-engine.js && node --check assets/lab-content.js && node --check assets/live-labs.js && node --check assets/course-data.js && node --check assets/course-logic.js && node --check assets/course-labs.js && node --check assets/course.js && node --check assets/extension-data.js && node --check assets/extension-logic.js && node --check assets/extension.js && node --check assets/history-stories.js && node --check assets/reading-guide.js && node --check assets/quiz-embed.js && node --check assets/quiz-qr.js && node --check assets/quiz-live.js && node --check server/quiz-service.mjs && node --check server/quiz-questions.mjs && node --check scripts/serve.mjs && node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs tests/history-stories.test.cjs tests/reading-guide.test.cjs tests/quiz-live.test.mjs tests/ui-regressions.test.cjs"
+    "test": "node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs tests/history-stories.test.cjs tests/reading-guide.test.cjs tests/quiz-live.test.mjs tests/ui-regressions.test.cjs tests/beginner-context.test.cjs",
+    "check": "node --check assets/beginner-context-data.js && node --check assets/beginner-context-logic.js && node --check assets/beginner-context.js && node --check assets/logic.js && node --check assets/content.js && node --check assets/app.js && node --check assets/lab-engine.js && node --check assets/lab-content.js && node --check assets/live-labs.js && node --check assets/course-data.js && node --check assets/course-logic.js && node --check assets/course-labs.js && node --check assets/course.js && node --check assets/extension-data.js && node --check assets/extension-logic.js && node --check assets/extension.js && node --check assets/history-stories.js && node --check assets/reading-guide.js && node --check assets/quiz-embed.js && node --check assets/quiz-qr.js && node --check assets/quiz-live.js && node --check server/quiz-service.mjs && node --check server/quiz-questions.mjs && node --check scripts/serve.mjs && node --test tests/logic.test.cjs tests/course.test.cjs tests/extension.test.cjs tests/history-stories.test.cjs tests/reading-guide.test.cjs tests/quiz-live.test.mjs tests/ui-regressions.test.cjs tests/beginner-context.test.cjs"
   },
   "engines": {
     "node": ">=22.13.0"

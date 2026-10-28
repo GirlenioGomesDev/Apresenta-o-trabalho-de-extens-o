@@ -36,7 +36,7 @@
     'dados-pergunta':[group('Observe os registros','.data-record-preview'),group('Defina a pergunta','.data-question-board>.concept-three')],
     'lab-dados-coleta':[group('Olhe os registros','.data-table-wrap'),group('Mude uma condição','.data-clean-controls'),group('Compare os resultados','.analysis-bars','.analysis-measures','#data-quality')],
     'dados-vies':[group('Compare as escalas','.chart-literacy > div:first-child'),group('Leia a diferença real','.experiment-takeaway')],
-    'alan-turing':[group('Entenda o problema da época','.turing-layout','.turing-team'),group('Conheça as máquinas','.turing-machine-pair'),group('Execute uma ideia','.turing-lab')],
+    'alan-turing':[group('Entenda o problema da época','.turing-layout','.turing-team'),group('Conheça as máquinas','.turing-machine-pair'),group('Entenda a Enigma e o trabalho da equipe','.enigma-context'),group('Execute uma ideia','.turing-lab')],
     'codigo-seguro':[group('Entenda a permissão','.lead'),group('Escolha o papel e teste','.permission-demo'),group('Conheça as proteções','.safety-focus')],
     'lab-cyber-regras':[group('Defina identidade e regras','.access-policy-controls'),group('Compare cada decisão','#visual-access-matrix','#access-feedback')],
     detetive:[group('Escolha o cenário','.scenario-tabs'),group('Leia os sinais e teste uma ação','#phishing-scenario','#mfa-scenario')],
@@ -75,6 +75,7 @@
     if(['inicio','quiz','encerramento','equipe'].includes(scene.id))return;
     const groups=[],used=new Set();
     const source=custom[scene.id]||defaultGroups(scene);
+    if($(':scope>.lesson-context',scene))source.unshift(group('Entenda o exemplo antes de experimentar',':scope>.lesson-context'));
     for(const entry of source){
       const nodes=entry.nodes||entry.selectors.flatMap(s=>$$(s,scene));
       const unique=nodes.filter((el,i)=>nodes.indexOf(el)===i&&!used.has(el)&&!groups.some(g=>g.nodes.some(parent=>parent.contains(el))));

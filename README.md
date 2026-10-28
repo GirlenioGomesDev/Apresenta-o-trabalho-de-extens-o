@@ -2,7 +2,15 @@
 
 Oficina para alunos do ensino médio · Grupo 04 · UNINASSAU Campus Graças.
 
-**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.7.2#inicio)** · versão 2.7.2
+**[Abrir a apresentação](https://girleniogomesdev.github.io/Apresenta-o-trabalho-de-extens-o/?v=2.8.0#inicio)** · versão 2.8.0
+
+## Contexto para quem está começando - versão 2.8
+
+- 45 blocos com situação inicial, mudança e orientação sobre o que observar no exemplo; pessoas e contribuições recebem explicações em linguagem mais direta.
+- Enigma: tecla, rotores e lâmpada, com cinco letras, decifragem na receptora e comparação de posições iniciais. O recorte usa fiação histórica com configuração fixa; os detalhes e limites estão identificados.
+- Turing e o trabalho coletivo: base polonesa, Welchman, engenharia, operação, pistas e conferência. O exemplo da Enigma, a analogia da Bombe e a fita de 1936 são distinguidos.
+- Grace Hopper: necessidade de evitar cópias e ajustes manuais, A-0, FLOW-MATIC e o esforço coletivo do COBOL, com comparação visual do processo.
+- 46 testes automatizados aprovados e conferência das 55 páginas no computador, em 320 px e em 390 px. Conteúdo, fotos, práticas, ordem e quiz preservados.
 
 ## Acabamento visual - versão 2.7.2
 

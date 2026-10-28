@@ -2,6 +2,17 @@
 
 **55 páginas e 160 minutos sugeridos.** As práticas e o conteúdo histórico foram preservados. As duas introduções de participação continuam removidas; as perguntas ficam no quiz com QR.
 
+## Como dar contexto antes de demonstrar
+
+Use os blocos “Contexto em um exemplo” sem ler cada parágrafo em voz alta. Apresente o problema em uma frase, mostre a situação inicial, anuncie uma mudança e acompanhe o resultado. As comparações usam o mesmo cenário. Quando o desenho for uma analogia, diga o que ele representa.
+
+- **Turing / Enigma:** diferencie cifrar uma mensagem de investigar sua configuração. Pressione A cinco vezes, confira as rodas e a lâmpada, reinicie a receptora e compare AAA com AAB. Relacione isso ao desafio de descobrir a configuração. Só então use as hipóteses fictícias do laboratório da Bombe. A fita de 1936 demonstra outra ideia: executar regras.
+- **Equipe:** apresente os poloneses como base do trabalho, Turing e Welchman na abordagem da Bombe, engenharia e operadoras na execução, analistas nas pistas e verificações. A contribuição ajudou os Aliados; o resultado não foi de uma pessoa só.
+- **Grace:** comece com copiar trechos e ajustar endereços à mão. Mostre a montagem automatizada pelo A-0. Depois diferencie FLOW-MATIC, com palavras próximas do inglês, do COBOL, resultado de um esforço coletivo. Os identificadores do desenho são ilustrativos.
+- **Web e carreiras:** antes de tocar no controle ou editar o código, leia “Na demonstração”. Compare uma condição por vez; depois descreva o que mudou e qual regra explica esse resultado.
+
+O cronograma continua sendo uma sugestão. Selecione as interações para o tempo disponível; as fontes e os detalhes técnicos servem de apoio, sem necessidade de ler todos os cartões.
+
 ## Ordem de leitura
 
 Os números 01, 02, 03… ficam impressos nos blocos. Leia na ordem em que aparecem; todo o material já está visível. Não há barra de foco ou botões para revelar trechos de leitura. Os botões dos testes continuam disponíveis.
