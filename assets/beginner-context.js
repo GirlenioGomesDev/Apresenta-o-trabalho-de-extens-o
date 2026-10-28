@@ -8,7 +8,7 @@
     const scene=$('#'+id);if(!scene)continue;
     const box=document.createElement('div');box.className='lesson-context';
     box.innerHTML='<span class="mini-label">CONTEXTO EM UM EXEMPLO</span><h3>'+esc(item[0])+'</h3><p>'+esc(item[1])+'</p>'+comparison(...item.slice(2,6))+'<p class="context-observe"><b>Na demonstração:</b> '+esc(item[6])+'</p>';
-    const anchor=$(':scope>.chronology-stamp',scene)||$(':scope>.course-lead,:scope>.lead',scene)||$(':scope>.scene-title',scene);
+    const anchor=$(':scope>.chronology-stamp',scene)||$(':scope>.course-lead,:scope>.lead',scene)||$(':scope>.scene-title',scene)||$(':scope>.scene-heading-row',scene);
     if(anchor)anchor.after(box);
   }
 
